@@ -1,0 +1,11 @@
+{
+  "name": "elecciones-espana-2026",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Guía ciudadana y comparador neutral de programas electorales para las Elecciones Generales de España 2026",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/dataAndEngine.test.js",
+    "start": "python3 -m http.server 8090"
+  }
+}
