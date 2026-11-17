@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elecciones Generales España 2026 — Guía de Programas Electorales</title>
+  <meta
+    name="description"
+    content="Guía ciudadana neutral y comparador de programas electorales de 17 formaciones políticas para las Elecciones Generales de España 2026."
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="#partidos" class="brand-link" id="nav-brand-home">
+          <span class="brand-title">Elecciones Generales España 2026</span>
+          <span class="brand-tag">Guía de Programas Electorales</span>
+        </a>
+        <p class="brand-subtitle">
+          Consulta neutral de programas, comparativa temática y cuestionario de medidas concretas sobre 17 formaciones políticas
+        </p>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button type="button" class="nav-btn active" data-route="partidos" id="nav-btn-partidos">
+          Partidos y Programas (17)
+        </button>
+        <button type="button" class="nav-btn" data-route="comparador" id="nav-btn-comparador">
+          Comparador por Temas (10)
+        </button>
+        <button type="button" class="nav-btn" data-route="cuestionario" id="nav-btn-cuestionario">
+          Cuestionario de Medidas (12)
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <!-- VISTA 1: DIRECTORIO DE PARTIDOS -->
+    <section id="view-parties" class="view-section" aria-labelledby="parties-heading">
+      <div class="page-intro">
+        <h1 id="parties-heading" class="page-title">Formaciones políticas y programas</h1>
+        <p class="page-lead">
+          Explore los perfiles y programas electorales de las 17 formaciones organizadas por bloque ideológico. Seleccione cualquier partido para leer su programa completo dividido en 10 áreas temáticas.
+        </p>
+      </div>
+
+      <div class="toolbar-panel">
+        <div class="bloc-filters" id="bloc-filter-bar" role="group" aria-label="Filtrar por bloque ideológico"></div>
+        <div class="search-box">
+          <label for="party-search-input" class="sr-only">Buscar partido o medida programática</label>
+          <input
+            type="search"
+            id="party-search-input"
+            class="search-input"
+            placeholder="Buscar partido, siglas o medida (ej. vivienda, nuclear, CGPJ)..."
+          />
+        </div>
+      </div>
+
+      <div class="results-meta" id="parties-count-label"></div>
+
+      <div id="parties-grid" class="parties-grid"></div>
+    </section>
+
+    <!-- VISTA 2: PERFIL MONOGRÁFICO DE PARTIDO -->
+    <section id="view-profile" class="view-section hidden" aria-live="polite">
+      <div id="party-profile-container"></div>
+    </section>
+
+    <!-- VISTA 3: COMPARADOR TEMÁTICO -->
+    <section id="view-comparator" class="view-section hidden" aria-labelledby="comparator-heading">
+      <div class="page-intro">
+        <h1 id="comparator-heading" class="page-title">Comparador por áreas temáticas</h1>
+        <p class="page-lead">
+          Contraste lado a lado las medidas concretas que propone cada partido en una misma materia. Puede filtrar por bloque ideológico o marcar formaciones concretas.
+        </p>
+      </div>
+
+      <div class="comparator-controls">
+        <div class="control-group">
+          <div class="control-label">1. Seleccione el área temática (10 bloques)</div>
+          <div id="comparator-topics-bar" class="topic-pills" role="group" aria-label="Áreas temáticas"></div>
+        </div>
+
+        <div class="control-group">
+          <div class="control-header-row">
+            <div class="control-label">2. Seleccione los partidos a comparar</div>
+            <div class="control-quick-actions" id="comparator-quick-actions"></div>
+          </div>
+          <div id="comparator-parties-bar" class="party-check-grid"></div>
+        </div>
+      </div>
+
+      <div id="comparator-topic-banner" class="topic-banner"></div>
+      <div id="comparator-grid" class="comparator-grid"></div>
+    </section>
+
+    <!-- VISTA 4: CUESTIONARIO DE MEDIDAS CONCRETAS -->
+    <section id="view-questionnaire" class="view-section hidden" aria-labelledby="questionnaire-heading">
+      <div class="page-intro">
+        <h1 id="questionnaire-heading" class="page-title">Cuestionario ciudadano de medidas concretas</h1>
+        <p class="page-lead">
+          En lugar de afirmaciones abstractas de «acuerdo o desacuerdo», cada cuestión plantea un problema público real con opciones programáticas concretas y excluyentes. Elija la medida que mejor refleje su postura e indique qué importancia tiene ese tema para usted.
+        </p>
+      </div>
+
+      <div class="quiz-status-bar" id="quiz-status-bar">
+        <div class="quiz-progress-text">
+          Preguntas respondidas: <strong id="quiz-answered-count">0</strong> de <strong>12</strong>
+        </div>
+        <div class="quiz-status-actions">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-reset-quiz">
+            Reiniciar respuestas
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-calculate-affinity">
+            Calcular afinidad
+          </button>
+        </div>
+      </div>
+
+      <div id="questionnaire-list" class="questionnaire-list"></div>
+
+      <div class="quiz-submit-footer">
+        <button type="button" class="btn btn-primary" id="btn-calculate-affinity-bottom">
+          Ver resultados de afinidad ciudadana
+        </button>
+      </div>
+
+      <div id="questionnaire-results" class="quiz-results hidden" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-primary">
+        Elecciones Generales España 2026 — Guía Informativa de Programas Electorales
+      </div>
+      <div class="footer-secondary">
+        Proyecto informativo estático y neutral basado en programas electorales, contratos programáticos y documentos públicos de las formaciones políticas. Alojado como repositorio abierto en GitHub Pages.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
