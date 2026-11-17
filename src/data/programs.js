@@ -13,9 +13,10 @@ export const PROGRAMS = {
         'Hacer permanente el Impuesto de Solidaridad a las Grandes Fortunas a partir de 3 millones de euros.',
         'Consolidar gravámenes extraordinarios sobre los beneficios de grandes entidades financieras y energéticas.',
         'Financiar una herencia universal de 20.000 euros para jóvenes al cumplir los 18 años orientada a formación o vivienda.',
-        'Equiparar progresivamente los tipos efectivos del IRPF entre rentas del ahorro y rentas salariales.'
+        'Equiparar progresivamente los tipos efectivos del IRPF entre rentas del ahorro y rentas salariales.',
+        'Reformar las reglas fiscales europeas de estabilidad para excluir inversiones verdes y sociales del cómputo de déficit y deuda.'
       ],
-      sourceRef: 'Programa económico de Sumar / confluencia progresista 2026'
+      sourceRef: 'Programa económico de Sumar / Frente Amplio 2026'
     },
     vivienda: {
       headline: 'Topes al alquiler en todo el país, regulación turística y parque público',
@@ -160,7 +161,8 @@ export const PROGRAMS = {
         'Crear una banca pública estatal que ofrezca hipotecas y crédito a pymes en condiciones reguladas.',
         'Topar los márgenes comerciales de las grandes distribuidoras de alimentación en productos de primera necesidad.',
         'Elevar el tipo marginal del IRPF al 60% para rentas superiores a 300.000 euros anuales.',
-        'Establecer un impuesto permanente y elevado a las grandes fortunas y beneficios extraordinarios.'
+        'Establecer un impuesto permanente y elevado a las grandes fortunas y beneficios extraordinarios.',
+        'Auditar la deuda pública para reestructurar pasivos ilegítimos de rescate financiero y exigir que el BCE financie inversión pública sin austeridad.'
       ],
       sourceRef: 'Programa Económico Podemos 2026'
     },
@@ -307,7 +309,8 @@ export const PROGRAMS = {
         'Ejecutar una reforma fiscal progresiva capaz de recaudar 111.000 millones de euros adicionales cada año.',
         'Crear una banca pública y empresas públicas estratégicas en industria, telecomunicaciones y energía.',
         'Intervenir precios de la cesta básica de alimentos y suministros energéticos esenciales.',
-        'Suprimir paraísos fiscales internos y reforzar la inspección fiscal contra la elusión de multinacionales.'
+        'Suprimir paraísos fiscales internos y reforzar la inspección fiscal contra la elusión de multinacionales.',
+        'Realizar una auditoría ciudadana de la deuda pública y cuestionar las reglas de déficit europeas que priorizan intereses frente al gasto social.'
       ],
       sourceRef: 'Programa Electoral Izquierda Unida 2026: Economía al servicio de la mayoría social'
     },
@@ -454,7 +457,8 @@ export const PROGRAMS = {
         'Nacionalizar sectores estratégicos: energía, banca, telecomunicaciones y transporte ferroviario y aéreo.',
         'Implantar una planificación democrática de la economía orientada a la reindustrialización y el empleo estable.',
         'Establecer una reforma fiscal radical que grave el gran capital, el patrimonio y los beneficios empresariales.',
-        'Controlar por ley los precios de bienes básicos y servicios esenciales frente a la inflación.'
+        'Controlar por ley los precios de bienes básicos y servicios esenciales frente a la inflación.',
+        'Ejecutar una auditoría integral y suspensión de pagos sobre la deuda considerada ilegítima frente a acreedores financieros y reglas del euro.'
       ],
       sourceRef: 'Tesis Programáticas del Partido Comunista de España (PCE)'
     },
@@ -601,7 +605,8 @@ export const PROGRAMS = {
         'Consolidar gravámenes específicos sobre beneficios extraordinarios de grandes bancos y compañías energéticas.',
         'Establecer una tributación mínima efectiva del 15% en el Impuesto de Sociedades para grandes multinacionales.',
         'Combatir la competencia fiscal desleal entre comunidades autónomas mediante armonización en Patrimonio y Sucesiones.',
-        'Ejecutar las inversiones en reindustrialización tecnológica, digitalización y leyes de apoyo a empresas emergentes.'
+        'Ejecutar las inversiones en reindustrialización tecnológica, digitalización y leyes de apoyo a empresas emergentes.',
+        'Mantener la senda gradual de reducción del déficit bajo el 3% y de la deuda pública en relación al PIB conforme a las reglas fiscales europeas.'
       ],
       sourceRef: 'Programa Electoral PSOE 2026: La fuerza de seguir avanzando'
     },
@@ -748,7 +753,8 @@ export const PROGRAMS = {
         'Reducir trámites regulatorios y licencias para la creación de empresas en 24 horas.',
         'Rebajar el IRPF a las clases medias y suprimir el Impuesto sobre Sucesiones y Donaciones en todo el Estado.',
         'Evaluar la eficiencia de todas las subvenciones y gastos públicos eliminando partidas improductivas.',
-        'Fomentar la atracción de inversión tecnológica y el mercado único español sin barreras autonómicas.'
+        'Fomentar la atracción de inversión tecnológica y el mercado único español sin barreras autonómicas.',
+        'Cumplir la senda europea de reducción de deuda y déficit mediante contención del gasto político y crecimiento productivo.'
       ],
       sourceRef: 'La España que merecemos: Bloque Económico (Cs / Coalición D21 2026)'
     },
@@ -895,7 +901,8 @@ export const PROGRAMS = {
         'Garantizar la plena unidad de mercado suprimiendo normativas autonómicas contradictorias para empresas.',
         'Eliminar subvenciones directas sin concurrencia a organizaciones patronales, sindicatos y entidades afines.',
         'Reorientar el gasto administrativo hacia inversión en I+D+i y formación profesional.',
-        'Asegurar transparencia absoluta en todos los contratos y presupuestos públicos.'
+        'Asegurar transparencia absoluta en todos los contratos y presupuestos públicos.',
+        'Reducir el déficit y la deuda pública eliminando duplicidades autonómicas, diputaciones y entes administrativos redundantes.'
       ],
       sourceRef: 'Corpus Programático de Unión Progreso y Democracia (UPyD)'
     },
@@ -1042,7 +1049,8 @@ export const PROGRAMS = {
         'Duplicar el mínimo exento del IRPF por el primer hijo (de 2.400 a 4.800 euros) y deflactar la tarifa a rentas medias.',
         'Rebajar el IVA de la energía del 21% al 10% y aplicar un IVA del 0% a alimentos básicos.',
         'Derogar los impuestos extraordinarios a banca y energéticas y bonificar el Impuesto de Patrimonio y Sucesiones.',
-        'Simplificar licencias administrativas reduciendo el número de ministerios y organismos públicos duplicados.'
+        'Simplificar licencias administrativas reduciendo el número de ministerios y organismos públicos duplicados.',
+        'Reducir la deuda pública bajo reglas fiscales europeas prohibiendo aprobar nuevo gasto sin financiación garantizada y ampliando el control de la AIReF.'
       ],
       sourceRef: 'Contrato con España: Programa de Gobierno PP 2026'
     },
@@ -1189,7 +1197,8 @@ export const PROGRAMS = {
         'Consolidar una economía social de mercado combinando iniciativa privada con cohesión social.',
         'Mantener un sistema tributario progresivo inspirado en la reforma fiscal de 1977 (IRPF y Patrimonio) con lucha contra el fraude.',
         'Impulsar acuerdos macroeconómicos de consenso entre Gobierno, sindicatos y patronal para moderar la inflación.',
-        'Modernizar infraestructuras e industria para preparar la adhesión plena al mercado común europeo.'
+        'Modernizar infraestructuras e industria para preparar la adhesión plena al mercado común europeo.',
+        'Controlar el déficit público y el endeudamiento estatal mediante disciplina presupuestaria y equilibrio monetario gradual.'
       ],
       sourceRef: 'Programa UCD (1977-1979) y Pactos de la Moncloa (Referencia histórica)'
     },
@@ -1336,7 +1345,8 @@ export const PROGRAMS = {
         'Simplificar el IRPF en dos tramos (15% hasta 70.000 euros y 25% en adelante) con deducciones por hijos.',
         'Suprimir el Impuesto sobre el Patrimonio, Sucesiones, Donaciones y Plusvalía municipal en toda España.',
         'Reducir el IVA en productos básicos, suministros energéticos del hogar y medicamentos.',
-        'Eliminar subvenciones públicas a partidos, sindicatos, patronales y organismos políticos autonómicos.'
+        'Eliminar subvenciones públicas a partidos, sindicatos, patronales y organismos políticos autonómicos.',
+        'Reducir la deuda pública y el déficit ejecutando recortes drásticos en estructuras autonómicas duplicadas y gasto político.'
       ],
       sourceRef: 'Programa Electoral VOX 2026: Es sentido común'
     },
@@ -1483,7 +1493,8 @@ export const PROGRAMS = {
         'Eximir totalmente del pago de IRPF a las rentas del trabajo de hasta 35.000 euros anuales.',
         'Reducir el tamaño de la administración central pasando de 22 a 10 ministerios y suprimir duplicidades autonómicas.',
         'Bajar el IVA de productos básicos, energía y vivienda y reducir la cuña fiscal del trabajo del 41% al 29%.',
-        'Suprimir toda subvención estatal a partidos políticos, sindicatos, patronales y entidades ideológicas.'
+        'Suprimir toda subvención estatal a partidos políticos, sindicatos, patronales y entidades ideológicas.',
+        'Contener la deuda pública y la carga de intereses eliminando gasto ministerial y duplicidades regionales en lugar de subir impuestos.'
       ],
       sourceRef: 'Contrato Electoral SALF (119 medidas): Economía y Fiscalidad'
     },
@@ -1630,7 +1641,8 @@ export const PROGRAMS = {
         'Subordinar la actividad financiera y bancaria al interés nacional frente a multinacionales y fondos extranjeros.',
         'Imponer proteccionismo económico estricto para preservar industrias y comercios locales frente a importaciones.',
         'Combatir la usura bancaria y el endeudamiento nacional con instituciones financieras internacionales.',
-        'Reorientar el presupuesto hacia vivienda, natalidad e industria propia suprimiendo gasto político.'
+        'Reorientar el presupuesto hacia vivienda, natalidad e industria propia suprimiendo gasto político.',
+        'Rechazar la deuda pública externa y el pago de intereses usurarios vinculados al sistema financiero global.'
       ],
       sourceRef: 'Manifiesto Ideológico y Puntos Programáticos de Núcleo Nacional'
     },
@@ -1777,7 +1789,8 @@ export const PROGRAMS = {
         'Nacionalizar la banca privada y las grandes empresas de energía, agua y comunicaciones.',
         'Superar el capitalismo especulativo mediante crédito público a interés mínimo para trabajadores y pymes.',
         'Organizar la economía en torno al trabajo como valor supremo, eliminando la usura y especulación bursátil.',
-        'Reconocer la propiedad privada familiar y cooperativa ligada a su función productiva social.'
+        'Reconocer la propiedad privada familiar y cooperativa ligada a su función productiva social.',
+        'Ejecutar una auditoría integral de cuentas y deuda pública frente al endeudamiento externo y la usura financiera.'
       ],
       sourceRef: 'Programa Nacionalsindicalista (27 Puntos y Programa Actual de FE de las JONS)'
     },
@@ -1924,7 +1937,8 @@ export const PROGRAMS = {
         'Suprimir el 100% de las subvenciones públicas a la tauromaquia, caza y ganadería intensiva industrial.',
         'Reducir el IVA de los servicios veterinarios del 21% al tipo superreducido del 4%.',
         'Establecer fiscalidad progresiva y tasas ambientales sobre industrias altamente contaminantes.',
-        'Redirigir ayudas públicas hacia la economía circular, energías limpias y alimentación vegetal.'
+        'Redirigir ayudas públicas hacia la economía circular, energías limpias y alimentación vegetal.',
+        'Medir la eficiencia y eficacia del gasto público evitando recortes en servicios sociales mientras se elimina el gasto insostenible.'
       ],
       sourceRef: 'Programa Político PACMA 2026: Economía Sostenible'
     },
@@ -2071,7 +2085,8 @@ export const PROGRAMS = {
         'Someter todos los programas de gasto público a auditorías independientes de impacto y eficacia para decidir su continuidad.',
         'Reducir radicalmente la carga burocrática y regulatoria para pequeñas empresas y emprendedores ("Revolución Pyme").',
         'Disminuir la presión fiscal general de forma responsable garantizando la financiación de sanidad y educación.',
-        'Fomentar la digitalización administrativa y las políticas de crecimiento orientadas al mérito y productividad.'
+        'Fomentar la digitalización administrativa y las políticas de crecimiento orientadas al mérito y productividad.',
+        'Reducir el déficit y la deuda pública combinando evaluación ex post de la AIReF sobre grandes obras y trato proporcionado a la deuda en la Ley de Segunda Oportunidad.'
       ],
       sourceRef: 'Programa Marco Democracia 21 (D21): Revolución Pyme y Economía 2026'
     },
@@ -2218,7 +2233,8 @@ export const PROGRAMS = {
         'Aplicar un recorte profundo del gasto político, ministerios, asesores y subvenciones sin interés general.',
         'Suprimir impuestos confiscatorios y simplificar obligaciones fiscales para autónomos y pymes.',
         'Auditar el uso de fondos públicos y recuperar patrimonios desviados mediante corrupción.',
-        'Fomentar la libertad económica liberando al ciudadano del intervencionismo regulatorio excesivo.'
+        'Fomentar la libertad económica liberando al ciudadano del intervencionismo regulatorio excesivo.',
+        'Crear una Auditoría Independiente del Gasto Público para frenar la deuda pública insostenible y el pago de intereses.'
       ],
       sourceRef: 'Contrato Electoral Iustitia Europa: Economía y Tijeretazo al Gasto'
     },
@@ -2365,7 +2381,8 @@ export const PROGRAMS = {
         'Ejecutar un Plan Estatal de Reindustrialización para recuperar siderurgia, manufactura y bienes de equipo.',
         'Nacionalizar sectores estratégicos como energía, banca, telecomunicaciones y transporte clave.',
         'Aplicar aranceles y proteccionismo comercial frente a importaciones desleales y deslocalizaciones empresariales.',
-        'Suprimir subvenciones a ONG, patronales y sindicatos institucionalizados destinando el presupuesto a industria.'
+        'Suprimir subvenciones a ONG, patronales y sindicatos institucionalizados destinando el presupuesto a industria.',
+        'Auditar la deuda pública frente a los mercados financieros y el BCE, reorientando el ahorro nacional hacia inversión productiva.'
       ],
       sourceRef: 'Programa Político Frente Obrero 2026: Defendamos España'
     },

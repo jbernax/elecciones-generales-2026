@@ -1,5 +1,5 @@
 /**
- * 14 concrete policy-choice questions covering all 12 core axes.
+ * 15 concrete policy-choice questions covering all 12 core axes.
  * Each question presents 4-5 distinct, verifiable programmatic options
  * rather than open-ended Agree/Disagree statements.
  */
@@ -264,9 +264,151 @@ export const QUESTIONS = [
   },
 
   {
+    id: 'q-economia-deuda',
+    topicId: 'economia',
+    title: '3. Gestión de la deuda pública, déficit y reglas fiscales',
+    questionText:
+      'Ante una deuda pública del 100,3% del PIB (1,767 billones €) y un déficit cercano al 2,8%, ¿qué estrategia fiscal y de gestión de la deuda prefiere?',
+    contextNote:
+      'Datos de referencia de septiembre de 2026 (Banco de España) y previsiones de la AIReF: el aumento de tipos de refinanciación eleva el gasto en intereses y exige decidir cómo equilibrar las cuentas.',
+    options: [
+      {
+        id: 'opt-deu-auditoria-reestructuracion',
+        title: 'Auditoría ciudadana de la deuda pública y reestructuración frente al BCE y mercados',
+        description:
+          'Auditar la deuda para identificar pasivos ilegítimos de rescates financieros, rechazar recortes de austeridad y exigir que el BCE financie inversión social.',
+        representativeParties: ['podemos', 'iu', 'pce', 'fo', 'fe_jons', 'nn'],
+        partyWeights: {
+          sumar: 0.55,
+          podemos: 1.0,
+          iu: 1.0,
+          pce: 1.0,
+          psoe: 0.05,
+          cs: 0.0,
+          upyd: 0.05,
+          pp: 0.0,
+          ucd: 0.0,
+          vox: 0.1,
+          salf: 0.25,
+          nn: 0.9,
+          fe_jons: 0.95,
+          pacma: 0.35,
+          d21: 0.0,
+          iustitia: 0.35,
+          fo: 1.0
+        }
+      },
+      {
+        id: 'opt-deu-flexibilizar-reglas-verdes',
+        title: 'Reformar las reglas fiscales europeas para blindar inversión verde y social',
+        description:
+          'Mantener la pertenencia al euro pero reformar las reglas fiscales comunitarias para excluir inversiones climáticas y sociales y financiar deuda con fiscalidad progresiva.',
+        representativeParties: ['sumar', 'pacma', 'psoe'],
+        partyWeights: {
+          sumar: 1.0,
+          podemos: 0.7,
+          iu: 0.75,
+          pce: 0.5,
+          psoe: 0.75,
+          cs: 0.2,
+          upyd: 0.2,
+          pp: 0.1,
+          ucd: 0.45,
+          vox: 0.0,
+          salf: 0.05,
+          nn: 0.0,
+          fe_jons: 0.1,
+          pacma: 1.0,
+          d21: 0.3,
+          iustitia: 0.1,
+          fo: 0.15
+        }
+      },
+      {
+        id: 'opt-deu-senda-europea-progresiva',
+        title: 'Cumplir gradualmente la senda europea (<3% déficit) combinando crecimiento e ingresos',
+        description:
+          'Reducir gradualmente la ratio de deuda y déficit respecto al PIB manteniendo el Estado del bienestar mediante crecimiento económico, fondos UE y tributos a grandes corporaciones.',
+        representativeParties: ['psoe', 'ucd'],
+        partyWeights: {
+          sumar: 0.6,
+          podemos: 0.25,
+          iu: 0.3,
+          pce: 0.15,
+          psoe: 1.0,
+          cs: 0.55,
+          upyd: 0.5,
+          pp: 0.45,
+          ucd: 1.0,
+          vox: 0.15,
+          salf: 0.1,
+          nn: 0.0,
+          fe_jons: 0.05,
+          pacma: 0.6,
+          d21: 0.65,
+          iustitia: 0.15,
+          fo: 0.05
+        }
+      },
+      {
+        id: 'opt-deu-airef-techo-gasto-igae',
+        title: 'Regla estricta sin gasto sin financiación, más poder a AIReF e IGAE con IA',
+        description:
+          'Prohibir aprobar nuevo gasto sin financiación garantizada, ampliar el control vinculante de la AIReF sobre todas las administraciones y auditar cada gran obra y partida.',
+        representativeParties: ['pp', 'd21', 'cs', 'upyd'],
+        partyWeights: {
+          sumar: 0.1,
+          podemos: 0.0,
+          iu: 0.0,
+          pce: 0.0,
+          psoe: 0.35,
+          cs: 1.0,
+          upyd: 0.95,
+          pp: 1.0,
+          ucd: 0.75,
+          vox: 0.55,
+          salf: 0.5,
+          nn: 0.1,
+          fe_jons: 0.1,
+          pacma: 0.35,
+          d21: 1.0,
+          iustitia: 0.7,
+          fo: 0.1
+        }
+      },
+      {
+        id: 'opt-deu-tijeretazo-duplicidades',
+        title: 'Recorte drástico de gasto político, ministerios y duplicidades autonómicas',
+        description:
+          'Reducir la deuda y el peso de los intereses recortando ministerios, asesores, subvenciones a partidos/sindicatos y entes autonómicos duplicados con auditoría independiente.',
+        representativeParties: ['vox', 'salf', 'iustitia', 'upyd'],
+        partyWeights: {
+          sumar: 0.0,
+          podemos: 0.0,
+          iu: 0.0,
+          pce: 0.0,
+          psoe: 0.05,
+          cs: 0.55,
+          upyd: 0.85,
+          pp: 0.6,
+          ucd: 0.2,
+          vox: 1.0,
+          salf: 1.0,
+          nn: 0.45,
+          fe_jons: 0.35,
+          pacma: 0.15,
+          d21: 0.6,
+          iustitia: 1.0,
+          fo: 0.45
+        }
+      }
+    ]
+  },
+
+  {
     id: 'q-vivienda-acceso',
     topicId: 'vivienda',
-    title: '3. Acceso a la vivienda, alquileres y ocupación ilegal',
+    title: '4. Acceso a la vivienda, alquileres y ocupación ilegal',
     questionText:
       '¿Qué conjunto de medidas debe aprobarse para resolver el problema del acceso a la vivienda?',
     contextNote:
@@ -408,7 +550,7 @@ export const QUESTIONS = [
   {
     id: 'q-empleo-jornada',
     topicId: 'empleo',
-    title: '4. Jornada laboral, salarios y trabajadores autónomos',
+    title: '5. Jornada laboral, salarios y trabajadores autónomos',
     questionText:
       '¿Qué reforma concreta prefiere en regulación laboral, jornada y autónomos?',
     contextNote:
@@ -550,7 +692,7 @@ export const QUESTIONS = [
   {
     id: 'q-pensiones-sistema',
     topicId: 'pensiones',
-    title: '5. Sistema público de pensiones y edad de jubilación',
+    title: '6. Sistema público de pensiones y edad de jubilación',
     questionText:
       '¿Qué reforma o garantía considera prioritaria para asegurar las pensiones públicas?',
     contextNote:
@@ -692,7 +834,7 @@ export const QUESTIONS = [
   {
     id: 'q-regeneracion-corrupcion',
     topicId: 'regeneracion_justicia',
-    title: '6. Control de la corrupción, aforamientos y gasto político',
+    title: '7. Control de la corrupción, aforamientos y gasto político',
     questionText:
       '¿Qué instrumento concreto considera más eficaz para combatir la corrupción y el abuso institucional?',
     contextNote:
@@ -834,7 +976,7 @@ export const QUESTIONS = [
   {
     id: 'q-regeneracion-justicia-voto',
     topicId: 'regeneracion_justicia',
-    title: '7. Elección del Poder Judicial (CGPJ) y reforma de la Ley Electoral',
+    title: '8. Elección del Poder Judicial (CGPJ) y reforma de la Ley Electoral',
     questionText:
       '¿Cómo deben elegirse el Consejo General del Poder Judicial (CGPJ) y los representantes en el Congreso?',
     contextNote:
@@ -950,7 +1092,7 @@ export const QUESTIONS = [
   {
     id: 'q-sanidad-gestion',
     topicId: 'sanidad',
-    title: '8. Gestión del Sistema Nacional de Salud y listas de espera',
+    title: '9. Gestión del Sistema Nacional de Salud y listas de espera',
     questionText:
       '¿Qué modelo de gestión y cobertura sanitaria debe aplicarse en España?',
     contextNote:
@@ -1066,7 +1208,7 @@ export const QUESTIONS = [
   {
     id: 'q-educacion-modelo',
     topicId: 'educacion',
-    title: '9. Red educativa, lengua vehicular y prueba universitaria',
+    title: '10. Red educativa, lengua vehicular y prueba universitaria',
     questionText:
       '¿Qué política educativa y lingüística debe regir en colegios y universidades?',
     contextNote:
@@ -1208,7 +1350,7 @@ export const QUESTIONS = [
   {
     id: 'q-inmigracion-fronteras',
     topicId: 'inmigracion',
-    title: '10. Política migratoria, regularizaciones y control de flujos',
+    title: '11. Política migratoria, regularizaciones y control de flujos',
     questionText:
       '¿Qué criterio debe regir la entrada, regularización y residencia de personas extranjeras en España?',
     contextNote:
@@ -1350,7 +1492,7 @@ export const QUESTIONS = [
   {
     id: 'q-seguridad-orden',
     topicId: 'seguridad',
-    title: '11. Seguridad ciudadana, Código Penal y modelo policial',
+    title: '12. Seguridad ciudadana, Código Penal y modelo policial',
     questionText:
       '¿Qué medidas concretas deben priorizarse en seguridad pública, fronteras y política penitenciaria?',
     contextNote:
@@ -1466,7 +1608,7 @@ export const QUESTIONS = [
   {
     id: 'q-modelo-estado',
     topicId: 'modelo_estado',
-    title: '12. Organización territorial del Estado y Jefatura del Estado',
+    title: '13. Organización territorial del Estado y Jefatura del Estado',
     questionText:
       '¿Qué modelo territorial y forma de Estado debe regir la estructura institucional española?',
     contextNote:
@@ -1608,7 +1750,7 @@ export const QUESTIONS = [
   {
     id: 'q-energia-campo',
     topicId: 'energia_campo',
-    title: '13. Energía nuclear, cambio climático, campo y protección animal',
+    title: '14. Energía nuclear, cambio climático, campo y protección animal',
     questionText:
       '¿Qué prioridad energética, medioambiental y agraria considera acertada para España?',
     contextNote:
@@ -1724,7 +1866,7 @@ export const QUESTIONS = [
   {
     id: 'q-exterior-ue',
     topicId: 'exterior_ue',
-    title: '14. Unión Europea, soberanía nacional, OTAN y política exterior',
+    title: '15. Unión Europea, soberanía nacional, OTAN y política exterior',
     questionText:
       '¿Qué posición debe mantener España ante la Unión Europea y las alianzas militares internacionales?',
     contextNote:

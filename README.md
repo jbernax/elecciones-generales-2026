@@ -25,8 +25,9 @@ Aplicación web estática, sobria y neutral para consultar, comparar y contrasta
 │   ├── data/
 │   │   ├── parties.js          # Definición de los 6 bloques y las 17 formaciones
 │   │   ├── topics.js           # 12 áreas temáticas estructurales
+│   │   ├── macroContext.js     # Indicadores de deuda pública, déficit y reglas fiscales (2026)
 │   │   ├── programs.js         # 204 fichas programáticas (17 partidos x 12 temas)
-│   │   └── questionnaire.js    # 14 cuestiones de medidas concretas
+│   │   └── questionnaire.js    # 15 cuestiones de medidas concretas
 │   └── engine/
 │       └── affinityEngine.js   # Cálculo de afinidad ponderada, filtrado y comparativa
 └── tests/

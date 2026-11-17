@@ -6,10 +6,10 @@
 export const TOPICS = [
   {
     id: 'economia',
-    title: 'Economía, Fiscalidad y Modelo Productivo',
-    shortTitle: 'Economía y Fiscalidad',
+    title: 'Economía, Fiscalidad y Deuda Pública',
+    shortTitle: 'Economía y Deuda',
     description:
-      'Estructura del IRPF, impuestos al patrimonio, banca y grandes empresas, gasto público, pymes y papel del Estado en la economía.'
+      'Estructura del IRPF, impuestos al patrimonio, banca y grandes empresas, gestión de la deuda pública, déficit, reglas fiscales y papel del Estado.'
   },
   {
     id: 'vivienda',

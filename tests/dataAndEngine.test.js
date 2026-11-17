@@ -8,6 +8,7 @@ import { BLOCS, PARTIES, getPartyById } from '../src/data/parties.js';
 import { TOPICS, getTopicById } from '../src/data/topics.js';
 import { PROGRAMS, getPartyProgram, getProposal } from '../src/data/programs.js';
 import { QUESTIONS } from '../src/data/questionnaire.js';
+import { SPAIN_FISCAL_STATUS } from '../src/data/macroContext.js';
 import {
   PRIORITY_WEIGHTS,
   calculateCitizenAffinity,
@@ -85,8 +86,8 @@ test('programs dataset covers all 17 parties across all 12 separated topics (204
   assert.equal(Object.keys(PROGRAMS).length, 17);
 });
 
-test('questionnaire covers all 12 topics with 14 concrete options and full 17-party weight maps', () => {
-  assert.equal(QUESTIONS.length, 14);
+test('questionnaire covers all 12 topics with 15 concrete options and full 17-party weight maps', () => {
+  assert.equal(QUESTIONS.length, 15);
 
   const coveredTopics = new Set(QUESTIONS.map((q) => q.topicId));
   for (const topic of TOPICS) {
@@ -276,4 +277,20 @@ test('separated empleo, pensiones, inmigracion, and seguridad topics track indep
   const securityComparison = buildTopicComparison('seguridad', ['psoe', 'pp', 'salf'], PARTIES, PROGRAMS);
   assert.equal(securityComparison.length, 3);
   assert.ok(securityComparison.every((item) => item.proposal && item.proposal.measures.length >= 3));
+});
+
+test('macroeconomic financial status reference and party debt-management proposals are complete', () => {
+  assert.equal(SPAIN_FISCAL_STATUS.metrics.length, 4);
+  assert.ok(SPAIN_FISCAL_STATUS.sourcesNote.includes('Banco de España'));
+  assert.ok(SPAIN_FISCAL_STATUS.sourcesNote.includes('AIReF'));
+
+  for (const party of PARTIES) {
+    const econ = getProposal(party.id, 'economia');
+    assert.ok(econ, `Missing economia entry for ${party.id}`);
+    const combinedText = `${econ.summary} ${econ.measures.join(' ')}`.toLowerCase();
+    assert.ok(
+      /deuda|déficit|endeudamiento|gasto público|estabilidad/.test(combinedText),
+      `Expected explicit debt/deficit management reference in ${party.id} economia entry`
+    );
+  }
 });

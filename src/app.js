@@ -7,6 +7,7 @@ import { BLOCS, PARTIES, getPartyById } from './data/parties.js';
 import { TOPICS, getTopicById } from './data/topics.js';
 import { PROGRAMS, getPartyProgram, getProposal } from './data/programs.js';
 import { QUESTIONS } from './data/questionnaire.js';
+import { SPAIN_FISCAL_STATUS } from './data/macroContext.js';
 import {
   calculateCitizenAffinity,
   filterParties,
@@ -154,7 +155,59 @@ function renderBlocFilters() {
   });
 }
 
+function renderFiscalContextHtml({ collapsible = true } = {}) {
+  const metricsHtml = SPAIN_FISCAL_STATUS.metrics
+    .map(
+      (m) => `
+      <div class="fiscal-metric-card">
+        <div class="fiscal-metric-label">${escapeHtml(m.label)}</div>
+        <div class="fiscal-metric-value">${escapeHtml(m.value)}</div>
+        <p class="fiscal-metric-detail">${escapeHtml(m.detail)}</p>
+      </div>
+    `
+    )
+    .join('');
+
+  if (collapsible) {
+    return `
+      <details class="fiscal-details">
+        <summary class="fiscal-summary-bar">
+          <span>
+            <strong>${escapeHtml(SPAIN_FISCAL_STATUS.title)}:</strong>
+            Deuda pública 100,3% del PIB (1,767 billones €) · Déficit 2,8% del PIB
+          </span>
+          <span class="fiscal-summary-action">Ver indicadores y fuentes &rarr;</span>
+        </summary>
+        <div class="fiscal-details-body">
+          <p class="fiscal-subtitle">${escapeHtml(SPAIN_FISCAL_STATUS.subtitle)}</p>
+          <div class="fiscal-metrics-grid">${metricsHtml}</div>
+          <div class="fiscal-sources">${escapeHtml(SPAIN_FISCAL_STATUS.sourcesNote)}</div>
+        </div>
+      </details>
+    `;
+  }
+
+  return `
+    <div class="fiscal-panel">
+      <div class="fiscal-panel-head">
+        <div>
+          <h3 class="fiscal-panel-title">${escapeHtml(SPAIN_FISCAL_STATUS.title)}</h3>
+          <p class="fiscal-subtitle">${escapeHtml(SPAIN_FISCAL_STATUS.subtitle)}</p>
+        </div>
+        <span class="bloc-badge">${escapeHtml(SPAIN_FISCAL_STATUS.updatedLabel)}</span>
+      </div>
+      <div class="fiscal-metrics-grid">${metricsHtml}</div>
+      <div class="fiscal-sources">${escapeHtml(SPAIN_FISCAL_STATUS.sourcesNote)}</div>
+    </div>
+  `;
+}
+
 function renderPartiesDirectory() {
+  const fiscalDir = document.getElementById('fiscal-context-directory');
+  if (fiscalDir) {
+    fiscalDir.innerHTML = renderFiscalContextHtml({ collapsible: true });
+  }
+
   renderBlocFilters();
 
   const filtered = filterParties(PARTIES, PROGRAMS, {
@@ -522,6 +575,17 @@ function renderComparatorView() {
     <h2 class="topic-banner-title">${escapeHtml(currentTopic.title)}</h2>
     <p class="topic-banner-desc">${escapeHtml(currentTopic.description)}</p>
   `;
+
+  const fiscalBanner = document.getElementById('comparator-fiscal-banner');
+  if (fiscalBanner) {
+    if (currentTopic.id === 'economia' || currentTopic.id === 'pensiones') {
+      fiscalBanner.innerHTML = renderFiscalContextHtml({ collapsible: false });
+      fiscalBanner.classList.remove('hidden');
+    } else {
+      fiscalBanner.innerHTML = '';
+      fiscalBanner.classList.add('hidden');
+    }
+  }
 
   const comparisonItems = buildTopicComparison(
     currentTopic.id,
