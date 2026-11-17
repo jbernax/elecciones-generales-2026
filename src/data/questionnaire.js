@@ -1,6 +1,6 @@
 /**
- * 12 concrete policy-choice questions covering all 10 core axes.
- * Each question presents 5-6 distinct, verifiable programmatic options
+ * 14 concrete policy-choice questions covering all 12 core axes.
+ * Each question presents 4-5 distinct, verifiable programmatic options
  * rather than open-ended Agree/Disagree statements.
  */
 
@@ -407,8 +407,8 @@ export const QUESTIONS = [
 
   {
     id: 'q-empleo-jornada',
-    topicId: 'empleo_pensiones',
-    title: '4. Jornada laboral, contratación y trabajadores autónomos',
+    topicId: 'empleo',
+    title: '4. Jornada laboral, salarios y trabajadores autónomos',
     questionText:
       '¿Qué reforma concreta prefiere en regulación laboral, jornada y autónomos?',
     contextNote:
@@ -418,7 +418,7 @@ export const QUESTIONS = [
         id: 'opt-emp-32-horas',
         title: 'Jornada máxima legal de 32 horas semanales y refuerzo de despido e SMI',
         description:
-          'Reducir por ley la semana laboral a 32 horas sin pérdida de sueldo, elevar la indemnización por despido y revalorizar el SMI y pensiones por IPC.',
+          'Reducir por ley la semana laboral a 32 horas sin pérdida de sueldo, elevar la indemnización por despido improcedente y reforzar el SMI.',
         representativeParties: ['podemos', 'iu', 'pce', 'sumar'],
         partyWeights: {
           sumar: 0.9,
@@ -444,7 +444,7 @@ export const QUESTIONS = [
         id: 'opt-emp-375-dialogo',
         title: 'Jornada de 37,5 horas pactada y SMI fijado por ley al 60% del salario medio',
         description:
-          'Avanzar hacia las 37,5 horas semanales mediante diálogo social, garantizar el SMI al 60% del salario medio y dotar el Fondo de Reserva de pensiones.',
+          'Avanzar hacia las 37,5 horas semanales mediante diálogo social y garantizar por ley el SMI al 60% del salario medio.',
         representativeParties: ['psoe', 'sumar', 'pacma', 'ucd'],
         partyWeights: {
           sumar: 0.9,
@@ -548,9 +548,151 @@ export const QUESTIONS = [
   },
 
   {
+    id: 'q-pensiones-sistema',
+    topicId: 'pensiones',
+    title: '5. Sistema público de pensiones y edad de jubilación',
+    questionText:
+      '¿Qué reforma o garantía considera prioritaria para asegurar las pensiones públicas?',
+    contextNote:
+      'Separa las preferencias sobre pensiones de la regulación del empleo: edad de jubilación, blindaje constitucional, financiación vía PGE, ahorro privado o natalidad.',
+    options: [
+      {
+        id: 'opt-pen-65-pge-minimas',
+        title: 'Jubilación a los 65 años, pensiones mínimas al SMI y financiación vía PGE',
+        description:
+          'Revertir la jubilación a los 67 años, equiparar las pensiones mínimas al salario mínimo, financiar la Seguridad Social con impuestos al capital y eliminar ventajas a planes privados.',
+        representativeParties: ['podemos', 'iu', 'pce'],
+        partyWeights: {
+          sumar: 0.85,
+          podemos: 1.0,
+          iu: 1.0,
+          pce: 1.0,
+          psoe: 0.45,
+          cs: 0.05,
+          upyd: 0.1,
+          pp: 0.0,
+          ucd: 0.2,
+          vox: 0.1,
+          salf: 0.1,
+          nn: 0.2,
+          fe_jons: 0.55,
+          pacma: 0.8,
+          d21: 0.05,
+          iustitia: 0.1,
+          fo: 0.7
+        }
+      },
+      {
+        id: 'opt-pen-blindaje-ipc-hucha',
+        title: 'Blindaje por ley/constitucional del IPC y refuerzo del Fondo de Reserva',
+        description:
+          'Asegurar la revalorización anual automática según el IPC, fortalecer el Fondo de Reserva mediante cotizaciones e incentivar el retraso voluntario del retiro.',
+        representativeParties: ['psoe', 'sumar', 'pacma', 'ucd'],
+        partyWeights: {
+          sumar: 0.95,
+          podemos: 0.7,
+          iu: 0.8,
+          pce: 0.6,
+          psoe: 1.0,
+          cs: 0.35,
+          upyd: 0.4,
+          pp: 0.4,
+          ucd: 0.9,
+          vox: 0.15,
+          salf: 0.15,
+          nn: 0.1,
+          fe_jons: 0.25,
+          pacma: 0.95,
+          d21: 0.45,
+          iustitia: 0.2,
+          fo: 0.35
+        }
+      },
+      {
+        id: 'opt-pen-actuarial-ahorro-mixto',
+        title: 'Cuentas individuales transparentes, caja única y ahorro complementario',
+        description:
+          'Informar de lo cotizado mediante cuentas nocionales, sostener la caja única vía mayor tasa de empleo e impulsar planes complementarios de empleo y ahorro.',
+        representativeParties: ['pp', 'cs', 'd21', 'upyd'],
+        partyWeights: {
+          sumar: 0.05,
+          podemos: 0.0,
+          iu: 0.0,
+          pce: 0.0,
+          psoe: 0.3,
+          cs: 1.0,
+          upyd: 1.0,
+          pp: 1.0,
+          ucd: 0.7,
+          vox: 0.55,
+          salf: 0.55,
+          nn: 0.1,
+          fe_jons: 0.05,
+          pacma: 0.15,
+          d21: 1.0,
+          iustitia: 0.55,
+          fo: 0.1
+        }
+      },
+      {
+        id: 'opt-pen-auditoria-fin-vitalicias',
+        title: 'Auditoría de la Seguridad Social y fin de pensiones vitalicias políticas',
+        description:
+          'Auditar las cuentas de la Seguridad Social, eliminar pensiones especiales o vitalicias de cargos públicos y recortar gasto político para sostener las pensiones.',
+        representativeParties: ['iustitia', 'salf', 'vox'],
+        partyWeights: {
+          sumar: 0.1,
+          podemos: 0.1,
+          iu: 0.1,
+          pce: 0.05,
+          psoe: 0.05,
+          cs: 0.5,
+          upyd: 0.7,
+          pp: 0.4,
+          ucd: 0.15,
+          vox: 0.85,
+          salf: 1.0,
+          nn: 0.35,
+          fe_jons: 0.35,
+          pacma: 0.2,
+          d21: 0.65,
+          iustitia: 1.0,
+          fo: 0.45
+        }
+      },
+      {
+        id: 'opt-pen-natalidad-65-nacional',
+        title: 'Sostener pensiones con natalidad nacional, industria y vuelta a los 65 años',
+        description:
+          'Rechazar la inmigración como parche demográfico, recuperar la jubilación a los 65 años (y anticipada por penosidad) y garantizar pensiones mediante natalidad e industria.',
+        representativeParties: ['fo', 'fe_jons', 'nn', 'vox'],
+        partyWeights: {
+          sumar: 0.15,
+          podemos: 0.2,
+          iu: 0.2,
+          pce: 0.3,
+          psoe: 0.05,
+          cs: 0.05,
+          upyd: 0.15,
+          pp: 0.2,
+          ucd: 0.1,
+          vox: 0.8,
+          salf: 0.65,
+          nn: 1.0,
+          fe_jons: 1.0,
+          pacma: 0.05,
+          d21: 0.1,
+          iustitia: 0.4,
+          fo: 1.0
+        }
+      }
+    ]
+  },
+
+  {
     id: 'q-regeneracion-corrupcion',
     topicId: 'regeneracion_justicia',
-    title: '5. Control de la corrupción, aforamientos y gasto político',
+    title: '6. Control de la corrupción, aforamientos y gasto político',
     questionText:
       '¿Qué instrumento concreto considera más eficaz para combatir la corrupción y el abuso institucional?',
     contextNote:
@@ -692,7 +834,7 @@ export const QUESTIONS = [
   {
     id: 'q-regeneracion-justicia-voto',
     topicId: 'regeneracion_justicia',
-    title: '6. Elección del Poder Judicial (CGPJ) y reforma de la Ley Electoral',
+    title: '7. Elección del Poder Judicial (CGPJ) y reforma de la Ley Electoral',
     questionText:
       '¿Cómo deben elegirse el Consejo General del Poder Judicial (CGPJ) y los representantes en el Congreso?',
     contextNote:
@@ -808,7 +950,7 @@ export const QUESTIONS = [
   {
     id: 'q-sanidad-gestion',
     topicId: 'sanidad',
-    title: '7. Gestión del Sistema Nacional de Salud y listas de espera',
+    title: '8. Gestión del Sistema Nacional de Salud y listas de espera',
     questionText:
       '¿Qué modelo de gestión y cobertura sanitaria debe aplicarse en España?',
     contextNote:
@@ -924,7 +1066,7 @@ export const QUESTIONS = [
   {
     id: 'q-educacion-modelo',
     topicId: 'educacion',
-    title: '8. Red educativa, lengua vehicular y prueba universitaria',
+    title: '9. Red educativa, lengua vehicular y prueba universitaria',
     questionText:
       '¿Qué política educativa y lingüística debe regir en colegios y universidades?',
     contextNote:
@@ -1065,18 +1207,18 @@ export const QUESTIONS = [
 
   {
     id: 'q-inmigracion-fronteras',
-    topicId: 'inmigracion_seguridad',
-    title: '9. Política migratoria, fronteras y seguridad ciudadana',
+    topicId: 'inmigracion',
+    title: '10. Política migratoria, regularizaciones y control de flujos',
     questionText:
-      '¿Qué política debe aplicarse ante los flujos migratorios y la seguridad en fronteras?',
+      '¿Qué criterio debe regir la entrada, regularización y residencia de personas extranjeras en España?',
     contextNote:
-      'Recoge desde la regularización amplia y cierre de CIEs hasta la contratación en origen, la expulsión rápida de irregulares o la remigración.',
+      'Distingue específicamente el modelo migratorio (regularización, arraigo laboral, visados en origen, expulsión o remigración) de la política policial y penal interna.',
     options: [
       {
         id: 'opt-inm-regularizacion-cie',
         title: 'Regularización extraordinaria, cierre de los CIEs y vías seguras de asilo',
         description:
-          'Regularizar a las personas extranjeras que residen en España, cerrar los Centros de Internamiento de Extranjeros y garantizar el rescate humanitario.',
+          'Regularizar a las personas extranjeras que residen en España, cerrar los Centros de Internamiento de Extranjeros y garantizar vías legales de acogida.',
         representativeParties: ['podemos', 'sumar', 'iu', 'pce', 'pacma'],
         partyWeights: {
           sumar: 1.0,
@@ -1100,9 +1242,9 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-inm-arraigo-cooperacion',
-        title: 'Migración regular ligada al empleo y acuerdos con países de origen',
+        title: 'Migración regular ligada al empleo, arraigo y acuerdos con países de origen',
         description:
-          'Facilitar vías ordenadas de arraigo laboral y formación en sectores deficitarios junto a cooperación policial y económica con países emisores.',
+          'Facilitar vías ordenadas de arraigo laboral y formación en sectores deficitarios junto a cooperación económica con países emisores.',
         representativeParties: ['psoe', 'd21', 'cs', 'ucd'],
         partyWeights: {
           sumar: 0.55,
@@ -1126,9 +1268,9 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-inm-origen-multirreincidencia',
-        title: 'Sin regularizaciones masivas, contratos en origen y dureza ante multirreincidencia',
+        title: 'Sin regularizaciones masivas, contratos en origen y visados por cualificación',
         description:
-          'Rechazar regularizaciones extraordinarias, exigir contrato previo en país de origen, reforzar Frontex y agravar penas a delincuentes multirreincidentes.',
+          'Rechazar regularizaciones extraordinarias, exigir contrato previo en país de origen o sistema por puntos y aplicar el pacto europeo de retornos.',
         representativeParties: ['pp', 'upyd', 'cs'],
         partyWeights: {
           sumar: 0.05,
@@ -1136,8 +1278,8 @@ export const QUESTIONS = [
           iu: 0.0,
           pce: 0.0,
           psoe: 0.35,
-          cs: 0.8,
-          upyd: 0.9,
+          cs: 0.9,
+          upyd: 0.95,
           pp: 1.0,
           ucd: 0.55,
           vox: 0.55,
@@ -1145,16 +1287,16 @@ export const QUESTIONS = [
           nn: 0.2,
           fe_jons: 0.35,
           pacma: 0.05,
-          d21: 0.75,
+          d21: 0.85,
           iustitia: 0.65,
           fo: 0.45
         }
       },
       {
         id: 'opt-inm-expulsion-armada',
-        title: 'Expulsión rápida de irregulares y delincuentes y despliegue militar en fronteras',
+        title: 'Expulsión rápida de irregulares y bloqueo a países que no repatríen',
         description:
-          'Deportar en 48h a inmigrantes ilegales o condenados, desplegar a las Fuerzas Armadas en Ceuta, Melilla y el Estrecho y frenar la inmigración descontrolada.',
+          'Deportar de forma ágil a inmigrantes en situación irregular o condenados por delito, suspender visados a países no cooperantes y vetar regularizaciones.',
         representativeParties: ['vox', 'salf', 'fo', 'iustitia', 'fe_jons'],
         partyWeights: {
           sumar: 0.0,
@@ -1169,11 +1311,11 @@ export const QUESTIONS = [
           vox: 1.0,
           salf: 1.0,
           nn: 0.75,
-          fe_jons: 0.9,
+          fe_jons: 0.95,
           pacma: 0.0,
           d21: 0.2,
-          iustitia: 0.85,
-          fo: 0.95
+          iustitia: 0.95,
+          fo: 1.0
         }
       },
       {
@@ -1206,9 +1348,125 @@ export const QUESTIONS = [
   },
 
   {
+    id: 'q-seguridad-orden',
+    topicId: 'seguridad',
+    title: '11. Seguridad ciudadana, Código Penal y modelo policial',
+    questionText:
+      '¿Qué medidas concretas deben priorizarse en seguridad pública, fronteras y política penitenciaria?',
+    contextNote:
+      'Contrapone la derogación de la Ley Mordaza y seguridad preventiva frente al endurecimiento contra la multirreincidencia, prisiones de máxima seguridad o despliegue militar.',
+    options: [
+      {
+        id: 'opt-seg-derogar-mordaza-proximidad',
+        title: 'Derogar la Ley Mordaza, policía de proximidad y prevención social',
+        description:
+          'Suprimir los artículos sancionadores de la Ley de Seguridad Ciudadana, potenciar la policía comunitaria y reforzar recursos contra violencia machista y delitos de odio.',
+        representativeParties: ['podemos', 'iu', 'pce', 'sumar', 'pacma'],
+        partyWeights: {
+          sumar: 1.0,
+          podemos: 1.0,
+          iu: 1.0,
+          pce: 1.0,
+          psoe: 0.55,
+          cs: 0.1,
+          upyd: 0.25,
+          pp: 0.0,
+          ucd: 0.3,
+          vox: 0.0,
+          salf: 0.0,
+          nn: 0.0,
+          fe_jons: 0.0,
+          pacma: 1.0,
+          d21: 0.15,
+          iustitia: 0.35,
+          fo: 0.05
+        }
+      },
+      {
+        id: 'opt-seg-plantillas-ciber-viogen',
+        title: 'Ampliar plantillas de Policía y Guardia Civil, ciberseguridad y medios técnicos',
+        description:
+          'Incrementar efectivos y medios contra narcotráfico, ciberdelincuencia y violencia de género manteniendo garantías procesales y respaldo institucional.',
+        representativeParties: ['psoe', 'd21', 'ucd'],
+        partyWeights: {
+          sumar: 0.45,
+          podemos: 0.2,
+          iu: 0.3,
+          pce: 0.15,
+          psoe: 1.0,
+          cs: 0.8,
+          upyd: 0.7,
+          pp: 0.65,
+          ucd: 0.95,
+          vox: 0.25,
+          salf: 0.2,
+          nn: 0.05,
+          fe_jons: 0.15,
+          pacma: 0.5,
+          d21: 1.0,
+          iustitia: 0.45,
+          fo: 0.3
+        }
+      },
+      {
+        id: 'opt-seg-multirreincidencia-equiparacion',
+        title: 'Agravante penal de multirreincidencia, equiparación salarial y mando estatal',
+        description:
+          'Endurecer el Código Penal frente a hurtos reiterados y desórdenes graves, equiparar salarios policiales, reconocer profesión de riesgo y despolitizar cúpulas.',
+        representativeParties: ['pp', 'cs', 'upyd', 'iustitia'],
+        partyWeights: {
+          sumar: 0.05,
+          podemos: 0.0,
+          iu: 0.0,
+          pce: 0.0,
+          psoe: 0.35,
+          cs: 1.0,
+          upyd: 1.0,
+          pp: 1.0,
+          ucd: 0.55,
+          vox: 0.75,
+          salf: 0.65,
+          nn: 0.3,
+          fe_jons: 0.45,
+          pacma: 0.1,
+          d21: 0.85,
+          iustitia: 0.9,
+          fo: 0.65
+        }
+      },
+      {
+        id: 'opt-seg-macrocarcel-armada-defensa',
+        title: 'Macrocárcel sin tercer grado, legítima defensa y despliegue militar fronterizo',
+        description:
+          'Construir prisión de máxima seguridad o ampliar cadena perpetua, reforzar la legítima defensa en el hogar y desplegar a las Fuerzas Armadas en Estrecho, Ceuta y Melilla.',
+        representativeParties: ['salf', 'vox', 'fe_jons', 'nn', 'fo'],
+        partyWeights: {
+          sumar: 0.0,
+          podemos: 0.0,
+          iu: 0.0,
+          pce: 0.0,
+          psoe: 0.05,
+          cs: 0.15,
+          upyd: 0.2,
+          pp: 0.45,
+          ucd: 0.05,
+          vox: 1.0,
+          salf: 1.0,
+          nn: 0.95,
+          fe_jons: 0.95,
+          pacma: 0.0,
+          d21: 0.15,
+          iustitia: 0.6,
+          fo: 0.9
+        }
+      }
+    ]
+  },
+
+  {
     id: 'q-modelo-estado',
     topicId: 'modelo_estado',
-    title: '10. Organización territorial del Estado y Jefatura del Estado',
+    title: '12. Organización territorial del Estado y Jefatura del Estado',
     questionText:
       '¿Qué modelo territorial y forma de Estado debe regir la estructura institucional española?',
     contextNote:
@@ -1350,7 +1608,7 @@ export const QUESTIONS = [
   {
     id: 'q-energia-campo',
     topicId: 'energia_campo',
-    title: '11. Energía nuclear, cambio climático, campo y protección animal',
+    title: '13. Energía nuclear, cambio climático, campo y protección animal',
     questionText:
       '¿Qué prioridad energética, medioambiental y agraria considera acertada para España?',
     contextNote:
@@ -1466,7 +1724,7 @@ export const QUESTIONS = [
   {
     id: 'q-exterior-ue',
     topicId: 'exterior_ue',
-    title: '12. Unión Europea, soberanía nacional, OTAN y política exterior',
+    title: '14. Unión Europea, soberanía nacional, OTAN y política exterior',
     questionText:
       '¿Qué posición debe mantener España ante la Unión Europea y las alianzas militares internacionales?',
     contextNote:

@@ -1,5 +1,5 @@
 /**
- * The 10 core thematic axes used across party profiles, side-by-side comparison,
+ * The 12 core thematic axes used across party profiles, side-by-side comparison,
  * and the citizen concrete-policy questionnaire.
  */
 
@@ -19,11 +19,18 @@ export const TOPICS = [
       'Regulación o liberalización de los precios del alquiler, parque público residencial, ayudas fiscales a jóvenes y desalojo de ocupaciones.'
   },
   {
-    id: 'empleo_pensiones',
-    title: 'Empleo, Salarios, Autónomos y Pensiones',
-    shortTitle: 'Empleo y Pensiones',
+    id: 'empleo',
+    title: 'Empleo, Salarios y Autónomos',
+    shortTitle: 'Empleo y Salarios',
     description:
-      'Duración de la jornada laboral, Salario Mínimo Interprofesional, cuotas de autónomos, indemnización por despido y sistema de pensiones.'
+      'Duración de la jornada laboral, Salario Mínimo Interprofesional, cuotas de autónomos, modalidades contractuales e indemnización por despido.'
+  },
+  {
+    id: 'pensiones',
+    title: 'Sistema de Pensiones y Jubilación',
+    shortTitle: 'Pensiones',
+    description:
+      'Revalorización conforme al IPC, edad de jubilación, pensiones mínimas, sostenibilidad financiera de la Seguridad Social y ahorro complementario.'
   },
   {
     id: 'regeneracion_justicia',
@@ -47,11 +54,18 @@ export const TOPICS = [
       'Red pública frente a concertada y cheque escolar, prueba de acceso universitaria, gratuidad de etapas y lengua vehicular de enseñanza.'
   },
   {
-    id: 'inmigracion_seguridad',
-    title: 'Inmigración, Fronteras y Seguridad Ciudadana',
-    shortTitle: 'Inmigración y Seguridad',
+    id: 'inmigracion',
+    title: 'Inmigración, Asilo y Control de Flujos',
+    shortTitle: 'Inmigración',
     description:
-      'Control fronterizo, regularizaciones o expulsiones, multirreincidencia penal, dotación de fuerzas de seguridad y sistema penitenciario.'
+      'Vías legales de entrada y arraigo, regularizaciones extraordinarias, expulsiones administrativas, CIEs e integración laboral.'
+  },
+  {
+    id: 'seguridad',
+    title: 'Seguridad Ciudadana, Fronteras y Orden Penal',
+    shortTitle: 'Seguridad',
+    description:
+      'Delincuencia multirreincidente, reforma del Código Penal y sistema penitenciario, legítima defensa, vigilancia fronteriza y fuerzas de seguridad.'
   },
   {
     id: 'modelo_estado',

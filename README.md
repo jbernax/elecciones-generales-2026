@@ -24,9 +24,9 @@ Aplicación web estática, sobria y neutral para consultar, comparar y contrasta
 │   ├── app.js                  # Controlador de vistas y enrutamiento por hash
 │   ├── data/
 │   │   ├── parties.js          # Definición de los 6 bloques y las 17 formaciones
-│   │   ├── topics.js           # 10 áreas temáticas estructurales
-│   │   ├── programs.js         # 170 fichas programáticas (17 partidos x 10 temas)
-│   │   └── questionnaire.js    # 12 cuestiones de medidas concretas
+│   │   ├── topics.js           # 12 áreas temáticas estructurales
+│   │   ├── programs.js         # 204 fichas programáticas (17 partidos x 12 temas)
+│   │   └── questionnaire.js    # 14 cuestiones de medidas concretas
 │   └── engine/
 │       └── affinityEngine.js   # Cálculo de afinidad ponderada, filtrado y comparativa
 └── tests/

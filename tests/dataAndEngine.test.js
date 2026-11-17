@@ -51,8 +51,14 @@ test('parties roster includes all 17 formations in the exact order and 6 blocs',
   });
 });
 
-test('programs dataset covers all 17 parties across all 10 topics (170 entries)', () => {
-  assert.equal(TOPICS.length, 10);
+test('programs dataset covers all 17 parties across all 12 separated topics (204 entries)', () => {
+  assert.equal(TOPICS.length, 12);
+  assert.ok(getTopicById('empleo'));
+  assert.ok(getTopicById('pensiones'));
+  assert.ok(getTopicById('inmigracion'));
+  assert.ok(getTopicById('seguridad'));
+  assert.equal(getTopicById('empleo_pensiones'), undefined);
+  assert.equal(getTopicById('inmigracion_seguridad'), undefined);
 
   let entryCount = 0;
   for (const party of PARTIES) {
@@ -75,12 +81,12 @@ test('programs dataset covers all 17 parties across all 10 topics (170 entries)'
     }
   }
 
-  assert.equal(entryCount, 170);
+  assert.equal(entryCount, 204);
   assert.equal(Object.keys(PROGRAMS).length, 17);
 });
 
-test('questionnaire covers all 10 topics with concrete options and full 17-party weight maps', () => {
-  assert.equal(QUESTIONS.length, 12);
+test('questionnaire covers all 12 topics with 14 concrete options and full 17-party weight maps', () => {
+  assert.equal(QUESTIONS.length, 14);
 
   const coveredTopics = new Set(QUESTIONS.map((q) => q.topicId));
   for (const topic of TOPICS) {
@@ -244,4 +250,30 @@ test('local PDF assets referenced by parties exist, are valid PDFs, and stay und
     fs.closeSync(fd);
     assert.equal(buf.toString('utf8'), '%PDF-', `Invalid PDF magic header for ${party.id}`);
   }
+});
+
+test('separated empleo, pensiones, inmigracion, and seguridad topics track independent scores', () => {
+  const answers = {
+    'q-empleo-jornada': 'opt-emp-375-dialogo',
+    'q-pensiones-sistema': 'opt-pen-natalidad-65-nacional',
+    'q-inmigracion-fronteras': 'opt-inm-arraigo-cooperacion',
+    'q-seguridad-orden': 'opt-seg-multirreincidencia-equiparacion'
+  };
+
+  const summary = calculateCitizenAffinity(answers, {}, QUESTIONS, PARTIES);
+  assert.equal(summary.answeredCount, 4);
+
+  const psoeResult = summary.rankedParties.find((r) => r.partyId === 'psoe');
+  assert.equal(psoeResult.topicScores.empleo, 100);
+  assert.equal(psoeResult.topicScores.pensiones, 5);
+  assert.equal(psoeResult.topicScores.inmigracion, 100);
+  assert.equal(psoeResult.topicScores.seguridad, 35);
+
+  const pensionComparison = buildTopicComparison('pensiones', ['psoe', 'pp', 'vox'], PARTIES, PROGRAMS);
+  assert.equal(pensionComparison.length, 3);
+  assert.ok(pensionComparison.every((item) => item.proposal && item.proposal.measures.length >= 3));
+
+  const securityComparison = buildTopicComparison('seguridad', ['psoe', 'pp', 'salf'], PARTIES, PROGRAMS);
+  assert.equal(securityComparison.length, 3);
+  assert.ok(securityComparison.every((item) => item.proposal && item.proposal.measures.length >= 3));
 });

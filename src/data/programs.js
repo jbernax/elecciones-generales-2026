@@ -1,6 +1,6 @@
 /**
  * Structured programmatic corpus for all 17 political formations across
- * the 10 core policy areas (170 topic-party entries).
+ * the 12 core policy areas (204 topic-party entries).
  */
 
 export const PROGRAMS = {
@@ -29,7 +29,7 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Bloque de Vivienda de Sumar 2026'
     },
-    empleo_pensiones: {
+    empleo: {
       headline: 'Reducción legal de la jornada a 37,5 y 32 horas sin bajada salarial',
       summary:
         'Sitúa la reducción del tiempo de trabajo, la mejora del SMI y el encarecimiento del despido improcedente como ejes centrales.',
@@ -37,9 +37,21 @@ export const PROGRAMS = {
         'Implantar por ley la jornada máxima de 37,5 horas semanales de forma inmediata con senda hacia las 32 horas.',
         'Revalorizar el Salario Mínimo Interprofesional por encima del 60% del salario medio.',
         'Establecer el despido restaurativo o indemnizaciones disuasorias adaptadas al daño real del trabajador.',
-        'Garantizar el poder adquisitivo de las pensiones conforme al IPC y elevar las pensiones mínimas.'
+        'Impulsar la democracia en la empresa con participación de las plantillas en los consejos de dirección.'
       ],
-      sourceRef: 'Programa laboral y social de Sumar'
+      sourceRef: 'Programa laboral de Sumar / Frente Amplio 2026'
+    },
+    pensiones: {
+      headline: 'Blindaje constitucional de las pensiones públicas y fin de deducciones privadas',
+      summary:
+        'Defiende garantizar constitucionalmente la revalorización por IPC, elevar las pensiones mínimas y suprimir incentivos fiscales a planes privados.',
+      measures: [
+        'Blindar en la Constitución el sistema público de pensiones y su revalorización anual conforme al IPC.',
+        'Incrementar las pensiones mínimas y no contributivas para reducir la brecha de pobreza en mayores.',
+        'Eliminar deducciones y bonificaciones fiscales a planes de pensiones privados individuales.',
+        'Reforzar los ingresos de la Seguridad Social destopando progresivamente las cotizaciones máximas.'
+      ],
+      sourceRef: 'Bloque de Pensiones Públicas de Sumar / Frente Amplio 2026'
     },
     regeneracion_justicia: {
       headline: 'Desbloqueo institucional, democracia participativa y transparencia pública',
@@ -77,17 +89,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Eje de Educación y Universidad de Sumar'
     },
-    inmigracion_seguridad: {
-      headline: 'Regularización extraordinaria, cierre de CIEs y seguridad comunitaria',
+    inmigracion: {
+      headline: 'Regularización extraordinaria, cierre de CIEs y homologación ágil de títulos',
       summary:
         'Defiende la regularización administrativa de residentes sin papeles, vías legales de acogida y derechos humanos en frontera.',
       measures: [
         'Aprobar la regularización extraordinaria de personas extranjeras que ya residen y trabajan en España.',
         'Cerrar progresivamente los Centros de Internamiento de Extranjeros (CIEs) y fin de devoluciones en caliente.',
-        'Reforzar la policía de proximidad y los juzgados especializados en violencia y delitos de odio.',
-        'Agilizar la homologación de títulos académicos de personas migrantes para cubrir vacantes profesionales.'
+        'Agilizar la homologación de títulos académicos de personas migrantes para cubrir vacantes profesionales.',
+        'Establecer vías legales y seguras de visado y asilo en países de origen.'
       ],
       sourceRef: 'Bloque de Derechos y Migraciones de Sumar'
+    },
+    seguridad: {
+      headline: 'Policía de proximidad, prevención social y lucha contra delitos de odio',
+      summary:
+        'Plantea un modelo policial comunitario centrado en derechos civiles, violencia machista, delitos de odio y seguridad digital.',
+      measures: [
+        'Reforzar la policía de proximidad y los juzgados especializados en violencia machista y delitos de odio.',
+        'Reformar el Código Penal y leyes de protección frente a la violencia digital y por inteligencia artificial.',
+        'Sustituir los aspectos más punitivos de la Ley de Seguridad Ciudadana garantizando derechos de reunión.',
+        'Incrementar la coordinación preventiva frente a redes de crimen organizado y trata.'
+      ],
+      sourceRef: 'Seguridad Democrática y Derechos de Sumar'
     },
     modelo_estado: {
       headline: 'Estado plurinacional, federalismo cooperativo y mayor autogobierno',
@@ -152,7 +176,7 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Plan de Choque en Vivienda de Podemos'
     },
-    empleo_pensiones: {
+    empleo: {
       headline: 'Semana laboral de 32 horas, subida del SMI y recuperación del despido de 45 días',
       summary:
         'Propugna reducir la jornada sin merma salarial, elevar el salario mínimo y revertir por completo los recortes laborales de 2012.',
@@ -160,9 +184,21 @@ export const PROGRAMS = {
         'Establecer por ley la jornada laboral de 32 horas semanales (4 días) sin reducción salarial.',
         'Elevar el SMI de forma progresiva hasta garantizar una renta digna indexada automáticamente al coste de la vida.',
         'Restablecer la indemnización de 45 días por año trabajado y los salarios de tramitación en despidos improcedentes.',
-        'Garantizar pensiones mínimas iguales al SMI y derogar la jubilación a los 67 años.'
+        'Reforzar la Inspección de Trabajo contra contratos fraudulentos y horas extraordinarias no pagadas.'
       ],
-      sourceRef: 'Bloque Laboral y Pensiones de Podemos'
+      sourceRef: 'Bloque Laboral de Podemos'
+    },
+    pensiones: {
+      headline: 'Derogar la jubilación a los 67 años y equiparar pensiones mínimas al SMI',
+      summary:
+        'Reclama volver a la edad ordinaria de jubilación de 65 años, subir pensiones mínimas al nivel del SMI y financiar déficits con fiscalidad.',
+      measures: [
+        'Derogar la jubilación a los 67 años recuperando los 65 años y la jubilación anticipada sin penalización con 40 años cotizados.',
+        'Equiparar progresivamente las pensiones mínimas y no contributivas con el Salario Mínimo Interprofesional.',
+        'Garantizar la revalorización automática por IPC y financiar la Seguridad Social con impuestos si fuera necesario.',
+        'Suprimir cualquier incentivo fiscal a planes privados de pensiones de empresa o individuales.'
+      ],
+      sourceRef: 'Bloque de Pensiones de Podemos'
     },
     regeneracion_justicia: {
       headline: 'Reforma democrática del Poder Judicial, fin de puertas giratorias y pluralismo mediático',
@@ -200,17 +236,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Bloque de Educación Pública de Podemos'
     },
-    inmigracion_seguridad: {
-      headline: 'Papeles para todos, derogación de la Ley de Extranjería y policía democrática',
+    inmigracion: {
+      headline: 'Papeles para todos, derogación de la Ley de Extranjería y cierre de CIEs',
       summary:
         'Plantea el reconocimiento de plenos derechos de ciudadanía y trabajo a todas las personas migrantes y la eliminación de trabas legales.',
       measures: [
         'Derogar la Ley de Extranjería y aprobar una regularización inmediata sin requisitos restrictivos.',
         'Cerrar de forma definitiva todos los Centros de Internamiento de Extranjeros (CIEs).',
-        'Derogar la Ley de Seguridad Ciudadana (Ley Mordaza) en todos sus artículos sancionadores.',
-        'Garantizar vías legales y seguras de asilo y rescate marítimo sin externalización de fronteras.'
+        'Garantizar vías legales y seguras de asilo y rescate marítimo sin externalización de fronteras.',
+        'Reconocer el derecho al voto en todas las elecciones a residentes extranjeros tras un período breve de empadronamiento.'
       ],
       sourceRef: 'Derechos Civiles y Migraciones de Podemos'
+    },
+    seguridad: {
+      headline: 'Derogación de la Ley Mordaza, policía democrática y prevención social',
+      summary:
+        'Aboga por revertir reformas penales punitivas, proteger libertades de protesta y reforzar las plantillas frente a violencia machista y corrupción.',
+      measures: [
+        'Derogar la Ley de Seguridad Ciudadana (Ley Mordaza) en todos sus artículos sancionadores.',
+        'Reformar los protocolos policiales para garantizar identificación visible y rendición de cuentas.',
+        'Ampliar los recursos policiales y judiciales contra violencia de género, delitos económicos y delitos de odio.',
+        'Orientar el sistema penitenciario hacia la reinserción efectiva y medidas alternativas no privativas de libertad.'
+      ],
+      sourceRef: 'Libertades Públicas y Seguridad de Podemos'
     },
     modelo_estado: {
       headline: 'República federal plurinacional y derecho a decidir pactado',
@@ -275,17 +323,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Electoral Izquierda Unida 2026: Vivienda'
     },
-    empleo_pensiones: {
-      headline: 'Jornada de 32 horas, revalorización por IPC y fortalecimiento sindical',
+    empleo: {
+      headline: 'Jornada de 32 horas, refuerzo sindical y derogación de reformas laborales',
       summary:
         'Impulsa la reducción inmediata del tiempo de trabajo, la subida del salario mínimo y el refuerzo de la negociación colectiva.',
       measures: [
         'Implantar por ley la jornada laboral de 32 horas semanales sin pérdida de salario.',
-        'Garantizar la revalorización automática de todas las pensiones según el IPC real y elevar las pensiones mínimas.',
         'Derogar por completo los aspectos lesivos de las reformas laborales y aumentar las indemnizaciones por despido.',
-        'Combatir la precariedad juvenil y suprimir las horas extras no remuneradas mediante control laboral estricto.'
+        'Combatir la precariedad juvenil y suprimir las horas extras no remuneradas mediante control laboral estricto.',
+        'Garantizar un Salario Mínimo Interprofesional suficiente vinculado a la evolución real del coste de la vida.'
       ],
-      sourceRef: 'Programa Electoral Izquierda Unida 2026: Trabajo y Pensiones'
+      sourceRef: 'Programa Electoral Izquierda Unida 2026: Trabajo'
+    },
+    pensiones: {
+      headline: 'Blindaje constitucional del sistema público, IPC real y jubilación a los 65 años',
+      summary:
+        'Defiende la revalorización automática por IPC, el incremento de pensiones mínimas y la financiación solidaria vía Presupuestos Generales.',
+      measures: [
+        'Garantizar por mandato constitucional la revalorización automática de todas las pensiones según el IPC real.',
+        'Elevar las pensiones mínimas y de viudedad para erradicar la pobreza entre personas mayores.',
+        'Recuperar los 65 años como edad ordinaria de jubilación y coeficientes reductores sin penalización para trabajos penosos.',
+        'Reforzar la Seguridad Social eliminando topes máximos de cotización y bonificaciones a planes privados.'
+      ],
+      sourceRef: 'Programa Electoral Izquierda Unida 2026: Pensiones'
     },
     regeneracion_justicia: {
       headline: 'Estado laico, democratización judicial y rendición de cuentas ciudadana',
@@ -323,17 +383,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Electoral Izquierda Unida 2026: Educación'
     },
-    inmigracion_seguridad: {
-      headline: 'Regularización amplia, acogida digna y derogación de leyes represivas',
+    inmigracion: {
+      headline: 'Regularización amplia, acogida digna y cierre de CIEs',
       summary:
-        'Aboga por garantizar derechos laborales y civiles a la población migrante, el cierre de los CIEs y políticas de prevención social.',
+        'Aboga por garantizar derechos laborales y civiles a la población migrante, vías legales seguras y el cierre de centros de internamiento.',
       measures: [
         'Aprobar la regularización administrativa de las personas migrantes residentes y agilizar permisos de trabajo.',
         'Cerrar todos los Centros de Internamiento de Extranjeros y terminar con las devoluciones sumarias en frontera.',
-        'Derogar la Ley Mordaza y reformar el Código Penal para evitar la criminalización de la protesta social.',
-        'Invertir en cohesión de barrios y servicios públicos como base real de la seguridad ciudadana.'
+        'Sustituir el enfoque policial de control migratorio por vías seguras de asilo y cooperación al desarrollo.',
+        'Facilitar la reagrupación familiar y la plena igualdad de derechos sociales y laborales.'
       ],
-      sourceRef: 'Programa Electoral Izquierda Unida 2026: Libertades y Migración'
+      sourceRef: 'Programa Electoral Izquierda Unida 2026: Migración'
+    },
+    seguridad: {
+      headline: 'Derogación de la Ley Mordaza y seguridad basada en cohesión social',
+      summary:
+        'Rechaza leyes restrictivas de derechos de protesta y plantea políticas de prevención comunitaria y refuerzo de medios frente a violencia.',
+      measures: [
+        'Derogar la Ley Mordaza y reformar el Código Penal para evitar la criminalización de la protesta social.',
+        'Invertir en cohesión de barrios y servicios públicos como base real de la seguridad ciudadana.',
+        'Reforzar las unidades especializadas contra violencia machista, delitos de odio y delincuencia económica.',
+        'Garantizar el control democrático y rendición de cuentas de las fuerzas y cuerpos de seguridad.'
+      ],
+      sourceRef: 'Programa Electoral Izquierda Unida 2026: Libertades y Seguridad'
     },
     modelo_estado: {
       headline: 'República Federal, laica y solidaria con respeto a la diversidad territorial',
@@ -398,17 +470,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Propuestas de Vivienda del PCE'
     },
-    empleo_pensiones: {
-      headline: 'Jornada de 32 horas, pleno empleo garantizado y pensiones 100% públicas',
+    empleo: {
+      headline: 'Jornada de 32 horas, pleno empleo garantizado y fin de subcontratas abusivas',
       summary:
-        'Propone la reducción drástica de la jornada laboral, el trabajo garantizado desde el sector público y el blindaje de la Seguridad Social.',
+        'Propone la reducción drástica de la jornada laboral, el trabajo garantizado desde el sector público y la recuperación integral de derechos laborales.',
       measures: [
         'Implantar la jornada laboral de 32 horas semanales sin pérdida de poder adquisitivo ni flexibilidad patronal.',
-        'Crear un plan de trabajo garantizado en servicios públicos, cuidados y transición ecológica.',
+        'Crear un plan de trabajo garantizado en servicios públicos, industria, cuidados y transición ecológica.',
         'Derogar todas las reformas laborales regresivas y prohibir las empresas de trabajo temporal y subcontratas abusivas.',
-        'Financiar las pensiones públicas también vía Presupuestos Generales del Estado y fijar la jubilación ordinaria a los 60-65 años.'
+        'Reforzar la negociación colectiva sectorial y la capacidad sancionadora de la Inspección de Trabajo.'
       ],
       sourceRef: 'Programa Laboral y Sindical del PCE'
+    },
+    pensiones: {
+      headline: 'Pensiones 100% públicas financiadas por PGE y jubilación a los 60-65 años',
+      summary:
+        'Reivindica un sistema público de reparto blindado con cargo a los Presupuestos Generales y la rebaja de la edad de jubilación.',
+      measures: [
+        'Financiar las pensiones públicas también vía Presupuestos Generales del Estado mediante fiscalidad al capital.',
+        'Fijar la edad ordinaria de jubilación en los 65 años, con reducción a los 60 años en profesiones penosas o de riesgo.',
+        'Revalorizar todas las pensiones por encima del IPC real y prohibir la privatización mediante fondos de empleo.',
+        'Equiparar la pensión mínima con el salario mínimo garantizado.'
+      ],
+      sourceRef: 'Sistema Público de Pensiones en las Tesis del PCE'
     },
     regeneracion_justicia: {
       headline: 'Proceso constituyente, justicia popular y fin de privilegios institucionales',
@@ -446,7 +530,7 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación Pública y Laica del PCE'
     },
-    inmigracion_seguridad: {
+    inmigracion: {
       headline: 'Solidaridad internacionalista de clase, papeles para todos y fin de CIEs',
       summary:
         'Rechaza la criminalización de la población migrante, defendiendo derechos laborales plenos como garantía frente a la explotación patronal.',
@@ -457,6 +541,18 @@ export const PROGRAMS = {
         'Garantizar la igualdad de derechos políticos, sindicales y sociales de toda la clase trabajadora residente.'
       ],
       sourceRef: 'Programa del PCE sobre Migración y Clase Trabajadora'
+    },
+    seguridad: {
+      headline: 'Derogación de leyes represivas y desmilitarización del orden público',
+      summary:
+        'Exige eliminar normas que limitan la acción sindical y social, desmilitarizar cuerpos policiales y perseguir delitos económicos y fascismo.',
+      measures: [
+        'Derogar íntegramente la Ley de Seguridad Ciudadana y eliminar la criminalización del derecho de huelga y piquetes.',
+        'Suprimir el carácter militar de la Guardia Civil avanzando hacia cuerpos policiales civiles unificados.',
+        'Perseguir de oficio el fraude fiscal, los delitos contra los derechos de los trabajadores y los delitos de odio.',
+        'Orientar el sistema penitenciario a la reeducación y reinserción social eliminando la prisión permanente revisable.'
+      ],
+      sourceRef: 'Derechos Democráticos y Seguridad — PCE'
     },
     modelo_estado: {
       headline: 'República Federal, Plurinacional y Solidaria con derecho de autodeterminación',
@@ -521,17 +617,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Bloque de Vivienda del PSOE 2026'
     },
-    empleo_pensiones: {
-      headline: 'SMI al 60% del salario medio por ley, jornada de 37,5 horas y hucha de pensiones',
+    empleo: {
+      headline: 'SMI al 60% del salario medio por ley y jornada de 37,5 horas por diálogo social',
       summary:
-        'Prioriza la estabilidad contractual, la concertación social con sindicatos y patronal y la garantía legal de las pensiones.',
+        'Prioriza la estabilidad contractual, la concertación social con sindicatos y patronal y políticas activas de inserción juvenil.',
       measures: [
         'Blindar por ley que el Salario Mínimo Interprofesional (SMI) equivalga siempre como mínimo al 60% del salario medio.',
         'Reducir progresivamente la jornada laboral máxima semanal hacia las 37,5 horas mediante diálogo social.',
-        'Mantener la revalorización de las pensiones conforme al IPC y seguir nutriendo el Fondo de Reserva de la Seguridad Social.',
-        'Reforzar políticas activas de empleo enfocadas en jóvenes y parados de larga duración.'
+        'Reforzar políticas activas de empleo enfocadas en jóvenes, mujeres y parados de larga duración.',
+        'Consolidar la contratación indefinida y la adaptación del Estatuto de los Trabajadores al empleo digital.'
       ],
-      sourceRef: 'Bloque de Empleo y Pensiones del PSOE 2026'
+      sourceRef: 'Bloque de Empleo y Salarios del PSOE 2026'
+    },
+    pensiones: {
+      headline: 'Revalorización legal conforme al IPC y refuerzo de la hucha de pensiones',
+      summary:
+        'Defiende el Pacto de Toledo, la actualización anual automática con la inflación y la dotación sostenida del Fondo de Reserva.',
+      measures: [
+        'Mantener por ley la revalorización anual de todas las pensiones contributivas y no contributivas conforme al IPC.',
+        'Seguir nutriendo el Fondo de Reserva de la Seguridad Social mediante el Mecanismo de Equidad Intergeneracional.',
+        'Mejorar de forma gradual las pensiones mínimas y de viudedad para reducir la brecha de género.',
+        'Incentivar la jubilación demorada voluntaria y compatible parcialmente con el empleo.'
+      ],
+      sourceRef: 'Bloque de Pensiones y Pacto de Toledo del PSOE 2026'
     },
     regeneracion_justicia: {
       headline: 'Renovación constitucional de órganos, digitalización judicial y transparencia',
@@ -569,17 +677,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación, Ciencia y Universidades del PSOE 2026'
     },
-    inmigracion_seguridad: {
-      headline: 'Migración regular vinculada al empleo, cooperación exterior y policía equipada',
+    inmigracion: {
+      headline: 'Migración regular vinculada al empleo y cooperación con países de origen',
       summary:
         'Plantea vías ordenadas de integración y arraigo laboral junto a acuerdos de control migratorio con países de origen y tránsito.',
       measures: [
         'Facilitar vías de regularización por arraigo laboral y formación en sectores con falta de mano de obra.',
-        'Reforzar acuerdos de cooperación económica y policial con países de origen y tránsito para combatir mafias.',
-        'Ampliar las plantillas y equipamientos de Policía Nacional y Guardia Civil en lucha contra el crimen organizado y ciberdelitos.',
-        'Rechazar bloqueos militares marítimos y garantizar el respeto a los procedimientos de asilo.'
+        'Reforzar acuerdos de cooperación económica y retorno ordenado con países de origen y tránsito.',
+        'Rechazar bloqueos militares marítimos y garantizar el respeto a los procedimientos de asilo.',
+        'Aplicar el Pacto Europeo de Migración y Asilo con solidaridad entre Estados miembros.'
       ],
-      sourceRef: 'Seguridad y Política Migratoria del PSOE 2026'
+      sourceRef: 'Política Migratoria del PSOE 2026'
+    },
+    seguridad: {
+      headline: 'Más plantillas de Policía y Guardia Civil y lucha contra crimen y ciberdelitos',
+      summary:
+        'Apuesta por ampliar efectivos y medios tecnológicos policiales para combatir el narcotráfico, ciberdelincuencia y violencia de género.',
+      measures: [
+        'Ampliar las plantillas y equipamientos de Policía Nacional y Guardia Civil con oferta récord de plazas.',
+        'Reforzar los planes de seguridad en el Campo de Gibraltar y costas frente a redes de narcotráfico.',
+        'Potenciar unidades especializadas en ciberseguridad, estafas digitales y protección de menores en red.',
+        'Consolidar el sistema VioGén y la coordinación policial contra delitos de odio y multirreincidencia.'
+      ],
+      sourceRef: 'Seguridad Ciudadana del PSOE 2026'
     },
     modelo_estado: {
       headline: 'Estado autonómico cooperativo, cogobernanza federal y diálogo territorial',
@@ -644,17 +764,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'La España que merecemos: España Resuelve (Cs 2026)'
     },
-    empleo_pensiones: {
-      headline: 'Contrato único indefinido, mochila austriaca y reforma de autónomos',
+    empleo: {
+      headline: 'Contrato único indefinido, mochila austriaca y tarifa cero a autónomos',
       summary:
-        'Plantea eliminar la dualidad entre contratos fijos y temporales, modernizar las cotizaciones de autónomos y asegurar pensiones sostenibles.',
+        'Plantea eliminar la dualidad entre contratos fijos y temporales, simplificar trámites de autónomos y bonificar contratación indefinida.',
       measures: [
         'Implantar un contrato único indefinido con indemnización creciente por antigüedad y mochila austriaca portátil.',
         'Establecer tarifa cero para nuevos autónomos que no alcancen el SMI y simplificar declaraciones trimestrales.',
-        'Vincular la evolución de las pensiones a la productividad, el empleo y un sistema mixto de ahorro complementario.',
-        'Bonificar cotizaciones a empresas que formen y contraten de forma estable a jóvenes y mayores de 50 años.'
+        'Bonificar cotizaciones a empresas que formen y contraten de forma estable a jóvenes y mayores de 50 años.',
+        'Modernizar los servicios de empleo con itinerarios digitales de recualificación ligados a demanda real.'
       ],
       sourceRef: 'Propuestas Laborales de Ciudadanos'
+    },
+    pensiones: {
+      headline: 'Sostenibilidad ligada al empleo, cuentas nocionales y ahorro complementario',
+      summary:
+        'Propone transparencia actuarial con cuentas individuales informativas, incentivo al empleo sénior y sistemas complementarios de ahorro laboral.',
+      measures: [
+        'Vincular la evolución de las pensiones a la productividad, el empleo y la esperanza de vida.',
+        'Impulsar un modelo mixto que sume al sistema público planes complementarios de empleo tipo mochila austriaca.',
+        'Introducir cartas informativas anuales transparentes basadas en cuentas individuales nocionales.',
+        'Facilitar la compatibilidad voluntaria del 100% de la pensión con el trabajo activo para autónomos y profesionales.'
+      ],
+      sourceRef: 'Reforma de Pensiones de Ciudadanos'
     },
     regeneracion_justicia: {
       headline: 'Listas abiertas, fin de aforamientos, juzgados anticorrupción y CGPJ independiente',
@@ -692,17 +824,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación e Igualdad de Oportunidades (Cs)'
     },
-    inmigracion_seguridad: {
-      headline: 'Inmigración ordenada por puntos, integración cívica y seguridad europea',
+    inmigracion: {
+      headline: 'Inmigración ordenada por puntos, cualificación laboral e integración cívica',
       summary:
-        'Propone una inmigración legal ligada a cualificación y demanda laboral, refuerzo de Frontex y apoyo a fuerzas de seguridad.',
+        'Propone una inmigración legal ligada a cualificación y demanda laboral, refuerzo común europeo de visados y retorno efectivo de irregulares.',
       measures: [
         'Establecer un sistema ordenado de visados por puntos y cualificación según necesidades del mercado laboral.',
         'Reforzar las fronteras exteriores europeas a través de Frontex y acuerdos bilaterales de retorno.',
-        'Equiparar salarialmente y mejorar los medios materiales de Policía Nacional y Guardia Civil.',
-        'Endurecer la respuesta legal contra la multirreincidencia y delitos de usurpación de vivienda.'
+        'Promover la integración lingüística y cívica constitucional para la obtención de residencia permanente.',
+        'Agilizar permisos de residencia para talento tecnológico, investigadores y emprendedores.'
       ],
-      sourceRef: 'Seguridad y Fronteras en el Ideario Liberal de Cs'
+      sourceRef: 'Política Migratoria Liberal de Ciudadanos'
+    },
+    seguridad: {
+      headline: 'Equiparación salarial policial, refuerzo de medios y ley antimultirreincidencia',
+      summary:
+        'Defiende respaldar material y salarialmente a las Fuerzas y Cuerpos de Seguridad del Estado y endurecer la respuesta frente a la multirreincidencia.',
+      measures: [
+        'Equiparar salarialmente y mejorar los medios materiales de Policía Nacional y Guardia Civil.',
+        'Endurecer la respuesta legal contra la delincuencia multirreincidente y los delitos de usurpación de vivienda.',
+        'Reforzar la cooperación policial europea (Europol) frente al terrorismo, narcotráfico y crimen organizado.',
+        'Garantizar asistencia jurídica y protección institucional a los agentes en ejercicio de sus funciones.'
+      ],
+      sourceRef: 'Seguridad y Estado de Derecho — Ciudadanos'
     },
     modelo_estado: {
       headline: 'Constitucionalismo liberal, fin de privilegios forales y unidad de mercado',
@@ -767,17 +911,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Propuestas Sociales y de Vivienda de UPyD'
     },
-    empleo_pensiones: {
-      headline: 'Contrato único indefinido, igualdad laboral estatal y pensiones transparentes',
+    empleo: {
+      headline: 'Contrato único indefinido e igualdad laboral sin barreras autonómicas',
       summary:
-        'Propugna combatir la temporalidad con un contrato único, eliminar cuotas corporativas obligatorias y asegurar la viabilidad del sistema de pensiones.',
+        'Propugna combatir la temporalidad con un contrato único, eliminar barreras lingüísticas para trabajar en otras regiones y modernizar convenios.',
       measures: [
         'Implantar un contrato único indefinido con indemnización progresiva para terminar con la precariedad dual.',
         'Garantizar la igualdad de oportunidades laborales en todo el país eliminando requisitos lingüísticos discriminatorios.',
-        'Asegurar cuentas individuales informativas en la Seguridad Social y sostenibilidad financiera a largo plazo.',
-        'Facilitar la movilidad geográfica de trabajadores eliminando barreras administrativas regionales.'
+        'Facilitar la movilidad geográfica de trabajadores eliminando barreras administrativas regionales.',
+        'Suprimir cuotas corporativas obligatorias y subvenciones directas sin concurrencia a sindicatos y patronales.'
       ],
-      sourceRef: 'Reforma Laboral y Pensiones de UPyD'
+      sourceRef: 'Reforma Laboral de UPyD'
+    },
+    pensiones: {
+      headline: 'Cuentas individuales transparentes, Pacto de Toledo y viabilidad actuarial',
+      summary:
+        'Aboga por asegurar la viabilidad financiera a largo plazo de la Seguridad Social mediante cuentas informativas y reforma del gasto público.',
+      measures: [
+        'Asegurar cuentas individuales informativas en la Seguridad Social que reflejen exactamente lo cotizado.',
+        'Separar claramente las fuentes de financiación de prestaciones contributivas y no contributivas.',
+        'Garantizar el poder adquisitivo de las pensiones con reformas estructurales que amplíen la base de cotizantes.',
+        'Eliminar pensiones especiales o privilegios parlamentarios respecto al régimen general.'
+      ],
+      sourceRef: 'Sostenibilidad de Pensiones — UPyD'
     },
     regeneracion_justicia: {
       headline: 'Reforma de la LOREG, proporcionalidad pura, listas abiertas y fin de partidocracia',
@@ -815,17 +971,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Propuesta Educativa Nacional de UPyD'
     },
-    inmigracion_seguridad: {
-      headline: 'Política común europea, control legal de flujos y cuerpo estatal reforzado',
+    inmigracion: {
+      headline: 'Política común europea de asilo, visados legales e integración cívica',
       summary:
-        'Defiende la gestión estatal y europea coordinada de fronteras junto al cumplimiento estricto de las leyes de extranjería e integración cívica.',
+        'Defiende la gestión europea coordinada de los flujos migratorios junto al cumplimiento estricto de las leyes de extranjería e integración.',
       measures: [
-        'Transferir y coordinar en la UE el control efectivo de fronteras y el sistema de asilo común.',
-        'Condicionar la inmigración laboral a contratos legales y capacidad de integración.',
-        'Unificar criterios de seguridad bajo mando estatal reforzando Policía Nacional y Guardia Civil.',
-        'Aumentar los recursos contra el crimen organizado, narcotráfico y delincuencia multirreincidente.'
+        'Transferir y coordinar en la Unión Europea el control efectivo de fronteras y el sistema de asilo común.',
+        'Condicionar la inmigración laboral a contratos legales y capacidad de integración en la sociedad de acogida.',
+        'Garantizar la igualdad de derechos y deberes constitucionales evitando guetos comunitarios.',
+        'Agilizar procedimientos de retorno ante entrada irregular firme respetando derechos humanos.'
       ],
-      sourceRef: 'Seguridad e Inmigración en el Ideario de UPyD'
+      sourceRef: 'Política Migratoria en el Ideario de UPyD'
+    },
+    seguridad: {
+      headline: 'Cuerpos de seguridad bajo mando estatal único y lucha contra multirreincidencia',
+      summary:
+        'Propone unificar criterios policiales bajo competencia del Estado central y reforzar los recursos contra crimen organizado y terrorismo.',
+      measures: [
+        'Unificar criterios de seguridad bajo mando estatal reforzando Policía Nacional y Guardia Civil.',
+        'Aumentar los recursos contra el crimen organizado, narcotráfico y delincuencia multirreincidente.',
+        'Eliminar duplicidades administrativas entre cuerpos policiales mejorando la interoperabilidad de bases de datos.',
+        'Reformar la Ley de Seguridad Ciudadana protegiendo derechos fundamentales junto a la autoridad policial.'
+      ],
+      sourceRef: 'Seguridad Nacional en el Ideario de UPyD'
     },
     modelo_estado: {
       headline: 'Reforma constitucional del Estado autonómico y supresión de diputaciones',
@@ -890,17 +1058,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Plan de Vivienda del Partido Popular 2026'
     },
-    empleo_pensiones: {
-      headline: 'Tarifa cero para nuevos autónomos, flexibilidad laboral y sostenibilidad pensional',
+    empleo: {
+      headline: 'Tarifa cero para nuevos autónomos, flexibilidad laboral y mochila individual',
       summary:
-        'Defiende reducir cotizaciones para fomentar la contratación indefinida, apoyar a autónomos y garantizar la revalorización de las pensiones.',
+        'Defiende reducir cotizaciones para fomentar la contratación indefinida, apoyar a pymes y autónomos y rechazar rigideces legales de jornada.',
       measures: [
         'Implantar la tarifa cero de cotización durante el primer año para nuevos trabajadores autónomos.',
         'Flexibilizar la negociación colectiva por empresa rechazando imposiciones rígidas sobre la jornada laboral.',
-        'Garantizar por ley la revalorización de las pensiones mediante crecimiento económico y creación de empleo.',
-        'Implementar una mochila individual de formación y protección laboral que acompañe al trabajador.'
+        'Implementar una mochila individual de formación y protección laboral que acompañe al trabajador.',
+        'Bonificar la contratación indefinida de jóvenes, mayores de 50 años y parados de larga duración.'
       ],
-      sourceRef: 'Empleo, Autónomos y Pensiones del PP 2026'
+      sourceRef: 'Programa Electoral PP 2026: Empleo y Autónomos'
+    },
+    pensiones: {
+      headline: 'Revalorización garantizada, caja única de cotizaciones y empleo sénior',
+      summary:
+        'Asegura la actualización de las pensiones junto al crecimiento económico, mantiene la caja única de la Seguridad Social y fomenta el retiro flexible.',
+      measures: [
+        'Garantizar por ley la revalorización de las pensiones sosteniendo el sistema mediante creación de empleo.',
+        'Blindar la caja única de la Seguridad Social rechazando cualquier traspaso fragmentado de la gestión económica.',
+        'Incentivar la prolongación voluntaria de la vida laboral compatibilizando trabajo y pensión al 100%.',
+        'Fomentar planes complementarios de empleo y ahorro individual sin penalizaciones tributarias.'
+      ],
+      sourceRef: 'Programa Electoral PP 2026: Pensiones'
     },
     regeneracion_justicia: {
       headline: 'Elección directa del CGPJ por los jueces, independencia fiscal y control del gasto',
@@ -938,17 +1118,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación, Mérito y Libertad del PP 2026'
     },
-    inmigracion_seguridad: {
-      headline: 'Inmigración ligada a contrato en origen, refuerzo policial y antimultirreincidencia',
+    inmigracion: {
+      headline: 'Inmigración ligada a contrato en origen, visados por puntos y control fronterizo',
       summary:
-        'Se opone a regularizaciones masivas sin contrato previo, exige refuerzo fronterizo en colaboración europea y endurece penas contra reincidentes.',
+        'Se opone a regularizaciones extraordinarias masivas, vincula la inmigración a empleo previo en origen y coopera con la UE en retornos.',
       measures: [
         'Rechazar regularizaciones extraordinarias masivas y vincular la inmigración legal a contratos de trabajo en origen.',
-        'Aumentar el despliegue de vigilancia marítima y medios de Policía Nacional y Guardia Civil en fronteras.',
-        'Endurecer el Código Penal frente a la delincuencia multirreincidente y proteger legalmente a las fuerzas del orden.',
-        'Agilizar la expulsión de extranjeros condenados por delitos graves.'
+        'Aumentar el despliegue de vigilancia marítima y colaboración con Frontex frente a mafias de tráfico de personas.',
+        'Agilizar la expulsión de extranjeros condenados por delitos graves o de sangre sin dilación por causas pendientes.',
+        'Impulsar convenios de migración circular y formación profesional regulada en países socios.'
       ],
-      sourceRef: 'Seguridad y Política Migratoria del PP 2026'
+      sourceRef: 'Programa Electoral PP 2026: Política Migratoria'
+    },
+    seguridad: {
+      headline: 'Agravante penal de multirreincidencia, protección policial y orden público',
+      summary:
+        'Endurece el Código Penal contra la delincuencia multirreincidente, recupera delitos de desórdenes graves y refuerza a Policía y Guardia Civil.',
+      measures: [
+        'Recuperar y agravar en el Código Penal el castigo a la multirreincidencia delictiva y hurtos reiterados.',
+        'Reforzar las penas frente a desórdenes públicos graves, sedición adaptada y agresiones a agentes.',
+        'Equiparar salarialmente, reconocer como profesión de riesgo y dotar de medios a Policía Nacional y Guardia Civil.',
+        'Acelerar los juicios rápidos contra el crimen organizado, narcotráfico y bandas violentas.'
+      ],
+      sourceRef: 'Programa Electoral PP 2026: Seguridad y Código Penal'
     },
     modelo_estado: {
       headline: 'Defensa de la Constitución de 1978, unidad nacional y financiación multilateral',
@@ -1013,17 +1205,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Política Social y de Vivienda de UCD (Referencia histórica)'
     },
-    empleo_pensiones: {
-      headline: 'Estatuto de los Trabajadores, diálogo sindical y universalización de la Seguridad Social',
+    empleo: {
+      headline: 'Estatuto de los Trabajadores, diálogo sindical y defensa del empleo estable',
       summary:
-        'Sentó las bases del moderno marco laboral democrático, el derecho de huelga y negociación colectiva y la expansión del sistema público de pensiones.',
+        'Sentó las bases del moderno marco laboral democrático mediante el derecho de huelga, la negociación colectiva y el consenso social.',
       measures: [
         'Garantizar el diálogo social estable bajo el marco del Estatuto de los Trabajadores y libertad sindical.',
-        'Sostener y ampliar la cobertura universal de la Seguridad Social con equilibrio actuarial.',
-        'Fomentar el empleo estable mediante reducción de cargas empresariales en momentos de reconversión.',
-        'Proteger las prestaciones por desempleo y la formación profesional para trabajadores afectados.'
+        'Fomentar el empleo estable mediante reducción de cargas empresariales en momentos de reconversión industrial.',
+        'Proteger las prestaciones por desempleo y la formación profesional para trabajadores afectados.',
+        'Impulsar el empleo juvenil y rural mediante crédito oficial e incentivos a la inversión.'
       ],
       sourceRef: 'Marco Laboral de la Transición — UCD (Referencia histórica)'
+    },
+    pensiones: {
+      headline: 'Universalización de la Seguridad Social y revalorización solidaria',
+      summary:
+        'Expandió la cobertura de la Seguridad Social hacia un sistema público universal, contributivo y financieramente equilibrado.',
+      measures: [
+        'Sostener y ampliar la cobertura universal de la Seguridad Social con equilibrio actuarial.',
+        'Actualizar periódicamente las pensiones de jubilación, viudedad e invalidez atendiendo a las más bajas.',
+        'Integrar regímenes especiales agrarios y de trabajadores autónomos en la protección social moderna.',
+        'Modernizar la gestión administrativa del Instituto Nacional de la Seguridad Social.'
+      ],
+      sourceRef: 'Seguridad Social de la Transición — UCD (Referencia histórica)'
     },
     regeneracion_justicia: {
       headline: 'Consenso constitucional, independencia judicial y libertades democráticas',
@@ -1061,15 +1265,27 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Pacto Educativo Constitucional (Art. 27) — UCD'
     },
-    inmigracion_seguridad: {
+    inmigracion: {
+      headline: 'Regulación legal de extranjería compatible con estándares europeos',
+      summary:
+        'Sentó el marco legal inicial de extranjería y asilo democrático en concordancia con la Constitución de 1978 y tratados europeos.',
+      measures: [
+        'Regular los flujos de extranjería con criterios legales compatibles con los estándares europeos.',
+        'Reconocer el derecho constitucional de asilo y refugio conforme a la Convención de Ginebra.',
+        'Establecer convenios bilaterales de cooperación consular y movilidad laboral con Iberoamérica y Europa.',
+        'Garantizar garantías jurídicas administrativas en procedimientos de residencia y permisos de trabajo.'
+      ],
+      sourceRef: 'Política de Extranjería — UCD (Referencia histórica)'
+    },
+    seguridad: {
       headline: 'Seguridad ciudadana democrática, profesionalización policial y orden constitucional',
       summary:
         'Transformó los cuerpos policiales hacia modelos democráticos de servicio público, defendiendo la seguridad bajo garantías procesales.',
       measures: [
         'Garantizar la seguridad ciudadana mediante cuerpos policiales sometidos estrictamente a la ley y los jueces.',
         'Fomentar el consenso político y policial frente al terrorismo y el crimen organizado.',
-        'Regular los flujos de extranjería con criterios legales compatibles con los estándares europeos.',
-        'Modernizar el sistema penitenciario orientándolo a la legalidad constitucional y reinserción.'
+        'Modernizar el sistema penitenciario orientándolo a la legalidad constitucional y reinserción.',
+        'Profesionalizar la formación de los cuerpos y fuerzas de seguridad del Estado democrático.'
       ],
       sourceRef: 'Política de Interior y Seguridad — UCD'
     },
@@ -1136,17 +1352,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Bloque de Vivienda y Propiedad — VOX 2026'
     },
-    empleo_pensiones: {
+    empleo: {
       headline: 'Cuota cero a autónomos por debajo del SMI, rebaja de cotizaciones y prioridad nacional',
       summary:
         'Defiende aliviar los costes laborales y burocráticos sobre autónomos y empresas españolas y priorizar a trabajadores nacionales en políticas activas.',
       measures: [
         'Implantar cuota cero de autónomos para quienes ingresen por debajo del Salario Mínimo Interprofesional.',
         'Reducir las cotizaciones sociales empresariales a cambio de contratación indefinida de jóvenes y parados.',
-        'Establecer prioridad nacional en el acceso a ayudas sociales y prestaciones no contributivas.',
-        'Garantizar las pensiones reduciendo el despilfarro político autonómico e incentivando la natalidad.'
+        'Establecer prioridad nacional en el acceso a ayudas sociales y formación para el empleo.',
+        'Suprimir las subvenciones públicas a sindicatos y patronales sustituyéndolas por negociación directa.'
       ],
       sourceRef: 'Bloque de Empleo y Autónomos — VOX 2026'
+    },
+    pensiones: {
+      headline: 'Garantía de pensiones con recorte del gasto político y fomento de la natalidad',
+      summary:
+        'Asegura la revalorización y viabilidad de las pensiones públicas eliminando el gasto autonómico improductivo e impulsando la natalidad española.',
+      measures: [
+        'Garantizar las pensiones reduciendo el despilfarro político autonómico, ministerios y organismos duplicados.',
+        'Fomentar la natalidad y apoyo familiar como base demográfica indispensable del sistema de reparto.',
+        'Eximir de tributación por IRPF a las pensiones públicas de jubilación y viudedad más bajas.',
+        'Crear una cuenta individual informativa de cotizaciones junto a incentivos fiscales al ahorro voluntario.'
+      ],
+      sourceRef: 'Pensiones y Familia — VOX 2026'
     },
     regeneracion_justicia: {
       headline: 'Reforma de elección judicial por jueces, cadena perpetua y fin de aforamientos',
@@ -1184,17 +1412,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación y Libertad de las Familias — VOX 2026'
     },
-    inmigracion_seguridad: {
-      headline: 'Deportación de ilegales, cierre militarizado de fronteras y fin de regularizaciones',
+    inmigracion: {
+      headline: 'Deportación de ilegales, veto a regularizaciones y prioridad nacional',
       summary:
-        'Eje central de su programa: prohibición de regularizaciones masivas, repatriación de inmigrantes irregulares y despliegue militar en Ceuta, Melilla y el mar.',
+        'Prohíbe cualquier regularización extraordinaria de inmigrantes en situación ilegal, exigiendo repatriaciones inmediatas y prioridad nacional.',
       measures: [
         'Prohibir cualquier regularización extraordinaria de inmigrantes en situación ilegal.',
         'Deportar de forma inmediata a todos los inmigrantes irregulares y a extranjeros que cometan delitos graves o reiterados.',
-        'Desplegar a las Fuerzas Armadas en Ceuta, Melilla y vigilancia marítima frente al tráfico ilegal.',
-        'Suprimir subvenciones a ONG que colaboren con redes migratorias irregulares.'
+        'Suprimir subvenciones a ONG que colaboren con redes migratorias irregulares y cerrar centros de acogida en barrios.',
+        'Reservar ayudas sociales y acceso a nacionalidad bajo estricta integración y prioridad nacional.'
       ],
-      sourceRef: 'Fronteras y Seguridad — VOX 2026'
+      sourceRef: 'Política Migratoria — VOX 2026'
+    },
+    seguridad: {
+      headline: 'Militarización de fronteras, cadena perpetua y endurecimiento del Código Penal',
+      summary:
+        'Propone desplegar a las Fuerzas Armadas en Ceuta y Melilla, ampliar la prisión permanente revisable y blindar la autoridad policial.',
+      measures: [
+        'Desplegar a las Fuerzas Armadas en Ceuta, Melilla y vigilancia marítima frente al tráfico ilegal.',
+        'Ampliar la prisión permanente revisable y reducir la edad penal en supuestos violentos muy graves.',
+        'Reforzar la legítima defensa en el hogar y proteger legal y salarialmente a Policía Nacional y Guardia Civil.',
+        'Suprimir policías autonómicas duplicadas integrando sus efectivos en los cuerpos estatales.'
+      ],
+      sourceRef: 'Seguridad y Defensa Fronteriza — VOX 2026'
     },
     modelo_estado: {
       headline: 'Estado unitario sin autonomías ni privilegios fiscales territoriales',
@@ -1259,17 +1499,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Contrato Electoral SALF: Vivienda'
     },
-    empleo_pensiones: {
+    empleo: {
       headline: 'Supresión de la cuota de autónomos, contrato único y mochila austriaca',
       summary:
         'Propugna abolir la cuota fija de autónomos, instaurar un contrato único con mochila austriaca y bajar cotizaciones empresariales.',
       measures: [
         'Eliminar la cuota mensual de autónomos sustituyéndola por tributación vinculada exclusivamente al beneficio neto real.',
         'Implantar un contrato único con mochila austriaca para facilitar la movilidad laboral sin pérdida de derechos.',
-        'Reducir la cuña fiscal y cotizaciones sobre la contratación para elevar el salario neto del trabajador.',
-        'Garantizar las pensiones públicas eliminando el gasto político y fomentando la natalidad.'
+        'Reducir la cuña fiscal y cotizaciones sobre la contratación del 41% al 29% para elevar el salario neto.',
+        'Suprimir toda subvención pública a sindicatos mayoritarios y patronales.'
       ],
       sourceRef: 'Contrato Electoral SALF: Empleo y Autónomos'
+    },
+    pensiones: {
+      headline: 'Auditoría de la Seguridad Social y garantía de pensiones sin gasto político',
+      summary:
+        'Plantea sostener las pensiones eliminando duplicidades estatales, fomentando la natalidad nacional y reforzando el ahorro individual.',
+      measures: [
+        'Garantizar las pensiones públicas eliminando el gasto político improductivo y las pensiones vitalicias de cargos.',
+        'Fomentar políticas intensivas de natalidad y empleo formal para equilibrar la pirámide de cotizantes.',
+        'Realizar una auditoría independiente integral de las cuentas de la Seguridad Social.',
+        'Permitir compatibilizar voluntariamente la pensión de jubilación con el trabajo autónomo o profesional.'
+      ],
+      sourceRef: 'Contrato Electoral SALF: Pensiones'
     },
     regeneracion_justicia: {
       headline: 'Corrupción imprescriptible, triple devolución, incentivo del 15% y penalización salarial',
@@ -1307,17 +1559,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Contrato Electoral SALF: Educación'
     },
-    inmigracion_seguridad: {
-      headline: 'Expulsión en 48h de irregulares, legítima defensa armada y Armada en el Estrecho',
+    inmigracion: {
+      headline: 'Expulsión en 48 horas de irregulares y bloqueo a países sin repatriación',
       summary:
-        'Adopta medidas punitivas de seguridad máxima, despliegue militar marítimo y expulsiones rápidas de inmigrantes ilegales o delincuentes.',
+        'Defiende restringir la entrada exclusivamente a inmigración legal y ejecutar expulsiones rápidas de irregulares y delincuentes extranjeros.',
       measures: [
         'Ejecutar la expulsión en 48 horas de inmigrantes en situación irregular o condenados por delito.',
+        'Suspender visados, ayudas y acuerdos con países que rechacen repatriar a sus nacionales en situación ilegal.',
+        'Permitir únicamente inmigración legal con contrato y verificación de antecedentes penales.',
+        'Retirar subvenciones públicas a organizaciones dedicadas a la acogida irregular.'
+      ],
+      sourceRef: 'Contrato Electoral SALF: Inmigración'
+    },
+    seguridad: {
+      headline: 'Macrocárcel de máxima seguridad, legítima defensa y Armada en el Estrecho',
+      summary:
+        'Adopta medidas punitivas de seguridad máxima, cumplimiento íntegro de penas sin tercer grado y despliegue militar marítimo contra el narco.',
+      measures: [
+        'Construir una macrocárcel de máxima seguridad sin tercer grado para violadores, asesinos, corruptos y multirreincidentes.',
         'Desplegar de forma permanente a la Armada y Ejército del Aire en el Estrecho contra el narcotráfico y mafias.',
         'Reforzar la presunción legal de legítima defensa armada dentro del hogar o negocio ante asaltos violentos.',
-        'Suspender visados y acuerdos con países que rechacen repatriar a sus nacionales en situación ilegal.'
+        'Impulsar una ley antiterrorista de máximos contra redes extremistas violentas.'
       ],
-      sourceRef: 'Contrato Electoral SALF: Seguridad e Inmigración'
+      sourceRef: 'Contrato Electoral SALF: Seguridad y Justicia'
     },
     modelo_estado: {
       headline: 'Centralización de competencias clave y recorte radical de estructuras regionales',
@@ -1382,17 +1646,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Puntos Sociales de Núcleo Nacional'
     },
-    empleo_pensiones: {
-      headline: 'Protección del trabajador nacional y rechazo al reemplazo laboral',
+    empleo: {
+      headline: 'Prioridad laboral nacional y rechazo a la devaluación salarial',
       summary:
-        'Vincula la protección salarial del trabajador español al cierre frente a mano de obra extranjera barata y al fomento de la natalidad nacional.',
+        'Vincula la protección del salario del trabajador español al cierre frente a mano de obra extranjera barata y al apoyo al comercio local.',
       measures: [
         'Imponer prioridad absoluta del trabajador nacional en la contratación pública y privada.',
         'Combatir la devaluación salarial derivada de la contratación de mano de obra inmigrante.',
-        'Garantizar el sustento de pensiones mediante reindustrialización y políticas activas de natalidad.',
-        'Proteger el pequeño comercio y el trabajo autónomo frente a grandes plataformas transnacionales.'
+        'Proteger el pequeño comercio y el trabajo autónomo frente a grandes plataformas transnacionales.',
+        'Sancionar la deslocalización de industrias nacionales hacia países con costes laborales ínfimos.'
       ],
       sourceRef: 'Doctrina Social de Núcleo Nacional'
+    },
+    pensiones: {
+      headline: 'Sostenimiento generacional de pensiones mediante natalidad e industria nacional',
+      summary:
+        'Rechaza sostener el sistema de pensiones mediante inmigración y propone vincularlo a la natalidad nacional y reindustrialización.',
+      measures: [
+        'Garantizar las pensiones de jubilación exclusivamente a través de empleo industrial nacional y natalidad.',
+        'Rechazar explícitamente las políticas de reemplazo demográfico como solución al envejecimiento.',
+        'Proteger a los pensionistas españoles frente a la inflación en energía, alimentación y vivienda.',
+        'Suprimir cualquier prestación no contributiva o subsidio para población no nacional.'
+      ],
+      sourceRef: 'Doctrina Social de Núcleo Nacional: Natalidad y Mayores'
     },
     regeneracion_justicia: {
       headline: 'Ruptura total con el régimen de partidos de 1978 y endurecimiento penal',
@@ -1430,17 +1706,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación y Cultura en Núcleo Nacional'
     },
-    inmigracion_seguridad: {
+    inmigracion: {
       headline: 'Etnonacionalismo, remigración masiva y rechazo frontal a la multiculturalidad',
       summary:
-        'Núcleo central de su ideario: oposición radical a toda inmigración extracomunitaria, programas de repatriación y orden identitario.',
+        'Núcleo central de su ideario: oposición radical a toda inmigración extracomunitaria, programas de repatriación y cierre total de asilo.',
       measures: [
         'Detener por completo toda inmigración extracomunitaria y derogar mecanismos de asilo y nacionalización acelerada.',
         'Ejecutar programas estatales de repatriación masiva (remigración) de población inmigrante.',
         'Rechazar el multiculturalismo y defender la identidad étnica, cultural e histórica europea y española.',
-        'Desplegar presencia permanente policial y militar en fronteras y barrios con alta conflictividad.'
+        'Suprimir toda ayuda económica o sanitaria no urgente dirigida a inmigrantes.'
       ],
       sourceRef: 'Programa Identitario de Núcleo Nacional'
+    },
+    seguridad: {
+      headline: 'Despliegue policial y militar permanente y endurecimiento penal extremo',
+      summary:
+        'Propone una política de orden autoritario con presencia permanente en fronteras y barrios conflictivos y penas de máxima severidad.',
+      measures: [
+        'Desplegar presencia permanente policial y militar en fronteras y barrios con alta conflictividad.',
+        'Endurecer de forma drástica el Código Penal con cumplimiento íntegro de condenas por delitos violentos.',
+        'Reforzar los cuerpos de seguridad suprimiendo restricciones operativas en actuaciones de orden público.',
+        'Combatir bandas criminales, narcotráfico y usurpación de propiedades con detención preventiva reforzada.'
+      ],
+      sourceRef: 'Orden y Seguridad en Núcleo Nacional'
     },
     modelo_estado: {
       headline: 'Estado nacional unitario, centralizado y opuesto a autonomías y separatismo',
@@ -1505,17 +1793,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Propuestas Sociales de FE de las JONS'
     },
-    empleo_pensiones: {
+    empleo: {
       headline: 'Sindicatos productivos, salario familiar y participación obrera en beneficios',
       summary:
-        'Propone sustituir la confrontación sindical partidista por representación productiva directa, salario justo suficiente y protección pensional estatal.',
+        'Propone sustituir los sindicatos subvencionados por representación productiva directa, salario familiar suficiente y estabilidad laboral.',
       measures: [
         'Garantizar un salario familiar suficiente que permita vivir dignamente con un solo sueldo si se desea.',
         'Participación de los trabajadores en la gestión y beneficios de las empresas productivas.',
         'Sustituir los sindicatos subvencionados por sindicatos libres de rama de producción.',
-        'Asegurar pensiones públicas dignas financiadas solidariamente por el Estado nacional.'
+        'Combatir la precariedad, subcontratas abusivas y destrucción de empleo industrial nacional.'
       ],
-      sourceRef: 'Trabajo y Sindicalismo Nacional — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Trabajo'
+    },
+    pensiones: {
+      headline: 'Vuelta a la jubilación a los 65 años, retiro anticipado penoso y natalidad',
+      summary:
+        'Exige revertir el retraso de la edad de jubilación, reconocer profesiones penosas y sostener las pensiones mediante natalidad y Estado social.',
+      measures: [
+        'Recuperar los 65 años como edad ordinaria de jubilación frente a las prórrogas actuales.',
+        'Establecer jubilación anticipada obligatoria y sin merma en sectores físicos o penosos.',
+        'Sostener el sistema público de reparto fomentando la natalidad española en lugar de inmigración de reemplazo.',
+        'Garantizar pensiones dignas indexadas al coste real de la vida financiadas solidariamente por el Estado.'
+      ],
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Pensiones'
     },
     regeneracion_justicia: {
       headline: 'Superación del sistema de partidos y representación orgánica (familia, municipio, sindicato)',
@@ -1553,17 +1853,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación y Cultura Nacional — FE de las JONS'
     },
-    inmigracion_seguridad: {
-      headline: 'Control estricto fronterizo, defensa del trabajo nacional y seguridad pública',
+    inmigracion: {
+      headline: 'Control estricto migratorio, defensa del trabajo nacional y repatriación ilegal',
       summary:
-        'Rechaza la inmigración masiva desordenada por degradar salarios y cohesión nacional, exigiendo control de fronteras y orden público.',
+        'Rechaza la inmigración masiva desordenada por degradar salarios y cohesión nacional, exigiendo repatriación de irregulares.',
       measures: [
-        'Establecer el cierre estricto de fronteras frente a la inmigración irregular y repatriación inmediata.',
+        'Establecer el cierre estricto frente a la inmigración irregular y ejecutar su repatriación inmediata.',
         'Limitar la residencia laboral extranjera a necesidades estrictas sin desplazar al trabajador español.',
-        'Reforzar a las Fuerzas Armadas y cuerpos de seguridad para proteger la integridad física y territorial.',
-        'Combatir con máxima firmeza penal las mafias, el narcotráfico y la delincuencia violenta.'
+        'Rechazar acuerdos internacionales que impongan cuotas obligatorias de reparto de inmigrantes.',
+        'Priorizar la relación cultural e histórica ordenada con naciones hermanas de Hispanoamérica.'
       ],
-      sourceRef: 'Seguridad y Fronteras — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Inmigración'
+    },
+    seguridad: {
+      headline: 'Fortalecimiento militar y policial, orden público y lucha contra mafias',
+      summary:
+        'Reclama dotar de máxima dignidad y medios a Fuerzas Armadas y cuerpos policiales, con firmeza penal frente a violencia y narcotráfico.',
+      measures: [
+        'Reforzar a las Fuerzas Armadas y cuerpos de seguridad para proteger la integridad física y territorial.',
+        'Combatir con máxima firmeza penal las mafias, el narcotráfico y la delincuencia violenta.',
+        'Garantizar el control fronterizo permanente en Ceuta, Melilla, Canarias y costas peninsulares.',
+        'Proteger la seguridad en barrios obreros y medio rural aumentando dotaciones de Guardia Civil.'
+      ],
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Seguridad y Defensa'
     },
     modelo_estado: {
       headline: 'Unidad nacional intangible, abolición de autonomías y estado sindical unitario',
@@ -1628,17 +1940,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Político PACMA 2026: Vivienda Digna'
     },
-    empleo_pensiones: {
-      headline: 'Reducción de jornada para conciliación, empleos verdes y pensiones dignas',
+    empleo: {
+      headline: 'Reducción de jornada para conciliación y transición hacia empleos verdes',
       summary:
-        'Apoya la reducción gradual de la jornada laboral, el refuerzo de la economía de los cuidados y pensiones públicas garantizadas.',
+        'Apoya la reducción gradual de la jornada laboral, la reconversión laboral hacia empleos sostenibles y la prevención de riesgos laborales.',
       measures: [
         'Reducir la jornada laboral semanal para favorecer la conciliación familiar, personal y el cuidado.',
         'Crear programas de reconversión laboral hacia empleos verdes para trabajadores de sectores contaminantes o taurinos.',
-        'Revalorizar las pensiones públicas conforme al coste real de la vida reforzando las no contributivas.',
-        'Mejorar la protección contra accidentes y acoso laboral garantizando salarios dignos.'
+        'Mejorar la prevención de riesgos laborales y la protección frente al acoso laboral garantizando salarios dignos.',
+        'Impulsar el empleo joven en conservación ambiental, sanidad pública y economía circular.'
       ],
-      sourceRef: 'Programa Político PACMA 2026: Empleo y Justicia Social'
+      sourceRef: 'Programa Electoral PACMA 29N-2026: Empleo y Transición Laboral'
+    },
+    pensiones: {
+      headline: 'Blindaje constitucional de las pensiones y refuerzo de no contributivas',
+      summary:
+        'Propone reformar la Constitución para proteger las pensiones públicas frente a recortes y elevar las pensiones mínimas y no contributivas.',
+      measures: [
+        'Reformar la Constitución para blindar el sistema público de pensiones y su revalorización conforme al coste de la vida.',
+        'Elevar las pensiones mínimas, de viudedad y no contributivas garantizando una vejez digna.',
+        'Reforzar los servicios públicos sociosanitarios de cuidados para mayores para evitar la sobrecarga económica de pensionistas.',
+        'Promover líneas de apoyo contra la soledad no deseada permitiendo la compañía de animales en residencias.'
+      ],
+      sourceRef: 'Programa Electoral PACMA 29N-2026: Pensiones y Mayores'
     },
     regeneracion_justicia: {
       headline: 'Juzgados especializados en maltrato animal, ley electoral justa y transparencia',
@@ -1676,17 +2000,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Político PACMA 2026: Educación y Empatía'
     },
-    inmigracion_seguridad: {
-      headline: 'Derechos humanos, vías legales de acogida y protección ante delitos de odio',
+    inmigracion: {
+      headline: 'Derechos humanos, vías legales de acogida y cierre de los CIEs',
       summary:
-        'Defiende políticas de acogida humanitaria, la regularización digna de personas residentes y la persecución de la violencia y delitos de odio.',
+        'Defiende políticas de acogida humanitaria, la regularización digna de personas residentes y vías legales seguras de asilo y refugio.',
       measures: [
         'Garantizar el derecho de asilo, vías legales seguras y regularización administrativa de personas migrantes residentes.',
         'Cerrar los Centros de Internamiento de Extranjeros y respetar los derechos humanos en frontera.',
-        'Reforzar la protección del SEPRONA y cuerpos especializados contra delitos medioambientales y maltrato.',
-        'Ampliar la asistencia psicológica y recursos policiales contra la violencia machista y delitos de odio.'
+        'Promover el reconocimiento de refugiados climáticos ante desastres ambientales en países de origen.',
+        'Facilitar la inclusión social, lingüística y laboral sin discriminación de origen.'
       ],
-      sourceRef: 'Programa Político PACMA 2026: Derechos Humanos'
+      sourceRef: 'Programa Electoral PACMA 29N-2026: Derechos Humanos y Migración'
+    },
+    seguridad: {
+      headline: 'Seguridad ciudadana en áreas urbanas y rurales, SEPRONA y delitos de odio',
+      summary:
+        'Propone reforzar la seguridad pública preventiva, dotar al SEPRONA contra delitos ecológicos y proteger a víctimas de violencia y odio.',
+      measures: [
+        'Mejorar la seguridad ciudadana en núcleos urbanos y rurales reforzando las plantillas de proximidad.',
+        'Dotar de mayores medios al SEPRONA y fiscalías especializadas contra el maltrato animal y el delito medioambiental.',
+        'Ampliar la asistencia psicológica y recursos policiales contra la violencia machista y los delitos de odio.',
+        'Endurecer el Código Penal frente a la crueldad contra los animales como indicador de violencia interpersonal.'
+      ],
+      sourceRef: 'Programa Electoral PACMA 29N-2026: Seguridad Ciudadana y Ambiental'
     },
     modelo_estado: {
       headline: 'Leyes marco estatales de protección animal y descentralización cooperativa',
@@ -1751,17 +2087,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Marco Democracia 21 (D21): Vivienda y Emancipación 2026'
     },
-    empleo_pensiones: {
-      headline: 'Salarios vinculados a productividad, alivio a autónomos y reforma pensional',
+    empleo: {
+      headline: 'Salarios ligados a productividad, relevo en pymes y alivio a autónomos',
       summary:
-        'Defiende impulsar subidas salariales sostenibles basadas en productividad e innovación, reducir cotizaciones burocráticas y asegurar las pensiones.',
+        'Defiende impulsar subidas salariales sostenibles haciendo crecer el tejido pyme, facilitando el relevo generacional de negocios y aliviando a autónomos.',
       measures: [
         'Promover subidas salariales sostenibles apoyando el crecimiento en tamaño y productividad de las pymes españolas.',
-        'Simplificar las obligaciones administrativas y tributarias de los trabajadores autónomos.',
-        'Modernizar la formación continua para adaptar el empleo a la economía digital e inteligencia artificial.',
-        'Garantizar la sostenibilidad actuarial del sistema público de pensiones fomentando mayor tasa de actividad.'
+        'Simplificar las obligaciones administrativas, fiscales y de cotización de los trabajadores autónomos.',
+        'Aprobar medidas para que negocios rentables no cierren por jubilación del titular facilitando su traspaso laboral.',
+        'Modernizar la formación continua para adaptar el empleo a la economía digital e inteligencia artificial.'
       ],
-      sourceRef: 'Propuestas Económicas y Laborales de Democracia 21 (2026)'
+      sourceRef: 'Programa Democracia 21 (2026): Empleo y Revolución Pyme'
+    },
+    pensiones: {
+      headline: 'Sostenibilidad actuarial, ahorro para el futuro y lucha contra soledad mayor',
+      summary:
+        'Aboga por asegurar las pensiones de hoy y del futuro con mayor tasa de actividad, cuentas transparentes, incentivos al ahorro y atención a mayores.',
+      measures: [
+        'Garantizar las pensiones públicas presentes y futuras elevando la tasa de empleo formal y la productividad.',
+        'Informar con transparencia anual de la situación actuarial del sistema y favorecer el ahorro complementario juvenil.',
+        'Eliminar obstáculos y cargas fiscales para atraer y retener ahorro e inversión previsional.',
+        'Desplegar un plan nacional para garantizar una vida larga, plena y sin soledad no deseada para jubilados.'
+      ],
+      sourceRef: 'Programa Democracia 21 (2026): Pensiones y Mayores'
     },
     regeneracion_justicia: {
       headline: 'IGAE con IA y mandato blindado, cese sin presupuestos y juzgados anticorrupción',
@@ -1799,17 +2147,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Educación e Innovación — Democracia 21 (2026)'
     },
-    inmigracion_seguridad: {
-      headline: 'Migración legal ordenada por demanda de talento y seguridad jurídica',
+    inmigracion: {
+      headline: 'Migración legal ordenada por demanda laboral y atracción de talento',
       summary:
-        'Defiende vías ordenadas de inmigración cualificada y laboral vinculadas a integración y el fortalecimiento de la seguridad y legalidad.',
+        'Defiende vías ordenadas y ágiles de inmigración cualificada y laboral vinculadas a integración y legalidad europea.',
       measures: [
         'Agilizar visados legales de talento internacional y trabajadores necesarios en sectores con déficit.',
         'Garantizar el cumplimiento estricto de la ley frente a la inmigración irregular en coordinación con la UE.',
-        'Dotar de medios tecnológicos modernos a fuerzas de seguridad y tribunales frente al crimen y ciberdelincuencia.',
-        'Asegurar agilidad judicial frente a ocupaciones y delitos reiterados.'
+        'Agilizar la homologación digital transparente de títulos universitarios y profesionales extranjeros.',
+        'Vincular la residencia estable a formación laboral e integración cívica constitucional.'
       ],
-      sourceRef: 'Propuestas Institucionales — Democracia 21 (2026)'
+      sourceRef: 'Programa Democracia 21 (2026): Migración Ordenada'
+    },
+    seguridad: {
+      headline: 'Respaldo real a las fuerzas de seguridad, agilidad judicial y ciberseguridad',
+      summary:
+        'Plantea modernizar medios policiales y judiciales frente a ciberdelincuencia, ocupaciones y delitos reiterados dando respaldo a los agentes.',
+      measures: [
+        'Dotar de medios tecnológicos modernos y respaldo institucional real a Policía Nacional y Guardia Civil.',
+        'Asegurar agilidad judicial efectiva frente a ocupaciones ilegales y delincuencia multirreincidente.',
+        'Preparar las capacidades de seguridad nacional frente a amenazas híbridas, ciberataques y crimen organizado.',
+        'Evaluar con datos objetivos la eficacia de las políticas de prevención y seguridad en cada territorio.'
+      ],
+      sourceRef: 'Programa Democracia 21 (2026): Seguridad y Respaldo Policial'
     },
     modelo_estado: {
       headline: 'Constitucionalismo reformista, lealtad institucional y fin de polarización',
@@ -1874,17 +2234,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Contrato Electoral Iustitia Europa: Vivienda y Propiedad'
     },
-    empleo_pensiones: {
-      headline: 'Reducción de cargas a autónomos y empresas, libertad laboral y auditoría pensional',
+    empleo: {
+      headline: 'Reducción de cargas a autónomos y empresas y fin de subvenciones sindicales',
       summary:
-        'Propone reducir las cargas que asfixian al empleo y al trabajador autónomo y someter las cuentas de la Seguridad Social a auditoría independiente.',
+        'Propone reducir las cuotas y cotizaciones que asfixian al empleo y al trabajador autónomo, aumentando el salario neto y suprimiendo subvenciones.',
       measures: [
         'Rebajar las cuotas y trabas administrativas a trabajadores autónomos y pequeñas empresas.',
         'Reducir las cotizaciones sociales para aumentar el salario neto disponible de los trabajadores.',
-        'Realizar una auditoría transparente del sistema de pensiones garantizando la hucha frente a usos impropios.',
-        'Eliminar subvenciones obligatorias a sindicatos y patronales financiados con impuestos públicos.'
+        'Eliminar subvenciones públicas obligatorias a sindicatos y patronales financiados con impuestos.',
+        'Fomentar la libertad contractual y el emprendimiento eliminando burocracia estatal.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Trabajo'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Trabajo y Autónomos'
+    },
+    pensiones: {
+      headline: 'Reforma realista de pensiones, auditoría y fin de pensiones vitalicias políticas',
+      summary:
+        'Denuncia la insostenibilidad del sistema actual por parches políticos, propone auditoría transparente y suprime pensiones especiales de cargos.',
+      measures: [
+        'Realizar una auditoría transparente e independiente del sistema de pensiones frente a usos impropios de fondos.',
+        'Implantar un sistema de contribución realista y transparente que garantice pensiones dignas a quienes han cotizado.',
+        'Suprimir por completo las pensiones vitalicias e indemnizaciones especiales de exministros, diputados y cargos públicos.',
+        'Proteger el poder adquisitivo de los mayores reduciendo la carga fiscal sobre suministros e IVA básico.'
+      ],
+      sourceRef: 'Contrato Electoral Iustitia Europa: Reforma de Pensiones y Privilegios'
     },
     regeneracion_justicia: {
       headline: 'Blindaje de la Acción Popular (Art. 125 CE), fin de subvenciones a partidos y elección directa',
@@ -1922,17 +2294,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Contrato Electoral Iustitia Europa: Educación'
     },
-    inmigracion_seguridad: {
-      headline: 'Control estricto de fronteras, cumplimiento legal y lucha contra impunidad',
+    inmigracion: {
+      headline: 'España decide y controla: freno a inmigración ilegal y expulsión de delincuentes',
       summary:
-        'Exige el respeto estricto de las fronteras nacionales, la expulsión de inmigrantes ilegales que delincan y la independencia policial frente al poder político.',
+        'Exige soberanía nacional en política migratoria frente a cuotas europeas y la expulsión efectiva de entrada ilegal y delincuentes extranjeros.',
       measures: [
         'Implantar un control estricto de fronteras nacionales evitando la entrada irregular y redes de tráfico.',
         'Ejecutar expulsiones efectivas ante entrada ilegal o comisión de delitos graves.',
-        'Despolitizar las cúpulas de Policía Nacional y Guardia Civil asegurando su sujeción exclusiva a la ley y los jueces.',
-        'Derogar leyes que restrinjan libertades civiles de manifestación y expresión pacífica.'
+        'Rechazar repartos obligatorios de inmigrantes impuestos por la Unión Europea sin consentimiento nacional.',
+        'Vincular la residencia legal al respeto estricto de las leyes y derechos fundamentales constitucionales.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Fronteras y Seguridad'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Inmigración'
+    },
+    seguridad: {
+      headline: 'Nuevo modelo policial despolitizado y defensa de libertades civiles',
+      summary:
+        'Plantea despolitizar las cúpulas policiales sujetándolas únicamente a la ley y los jueces, mientras deroga normas restrictivas de libertades.',
+      measures: [
+        'Despolitizar las cúpulas de Policía Nacional y Guardia Civil asegurando su sujeción exclusiva a la ley y los jueces.',
+        'Dotar de medios jurídicos y materiales suficientes a los agentes para combatir delincuencia y corrupción.',
+        'Derogar leyes que restrinjan libertades civiles fundamentales de manifestación, expresión e información.',
+        'Agilizar los juzgados de instrucción para acabar con la impunidad en delitos reiterados.'
+      ],
+      sourceRef: 'Contrato Electoral Iustitia Europa: Nuevo Modelo Policial y Seguridad'
     },
     modelo_estado: {
       headline: 'Reforma profunda del régimen institucional de 1978 hacia democracia directa y unidad',
@@ -1997,17 +2381,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Político Frente Obrero 2026: Vivienda'
     },
-    empleo_pensiones: {
-      headline: 'Endurecimiento del despido, defensa salarial y rechazo al abaratamiento laboral',
+    empleo: {
+      headline: 'Endurecimiento del despido, defensa salarial y alivio de cuotas a autónomos',
       summary:
-        'Defiende reforzar los derechos del trabajador frente a la patronal, reducir la jornada sin pérdida salarial y prohibir la explotación de mano de obra irregular.',
+        'Defiende reforzar los derechos del trabajador frente a la patronal, reducir la jornada y cuotas de autónomos y perseguir la contratación irregular.',
       measures: [
         'Incrementar las indemnizaciones por despido improcedente y combatir la precariedad y horas extras impagadas.',
         'Reducir la jornada laboral sin pérdida salarial y garantizar salarios ligados al coste real de la vida.',
         'Perseguir penalmente a empresas que contraten mano de obra irregular para devaluar salarios de los trabajadores.',
-        'Garantizar pensiones públicas estatales sostenidas por la reindustrialización y el empleo estable.'
+        'Reducir las cuotas de trabajadores autónomos y garantizarles cobertura real por baja médica.'
       ],
       sourceRef: 'Programa Político Frente Obrero 2026: Derechos Laborales'
+    },
+    pensiones: {
+      headline: 'Rechazo al retraso de jubilación, garantía para autónomos y natalidad nacional',
+      summary:
+        'Se opone al aumento de la edad de jubilación, exige pensiones dignas para obreros y autónomos y vincula su sostenibilidad a natalidad e industria.',
+      measures: [
+        'Rechazar el retraso progresivo de la edad de jubilación recuperando los 65 años y jubilación anticipada por penosidad.',
+        'Garantizar pensiones públicas dignas también para los trabajadores autónomos y sectores físicos.',
+        'Sostener el sistema público mediante reindustrialización, empleo estable y fomento de la natalidad nacional.',
+        'Blindar las pensiones frente a la inflación y al encarecimiento abusivo de vivienda y energía.'
+      ],
+      sourceRef: 'Programa Político Frente Obrero 2026: Pensiones'
     },
     regeneracion_justicia: {
       headline: 'República popular unitaria, fin de puertas giratorias y control ciudadano',
@@ -2045,17 +2441,29 @@ export const PROGRAMS = {
       ],
       sourceRef: 'Programa Político Frente Obrero 2026: Educación'
     },
-    inmigracion_seguridad: {
-      headline: 'Control estricto de fronteras, rechazo a la inmigración masiva y contra el islamismo',
+    inmigracion: {
+      headline: 'Rechazo a la inmigración masiva, fin de regularizaciones y expulsión de irregulares',
       summary:
-        'Sostiene que la inmigración descontrolada sirve a la patronal para abaratar salarios y degrada barrios obreros, exigiendo cierre fronterizo y seguridad.',
+        'Sostiene que la inmigración descontrolada sirve a la patronal para abaratar salarios y degrada barrios obreros, exigiendo fin de regularizaciones.',
       measures: [
-        'Implantar control estricto de fronteras rechazando regularizaciones masivas e inmigración ilegal.',
-        'Expulsar de forma inmediata a inmigrantes irregulares y extranjeros que cometan delitos.',
-        'Combatir frontalmente el islamismo político radical y las mafias en barrios trabajadores.',
-        'Dotar de autoridad y medios materiales suficientes a las fuerzas de seguridad.'
+        'Rechazar regularizaciones extraordinarias masivas y restringir estrictamente la entrada de mano de obra extranjera.',
+        'Expulsar de forma inmediata a inmigrantes en situación irregular y a extranjeros que cometan delitos.',
+        'Retirar subvenciones a ONG que gestionen flujos migratorios irregulares o fomenten el efecto llamada.',
+        'Exigir asimilación cultural y lingüística real para quienes residan legalmente en España.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Inmigración y Seguridad'
+      sourceRef: 'Programa Político Frente Obrero 2026: Inmigración'
+    },
+    seguridad: {
+      headline: 'Seguridad en barrios obreros, fronteras firmes y lucha contra mafias e islamismo',
+      summary:
+        'Exige proteger barrios trabajadores frente a delincuencia, narcopisos e islamismo radical dotando de plena autoridad y medios a la policía.',
+      measures: [
+        'Implantar control estricto de fronteras nacionales desplegando los medios necesarios del Estado.',
+        'Combatir frontalmente el islamismo político radical y las mafias criminales y narcopisos en barrios obreros.',
+        'Dotar de autoridad jurídica, equipamiento y refuerzo de plantillas a las fuerzas y cuerpos de seguridad.',
+        'Endurecer el Código Penal frente a delincuencia violenta, multirreincidencia y agresiones a agentes.'
+      ],
+      sourceRef: 'Programa Político Frente Obrero 2026: Seguridad y Fronteras'
     },
     modelo_estado: {
       headline: 'República unitaria y centralizada frente al separatismo y las 17 taifas',
@@ -2097,7 +2505,7 @@ export const PROGRAMS = {
 };
 
 /**
- * Retrieve all 10 topic proposals for a given party.
+ * Retrieve all 12 topic proposals for a given party.
  * @param {string} partyId
  * @returns {Record<string, object>|undefined}
  */
