@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { BLOCS, PARTIES, getPartyById } from '../src/data/parties.js';
 import { TOPICS, getTopicById } from '../src/data/topics.js';
@@ -216,4 +219,29 @@ test('filterParties and buildTopicComparison filter by bloc and search accents c
     ['salf', 'd21', 'iustitia']
   );
   assert.ok(comparison[2].proposal.headline.includes('Acción Popular'));
+});
+
+test('local PDF assets referenced by parties exist, are valid PDFs, and stay under 50 MB', () => {
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const repoRoot = path.resolve(__dirname, '..');
+  const maxBytes = 50 * 1024 * 1024;
+
+  const partiesWithPdf = PARTIES.filter((p) => Boolean(p.localPdfPath));
+  assert.ok(partiesWithPdf.length >= 10);
+
+  for (const party of partiesWithPdf) {
+    assert.match(party.localPdfPath, /^\.\/pdfs\/[a-z0-9._-]+\.pdf$/i);
+    const absPath = path.resolve(repoRoot, party.localPdfPath);
+    assert.ok(fs.existsSync(absPath), `Missing local PDF for ${party.id}: ${absPath}`);
+
+    const stat = fs.statSync(absPath);
+    assert.ok(stat.size > 1024, `PDF too small for ${party.id}`);
+    assert.ok(stat.size < maxBytes, `PDF exceeds 50 MB GitHub warning limit for ${party.id}`);
+
+    const fd = fs.openSync(absPath, 'r');
+    const buf = Buffer.alloc(5);
+    fs.readSync(fd, buf, 0, 5, 0);
+    fs.closeSync(fd);
+    assert.equal(buf.toString('utf8'), '%PDF-', `Invalid PDF magic header for ${party.id}`);
+  }
 });

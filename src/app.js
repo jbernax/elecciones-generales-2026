@@ -48,6 +48,11 @@ function safeExternalUrl(rawUrl) {
   return '#partidos';
 }
 
+function safeLocalPdfPath(rawPath) {
+  if (typeof rawPath !== 'string') return null;
+  return /^\.\/pdfs\/[a-z0-9._-]+\.pdf$/i.test(rawPath) ? rawPath : null;
+}
+
 function showView(viewId) {
   const sections = ['view-parties', 'view-profile', 'view-comparator', 'view-questionnaire'];
   for (const id of sections) {
@@ -177,8 +182,9 @@ function renderPartiesDirectory() {
   }
 
   grid.innerHTML = filtered
-    .map(
-      (party) => `
+    .map((party) => {
+      const hasLocalPdf = Boolean(safeLocalPdfPath(party.localPdfPath));
+      return `
       <article class="party-card" style="--party-accent: ${escapeHtml(party.accentColor)};">
         <div>
           <div class="party-card-top">
@@ -198,10 +204,11 @@ function renderPartiesDirectory() {
           >
             Ver perfil &rarr;
           </a>
+          ${hasLocalPdf ? '<span class="pdf-local-tag">PDF local</span>' : ''}
         </div>
       </article>
-    `
-    )
+    `;
+    })
     .join('');
 }
 
@@ -216,6 +223,7 @@ function renderPartyProfile(partyId) {
 
   const websiteHref = safeExternalUrl(party.officialWebsite);
   const programHref = safeExternalUrl(party.programUrl);
+  const localPdfHref = safeLocalPdfPath(party.localPdfPath);
 
   const tocHtml = TOPICS.map(
     (topic, idx) => `
@@ -303,24 +311,67 @@ function renderPartyProfile(partyId) {
 
       <p class="profile-summary">${escapeHtml(party.summary)}</p>
 
-      <div class="profile-links-row">
-        <a
-          href="${escapeHtml(programHref)}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary btn-sm"
-        >
-          Consultar programa oficial
-        </a>
-        <a
-          href="${escapeHtml(websiteHref)}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-secondary btn-sm"
-        >
-          Web de la formación
-        </a>
+      <div class="pdf-status-note">
+        ${escapeHtml(party.localPdfMeta || '')}
       </div>
+
+      <div class="profile-links-row">
+        ${
+          localPdfHref
+            ? `
+          <button type="button" class="btn btn-primary btn-sm" id="btn-toggle-pdf-viewer">
+            Leer PDF integrado aquí
+          </button>
+          <a
+            href="${escapeHtml(localPdfHref)}"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary btn-sm"
+          >
+            Abrir PDF local
+          </a>
+          <a
+            href="${escapeHtml(localPdfHref)}"
+            download
+            class="btn btn-secondary btn-sm"
+          >
+            Descargar PDF
+          </a>
+          <a
+            href="${escapeHtml(websiteHref)}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-subtle btn-sm"
+          >
+            Web oficial
+          </a>
+        `
+            : `
+          <a
+            href="${escapeHtml(programHref)}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-sm"
+          >
+            Consultar documento oficial (externo)
+          </a>
+          <a
+            href="${escapeHtml(websiteHref)}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-sm"
+          >
+            Web de la formación
+          </a>
+        `
+        }
+      </div>
+
+      ${
+        localPdfHref
+          ? '<div id="pdf-viewer-panel" class="pdf-viewer-panel hidden"></div>'
+          : ''
+      }
     </header>
 
     <nav class="profile-toc" aria-label="Índice temático del programa">
@@ -340,6 +391,30 @@ function renderPartyProfile(partyId) {
   document.getElementById('btn-profile-open-comparator')?.addEventListener('click', () => {
     navigateTo(`#comparador/${TOPICS[0].id}`);
   });
+
+  const togglePdfBtn = document.getElementById('btn-toggle-pdf-viewer');
+  const pdfPanel = document.getElementById('pdf-viewer-panel');
+  if (togglePdfBtn && pdfPanel && localPdfHref) {
+    togglePdfBtn.addEventListener('click', () => {
+      const isHidden = pdfPanel.classList.contains('hidden');
+      if (isHidden) {
+        if (!pdfPanel.querySelector('iframe')) {
+          pdfPanel.innerHTML = `
+            <iframe
+              class="pdf-embed-frame"
+              src="${escapeHtml(localPdfHref)}"
+              title="Programa electoral en PDF de ${escapeHtml(party.fullName)}"
+            ></iframe>
+          `;
+        }
+        pdfPanel.classList.remove('hidden');
+        togglePdfBtn.textContent = 'Ocultar visor PDF';
+      } else {
+        pdfPanel.classList.add('hidden');
+        togglePdfBtn.textContent = 'Leer PDF integrado aquí';
+      }
+    });
+  }
 
   container.querySelectorAll('.toc-link').forEach((link) => {
     link.addEventListener('click', (event) => {

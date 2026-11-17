@@ -19,6 +19,7 @@ Aplicación web estática, sobria y neutral para consultar, comparar y contrasta
 ├── styles.css
 ├── package.json
 ├── README.md
+├── pdfs/                     # Documentos PDF oficiales alojados en el repositorio
 ├── src/
 │   ├── app.js                  # Controlador de vistas y enrutamiento por hash
 │   ├── data/
@@ -57,3 +58,10 @@ git push -u origin main
 3. En **Build and deployment**, seleccione **Deploy from a branch**.
 4. Elija la rama `main` y la carpeta `/ (root)`, y guarde los cambios.
 5. El archivo `.nojekyll` incluido en la raíz garantiza que todos los módulos JavaScript se sirvan directamente sin procesamiento adicional.
+
+## Documentos PDF locales (`pdfs/`)
+
+La carpeta `pdfs/` aloja los programas oficiales descargables sin restricciones anti-bot (`Sumar`/`IU` vía Frente Amplio, `PCE`, `Cs`/`D21`, `PP`, `FE de las JONS`, `PACMA`, `Iustitia Europa` y `Frente Obrero`) para consultarlos o leerlos de forma integrada desde el propio dominio de GitHub Pages sin salir a sitios externos.
+
+- Los servidores de `PSOE`, `VOX` y `SALF` bloquean descargas automatizadas (`HTTP 403` / desafío anti-bot), por lo que sus perfiles mantienen el enlace directo oficial y una nota explicativa; si descarga manualmente sus PDFs desde un navegador y los guarda en `pdfs/`, basta con asignar `localPdfPath` en `src/data/parties.js`.
+- `Podemos` figura pendiente de publicación para la convocatoria del 29N-2026 en fuentes abiertas, mientras que `UCD`, `UPyD` y `NN` carecen de programa electoral en PDF para 2026.
