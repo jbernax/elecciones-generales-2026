@@ -167,7 +167,7 @@ function initPaletteControls() {
 
 function initScrollProgress() {
   const fill = document.getElementById('reading-progress-fill');
-  const navLinks = Array.from(document.querySelectorAll('.pill-links a[href^="#"]'));
+  const navLinks = Array.from(document.querySelectorAll('.topbar-nav a[href^="#"]'));
   const observedSections = navLinks
     .map((link) => {
       const targetId = link.getAttribute('href')?.slice(1);
@@ -305,7 +305,7 @@ function renderPartiesDirectory() {
     .map((party, index) => {
       const safePdf = sanitizeLocalPdfPath(party.localPdfPath);
       const docStatus = safePdf
-        ? `PDF local disponible${party.localPdfMeta?.pages ? ` · ${party.localPdfMeta.pages} pág.` : ''}`
+        ? `PDF local${party.localPdfMeta?.pages ? ` · ${party.localPdfMeta.pages} pág.` : ''}`
         : party.status;
 
       return `
@@ -314,24 +314,22 @@ function renderPartiesDirectory() {
           style="--party-accent: ${escapeHtml(party.accentColor)};"
         >
           <header>
-            <p class="party-card-top">
-              <strong class="party-abbr">${escapeHtml(party.shortName)}</strong>
-              <span class="party-bloc-label">${escapeHtml(party.bloc)}</span>
+            <p class="party-eyebrow">
+              <span class="swatch-dot" aria-hidden="true"></span>
+              <span>${escapeHtml(party.bloc)} · ${escapeHtml(party.foundedLabel)}</span>
             </p>
-            <h3 class="party-official-name">${escapeHtml(party.fullName)}</h3>
-            <p class="party-ideology-line">${escapeHtml(party.ideology)} · ${escapeHtml(party.foundedLabel)}</p>
+            <h3 class="party-official-name">${escapeHtml(party.shortName)} — ${escapeHtml(party.fullName)}</h3>
+            <p class="party-summary-copy">${escapeHtml(party.ideology)}. ${escapeHtml(party.summary)}</p>
           </header>
-
-          <p class="party-summary-copy">${escapeHtml(party.summary)}</p>
 
           <footer class="party-card-foot">
             <span class="doc-badge ${safePdf ? 'is-local' : ''}">${escapeHtml(docStatus)}</span>
             <button
               type="button"
-              class="profile-open-btn"
+              class="inline-action-btn"
               data-open-party="${escapeHtml(party.id)}"
             >
-              Ver perfil &rarr;
+              Ver programa &rarr;
             </button>
           </footer>
         </article>
@@ -527,8 +525,11 @@ function renderComparatorWorkbench() {
             style="--party-accent: ${escapeHtml(party.accentColor)};"
           >
             <header class="comparator-card-head">
-              <strong class="party-abbr">${escapeHtml(party.shortName)}</strong>
-              <span class="party-bloc-label">${escapeHtml(party.bloc)}</span>
+              <span class="party-eyebrow">
+                <span class="swatch-dot" aria-hidden="true"></span>
+                <strong class="party-abbr">${escapeHtml(party.shortName)}</strong>
+              </span>
+              <span class="doc-badge">${escapeHtml(party.bloc)}</span>
             </header>
 
             <h4 class="comparator-card-headline">${escapeHtml(proposal.headline)}</h4>

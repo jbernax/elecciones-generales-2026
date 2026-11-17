@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="./restyle-tokens.css" />
@@ -22,31 +22,28 @@
     <div id="reading-progress-fill" class="progress-fill"></div>
   </div>
 
-  <nav class="floating-pill-nav nav-flagship" aria-label="Navegación principal">
-    <a href="#panorama" class="pill-brand">ESP · 2026</a>
-    <menu class="pill-links">
-      <li><a href="#panorama">Panorama</a></li>
-      <li><a href="#formaciones">Formaciones</a></li>
-      <li><a href="#comparador">Comparador</a></li>
-      <li><a href="#cuestionario">Test</a></li>
-    </menu>
-    <menu class="pill-actions">
-      <li>
-        <button
-          id="palette-toggle"
-          type="button"
-          class="palette-toggle-btn"
-          aria-pressed="false"
-          title="Alternar entre modo Obsidian Carbon y Daylight Editorial"
-        >
-          Modo claro
-        </button>
-      </li>
-      <li>
-        <a href="#cuestionario" class="pill-cta">Test (15)</a>
-      </li>
-    </menu>
-  </nav>
+  <header class="workbench-topbar">
+    <section class="topbar-inner">
+      <a href="#panorama" class="topbar-brand">Elecciones España 2026</a>
+
+      <nav class="topbar-nav" aria-label="Navegación principal">
+        <a href="#panorama">Panorama</a>
+        <a href="#formaciones">Formaciones</a>
+        <a href="#comparador">Comparador</a>
+        <a href="#cuestionario">Test ciudadano</a>
+      </nav>
+
+      <button
+        id="palette-toggle"
+        type="button"
+        class="palette-toggle-btn"
+        aria-pressed="false"
+        title="Alternar entre modo Obsidian Carbon y Daylight Editorial"
+      >
+        Modo claro
+      </button>
+    </section>
+  </header>
 
   <main>
     <section id="panorama" class="hero-stage">
@@ -86,7 +83,7 @@
           </hgroup>
           <p>
             Filtre por bloque ideológico o busque cualquier partido, siglas o medida clave.
-            Cada ficha abre el dosier completo con sus 12 áreas temáticas y acceso directo al documento PDF local cuando está disponible.
+            Cada ficha abre el dosier completo con sus 12 áreas temáticas y acceso al documento PDF local cuando está disponible.
           </p>
         </header>
 
@@ -132,7 +129,7 @@
             <section class="rail-group" aria-label="Selección de partidos">
               <header class="rail-subhead">
                 <span class="rail-heading">Formaciones en matriz</span>
-                <span id="workbench-parties-count" class="tabular rail-counter">4 / 17</span>
+                <span id="workbench-parties-count" class="tabular rail-counter">5 / 17</span>
               </header>
               <menu class="rail-presets">
                 <li><button type="button" class="preset-btn" data-preset="principales">Principales (5)</button></li>
