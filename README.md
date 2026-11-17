@@ -4,9 +4,9 @@ Aplicación web estática, sobria y neutral para consultar, comparar y contrasta
 
 ## Objetivos y diseño
 
-- **Lectura clara sin ruido visual**: Diseño editorial de alto contraste sin gradientes decorativos, iconos superfluos ni ventanas modales invasivas.
+- **Arquitectura unificada y lectura sobria**: Interfaz de desplazamiento único en etapas diferenciadas —panorama fiscal de partida, directorio Bento asimétrico de 12 columnas, comparador lateral dividido en panel de control y matriz (`Fichas` / `Tabla`), cuestionario en pantalla dividida con marcador de afinidad en tiempo real y cajón lateral deslizable para consultar programas completos y PDFs integrados— con selector de paleta `Obsidian Carbon` y `Daylight Editorial`.
 - **17 formaciones en 6 bloques ideológicos**: Cobertura completa de `Izquierda` (`Sumar`, `Podemos`, `IU`, `PCE`), `Centro-izquierda` (`PSOE`), `Centro` (`Cs`, `UPyD`), `Centro-derecha` (`PP`, `UCD`), `Derecha` (`VOX`, `SALF`, `NN`, `FE de las JONS`) y `Otros` (`PACMA`, `D21`, `Iustitia Europa`, `FO`).
-- **Cuestionario de medidas concretas**: En lugar de preguntas abiertas de «acuerdo o desacuerdo», cada cuestión plantea un problema público real con 4 o 5 opciones programáticas concretas y excluyentes, más ponderación de importancia por tema (`Prioritaria 2x`, `Normal 1x`, `Baja 0,5x` u `Omitir`).
+- **Cuestionario de medidas concretas**: En lugar de preguntas abiertas de «acuerdo o desacuerdo», cada cuestión plantea un problema público real con 4 o 5 opciones programáticas concretas y excluyentes, más ponderación de importancia por tema (`Alta (x2)`, `Normal (x1)`, `Baja (x0,5)` u `Omitir`).
 - **Cero compilación para GitHub Pages**: Implementada íntegramente con HTML5, CSS3 y módulos ES6 nativos en la raíz del repositorio.
 
 ## Estructura del repositorio
@@ -15,13 +15,15 @@ Aplicación web estática, sobria y neutral para consultar, comparar y contrasta
 .
 ├── .gitignore
 ├── .nojekyll
+├── DESIGN.md                 # Especificación tipográfica y estructural (restyle-modern)
 ├── index.html
-├── styles.css
+├── restyle-tokens.css        # Sistema de diseño y rejillas asimétricas (obsidian-carbon / daylight)
+├── styles.css                # Capa visual y adaptación móvil de componentes
 ├── package.json
 ├── README.md
 ├── pdfs/                     # Documentos PDF oficiales alojados en el repositorio
 ├── src/
-│   ├── app.js                  # Controlador de vistas y enrutamiento por hash
+│   ├── app.js                  # Controlador de vistas, cajón de perfil y test en tiempo real
 │   ├── data/
 │   │   ├── parties.js          # Definición de los 6 bloques y las 17 formaciones
 │   │   ├── topics.js           # 12 áreas temáticas estructurales
