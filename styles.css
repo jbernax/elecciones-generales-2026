@@ -183,13 +183,18 @@ ol.affinity-ranking-list {
 }
 
 .hero-copy {
+  grid-column: span 9;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .hero-display {
-  max-width: 14ch;
+  max-width: 18ch;
+}
+
+.hero-lead {
+  max-width: 60ch;
 }
 
 .hero-cta-row {
@@ -254,58 +259,6 @@ ol.affinity-ranking-list {
   font-size: 0.84rem;
 }
 
-.hero-telemetry {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: clamp(1.5rem, 2.5vw, 2rem);
-  background-color: var(--surface-1);
-  border: 1px solid var(--specular-border);
-  border-radius: 16px;
-}
-
-.telemetry-head {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.telemetry-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 1.9vw, 1.55rem);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.18;
-  color: var(--ink-primary);
-}
-
-.telemetry-meta-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 0;
-  padding-top: 1.25rem;
-  gap: 1.35rem 1.25rem;
-}
-
-.telemetry-meta-grid dt {
-  font-family: var(--font-label);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-.telemetry-meta-grid dd {
-  margin-top: 0.3rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.08rem, 1.4vw, 1.3rem);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums lining-nums;
-  color: var(--ink-primary);
-  line-height: 1.28;
-}
-
 .telemetry-detail {
   display: block;
   margin-top: 0.32rem;
@@ -314,15 +267,6 @@ ol.affinity-ranking-list {
   font-weight: 400;
   line-height: 1.5;
   color: var(--ink-secondary);
-}
-
-.telemetry-note {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  color: var(--ink-muted);
-  border-top: 1px solid var(--specular-border);
-  padding-top: 1rem;
 }
 
 /* Directory Filters & Asymmetric Bento Grid */
@@ -651,7 +595,11 @@ ol.affinity-ranking-list {
   line-height: 1.62;
 }
 
-/* Scoped Contrast-Safe Dark Breakout */
+/* Scoped Contrast-Safe Dark Topic Official Context Wrapper */
+.topic-official-container:empty {
+  display: none;
+}
+
 .carbon-breakout:empty {
   display: none;
 }
@@ -672,18 +620,90 @@ ol.affinity-ranking-list {
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   margin: 0;
-  padding: clamp(1.5rem, 2.6vw, 2.25rem);
+  padding: clamp(1.25rem, 2.2vw, 1.85rem);
 }
 
 .carbon-breakout .kicker {
   color: #60A5FA;
 }
 
+.topic-official-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.topic-official-summary::-webkit-details-marker {
+  display: none;
+}
+
+.topic-official-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.topic-official-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.08rem, 1.4vw, 1.24rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #F5F7FA;
+}
+
+.topic-official-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #CBD5E1;
+  max-width: 68ch;
+}
+
+.topic-official-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background-color: #131822;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #F5F7FA;
+  white-space: nowrap;
+  transition: border-color 0.18s var(--ease-out-expo), background-color 0.18s var(--ease-out-expo);
+}
+
+.topic-official-summary:hover .topic-official-toggle {
+  border-color: #60A5FA;
+}
+
+.topic-official-wrapper[open] .toggle-text-closed {
+  display: none;
+}
+
+.topic-official-wrapper:not([open]) .toggle-text-open {
+  display: none;
+}
+
+.topic-official-body {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
 .breakout-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.15rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem 1.5rem;
+  margin-top: 0;
 }
 
 .breakout-item dt {
@@ -698,19 +718,29 @@ ol.affinity-ranking-list {
 .breakout-item dd {
   margin-top: 0.32rem;
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.3vw, 1.22rem);
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
   font-weight: 600;
   font-variant-numeric: tabular-nums lining-nums;
-  line-height: 1.28;
+  line-height: 1.3;
   color: #F5F7FA;
 }
 
+.breakout-detail {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.52;
+  color: #CBD5E1;
+}
+
 .breakout-caption {
-  margin-top: 1.15rem;
+  margin-top: 1.2rem;
   padding-top: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-family: var(--font-sans);
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   line-height: 1.55;
   color: #CBD5E1;
 }
@@ -1407,7 +1437,11 @@ ol.affinity-ranking-list {
     padding: 0.25rem 0;
   }
 
-  .telemetry-meta-grid,
+  .topic-official-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .breakout-grid,
   .party-toggle-grid,
   .drawer-facts-grid {

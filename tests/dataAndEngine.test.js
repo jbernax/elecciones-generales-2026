@@ -8,7 +8,11 @@ import { BLOCS, PARTIES, getPartyById } from '../src/data/parties.js';
 import { TOPICS, getTopicById } from '../src/data/topics.js';
 import { PROGRAMS, getPartyProgram, getProposal } from '../src/data/programs.js';
 import { QUESTIONS } from '../src/data/questionnaire.js';
-import { SPAIN_FISCAL_STATUS } from '../src/data/macroContext.js';
+import {
+  SPAIN_FISCAL_STATUS,
+  TOPIC_OFFICIAL_CONTEXT,
+  getTopicOfficialContext
+} from '../src/data/macroContext.js';
 import {
   PRIORITY_WEIGHTS,
   calculateCitizenAffinity,
@@ -290,6 +294,25 @@ test('macroeconomic financial status reference and party debt-management proposa
   assert.equal(SPAIN_FISCAL_STATUS.metrics.length, 4);
   assert.ok(SPAIN_FISCAL_STATUS.sourcesNote.includes('Banco de España'));
   assert.ok(SPAIN_FISCAL_STATUS.sourcesNote.includes('AIReF'));
+
+  assert.equal(Object.keys(TOPIC_OFFICIAL_CONTEXT).length, TOPICS.length);
+  for (const topic of TOPICS) {
+    const context = getTopicOfficialContext(topic.id);
+    assert.ok(context, `Missing official context for topic ${topic.id}`);
+    assert.equal(context.topicId, topic.id);
+    assert.ok(context.title.trim().length > 10, `Missing title for ${topic.id}`);
+    assert.ok(context.subtitle.trim().length > 20, `Missing subtitle for ${topic.id}`);
+    assert.ok(context.updatedLabel.trim().length > 5, `Missing updatedLabel for ${topic.id}`);
+    assert.ok(context.sourcesNote.startsWith('Fuentes:'), `Expected Fuentes note for ${topic.id}`);
+    assert.equal(context.metrics.length, 4, `Expected 4 metrics for ${topic.id}`);
+    for (const metric of context.metrics) {
+      assert.ok(metric.id.trim().length > 1);
+      assert.ok(metric.label.trim().length > 2);
+      assert.ok(metric.value.trim().length > 2);
+      assert.ok(metric.detail.trim().length > 15);
+    }
+  }
+  assert.equal(getTopicOfficialContext('nonexistent-topic').topicId, 'economia');
 
   for (const party of PARTIES) {
     const econ = getProposal(party.id, 'economia');

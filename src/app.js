@@ -6,7 +6,7 @@ import { BLOCS, PARTIES, getPartyById } from './data/parties.js';
 import { TOPICS, getTopicById } from './data/topics.js';
 import { PROGRAMS, getPartyProgram } from './data/programs.js';
 import { QUESTIONS } from './data/questionnaire.js';
-import { SPAIN_FISCAL_STATUS } from './data/macroContext.js';
+import { getTopicOfficialContext } from './data/macroContext.js';
 import {
   filterParties,
   buildTopicComparison,
@@ -200,42 +200,7 @@ function initScrollProgress() {
 }
 
 /* =========================================================================
- * STAGE 1: HERO FISCAL TELEMETRY
- * ========================================================================= */
-function renderHeroMacroTelemetry() {
-  const kickerEl = document.getElementById('hero-fiscal-kicker');
-  const headingEl = document.getElementById('hero-fiscal-heading');
-  const metaEl = document.getElementById('hero-macro-meta');
-  const noteEl = document.getElementById('hero-macro-note');
-
-  if (kickerEl) {
-    kickerEl.textContent = SPAIN_FISCAL_STATUS.updatedLabel;
-  }
-  if (headingEl) {
-    headingEl.textContent = SPAIN_FISCAL_STATUS.title;
-  }
-  if (metaEl) {
-    metaEl.innerHTML = SPAIN_FISCAL_STATUS.metrics
-      .map(
-        (metric) => `
-          <section class="telemetry-metric-item">
-            <dt>${escapeHtml(metric.label)}</dt>
-            <dd>
-              ${escapeHtml(metric.value)}
-              <span class="telemetry-detail">${escapeHtml(metric.detail)}</span>
-            </dd>
-          </section>
-        `
-      )
-      .join('');
-  }
-  if (noteEl) {
-    noteEl.textContent = SPAIN_FISCAL_STATUS.sourcesNote;
-  }
-}
-
-/* =========================================================================
- * STAGE 2: ASYMMETRIC BENTO DIRECTORY
+ * STAGE 1: ASYMMETRIC BENTO DIRECTORY
  * ========================================================================= */
 function renderBlocFilters() {
   const bar = document.getElementById('bloc-filter-bar');
@@ -347,32 +312,48 @@ function renderPartiesDirectory() {
 /* =========================================================================
  * STAGE 3: UNIFIED SPLIT-STAGE WORKBENCH (#comparador)
  * ========================================================================= */
-function renderFiscalBreakout() {
-  const breakout = document.getElementById('workbench-fiscal-breakout');
-  if (!breakout) return;
+function renderTopicOfficialWrapper() {
+  const container = document.getElementById('workbench-official-wrapper');
+  if (!container) return;
 
-  const showFiscal =
-    state.comparatorTopicId === 'economia' || state.comparatorTopicId === 'pensiones';
-  if (!showFiscal) {
-    breakout.innerHTML = '';
+  const context = getTopicOfficialContext(state.comparatorTopicId);
+  if (!context) {
+    container.innerHTML = '';
     return;
   }
 
-  breakout.innerHTML = `
-    <figcaption class="kicker">${escapeHtml(SPAIN_FISCAL_STATUS.title)} · ${escapeHtml(SPAIN_FISCAL_STATUS.updatedLabel)}</figcaption>
-    <dl class="breakout-grid">
-      ${SPAIN_FISCAL_STATUS.metrics
-        .map(
-          (m) => `
-            <section class="breakout-item">
-              <dt>${escapeHtml(m.label)}</dt>
-              <dd>${escapeHtml(m.value)}</dd>
-            </section>
-          `
-        )
-        .join('')}
-    </dl>
-    <p class="breakout-caption">${escapeHtml(SPAIN_FISCAL_STATUS.subtitle)}</p>
+  container.innerHTML = `
+    <details class="topic-official-wrapper carbon-breakout">
+      <summary class="topic-official-summary">
+        <div class="topic-official-heading">
+          <span class="kicker">Contexto oficial · ${escapeHtml(context.updatedLabel)}</span>
+          <strong class="topic-official-title">${escapeHtml(context.title)}</strong>
+          <span class="topic-official-subtitle">${escapeHtml(context.subtitle)}</span>
+        </div>
+        <span class="topic-official-toggle">
+          <span class="toggle-text-closed">Desplegar datos oficiales</span>
+          <span class="toggle-text-open">Ocultar datos oficiales</span>
+        </span>
+      </summary>
+      <div class="topic-official-body">
+        <dl class="breakout-grid">
+          ${context.metrics
+            .map(
+              (m) => `
+                <section class="breakout-item">
+                  <dt>${escapeHtml(m.label)}</dt>
+                  <dd>
+                    ${escapeHtml(m.value)}
+                    <span class="breakout-detail">${escapeHtml(m.detail)}</span>
+                  </dd>
+                </section>
+              `
+            )
+            .join('')}
+        </dl>
+        <p class="breakout-caption">${escapeHtml(context.sourcesNote)}</p>
+      </div>
+    </details>
   `;
 }
 
@@ -454,7 +435,7 @@ function renderComparatorWorkbench() {
     <p>${escapeHtml(activeTopic.description)}</p>
   `;
 
-  renderFiscalBreakout();
+  renderTopicOfficialWrapper();
 
   const cardsBtn = document.getElementById('comparador-mode-cards');
   const tableBtn = document.getElementById('comparador-mode-table');
@@ -1121,7 +1102,6 @@ function handleDeepLinkHash() {
 
 function initApp() {
   initPaletteControls();
-  renderHeroMacroTelemetry();
   renderBlocFilters();
   renderPartiesDirectory();
   initComparatorControls();
