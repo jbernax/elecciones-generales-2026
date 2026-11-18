@@ -1,11 +1,11 @@
 # Elecciones Generales España 2026 — Guía de Programas y Afinidad Ciudadana
 
-Aplicación web estática, sobria y neutral para consultar, comparar y contrastar los programas electorales de 17 formaciones políticas ante las Elecciones Generales de España de 2026.
+Aplicación web estática, sobria y neutral para consultar, comparar y contrastar los programas electorales de 18 partidos y coaliciones ante las Elecciones Generales de España de 2026 (29N).
 
 ## Objetivos y diseño
 
 - **Arquitectura unificada y lectura sobria**: Interfaz de desplazamiento único en etapas diferenciadas —panorama fiscal de partida, directorio Bento asimétrico de 12 columnas, comparador lateral dividido en panel de control y matriz (`Fichas` / `Tabla`), cuestionario en pantalla dividida con marcador de afinidad en tiempo real y cajón lateral deslizable para consultar programas completos y PDFs integrados— con selector de paleta `Obsidian Carbon` y `Daylight Editorial`.
-- **17 formaciones en 6 bloques ideológicos**: Cobertura completa de `Izquierda` (`Sumar`, `Podemos`, `IU`, `PCE`), `Centro-izquierda` (`PSOE`), `Centro` (`Cs`, `UPyD`), `Centro-derecha` (`PP`, `UCD`), `Derecha` (`VOX`, `SALF`, `NN`, `FE de las JONS`) y `Otros` (`PACMA`, `D21`, `Iustitia Europa`, `FO`).
+- **18 partidos y coaliciones en 6 bloques ideológicos**: Cobertura completa de `Izquierda` (`Frente Amplio`, `Sumar`, `Podemos`, `IU`, `PCE`), `Centro-izquierda` (`PSOE`), `Centro` (`Cs`, `UPyD`), `Centro-derecha` (`PP`, `UCD`), `Derecha` (`VOX`, `SALF`, `NN`, `FE de las JONS`) y `Otros` (`PACMA`, `D21`, `Iustitia Europa`, `FO`).
 - **Cuestionario de medidas concretas**: En lugar de preguntas abiertas de «acuerdo o desacuerdo», cada cuestión plantea un problema público real con 4 o 5 opciones programáticas concretas y excluyentes, más ponderación de importancia por tema (`Alta (x2)`, `Normal (x1)`, `Baja (x0,5)` u `Omitir`).
 - **Cero compilación para GitHub Pages**: Implementada íntegramente con HTML5, CSS3 y módulos ES6 nativos en la raíz del repositorio.
 
@@ -25,10 +25,10 @@ Aplicación web estática, sobria y neutral para consultar, comparar y contrasta
 ├── src/
 │   ├── app.js                  # Controlador de vistas, cajón de perfil y test en tiempo real
 │   ├── data/
-│   │   ├── parties.js          # Definición de los 6 bloques y las 17 formaciones
+│   │   ├── parties.js          # Definición de los 6 bloques y las 18 formaciones y coaliciones
 │   │   ├── topics.js           # 12 áreas temáticas estructurales
 │   │   ├── macroContext.js     # Indicadores de deuda pública, déficit y reglas fiscales (2026)
-│   │   ├── programs.js         # 204 fichas programáticas (17 partidos x 12 temas)
+│   │   ├── programs.js         # 216 fichas programáticas (18 partidos x 12 temas)
 │   │   └── questionnaire.js    # 15 cuestiones de medidas concretas
 │   └── engine/
 │       └── affinityEngine.js   # Cálculo de afinidad ponderada, filtrado y comparativa
@@ -64,7 +64,7 @@ git push -u origin main
 
 ## Documentos PDF locales (`pdfs/`)
 
-La carpeta `pdfs/` aloja los programas oficiales descargables sin restricciones anti-bot (`Sumar`/`IU` vía Frente Amplio, `PCE`, `Cs`/`D21`, `PP`, `FE de las JONS`, `PACMA`, `Iustitia Europa` y `Frente Obrero`) para consultarlos o leerlos de forma integrada desde el propio dominio de GitHub Pages sin salir a sitios externos.
+La carpeta `pdfs/` aloja los programas oficiales descargables sin restricciones anti-bot (`Frente Amplio` / `Sumar` / `IU`, `PCE` estratégico 2024, `Cs`/`D21`, `PP`, `FE de las JONS`, `PACMA`, `Iustitia Europa` y `Frente Obrero`) para consultarlos o leerlos de forma integrada desde el propio dominio de GitHub Pages sin salir a sitios externos.
 
 - Los servidores de `PSOE`, `VOX` y `SALF` bloquean descargas automatizadas (`HTTP 403` / desafío anti-bot), por lo que sus perfiles mantienen el enlace directo oficial y una nota explicativa; si descarga manualmente sus PDFs desde un navegador y los guarda en `pdfs/`, basta con asignar `localPdfPath` en `src/data/parties.js`.
-- `Podemos` figura pendiente de publicación para la convocatoria del 29N-2026 en fuentes abiertas, mientras que `UCD`, `UPyD` y `NN` carecen de programa electoral en PDF para 2026.
+- `Podemos` dispone de programa publicado en `podemos.info/programa/` (442 medidas / 141 páginas para el 29N-2026) sin espejo local estático en `pdfs/`, mientras que `UCD`, `UPyD` y `NN` carecen de programa electoral en PDF para 2026.

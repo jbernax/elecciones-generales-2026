@@ -14,8 +14,8 @@ import {
 } from './engine/affinityEngine.js';
 
 const PRESET_PARTIES = {
-  principales: ['psoe', 'pp', 'vox', 'sumar', 'podemos'],
-  'izquierda-centro': ['sumar', 'podemos', 'iu', 'pce', 'psoe', 'cs', 'upyd'],
+  principales: ['psoe', 'pp', 'vox', 'frente_amplio', 'podemos'],
+  'izquierda-centro': ['frente_amplio', 'sumar', 'podemos', 'iu', 'pce', 'psoe', 'cs', 'upyd'],
   'derecha-otros': ['pp', 'ucd', 'vox', 'salf', 'nn', 'fe_jons', 'pacma', 'd21', 'iustitia', 'fo'],
   todas: PARTIES.map((party) => party.id)
 };
@@ -286,14 +286,14 @@ function renderPartiesDirectory() {
   });
 
   if (counterEl) {
-    counterEl.textContent = `${filtered.length} de ${PARTIES.length} formaciones`;
+    counterEl.textContent = `${filtered.length} de ${PARTIES.length} partidos`;
   }
 
   if (filtered.length === 0) {
     grid.innerHTML = `
       <article class="empty-state-panel">
-        <h3>Sin coincidencias exactas</h3>
-        <p>Pruebe otro término de búsqueda o restablezca el filtro de bloque ideológico.</p>
+        <h3>Sin coincidencias</h3>
+        <p>Prueba con otro término de búsqueda o quita el filtro de bloque ideológico.</p>
       </article>
     `;
     return;
@@ -449,7 +449,7 @@ function renderComparatorWorkbench() {
 
   const activeTopic = getTopicById(state.comparatorTopicId) || TOPICS[0];
   topicHeader.innerHTML = `
-    <span class="kicker">Área activa · ${selectedSet.size} formaciones comparadas</span>
+    <span class="kicker">Tema activo · ${selectedSet.size} partidos comparados</span>
     <h3>${escapeHtml(activeTopic.title)}</h3>
     <p>${escapeHtml(activeTopic.description)}</p>
   `;
@@ -478,11 +478,11 @@ function renderComparatorWorkbench() {
       <table class="spec-table">
         <thead>
           <tr>
-            <th>Formación</th>
+            <th>Partido</th>
             <th>Bloque</th>
-            <th>Eje programático</th>
-            <th>Medidas principales</th>
-            <th>Dosier</th>
+            <th>Línea principal</th>
+            <th>Medidas clave</th>
+            <th>Ficha</th>
           </tr>
         </thead>
         <tbody>
@@ -491,17 +491,17 @@ function renderComparatorWorkbench() {
               if (!proposal) return '';
               return `
                 <tr>
-                  <td data-label="Formación"><strong>${escapeHtml(party.shortName)}</strong></td>
+                  <td data-label="Partido"><strong>${escapeHtml(party.shortName)}</strong></td>
                   <td data-label="Bloque">${escapeHtml(party.bloc)}</td>
-                  <td data-label="Eje programático">${escapeHtml(proposal.headline)}</td>
-                  <td data-label="Medidas principales">${escapeHtml((proposal.measures || []).slice(0, 2).join(' · '))}</td>
-                  <td data-label="Dosier">
+                  <td data-label="Línea principal">${escapeHtml(proposal.headline)}</td>
+                  <td data-label="Medidas clave">${escapeHtml((proposal.measures || []).slice(0, 2).join(' · '))}</td>
+                  <td data-label="Ficha">
                     <button
                       type="button"
                       class="inline-action-btn"
                       data-open-party="${escapeHtml(party.id)}"
                     >
-                      Perfil &rarr;
+                      Ver ficha &rarr;
                     </button>
                   </td>
                 </tr>
@@ -751,7 +751,7 @@ function renderLiveScoreboard() {
 
   if (affinitySummary.answeredCount === 0) {
     if (headlineEl) {
-      headlineEl.textContent = 'Seleccione respuestas para calcular';
+      headlineEl.textContent = 'Responde para ver tu afinidad';
     }
     rankingEl.innerHTML = visibleRanking
       .slice(0, 8)
@@ -780,14 +780,14 @@ function renderLiveScoreboard() {
     });
 
     if (traceHeadingEl) {
-      traceHeadingEl.textContent = 'Contraste punto por punto';
+      traceHeadingEl.textContent = 'Desglose pregunta a pregunta';
     }
     if (openTraceBtn) {
       openTraceBtn.hidden = true;
     }
     traceTbodyEl.innerHTML = `
       <tr>
-        <td colspan="4">Marque al menos una medida en las 15 cuestiones para obtener el desglose programático detallado.</td>
+        <td colspan="4">Marca al menos una opción en las 15 preguntas para ver el desglose de coincidencia.</td>
       </tr>
     `;
     return;
@@ -802,8 +802,8 @@ function renderLiveScoreboard() {
   const topParty = topEntry ? getPartyById(topEntry.partyId) : null;
   if (headlineEl) {
     headlineEl.textContent = topParty
-      ? `Mayor afinidad actual: ${topParty.shortName} (${topEntry.scorePercentage}%)`
-      : 'Clasificación programática';
+      ? `Mayor afinidad: ${topParty.shortName} (${topEntry.scorePercentage}%)`
+      : 'Ranking de coincidencia';
   }
 
   rankingEl.innerHTML = visibleRanking
@@ -861,8 +861,8 @@ function renderLiveScoreboard() {
       return `
         <tr>
           <td data-label="Tema"><strong>${escapeHtml(topic?.shortLabel || topic?.title || row.topicId)}</strong></td>
-          <td data-label="Su elección">${escapeHtml(row.selectedOptionTitle)}</td>
-          <td data-label="Posición del partido">${escapeHtml(partyProposal?.headline || '--')}</td>
+          <td data-label="Tu elección">${escapeHtml(row.selectedOptionTitle)}</td>
+          <td data-label="Qué propone">${escapeHtml(partyProposal?.headline || '--')}</td>
           <td data-label="Afinidad" class="num">${escapeHtml(alignment)} (${Math.round(weight * 100)}%)</td>
         </tr>
       `;
@@ -922,7 +922,7 @@ function renderPartyDrawer() {
           safePdfPath
             ? `
               <button id="btn-toggle-pdf-viewer" type="button" class="btn-primary btn-compact">
-                ${state.drawerShowPdf ? 'Ocultar visor PDF integrado' : 'Abrir PDF local integrado'}
+                ${state.drawerShowPdf ? 'Cerrar visor PDF' : 'Leer PDF aquí'}
               </button>
               <a href="${escapeHtml(safePdfPath)}" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-compact">
                 Abrir PDF en pestaña
@@ -932,12 +932,12 @@ function renderPartyDrawer() {
         }
         ${
           safeProgramUrl
-            ? `<a href="${escapeHtml(safeProgramUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">Fuente web oficial</a>`
+            ? `<a href="${escapeHtml(safeProgramUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">Fuente oficial</a>`
             : ''
         }
         ${
           safeSiteUrl
-            ? `<a href="${escapeHtml(safeSiteUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">Web de la formación</a>`
+            ? `<a href="${escapeHtml(safeSiteUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">Web del partido</a>`
             : ''
         }
       </section>
@@ -972,7 +972,7 @@ function renderPartyDrawer() {
             data-jump-comparator="${escapeHtml(topic.id)}"
             data-party-id="${escapeHtml(party.id)}"
           >
-            Comparar en matriz &rarr;
+            Llevar al comparador &rarr;
           </button>
         </header>
         <h3>${escapeHtml(proposal.headline)}</h3>
@@ -1072,7 +1072,7 @@ function closePartyDrawer() {
   }
 
   if (window.location.hash.startsWith('#perfil/')) {
-    window.history.replaceState(null, '', '#formaciones');
+    window.history.replaceState(null, '', '#partidos');
   }
 
   if (state.lastFocusedTrigger && typeof state.lastFocusedTrigger.focus === 'function') {

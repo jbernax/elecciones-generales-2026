@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elecciones Generales España 2026 | Observatorio Programático</title>
+  <title>Elecciones Generales España 2026 | Comparador de Programas 29N</title>
   <meta
     name="description"
-    content="Observatorio interactivo de programas electorales para España 2026: 17 formaciones políticas, 12 bloques temáticos, PDFs oficiales integrados, contexto fiscal y test de afinidad política."
+    content="Guía electoral interactiva para las Elecciones Generales de España 2026: los 18 partidos y coaliciones, 12 áreas clave, programas en PDF, cuentas públicas y test de afinidad."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,9 +28,9 @@
 
       <nav class="topbar-nav" aria-label="Navegación principal">
         <a href="#panorama">Panorama</a>
-        <a href="#formaciones">Formaciones</a>
+        <a href="#partidos">Partidos</a>
         <a href="#comparador">Comparador</a>
-        <a href="#cuestionario">Test ciudadano</a>
+        <a href="#cuestionario">Test de afinidad</a>
       </nav>
 
       <button
@@ -49,24 +49,24 @@
     <section id="panorama" class="hero-stage">
       <section class="stage-container hero-grid">
         <header class="hero-copy">
-          <span class="kicker">España · Ciclo Electoral 2026 · 17 Formaciones · 12 Áreas</span>
-          <h1 class="hero-display">Programas electorales, frente a los hechos fiscales.</h1>
+          <span class="kicker">España · Elecciones Generales 29N · 18 Partidos y Coaliciones · 12 Temas</span>
+          <h1 class="hero-display">Las promesas del 29N, frente a las cuentas públicas.</h1>
           <p class="hero-lead">
-            Explore en un único entorno el arco parlamentario y extraparlamentario español de 2026,
-            contraste propuestas concretas separando empleo de pensiones y seguridad de inmigración,
-            consulte los PDFs oficiales almacenados en local y evalúe su afinidad real ponderando prioridades.
+            Consulta todos los partidos y coaliciones que concurren a las urnas —y las principales referencias históricas—,
+            compara sus propuestas cara a cara separando empleo de pensiones o seguridad de inmigración,
+            abre los programas oficiales en PDF y calcula tu afinidad real según lo que más te importa.
           </p>
           <menu class="hero-cta-row">
-            <li><a href="#formaciones" class="btn-primary">Explorar 17 formaciones</a></li>
-            <li><a href="#comparador" class="btn-secondary">Abrir comparador por temas</a></li>
-            <li><a href="#cuestionario" class="btn-ghost">Ir al test de 15 preguntas</a></li>
+            <li><a href="#partidos" class="btn-primary">Ver los 18 partidos</a></li>
+            <li><a href="#comparador" class="btn-secondary">Comparar cara a cara</a></li>
+            <li><a href="#cuestionario" class="btn-ghost">Hacer el test de 15 preguntas</a></li>
           </menu>
         </header>
 
         <aside id="hero-fiscal-telemetry" class="hero-telemetry" aria-labelledby="hero-fiscal-heading">
           <header class="telemetry-head">
-            <span class="kicker" id="hero-fiscal-kicker">Contexto fiscal · España 2026</span>
-            <h2 id="hero-fiscal-heading" class="telemetry-title">Restricción presupuestaria de partida</h2>
+            <span class="kicker" id="hero-fiscal-kicker">Cuentas públicas · España 2026</span>
+            <h2 id="hero-fiscal-heading" class="telemetry-title">El margen fiscal de partida</h2>
           </header>
           <dl id="hero-macro-meta" class="launch-meta-grid telemetry-meta-grid"></dl>
           <p id="hero-macro-note" class="telemetry-note"></p>
@@ -74,32 +74,32 @@
       </section>
     </section>
 
-    <section id="formaciones" class="stage-section">
+    <section id="partidos" class="stage-section">
       <section class="stage-container">
         <header class="stage-header">
           <hgroup>
-            <span class="kicker">Mapa del arco político · 6 Bloques ideológicos</span>
-            <h2>Las 17 formaciones y sus programas 2026</h2>
+            <span class="kicker">Mapa político · 6 bloques ideológicos</span>
+            <h2>Los 18 partidos, coaliciones y sus programas para el 29N</h2>
           </hgroup>
           <p>
-            Filtre por bloque ideológico o busque cualquier partido, siglas o medida clave.
-            Cada ficha abre el dosier completo con sus 12 áreas temáticas y acceso al documento PDF local cuando está disponible.
+            Filtra por bloque ideológico o busca cualquier partido, siglas o medida clave.
+            Cada ficha abre su programa completo en 12 temas y da acceso al PDF oficial cuando está disponible.
           </p>
         </header>
 
-        <section class="directory-toolbar" aria-label="Filtros de formaciones">
+        <section class="directory-toolbar" aria-label="Filtros de partidos">
           <ul id="bloc-filter-bar" class="bloc-chip-list" role="list"></ul>
           <label class="search-field" for="party-search-input">
-            <span class="search-label">Filtrar por partido o propuesta</span>
+            <span class="search-label">Buscar partido o propuesta</span>
             <input
               id="party-search-input"
               type="search"
-              placeholder="Ej. vivienda, deuda, PSOE, Sumar, PACMA, IRPF..."
+              placeholder="Ej. Frente Amplio, vivienda, deuda, PSOE, PP, PACMA, IRPF..."
               autocomplete="off"
             />
           </label>
           <output id="parties-counter" class="results-counter tabular" for="party-search-input">
-            17 de 17 formaciones
+            18 de 18 partidos
           </output>
         </section>
 
@@ -111,31 +111,31 @@
       <section class="stage-container">
         <header class="stage-header">
           <hgroup>
-            <span class="kicker">Mesa de trabajo temática · 12 Áreas programáticas</span>
-            <h2>Comparador directo de medidas</h2>
+            <span class="kicker">Cara a cara por temas · 12 áreas clave</span>
+            <h2>Qué propone cada partido</h2>
           </hgroup>
           <p>
-            Seleccione uno de los 12 temas en el panel lateral —incluyendo Empleo, Pensiones, Inmigración y Seguridad desagregados— y ajuste qué formaciones desea contrastar simultáneamente.
+            Elige uno de los 12 temas en el menú lateral —con Empleo, Pensiones, Inmigración y Seguridad por separado— y marca qué partidos quieres comparar a la vez.
           </p>
         </header>
 
         <section class="workbench-shell" aria-label="Comparador interactivo por temas">
           <aside class="workbench-rail">
             <section class="rail-group" aria-label="Selector de tema">
-              <span class="rail-heading">12 Áreas programáticas</span>
+              <span class="rail-heading">12 áreas clave</span>
               <ul id="workbench-topics-list" class="filter-stack" role="list"></ul>
             </section>
 
             <section class="rail-group" aria-label="Selección de partidos">
               <header class="rail-subhead">
-                <span class="rail-heading">Formaciones en matriz</span>
-                <span id="workbench-parties-count" class="tabular rail-counter">5 / 17</span>
+                <span class="rail-heading">Partidos a comparar</span>
+                <span id="workbench-parties-count" class="tabular rail-counter">5 / 18</span>
               </header>
               <menu class="rail-presets">
                 <li><button type="button" class="preset-btn" data-preset="principales">Principales (5)</button></li>
                 <li><button type="button" class="preset-btn" data-preset="izquierda-centro">Izq. y Centro</button></li>
                 <li><button type="button" class="preset-btn" data-preset="derecha-otros">Dcha. y Otros</button></li>
-                <li><button type="button" class="preset-btn" data-preset="todas">Todas (17)</button></li>
+                <li><button type="button" class="preset-btn" data-preset="todas">Todas (18)</button></li>
               </menu>
               <ul id="workbench-parties-toggle-list" class="party-toggle-grid" role="list"></ul>
             </section>
@@ -153,7 +153,7 @@
                 class="view-mode-btn is-active"
                 aria-pressed="true"
               >
-                Fichas comparativas
+                Tarjetas
               </button>
               <button
                 id="comparador-mode-table"
@@ -161,7 +161,7 @@
                 class="view-mode-btn"
                 aria-pressed="false"
               >
-                Tabla sintética
+                Tabla resumen
               </button>
             </section>
 
@@ -175,11 +175,11 @@
       <section class="stage-container">
         <header class="stage-header">
           <hgroup>
-            <span class="kicker">Ponderación por prioridad · Sin preguntas ambiguas</span>
-            <h2>Test ciudadano de afinidad política</h2>
+            <span class="kicker">Con peso por prioridad · Medidas concretas</span>
+            <h2>Test de afinidad electoral</h2>
           </hgroup>
           <p>
-            Responda a las medidas que realmente le importen y asigne su peso en el cálculo (Omitir, Baja, Normal o Alta). La clasificación y el contraste pregunta por pregunta se recalculan al instante en el panel lateral.
+            Marca las medidas que mejor encajan contigo y decide cuánto pesa cada tema (Omitir, Baja, Normal o Alta). El ranking y el desglose punto por punto se actualizan al instante.
           </p>
         </header>
 
@@ -189,10 +189,10 @@
           <aside id="scrolly-scoreboard" class="scrolly-sticky-visual" aria-live="polite">
             <header class="scoreboard-header">
               <span class="kicker">Afinidad en tiempo real</span>
-              <h3 id="scoreboard-headline">Clasificación programática</h3>
+              <h3 id="scoreboard-headline">Ranking de coincidencia</h3>
               <p class="scoreboard-progress-row">
                 <strong id="quiz-answered-count" class="tabular">0 / 15</strong>
-                <span>cuestiones activas ponderadas</span>
+                <span>preguntas valoradas</span>
               </p>
             </header>
 
@@ -211,7 +211,7 @@
 
             <section id="affinity-trace-section" class="affinity-trace-section">
               <header class="trace-header">
-                <h4 id="trace-party-heading">Contraste punto por punto</h4>
+                <h4 id="trace-party-heading">Desglose pregunta a pregunta</h4>
                 <button id="btn-open-trace-party" type="button" class="inline-action-btn" hidden>
                   Abrir programa completo &rarr;
                 </button>
@@ -220,8 +220,8 @@
                 <thead>
                   <tr>
                     <th>Tema</th>
-                    <th>Su elección</th>
-                    <th>Posición</th>
+                    <th>Tu elección</th>
+                    <th>Qué propone</th>
                     <th class="num">Afinidad</th>
                   </tr>
                 </thead>
@@ -243,7 +243,7 @@
   >
     <aside id="party-drawer" class="detail-drawer" tabindex="-1">
       <header class="drawer-topbar">
-        <span id="drawer-kicker" class="kicker">Dosier oficial 2026</span>
+        <span id="drawer-kicker" class="kicker">Programa y ficha 2026</span>
         <button id="btn-close-drawer" type="button" class="btn-close-drawer" aria-label="Cerrar perfil">
           Cerrar [Esc]
         </button>
@@ -253,8 +253,8 @@
   </div>
 
   <footer class="stage-container site-colophon">
-    <span>Observatorio Electoral España 2026 · 17 formaciones · 12 bloques · Sitio estático sin seguimiento</span>
-    <span>Referencias macroeconómicas: Banco de España, AIReF e IGAE (2025-2026) · Documentos en /pdfs</span>
+    <span>Guía Electoral España 2026 · 18 partidos y coaliciones · 12 temas · Sin rastreadores</span>
+    <span>Datos macroeconómicos: Banco de España, AIReF e IGAE (2025-2026) · PDFs en /pdfs</span>
   </footer>
 
   <script type="module" src="./src/app.js"></script>

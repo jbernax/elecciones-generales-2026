@@ -4,9 +4,9 @@
  */
 
 export const SPAIN_FISCAL_STATUS = {
-  title: 'Situación financiera y deuda pública de España (Referencia 2026)',
+  title: 'Las cuentas públicas de España (Referencia 2026)',
   subtitle:
-    'Contexto presupuestario de partida para contrastar la viabilidad de las propuestas de gasto, rebajas fiscales y gestión de la deuda.',
+    'El margen fiscal de partida para medir la viabilidad de las promesas de gasto, bajadas de impuestos y reducción de deuda.',
   updatedLabel: 'Datos y previsiones a noviembre de 2026 (Banco de España y AIReF)',
   metrics: [
     {

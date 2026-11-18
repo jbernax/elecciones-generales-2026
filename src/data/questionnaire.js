@@ -19,9 +19,10 @@ export const QUESTIONS = [
         title: 'Reforma fiscal progresiva intensa sobre fortunas, banca y energéticas',
         description:
           'Impuesto permanente a grandes patrimonios, tipos del 55-60% a rentas muy altas y gravámenes estables a banca y energéticas para ampliar gasto social.',
-        representativeParties: ['podemos', 'iu', 'pce', 'sumar'],
+        representativeParties: ['podemos', 'iu', 'pce', 'frente_amplio', 'sumar'],
         partyWeights: {
-          sumar: 0.9,
+          frente_amplio: 0.95,
+          sumar: 0.95,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -44,10 +45,11 @@ export const QUESTIONS = [
         id: 'opt-fisc-armonizacion-social',
         title: 'Fiscalidad progresiva moderada y armonización entre comunidades',
         description:
-          'Mantener tributos selectivos a banca/energéticas y un suelo mínimo del 15% a multinacionales, evitando competencia fiscal a la baja en Patrimonio y Sucesiones.',
-        representativeParties: ['psoe', 'sumar', 'pacma', 'ucd'],
+          'Mantener tributos selectivos a banca/energéticas y un suelo mínimo del 15%-20% en Sociedades, evitando competencia fiscal a la baja en Patrimonio y Sucesiones.',
+        representativeParties: ['psoe', 'frente_amplio', 'sumar', 'pacma', 'ucd'],
         partyWeights: {
-          sumar: 0.8,
+          frente_amplio: 0.85,
+          sumar: 0.85,
           podemos: 0.6,
           iu: 0.7,
           pce: 0.55,
@@ -70,17 +72,18 @@ export const QUESTIONS = [
         id: 'opt-fisc-auditoria-eficiencia',
         title: 'Auditar primero todo el gasto público y bajar impuestos sin dañar servicios',
         description:
-          'Someter cada programa público a auditoría de eficacia y coste, reducir burocracia a pymes y aliviar la carga fiscal de forma responsable y sostenible.',
+          'Someter cada programa público a auditoría de eficacia y coste, reducir burocracia a pymes («Test PYME») y aliviar la carga fiscal de forma sostenible.',
         representativeParties: ['d21', 'cs', 'upyd', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.15,
           sumar: 0.15,
           podemos: 0.05,
           iu: 0.05,
           pce: 0.0,
           psoe: 0.35,
-          cs: 0.95,
+          cs: 1.0,
           upyd: 0.9,
-          pp: 0.75,
+          pp: 0.8,
           ucd: 0.85,
           vox: 0.4,
           salf: 0.45,
@@ -94,26 +97,27 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-fisc-rebaja-irpf-sucesiones',
-        title: 'Deflactar el IRPF, bajar el IVA energético y suprimir Sucesiones y Patrimonio',
+        title: 'Deflactar el IRPF, eximir a jóvenes primer año y aplicar IVA 0% en alimentos básicos',
         description:
-          'Duplicar mínimos por hijo en IRPF, rebajar IVA de energía al 10% y alimentos al 0%, derogar impuestos a banca/energéticas y suprimir Sucesiones.',
-        representativeParties: ['pp', 'cs'],
+          'Deflactar la tarifa del IRPF, eximir de IRPF al SMI y el primer año a jóvenes (18-35 años), aplicar IVA del 0% a alimentos básicos y rebajar Sucesiones y Patrimonio.',
+        representativeParties: ['pp', 'vox', 'cs'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.0,
           psoe: 0.15,
-          cs: 0.85,
+          cs: 0.75,
           upyd: 0.55,
           pp: 1.0,
           ucd: 0.5,
-          vox: 0.85,
-          salf: 0.7,
+          vox: 0.9,
+          salf: 0.75,
           nn: 0.2,
           fe_jons: 0.1,
           pacma: 0.1,
-          d21: 0.75,
+          d21: 0.65,
           iustitia: 0.7,
           fo: 0.1
         }
@@ -122,9 +126,10 @@ export const QUESTIONS = [
         id: 'opt-fisc-choque-exencion',
         title: 'Exención total del IRPF a rentas medias/bajas o tipo dual bajo y recorte estatal',
         description:
-          'Eximir de IRPF hasta 35.000 euros o fijar un tipo dual reducido (15%-25%), eliminando subvenciones a partidos, sindicatos, patronales y entes autonómicos.',
+          'Eximir de IRPF hasta 35.000 euros o rebajar masivamente tipos directos, eliminando subvenciones a partidos, sindicatos, patronales y entes autonómicos.',
         representativeParties: ['salf', 'vox', 'iustitia'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -158,13 +163,14 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-mod-nacionalizacion-plan',
-        title: 'Nacionalizar banca y energía con planificación democrática estatal',
+        title: 'Banca pública, empresa energética pública y planificación estratégica',
         description:
-          'Crear una banca pública estatal, nacionalizar eléctricas y controlar márgenes de supermercados en productos básicos.',
-        representativeParties: ['pce', 'iu', 'podemos'],
+          'Crear una banca pública estatal, recuperar o nacionalizar sectores energéticos estratégicos y controlar márgenes en productos básicos.',
+        representativeParties: ['pce', 'iu', 'podemos', 'frente_amplio'],
         partyWeights: {
-          sumar: 0.7,
-          podemos: 0.95,
+          frente_amplio: 0.85,
+          sumar: 0.8,
+          podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
           psoe: 0.3,
@@ -189,6 +195,7 @@ export const QUESTIONS = [
           'Nacionalizar sectores estratégicos y aplicar aranceles frente a importaciones extracomunitarias baratas para proteger la industria y crédito nacional.',
         representativeParties: ['fo', 'fe_jons', 'nn'],
         partyWeights: {
+          frente_amplio: 0.3,
           sumar: 0.25,
           podemos: 0.3,
           iu: 0.35,
@@ -213,8 +220,9 @@ export const QUESTIONS = [
         title: 'Economía social de mercado con inversión pública verde y digital',
         description:
           'Colaboración público-privada en reindustrialización tecnológica, fondos europeos y regulación de sectores estratégicos sin nacionalizaciones masivas.',
-        representativeParties: ['psoe', 'sumar', 'pacma', 'ucd'],
+        representativeParties: ['psoe', 'frente_amplio', 'sumar', 'pacma', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.85,
           sumar: 0.85,
           podemos: 0.45,
           iu: 0.5,
@@ -238,9 +246,10 @@ export const QUESTIONS = [
         id: 'opt-mod-libre-mercado-pyme',
         title: 'Desregulación para pymes, unidad de mercado e impulso a la empresa privada',
         description:
-          'Suprimir barreras autonómicas al comercio, agilizar licencias en 24 horas y reducir la presencia empresarial del Estado en favor de la iniciativa privada.',
+          'Suprimir barreras autonómicas al comercio, reducir burocracia con un Test PYME y reducir la presencia empresarial del Estado en favor de la iniciativa privada.',
         representativeParties: ['d21', 'cs', 'pp', 'upyd', 'vox', 'salf', 'iustitia'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
@@ -279,7 +288,8 @@ export const QUESTIONS = [
           'Auditar la deuda para identificar pasivos ilegítimos de rescates financieros, rechazar recortes de austeridad y exigir que el BCE financie inversión social.',
         representativeParties: ['podemos', 'iu', 'pce', 'fo', 'fe_jons', 'nn'],
         partyWeights: {
-          sumar: 0.55,
+          frente_amplio: 0.65,
+          sumar: 0.6,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -300,14 +310,15 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-deu-flexibilizar-reglas-verdes',
-        title: 'Reformar las reglas fiscales europeas para blindar inversión verde y social',
+        title: 'Reformar reglas fiscales europeas, condonar deuda autonómica y blindar inversión verde',
         description:
-          'Mantener la pertenencia al euro pero reformar las reglas fiscales comunitarias para excluir inversiones climáticas y sociales y financiar deuda con fiscalidad progresiva.',
-        representativeParties: ['sumar', 'pacma', 'psoe'],
+          'Reformar las reglas fiscales y la regla de gasto municipal, condonar deuda autonómica contra el dumping fiscal y financiar inversión climática con fiscalidad progresiva.',
+        representativeParties: ['frente_amplio', 'sumar', 'pacma', 'psoe'],
         partyWeights: {
+          frente_amplio: 1.0,
           sumar: 1.0,
           podemos: 0.7,
-          iu: 0.75,
+          iu: 0.85,
           pce: 0.5,
           psoe: 0.75,
           cs: 0.2,
@@ -331,6 +342,7 @@ export const QUESTIONS = [
           'Reducir gradualmente la ratio de deuda y déficit respecto al PIB manteniendo el Estado del bienestar mediante crecimiento económico, fondos UE y tributos a grandes corporaciones.',
         representativeParties: ['psoe', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.55,
           sumar: 0.6,
           podemos: 0.25,
           iu: 0.3,
@@ -357,6 +369,7 @@ export const QUESTIONS = [
           'Prohibir aprobar nuevo gasto sin financiación garantizada, ampliar el control vinculante de la AIReF sobre todas las administraciones y auditar cada gran obra y partida.',
         representativeParties: ['pp', 'd21', 'cs', 'upyd'],
         partyWeights: {
+          frente_amplio: 0.1,
           sumar: 0.1,
           podemos: 0.0,
           iu: 0.0,
@@ -383,6 +396,7 @@ export const QUESTIONS = [
           'Reducir la deuda y el peso de los intereses recortando ministerios, asesores, subvenciones a partidos/sindicatos y entes autonómicos duplicados con auditoría independiente.',
         representativeParties: ['vox', 'salf', 'iustitia', 'upyd'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -416,12 +430,13 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-viv-intervencion-total',
-        title: 'Tope nacional obligatorio al alquiler, veto a fondos y parque público masivo',
+        title: 'Tope al 25% o rebaja legal del 40% al alquiler, veto a fondos y 1,5 M de pisos públicos',
         description:
-          'Limitar el alquiler por ley al 30% del salario, prohibir compra especulativa a fondos/no residentes y movilizar 1,5 millones de pisos de alquiler social.',
-        representativeParties: ['podemos', 'iu', 'pce', 'sumar'],
+          'Limitar el alquiler por ley (25% de renta del hogar o rebaja del 40%), prohibir compra especulativa a fondos, expropiar uso ocioso y levantar 1,5 millones de pisos públicos.',
+        representativeParties: ['frente_amplio', 'podemos', 'iu', 'pce', 'sumar'],
         partyWeights: {
-          sumar: 0.85,
+          frente_amplio: 1.0,
+          sumar: 1.0,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -442,12 +457,13 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-viv-zonas-tensionadas-ico',
-        title: 'Índice de alquiler en zonas tensionadas y préstamos ICO sin intereses',
+        title: 'CASA 47 (100.000 viviendas), zonas tensionadas y préstamos TUCASA de 50.000 €',
         description:
-          'Regular alquileres de temporada y zonas tensionadas con bonificaciones fiscales a propietarios e impulsar préstamos ICO hasta 50.000 euros para jóvenes.',
-        representativeParties: ['psoe', 'sumar', 'pacma'],
+          'Blindar la vivienda en la Constitución, destinar 1% del PIB y CASA 47 a alquiler asequible, regular zonas tensionadas e impulsar préstamos TUCASA hasta 50.000 euros.',
+        representativeParties: ['psoe', 'frente_amplio', 'sumar', 'pacma'],
         partyWeights: {
-          sumar: 0.85,
+          frente_amplio: 0.75,
+          sumar: 0.75,
           podemos: 0.55,
           iu: 0.65,
           pce: 0.45,
@@ -468,12 +484,13 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-viv-jovenes-seguridad',
-        title: 'Cero impuestos de compra a menores de 35 años y fondo europeo de barrios',
+        title: 'Cero impuestos a menores de 35 años, recargo a no residentes y 10.000 M€ UE',
         description:
-          'Eliminar tributos en la primera vivienda joven, movilizar 10.000 millones europeos para vivienda protegida y garantizar seguridad jurídica a diez años.',
+          'Eliminar tributos en la primera vivienda joven (hasta 400.000 €), movilizar 10.000 millones europeos para vivienda asequible y gravar compras especulativas de no residentes.',
         representativeParties: ['d21', 'cs', 'upyd', 'ucd'],
         partyWeights: {
-          sumar: 0.2,
+          frente_amplio: 0.15,
+          sumar: 0.15,
           podemos: 0.05,
           iu: 0.05,
           pce: 0.0,
@@ -494,11 +511,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-viv-suelo-desalojo',
-        title: 'Derogar topes, liberalizar suelo, bajar IVA/ITP y desalojo en 48 horas',
+        title: 'Derogar topes, construir 1M de pisos, bajar IVA/ITP y desalojo en 24-48 horas',
         description:
-          'Construir vivienda liberalizando suelo, reducir impuestos de primera vivienda y reformar la ley para ejecutar desalojos policiales de okupas en 24-48 horas.',
+          'Aumentar oferta liberalizando suelo, reducir al 4% o 0% el IVA en primera vivienda joven y reformar la ley para ejecutar desalojos de okupas en 24-48 horas.',
         representativeParties: ['pp', 'vox', 'iustitia'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -522,10 +540,11 @@ export const QUESTIONS = [
         id: 'opt-viv-veto-extranjeros-desalojo',
         title: 'Prohibir compra a fondos extranjeros, prioridad nacional y mano dura anti-mafias',
         description:
-          'Vetar la compra especulativa de vivienda residencial por fondos extranjeros, priorizar al ciudadano nacional en vivienda social y desalojar en 48 horas.',
+          'Vetar la compra especulativa de vivienda residencial por fondos extranjeros, priorizar al ciudadano nacional en vivienda social y desalojar ocupaciones en 48 horas.',
         representativeParties: ['salf', 'fo', 'nn', 'fe_jons'],
         partyWeights: {
-          sumar: 0.2,
+          frente_amplio: 0.15,
+          sumar: 0.15,
           podemos: 0.25,
           iu: 0.2,
           pce: 0.2,
@@ -554,16 +573,17 @@ export const QUESTIONS = [
     questionText:
       '¿Qué reforma concreta prefiere en regulación laboral, jornada y autónomos?',
     contextNote:
-      'Cada formación prioriza soluciones opuestas: reducción legal obligatoria del tiempo de trabajo, contrato único, tarifa cero o sindicación productiva.',
+      'Cada partido prioriza soluciones opuestas: reducción legal obligatoria del tiempo de trabajo, contrato único, tarifa cero o sindicación productiva.',
     options: [
       {
         id: 'opt-emp-32-horas',
-        title: 'Jornada máxima legal de 32 horas semanales y refuerzo de despido e SMI',
+        title: 'Jornada máxima legal de 30-32 horas semanales y refuerzo de despido e SMI',
         description:
-          'Reducir por ley la semana laboral a 32 horas sin pérdida de sueldo, elevar la indemnización por despido improcedente y reforzar el SMI.',
-        representativeParties: ['podemos', 'iu', 'pce', 'sumar'],
+          'Reducir por ley la semana laboral a 30-32 horas sin pérdida salarial, elevar el SMI (1.800 € o 60% del salario medio) y endurecer la indemnización por despido.',
+        representativeParties: ['podemos', 'frente_amplio', 'iu', 'pce', 'sumar'],
         partyWeights: {
-          sumar: 0.9,
+          frente_amplio: 0.95,
+          sumar: 0.95,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -584,11 +604,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-emp-375-dialogo',
-        title: 'Jornada de 37,5 horas pactada y SMI fijado por ley al 60% del salario medio',
+        title: 'Jornada de 37,5 horas (senda 35 h) y SMI fijado por ley al 60% del salario medio',
         description:
-          'Avanzar hacia las 37,5 horas semanales mediante diálogo social y garantizar por ley el SMI al 60% del salario medio.',
-        representativeParties: ['psoe', 'sumar', 'pacma', 'ucd'],
+          'Implantar la jornada máxima de 37,5 horas semanales rumbo a las 35 horas y garantizar por ley el SMI al 60% del salario medio.',
+        representativeParties: ['psoe', 'frente_amplio', 'sumar', 'pacma', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.9,
           sumar: 0.9,
           podemos: 0.6,
           iu: 0.7,
@@ -610,17 +631,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-emp-contrato-unico',
-        title: 'Contrato único indefinido, mochila austriaca y menos burocracia a pymes',
+        title: 'Alivio regulatorio a pymes, productividad con IA o contrato único',
         description:
-          'Eliminar la dualidad contractual con un contrato único de indemnización creciente, mochila austriaca portátil y reducción de cargas a pymes y autónomos.',
+          'Simplificar obligaciones laborales con transición de 2 años a micropymes, incentivar subidas salariales ligadas a productividad o implantar contrato único.',
         representativeParties: ['cs', 'upyd', 'd21', 'pp', 'salf'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.0,
           psoe: 0.2,
-          cs: 1.0,
+          cs: 0.95,
           upyd: 1.0,
           pp: 0.85,
           ucd: 0.65,
@@ -636,19 +658,20 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-emp-cuota-cero-autonomos',
-        title: 'Suprimir o bonificar a cero la cuota de autónomos y bajar cotizaciones',
+        title: 'Cuota cero o sin IVA <85.000 € a autónomos y bajar cotizaciones',
         description:
-          'Eliminar la cuota fija de autónomos o eximir a quienes ganen por debajo del SMI, reduciendo la cuña fiscal sobre salarios y contratación.',
+          'Suprimir o bonificar a cero la cuota de autónomos, eximir de IVA a quienes facturen <85.000 € y reducir la cuña fiscal sobre salarios y contratación.',
         representativeParties: ['salf', 'vox', 'pp', 'iustitia', 'd21'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.0,
           psoe: 0.1,
-          cs: 0.75,
+          cs: 0.8,
           upyd: 0.55,
-          pp: 0.9,
+          pp: 0.95,
           ucd: 0.35,
           vox: 1.0,
           salf: 1.0,
@@ -667,6 +690,7 @@ export const QUESTIONS = [
           'Proteger el salario del trabajador nacional frente a competencia de mano de obra irregular, endurecer despidos o implantar sindicatos productivos propios.',
         representativeParties: ['fo', 'nn', 'fe_jons', 'vox'],
         partyWeights: {
+          frente_amplio: 0.1,
           sumar: 0.1,
           podemos: 0.15,
           iu: 0.15,
@@ -700,12 +724,13 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-pen-65-pge-minimas',
-        title: 'Jubilación a los 65 años, pensiones mínimas al SMI y financiación vía PGE',
+        title: 'Jubilación a los 63-65 años, pensiones mínimas al SMI y veto a planes privados',
         description:
-          'Revertir la jubilación a los 67 años, equiparar las pensiones mínimas al salario mínimo, financiar la Seguridad Social con impuestos al capital y eliminar ventajas a planes privados.',
-        representativeParties: ['podemos', 'iu', 'pce'],
+          'Recuperar la jubilación ordinaria a los 65 años (o 60-63 en sectores penosos), equiparar pensiones mínimas al SMI y destopar cotizaciones altas.',
+        representativeParties: ['frente_amplio', 'podemos', 'iu', 'pce'],
         partyWeights: {
-          sumar: 0.85,
+          frente_amplio: 1.0,
+          sumar: 1.0,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -726,11 +751,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-pen-blindaje-ipc-hucha',
-        title: 'Blindaje por ley/constitucional del IPC y refuerzo del Fondo de Reserva',
+        title: 'Blindaje constitucional al IPC y refuerzo de ingresos públicos',
         description:
-          'Asegurar la revalorización anual automática según el IPC, fortalecer el Fondo de Reserva mediante cotizaciones e incentivar el retraso voluntario del retiro.',
-        representativeParties: ['psoe', 'sumar', 'pacma', 'ucd'],
+          'Blindar por mandato constitucional las pensiones públicas y su revalorización automática con el IPC, nutriendo el Fondo de Reserva.',
+        representativeParties: ['psoe', 'frente_amplio', 'sumar', 'pacma', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.95,
           sumar: 0.95,
           podemos: 0.7,
           iu: 0.8,
@@ -752,17 +778,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-pen-actuarial-ahorro-mixto',
-        title: 'Cuentas individuales transparentes, caja única y ahorro complementario',
+        title: 'Caja única nacional, Asamblea Ciudadana por las Pensiones y jubilación activa',
         description:
-          'Informar de lo cotizado mediante cuentas nocionales, sostener la caja única vía mayor tasa de empleo e impulsar planes complementarios de empleo y ahorro.',
+          'Blindar la caja única sin fragmentación territorial, incentivar la jubilación activa vía IRPF o consensuar sostenibilidad en una Asamblea Ciudadana.',
         representativeParties: ['pp', 'cs', 'd21', 'upyd'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.0,
           psoe: 0.3,
-          cs: 1.0,
+          cs: 0.95,
           upyd: 1.0,
           pp: 1.0,
           ucd: 0.7,
@@ -771,7 +798,7 @@ export const QUESTIONS = [
           nn: 0.1,
           fe_jons: 0.05,
           pacma: 0.15,
-          d21: 1.0,
+          d21: 0.95,
           iustitia: 0.55,
           fo: 0.1
         }
@@ -783,6 +810,7 @@ export const QUESTIONS = [
           'Auditar las cuentas de la Seguridad Social, eliminar pensiones especiales o vitalicias de cargos públicos y recortar gasto político para sostener las pensiones.',
         representativeParties: ['iustitia', 'salf', 'vox'],
         partyWeights: {
+          frente_amplio: 0.1,
           sumar: 0.1,
           podemos: 0.1,
           iu: 0.1,
@@ -809,6 +837,7 @@ export const QUESTIONS = [
           'Rechazar la inmigración como parche demográfico, recuperar la jubilación a los 65 años (y anticipada por penosidad) y garantizar pensiones mediante natalidad e industria.',
         representativeParties: ['fo', 'fe_jons', 'nn', 'vox'],
         partyWeights: {
+          frente_amplio: 0.15,
           sumar: 0.15,
           podemos: 0.2,
           iu: 0.2,
@@ -844,9 +873,10 @@ export const QUESTIONS = [
         id: 'opt-reg-auditoria-igae',
         title: 'IGAE con inteligencia artificial, juzgados anticorrupción y cese sin PGE',
         description:
-          'Blindar por 6 años al interventor general con cruce de datos por IA, crear juzgados anticorrupción, tipificar el enchufismo y cesar al Gobierno tras un año sin PGE.',
-        representativeParties: ['d21', 'cs'],
+          'Blindar por 6 años al interventor general con cruce de datos por IA, crear juzgados anticorrupción, tipificar el enchufismo y cesar al Gobierno tras prórroga de PGE.',
+        representativeParties: ['d21', 'cs', 'pp'],
         partyWeights: {
+          frente_amplio: 0.35,
           sumar: 0.35,
           podemos: 0.3,
           iu: 0.3,
@@ -854,7 +884,7 @@ export const QUESTIONS = [
           psoe: 0.35,
           cs: 1.0,
           upyd: 0.85,
-          pp: 0.55,
+          pp: 0.7,
           ucd: 0.5,
           vox: 0.45,
           salf: 0.55,
@@ -873,6 +903,7 @@ export const QUESTIONS = [
           'Garantizar constitucionalmente la acusación popular ciudadana, abolir la financiación pública de partidos políticos, suprimir aforamientos y limitar mandatos.',
         representativeParties: ['iustitia', 'upyd', 'fo'],
         partyWeights: {
+          frente_amplio: 0.25,
           sumar: 0.25,
           podemos: 0.3,
           iu: 0.25,
@@ -894,11 +925,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-reg-macrocarcel-penalizacion',
-        title: 'Delitos imprescriptibles, triple devolución, premio al denunciante y macrocárcel',
+        title: 'Delitos imprescriptibles, triple devolución, premio al denunciante y bloqueo de sueldo',
         description:
-          'Imprescriptibilidad de la corrupción, obligación de devolver el triple, 15% de recompensa al alertador, prisión de máxima seguridad y bloqueo de sueldo si incumple.',
+          'Imprescriptibilidad de la corrupción, obligación de devolver el triple, 15% de recompensa al alertador, prisión de máxima seguridad y bloqueo de sueldo hasta 2030 si incumple.',
         representativeParties: ['salf', 'vox', 'nn'],
         partyWeights: {
+          frente_amplio: 0.1,
           sumar: 0.1,
           podemos: 0.15,
           iu: 0.1,
@@ -920,11 +952,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-reg-puertas-giratorias-medios',
-        title: 'Prohibir puertas giratorias, regular lobbies y proteger a informantes',
+        title: 'Prohibir puertas giratorias, transparencia algorítmica y revocación por incumplimiento',
         description:
-          'Vetar durante 10 años el paso de altos cargos a empresas reguladas, crear registro obligatorio de grupos de presión y reforzar oficinas antifraude.',
-        representativeParties: ['podemos', 'sumar', 'iu', 'pce', 'psoe', 'fo'],
+          'Vetar el paso de altos cargos a empresas reguladas, exigir responsabilidad judicial por dolo grave, regular pluralismo mediático/IA y proteger informantes.',
+        representativeParties: ['frente_amplio', 'podemos', 'sumar', 'iu', 'pce', 'psoe', 'fo'],
         partyWeights: {
+          frente_amplio: 1.0,
           sumar: 1.0,
           podemos: 1.0,
           iu: 1.0,
@@ -951,6 +984,7 @@ export const QUESTIONS = [
           'Superar el sistema parlamentario de partidos mediante representación directa a través de familia, municipio y sindicato productivo o revocación directa.',
         representativeParties: ['fe_jons', 'nn'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.05,
           iu: 0.05,
@@ -989,6 +1023,7 @@ export const QUESTIONS = [
           'Que los jueces elijan directamente a los vocales del CGPJ, el Fiscal General pase terna parlamentaria y las listas de partido pasen a ser abiertas.',
         representativeParties: ['d21', 'cs', 'upyd', 'pp'],
         partyWeights: {
+          frente_amplio: 0.2,
           sumar: 0.2,
           podemos: 0.1,
           iu: 0.15,
@@ -1015,6 +1050,7 @@ export const QUESTIONS = [
           'Separar radicalmente Ejecutivo y Legislativo eligiendo al Presidente en urna directa, CGPJ por jueces y decisiones clave por referéndum vinculante.',
         representativeParties: ['iustitia', 'salf'],
         partyWeights: {
+          frente_amplio: 0.15,
           sumar: 0.15,
           podemos: 0.15,
           iu: 0.15,
@@ -1041,7 +1077,8 @@ export const QUESTIONS = [
           'Reformar la Ley Electoral para que cada voto valga exactamente lo mismo en todo el país, eliminando sobrerrepresentación de circunscripciones.',
         representativeParties: ['pacma', 'iu', 'upyd', 'pce'],
         partyWeights: {
-          sumar: 0.65,
+          frente_amplio: 0.75,
+          sumar: 0.75,
           podemos: 0.7,
           iu: 0.95,
           pce: 0.95,
@@ -1064,9 +1101,10 @@ export const QUESTIONS = [
         id: 'opt-jud-desbloqueo-parlamentario',
         title: 'Elección parlamentaria con mayorías de desbloqueo y acceso becado a la judicatura',
         description:
-          'Mantener la legitimidad democrática parlamentaria en la designación del CGPJ evitando bloqueos por minorías y democratizando oposiciones judiciales.',
-        representativeParties: ['psoe', 'sumar', 'podemos', 'iu'],
+          'Mantener la legitimidad democrática parlamentaria en la designación del CGPJ evitando bloqueos tras 2 meses y democratizando oposiciones judiciales.',
+        representativeParties: ['psoe', 'frente_amplio', 'sumar', 'podemos', 'iu'],
         partyWeights: {
+          frente_amplio: 1.0,
           sumar: 1.0,
           podemos: 1.0,
           iu: 0.9,
@@ -1100,12 +1138,13 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-san-100-publica-cartera',
-        title: 'Sanidad 100% pública sin conciertos privados, odontología, salud mental y farmacéutica pública',
+        title: 'Sanidad 100% pública (8% PIB), integración MUFACE, dental y farmacéutica pública',
         description:
-          'Derogar la Ley 15/1997, rescatar concesiones hospitalarias privadas, ampliar cartera dental/psicológica y crear una farmacéutica estatal.',
-        representativeParties: ['podemos', 'iu', 'pce', 'sumar', 'pacma'],
+          'Blindar un suelo del 8% del PIB, revertir externalizaciones e integrar MUFACE, ampliar cartera dental/óptica/auditiva/mental y crear farmacéutica estatal.',
+        representativeParties: ['frente_amplio', 'podemos', 'iu', 'pce', 'sumar', 'pacma'],
         partyWeights: {
-          sumar: 0.95,
+          frente_amplio: 1.0,
+          sumar: 1.0,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -1126,11 +1165,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-san-refuerzo-autonomico',
-        title: 'Refuerzo de atención primaria, más plazas MIR y salud mental en el SNS',
+        title: 'Plan Sonríe dental, salud mental (<30 días) y refuerzo de Atención Primaria',
         description:
-          'Aumentar plazas MIR de familia, financiar planes de choque para listas de espera, reforzar salud mental y limitar nuevas privatizaciones.',
+          'Ampliar plazas MIR de familia, financiar choque contra listas de espera, implantar Plan Sonríe bucodental y limitar nuevas privatizaciones.',
         representativeParties: ['psoe', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.85,
           sumar: 0.85,
           podemos: 0.6,
           iu: 0.7,
@@ -1152,11 +1192,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-san-colaboracion-privada',
-        title: 'Colaboración público-privada, tarjeta única interoperable y dirección profesional',
+        title: 'Pacto sanitario, tarjeta única interoperable y dirección profesional',
         description:
-          'Apoyarse en conciertos privados para reducir listas de espera, unificar la tarjeta e historial clínico digital y seleccionar gerentes por mérito.',
+          'Reducir listas de espera con refuerzo de plantillas y conciertos cuando falte capacidad, unificar la historia clínica y social digital y despolitizar gerencias.',
         representativeParties: ['pp', 'cs', 'd21'],
         partyWeights: {
+          frente_amplio: 0.1,
           sumar: 0.1,
           podemos: 0.0,
           iu: 0.0,
@@ -1178,11 +1219,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-san-centralizada-compras',
-        title: 'Central única de compras, devolución al Estado o plazo máximo de 60 días',
+        title: 'Central única de compras, devolución al Estado y topes de 30-90 días',
         description:
-          'Recentralizar el Sistema Nacional de Salud suprimiendo 17 consejerías, centralizar compras médicas y garantizar plazos máximos de cirugía y sueldos europeos.',
+          'Recentralizar el Sistema Nacional de Salud suprimiendo 17 consejerías, centralizar compras médicas y fijar plazos máximos de 30 días especialista y 90 cirugía.',
         representativeParties: ['vox', 'salf', 'upyd', 'fo', 'fe_jons', 'nn'],
         partyWeights: {
+          frente_amplio: 0.15,
           sumar: 0.15,
           podemos: 0.15,
           iu: 0.15,
@@ -1212,16 +1254,17 @@ export const QUESTIONS = [
     questionText:
       '¿Qué política educativa y lingüística debe regir en colegios y universidades?',
     contextNote:
-      'Contrasta la prioridad exclusiva por la escuela pública y laicidad frente a los conciertos escolares, el cheque escolar o la EBAU única y castellano común.',
+      'Contrasta la prioridad exclusiva por la escuela pública y laicidad frente a los conciertos escolares, el cheque escolar o la prueba común y castellano vehicular.',
     options: [
       {
         id: 'opt-edu-publica-laica-unica',
-        title: 'Supresión de conciertos, escuela pública única y laica, y gratuidad 0-3 años',
+        title: 'Suelo del 7% del PIB, gratuidad de 0 años a universidad y fin de conciertos segregadores',
         description:
-          'Destinar todo el presupuesto público a centros públicos, retirar religión confesional de las aulas, bajar ratios y garantizar becas salario.',
-        representativeParties: ['podemos', 'iu', 'pce', 'pacma', 'sumar'],
+          'Blindar la financiación pública (7% PIB), garantizar gratuidad desde 0-3 años hasta la universidad, reducir horas lectivas y ratios y reforzar becas.',
+        representativeParties: ['frente_amplio', 'podemos', 'iu', 'pce', 'pacma', 'sumar'],
         partyWeights: {
-          sumar: 0.9,
+          frente_amplio: 0.95,
+          sumar: 0.95,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -1247,7 +1290,8 @@ export const QUESTIONS = [
           'Ampliar plazas gratuitas de 0 a 3 años, impulsar la FP dual, mantener conciertos regulados y respetar las competencias lingüísticas autonómicas.',
         representativeParties: ['psoe', 'ucd'],
         partyWeights: {
-          sumar: 0.7,
+          frente_amplio: 0.75,
+          sumar: 0.75,
           podemos: 0.4,
           iu: 0.45,
           pce: 0.3,
@@ -1268,11 +1312,12 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-edu-ebau-unica-bilingue',
-        title: 'EBAU única nacional, libertad de centro concertado y derecho al castellano',
+        title: 'Sustituir la LOMLOE, libertad de centro concertado, tecnología y derecho al castellano',
         description:
-          'Establecer prueba de acceso universitaria idéntica en toda España, proteger la enseñanza concertada y garantizar escolarización en castellano e inglés.',
+          'Reforzar lectura, cálculo y tecnología, prestigiar al docente, proteger conciertos (6 años) y educación especial y garantizar escolarización en castellano e inglés.',
         representativeParties: ['pp', 'cs', 'upyd', 'd21'],
         partyWeights: {
+          frente_amplio: 0.1,
           sumar: 0.1,
           podemos: 0.0,
           iu: 0.0,
@@ -1287,7 +1332,7 @@ export const QUESTIONS = [
           nn: 0.3,
           fe_jons: 0.35,
           pacma: 0.15,
-          d21: 0.9,
+          d21: 0.95,
           iustitia: 0.6,
           fo: 0.4
         }
@@ -1296,9 +1341,10 @@ export const QUESTIONS = [
         id: 'opt-edu-cheque-pin-recentralizada',
         title: 'Cheque escolar universal, ley estatal única y fin de contenidos ideológicos',
         description:
-          'Devolver Educación al Estado central, implantar cheque escolar ("el dinero sigue al alumno"), única lengua vehicular común y autorización parental.',
+          'Devolver Educación al Estado central, implantar cheque escolar («el dinero sigue al alumno»), prohibir móviles en aulas y exigir autorización parental.',
         representativeParties: ['vox', 'salf', 'iustitia', 'nn'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1325,6 +1371,7 @@ export const QUESTIONS = [
           'Devolver Educación al Estado pero suprimiendo conciertos privados para crear una red pública única, laica, exigente y ligada a la industria.',
         representativeParties: ['fo', 'upyd', 'fe_jons'],
         partyWeights: {
+          frente_amplio: 0.35,
           sumar: 0.35,
           podemos: 0.4,
           iu: 0.45,
@@ -1358,11 +1405,12 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-inm-regularizacion-cie',
-        title: 'Regularización extraordinaria, cierre de los CIEs y vías seguras de asilo',
+        title: 'Culminar regularización de 2026, vía estable permanente y refugio garantizado',
         description:
-          'Regularizar a las personas extranjeras que residen en España, cerrar los Centros de Internamiento de Extranjeros y garantizar vías legales de acogida.',
-        representativeParties: ['podemos', 'sumar', 'iu', 'pce', 'pacma'],
+          'Consolidar un procedimiento reglado y permanente de regularización, reforzar oficinas de extranjería, aprobar Ley Antirracismo y rechazar centros externos de retorno.',
+        representativeParties: ['frente_amplio', 'podemos', 'sumar', 'iu', 'pce', 'pacma'],
         partyWeights: {
+          frente_amplio: 1.0,
           sumar: 1.0,
           podemos: 1.0,
           iu: 1.0,
@@ -1376,7 +1424,7 @@ export const QUESTIONS = [
           salf: 0.0,
           nn: 0.0,
           fe_jons: 0.0,
-          pacma: 1.0,
+          pacma: 0.95,
           d21: 0.2,
           iustitia: 0.05,
           fo: 0.05
@@ -1384,17 +1432,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-inm-arraigo-cooperacion',
-        title: 'Migración regular ligada al empleo, arraigo y acuerdos con países de origen',
+        title: 'Migración regular ligada al empleo, fondo de integración y acuerdos de origen',
         description:
-          'Facilitar vías ordenadas de arraigo laboral y formación en sectores deficitarios junto a cooperación económica con países emisores.',
+          'Facilitar vías ordenadas de migración laboral, homologación digital ágil de títulos y fondo de integración junto a cooperación económica con países emisores.',
         representativeParties: ['psoe', 'd21', 'cs', 'ucd'],
         partyWeights: {
-          sumar: 0.55,
+          frente_amplio: 0.6,
+          sumar: 0.6,
           podemos: 0.3,
           iu: 0.4,
           pce: 0.3,
           psoe: 1.0,
-          cs: 0.85,
+          cs: 0.95,
           upyd: 0.75,
           pp: 0.5,
           ucd: 0.9,
@@ -1410,17 +1459,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-inm-origen-multirreincidencia',
-        title: 'Sin regularizaciones masivas, contratos en origen y visados por cualificación',
+        title: 'Vetar regularizaciones masivas, visados por puntos y cupos con retorno',
         description:
-          'Rechazar regularizaciones extraordinarias, exigir contrato previo en país de origen o sistema por puntos y aplicar el pacto europeo de retornos.',
+          'Prohibir regularizaciones indiscriminadas, exigir contrato en origen o visado por puntos, identificar entradas en 7 días y exigir vínculo para la nacionalidad.',
         representativeParties: ['pp', 'upyd', 'cs'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.0,
           psoe: 0.35,
-          cs: 0.9,
+          cs: 0.8,
           upyd: 0.95,
           pp: 1.0,
           ucd: 0.55,
@@ -1429,18 +1479,19 @@ export const QUESTIONS = [
           nn: 0.2,
           fe_jons: 0.35,
           pacma: 0.05,
-          d21: 0.85,
+          d21: 0.8,
           iustitia: 0.65,
           fo: 0.45
         }
       },
       {
         id: 'opt-inm-expulsion-armada',
-        title: 'Expulsión rápida de irregulares y bloqueo a países que no repatríen',
+        title: 'Expulsión rápida de irregulares, Armada en fronteras y bloqueo a terceros países',
         description:
-          'Deportar de forma ágil a inmigrantes en situación irregular o condenados por delito, suspender visados a países no cooperantes y vetar regularizaciones.',
+          'Deportar de forma ágil a inmigrantes en situación irregular o condenados por delito, desplegar la Armada en fronteras y suspender visados a países sin retorno.',
         representativeParties: ['vox', 'salf', 'fo', 'iustitia', 'fe_jons'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1456,17 +1507,18 @@ export const QUESTIONS = [
           fe_jons: 0.95,
           pacma: 0.0,
           d21: 0.2,
-          iustitia: 0.95,
+          iustitia: 1.0,
           fo: 1.0
         }
       },
       {
         id: 'opt-inm-remigracion-etnonacional',
-        title: 'Cierre total a inmigración extracomunitaria y programas de repatriación masiva',
+        title: 'Cierre total a inmigración extracomunitaria y Plan Nacional de Remigración',
         description:
           'Detener por completo la inmigración de fuera de Europa, rechazar el multiculturalismo y ejecutar planes estatales de remigración identitaria.',
         representativeParties: ['nn', 'fe_jons'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1479,7 +1531,7 @@ export const QUESTIONS = [
           vox: 0.6,
           salf: 0.5,
           nn: 1.0,
-          fe_jons: 0.85,
+          fe_jons: 0.95,
           pacma: 0.0,
           d21: 0.0,
           iustitia: 0.35,
@@ -1500,11 +1552,12 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-seg-derogar-mordaza-proximidad',
-        title: 'Derogar la Ley Mordaza, policía de proximidad y prevención social',
+        title: 'Derogar la Ley Mordaza, regular el uso de la fuerza y seguridad preventiva',
         description:
-          'Suprimir los artículos sancionadores de la Ley de Seguridad Ciudadana, potenciar la policía comunitaria y reforzar recursos contra violencia machista y delitos de odio.',
-        representativeParties: ['podemos', 'iu', 'pce', 'sumar', 'pacma'],
+          'Suprimir artículos sancionadores de la Ley de Seguridad Ciudadana, adecuar el uso policial de la fuerza al TEDH y reforzar justicia restaurativa y prevención.',
+        representativeParties: ['frente_amplio', 'podemos', 'iu', 'pce', 'sumar', 'pacma'],
         partyWeights: {
+          frente_amplio: 1.0,
           sumar: 1.0,
           podemos: 1.0,
           iu: 1.0,
@@ -1526,17 +1579,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-seg-plantillas-ciber-viogen',
-        title: 'Ampliar plantillas de Policía y Guardia Civil, ciberseguridad y medios técnicos',
+        title: 'Ampliar plantillas policiales, Mando Único de Ciberseguridad (ANCI) y VioGén',
         description:
-          'Incrementar efectivos y medios contra narcotráfico, ciberdelincuencia y violencia de género manteniendo garantías procesales y respaldo institucional.',
-        representativeParties: ['psoe', 'd21', 'ucd'],
+          'Incrementar efectivos y medios contra narcotráfico, ciberataques (ANCI) y violencia de género manteniendo garantías procesales y respaldo institucional.',
+        representativeParties: ['psoe', 'd21', 'cs', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.45,
           sumar: 0.45,
           podemos: 0.2,
           iu: 0.3,
           pce: 0.15,
           psoe: 1.0,
-          cs: 0.8,
+          cs: 0.95,
           upyd: 0.7,
           pp: 0.65,
           ucd: 0.95,
@@ -1552,17 +1606,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-seg-multirreincidencia-equiparacion',
-        title: 'Agravante penal de multirreincidencia, equiparación salarial y mando estatal',
+        title: 'Agravante penal de multirreincidencia, defensa jurídica policial y mando estatal',
         description:
-          'Endurecer el Código Penal frente a hurtos reiterados y desórdenes graves, equiparar salarios policiales, reconocer profesión de riesgo y despolitizar cúpulas.',
+          'Endurecer el Código Penal frente a hurtos reiterados, narcopisos y desórdenes graves, proteger legalmente a agentes y despolitizar cúpulas policiales.',
         representativeParties: ['pp', 'cs', 'upyd', 'iustitia'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.0,
           psoe: 0.35,
-          cs: 1.0,
+          cs: 0.9,
           upyd: 1.0,
           pp: 1.0,
           ucd: 0.55,
@@ -1583,6 +1638,7 @@ export const QUESTIONS = [
           'Construir prisión de máxima seguridad o ampliar cadena perpetua, reforzar la legítima defensa en el hogar y desplegar a las Fuerzas Armadas en Estrecho, Ceuta y Melilla.',
         representativeParties: ['salf', 'vox', 'fe_jons', 'nn', 'fo'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1616,12 +1672,13 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-est-republica-federal-plurinacional',
-        title: 'República Federal y Plurinacional con derecho a decidir pactado',
+        title: 'República Federal y Plurinacional con reconocimiento territorial',
         description:
-          'Superar la Monarquía mediante referéndum, construir una República federal solidaria y reconocer referéndums pactados y cooficialidad plena.',
-        representativeParties: ['podemos', 'iu', 'pce', 'sumar'],
+          'Avanzar hacia una República federal plurinacional que reconozca la diversidad nacional y lingüística, la autonomía local y el derecho a decidir pactado.',
+        representativeParties: ['frente_amplio', 'podemos', 'iu', 'pce', 'sumar'],
         partyWeights: {
-          sumar: 0.9,
+          frente_amplio: 1.0,
+          sumar: 0.95,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -1647,6 +1704,7 @@ export const QUESTIONS = [
           'Mantener la arquitectura autonómica constitucional mejorando conferencias sectoriales, financiación solidaria y convivencia lingüística sin referéndums secesionistas.',
         representativeParties: ['psoe', 'ucd', 'pacma'],
         partyWeights: {
+          frente_amplio: 0.65,
           sumar: 0.65,
           podemos: 0.25,
           iu: 0.35,
@@ -1668,12 +1726,13 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-est-constitucional-sin-privilegios',
-        title: 'Constitucionalismo común sin cupos asimétricos ni duplicidades provinciales',
+        title: 'Constitucionalismo común sin privilegios bilaterales y unidad de mercado',
         description:
-          'Preservar las autonomías constitucionales eliminando diputaciones duplicadas, garantizando la unidad de mercado y rechazando financiaciones singulares.',
+          'Preservar el Estado autonómico con financiación multilateral sin privilegios, licencias válidas en toda España y Alta Inspección del Estado.',
         representativeParties: ['pp', 'cs', 'd21', 'upyd'],
         partyWeights: {
-          sumar: 0.15,
+          frente_amplio: 0.2,
+          sumar: 0.2,
           podemos: 0.05,
           iu: 0.05,
           pce: 0.0,
@@ -1699,6 +1758,7 @@ export const QUESTIONS = [
           'Revertir la descentralización recuperando competencias esenciales para garantizar igualdad en las 52 provincias y suprimir entes regionales redundantes.',
         representativeParties: ['upyd', 'salf', 'fo', 'iustitia'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1725,6 +1785,7 @@ export const QUESTIONS = [
           'Suprimir las 17 comunidades autónomas y sus parlamentos para instaurar un Estado unitario centralizado e ilegalizar los partidos separatistas.',
         representativeParties: ['vox', 'fe_jons', 'nn', 'fo'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1761,8 +1822,9 @@ export const QUESTIONS = [
         title: 'Transición verde urgente, cierre nuclear, fin de macrogranjas, caza y tauromaquia',
         description:
           'Acelerar el mix 100% renovable, prohibir las macrogranjas industriales, abolir la tauromaquia y la caza deportiva, y proteger estrictamente la fauna silvestre.',
-        representativeParties: ['pacma', 'sumar', 'podemos', 'iu'],
+        representativeParties: ['pacma', 'frente_amplio', 'sumar', 'podemos', 'iu'],
         partyWeights: {
+          frente_amplio: 0.9,
           sumar: 0.9,
           podemos: 0.95,
           iu: 0.9,
@@ -1784,13 +1846,14 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-ene-cierre-nuclear-pacto-verde',
-        title: 'Cierre nuclear programado (2027-2035), renovables y modernización agraria verde',
+        title: 'Cierre nuclear (2027-2035), comercializadora pública con 3h gratis y renovables',
         description:
-          'Mantener el calendario de cierre nuclear, impulsar renovables e hidrógeno verde y cumplir el Pacto Verde Europeo apoyando regadíos sostenibles.',
-        representativeParties: ['psoe', 'sumar', 'iu', 'pce'],
+          'Cumplir el calendario de cierre nuclear, acabar con el sistema marginalista, crear empresa pública eléctrica (3h diarias gratis) e impulsar agroecología y transición verde.',
+        representativeParties: ['frente_amplio', 'psoe', 'sumar', 'iu', 'pce'],
         partyWeights: {
-          sumar: 0.95,
-          podemos: 0.85,
+          frente_amplio: 1.0,
+          sumar: 1.0,
+          podemos: 0.9,
           iu: 0.95,
           pce: 0.9,
           psoe: 1.0,
@@ -1810,17 +1873,18 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-ene-neutralidad-tecnologica-nuclear',
-        title: 'Prórroga de centrales nucleares, renovables eficientes y flexibilizar la PAC',
+        title: 'Prórroga de centrales nucleares, desalación/riego eficiente y flexibilizar la PAC',
         description:
-          'Alargar la vida de los reactores nucleares como respaldo barato, combinar renovables competitivas, ejecutar obras hidráulicas y reducir trabas al campo.',
+          'Alargar la vida de los reactores nucleares, suprimir el impuesto eléctrico del 7%, combinar renovables y desalación eficiente y defender cláusulas espejo al campo.',
         representativeParties: ['pp', 'd21', 'cs', 'upyd', 'ucd'],
         partyWeights: {
+          frente_amplio: 0.05,
           sumar: 0.05,
           podemos: 0.0,
           iu: 0.0,
           pce: 0.05,
           psoe: 0.25,
-          cs: 1.0,
+          cs: 0.85,
           upyd: 1.0,
           pp: 1.0,
           ucd: 0.85,
@@ -1829,7 +1893,7 @@ export const QUESTIONS = [
           nn: 0.35,
           fe_jons: 0.45,
           pacma: 0.05,
-          d21: 1.0,
+          d21: 0.85,
           iustitia: 0.55,
           fo: 0.55
         }
@@ -1841,6 +1905,7 @@ export const QUESTIONS = [
           'Suprimir normativas climáticas europeas que encarecen el campo y la industria, construir o blindar nucleares e imponer aranceles frente a importaciones agrarias.',
         representativeParties: ['vox', 'salf', 'fo', 'iustitia', 'nn', 'fe_jons'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.0,
           iu: 0.0,
@@ -1856,7 +1921,7 @@ export const QUESTIONS = [
           fe_jons: 0.95,
           pacma: 0.0,
           d21: 0.2,
-          iustitia: 0.95,
+          iustitia: 1.0,
           fo: 1.0
         }
       }
@@ -1874,12 +1939,13 @@ export const QUESTIONS = [
     options: [
       {
         id: 'opt-ext-europeismo-otan-2pct',
-        title: 'Europeísmo federalizante, mercado único y cumplimiento del 2% en la OTAN',
+        title: 'Integración europea, pilar europeo y cumplimiento de compromisos en la OTAN',
         description:
-          'Profundizar en la integración fiscal y defensiva de la Unión Europea, impulsar la competitividad y cumplir los compromisos estratégicos en la OTAN.',
+          'Profundizar en la integración tecnológica, financiera y defensiva de la Unión Europea y cumplir los compromisos estratégicos y de defensa en la OTAN.',
         representativeParties: ['psoe', 'pp', 'cs', 'd21', 'upyd', 'ucd'],
         partyWeights: {
-          sumar: 0.35,
+          frente_amplio: 0.25,
+          sumar: 0.25,
           podemos: 0.05,
           iu: 0.05,
           pce: 0.0,
@@ -1900,14 +1966,15 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-ext-europa-social-sin-rearme',
-        title: 'Unión Europea social y pacífica sin escalada militar ni austeridad',
+        title: 'Unión Europea social y pacífica sin escalada militar de la OTAN',
         description:
-          'Permanecer en la UE reformando el Pacto de Estabilidad y el BCE hacia inversión social y verde, rechazando aumentar el gasto militar del 2%.',
-        representativeParties: ['sumar', 'pacma', 'psoe'],
+          'Permanecer en la UE reformando el Pacto de Estabilidad hacia inversión social y verde, rechazando objetivos de gasto militar OTAN y destinando el 0,7% a cooperación.',
+        representativeParties: ['frente_amplio', 'sumar', 'pacma', 'psoe'],
         partyWeights: {
+          frente_amplio: 1.0,
           sumar: 1.0,
           podemos: 0.6,
-          iu: 0.65,
+          iu: 0.8,
           pce: 0.4,
           psoe: 0.6,
           cs: 0.3,
@@ -1926,12 +1993,13 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-ext-no-otan-pacifista',
-        title: 'Salida de la OTAN, cierre de bases estadounidenses y desarme internacional',
+        title: 'Salida de la OTAN, cierre de bases estadounidenses y estatuto de neutralidad',
         description:
-          'Abandonar la alianza militar atlántica y cerrar las bases de Rota y Morón, priorizando el desarme, la cooperación internacional y una Europa de los pueblos.',
+          'Abandonar la alianza militar atlántica y cerrar las bases de Rota y Morón, blindar el «No a la guerra» en la Constitución y priorizar el desarme.',
         representativeParties: ['podemos', 'iu', 'pce'],
         partyWeights: {
-          sumar: 0.5,
+          frente_amplio: 0.65,
+          sumar: 0.55,
           podemos: 1.0,
           iu: 1.0,
           pce: 1.0,
@@ -1957,6 +2025,7 @@ export const QUESTIONS = [
           'Someter las directivas de la UE a la Constitución española, renegociar las condiciones de pertenencia mediante referéndum y aplicar firmeza ante Marruecos.',
         representativeParties: ['vox', 'salf', 'iustitia'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.05,
           iu: 0.05,
@@ -1983,6 +2052,7 @@ export const QUESTIONS = [
           'Abandonar la UE, el euro y la OTAN para recuperar moneda, aranceles y fronteras propias, cerrando bases militares y trazando alianzas propias.',
         representativeParties: ['fo', 'nn', 'fe_jons'],
         partyWeights: {
+          frente_amplio: 0.0,
           sumar: 0.0,
           podemos: 0.35,
           iu: 0.3,

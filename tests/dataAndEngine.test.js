@@ -17,6 +17,7 @@ import {
 } from '../src/engine/affinityEngine.js';
 
 const EXPECTED_ORDER = [
+  { id: 'frente_amplio', shortName: 'Frente Amplio', bloc: 'Izquierda', foundedYear: 2026 },
   { id: 'sumar', shortName: 'Sumar', bloc: 'Izquierda', foundedYear: 2022 },
   { id: 'podemos', shortName: 'Podemos', bloc: 'Izquierda', foundedYear: 2014 },
   { id: 'iu', shortName: 'IU', bloc: 'Izquierda', foundedYear: 1986 },
@@ -36,9 +37,9 @@ const EXPECTED_ORDER = [
   { id: 'fo', shortName: 'FO', bloc: 'Otros', foundedYear: 2018 }
 ];
 
-test('parties roster includes all 17 formations in the exact order and 6 blocs', () => {
+test('parties roster includes all 18 formations in the exact order and 6 blocs', () => {
   assert.equal(BLOCS.length, 6);
-  assert.equal(PARTIES.length, 17);
+  assert.equal(PARTIES.length, 18);
 
   PARTIES.forEach((party, idx) => {
     const expected = EXPECTED_ORDER[idx];
@@ -52,7 +53,7 @@ test('parties roster includes all 17 formations in the exact order and 6 blocs',
   });
 });
 
-test('programs dataset covers all 17 parties across all 12 separated topics (204 entries)', () => {
+test('programs dataset covers all 18 parties across all 12 separated topics (216 entries)', () => {
   assert.equal(TOPICS.length, 12);
   assert.ok(getTopicById('empleo'));
   assert.ok(getTopicById('pensiones'));
@@ -82,11 +83,11 @@ test('programs dataset covers all 17 parties across all 12 separated topics (204
     }
   }
 
-  assert.equal(entryCount, 204);
-  assert.equal(Object.keys(PROGRAMS).length, 17);
+  assert.equal(entryCount, 216);
+  assert.equal(Object.keys(PROGRAMS).length, 18);
 });
 
-test('questionnaire covers all 12 topics with 15 concrete options and full 17-party weight maps', () => {
+test('questionnaire covers all 12 topics with 15 concrete options and full 18-party weight maps', () => {
   assert.equal(QUESTIONS.length, 15);
 
   const coveredTopics = new Set(QUESTIONS.map((q) => q.topicId));
@@ -116,7 +117,7 @@ test('calculateCitizenAffinity handles empty or skipped responses cleanly', () =
   const emptyResult = calculateCitizenAffinity({}, {}, QUESTIONS, PARTIES);
   assert.equal(emptyResult.answeredCount, 0);
   assert.equal(emptyResult.totalWeight, 0);
-  assert.equal(emptyResult.rankedParties.length, 17);
+  assert.equal(emptyResult.rankedParties.length, 18);
   assert.equal(emptyResult.rankedParties[0].scorePercentage, 0);
 
   const skippedResult = calculateCitizenAffinity(
@@ -141,9 +142,10 @@ test('calculateCitizenAffinity ranks matching parties highest when choosing thei
   };
   const d21Summary = calculateCitizenAffinity(d21Answers, {}, QUESTIONS, PARTIES);
   assert.equal(d21Summary.answeredCount, 6);
-  assert.equal(d21Summary.rankedParties[0].partyId, 'd21');
-  assert.equal(d21Summary.rankedParties[0].scorePercentage, 100);
-  assert.equal(d21Summary.rankedParties[0].exactMatchesCount, 6);
+  assert.ok(['d21', 'cs'].includes(d21Summary.rankedParties[0].partyId));
+  const d21Result = d21Summary.rankedParties.find((r) => r.partyId === 'd21');
+  assert.equal(d21Result.scorePercentage, 100);
+  assert.equal(d21Result.exactMatchesCount, 6);
 
   // Select signature concrete measures of Frente Obrero (FO)
   const foAnswers = {
@@ -211,10 +213,15 @@ test('filterParties and buildTopicComparison filter by bloc and search accents c
     ['vox', 'salf', 'nn', 'fe_jons']
   );
 
-  // Accent-insensitive search across programmatic measures
+  // Accent-insensitive search across programmatic measures (IGAE shared by Cs & D21 2026 coalition)
   const igaeMatches = filterParties(PARTIES, PROGRAMS, { query: 'IGAE' });
-  assert.equal(igaeMatches.length, 1);
-  assert.equal(igaeMatches[0].id, 'd21');
+  assert.deepEqual(
+    igaeMatches.map((p) => p.id),
+    ['cs', 'd21']
+  );
+
+  const faMatches = filterParties(PARTIES, PROGRAMS, { query: 'tres horas diarias' });
+  assert.ok(faMatches.some((p) => p.id === 'frente_amplio'));
 
   const macrocarcelMatches = filterParties(PARTIES, PROGRAMS, { query: 'macrocarcel' });
   assert.ok(macrocarcelMatches.some((p) => p.id === 'salf'));
@@ -293,4 +300,39 @@ test('macroeconomic financial status reference and party debt-management proposa
       `Expected explicit debt/deficit management reference in ${party.id} economia entry`
     );
   }
+});
+
+test('Frente Amplio and 2026 program dataset accurately reflect verified 29N-2026 proposals', () => {
+  const fa = getPartyById('frente_amplio');
+  assert.ok(fa);
+  assert.equal(fa.leader, 'Ada Colau');
+  assert.equal(fa.localPdfPath, './pdfs/sumar-frente-amplio-2026.pdf');
+
+  const faHousing = getProposal('frente_amplio', 'vivienda');
+  assert.ok(faHousing.measures.join(' ').includes('25%'));
+  assert.ok(faHousing.measures.join(' ').includes('1,5 millones'));
+
+  const faPensions = getProposal('frente_amplio', 'pensiones');
+  assert.ok(faPensions.measures.join(' ').includes('200 euros'));
+
+  // Ensure stale 2023 Sumar proposal was removed
+  const sumarEcon = getProposal('sumar', 'economia');
+  assert.ok(!sumarEcon.measures.join(' ').includes('herencia universal de 20.000'));
+
+  // Choosing Frente Amplio 2026 concrete measures yields 100% affinity
+  const faAnswers = {
+    'q-economia-deuda': 'opt-deu-flexibilizar-reglas-verdes',
+    'q-vivienda-acceso': 'opt-viv-intervencion-total',
+    'q-pensiones-sistema': 'opt-pen-65-pge-minimas',
+    'q-regeneracion-corrupcion': 'opt-reg-puertas-giratorias-medios',
+    'q-sanidad-gestion': 'opt-san-100-publica-cartera',
+    'q-inmigracion-fronteras': 'opt-inm-regularizacion-cie',
+    'q-modelo-estado': 'opt-est-republica-federal-plurinacional',
+    'q-energia-campo': 'opt-ene-cierre-nuclear-pacto-verde',
+    'q-exterior-ue': 'opt-ext-europa-social-sin-rearme'
+  };
+  const faSummary = calculateCitizenAffinity(faAnswers, {}, QUESTIONS, PARTIES);
+  const faRank = faSummary.rankedParties.find((r) => r.partyId === 'frente_amplio');
+  assert.equal(faRank.scorePercentage, 100);
+  assert.equal(faRank.exactMatchesCount, 9);
 });

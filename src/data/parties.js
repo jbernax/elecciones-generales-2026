@@ -1,6 +1,6 @@
 /**
- * Ideological blocs and the 17 political formations covered in the
- * Elecciones Generales Espana 2026 reference dataset.
+ * Ideological blocs and the 18 political formations covered in the
+ * Elecciones Generales Espana 2026 (29N) reference dataset.
  */
 
 export const BLOCS = [
@@ -14,61 +14,80 @@ export const BLOCS = [
 
 export const PARTIES = [
   {
+    id: 'frente_amplio',
+    shortName: 'Frente Amplio',
+    bloc: 'Izquierda',
+    fullName: 'Frente Amplio (Sumar · IU · Más Madrid · Comuns)',
+    ideology: 'Izquierda progresista, ecosocialista y federal',
+    foundedYear: 2026,
+    foundedLabel: 'coalición 2026',
+    leader: 'Ada Colau',
+    accentColor: '#b91c4c',
+    status: 'En activo (coalición estatal 29N-2026 en 46 circunscripciones + alianzas territoriales)',
+    summary:
+      'Coalición electoral de 2026 que agrupa a Movimiento Sumar, Izquierda Unida, Más Madrid, Comuns y fuerzas aliadas. Propone 1,5 millones de viviendas públicas con el 1% del PIB anual, tope del alquiler al 25% de la renta, jornada de 32 horas, prestación universal de 200 €/mes por menor, tipo mínimo del 20% en Sociedades y una República Federal y Plurinacional.',
+    documentTitle: 'Un programa como una casa — Programa Electoral Frente Amplio 29N-2026',
+    officialWebsite: 'https://frenteamplio.info',
+    programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
+    localPdfPath: './pdfs/sumar-frente-amplio-2026.pdf',
+    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa Electoral Frente Amplio 29N-2026)'
+  },
+  {
     id: 'sumar',
     shortName: 'Sumar',
     bloc: 'Izquierda',
-    fullName: 'Sumar',
+    fullName: 'Movimiento Sumar (integrado en Frente Amplio)',
     ideology: 'Izquierda progresista plural',
     foundedYear: 2022,
     foundedLabel: 'desde 2022',
-    leader: 'Yolanda Díaz / Confluencia progresista',
-    accentColor: '#b91c4c',
-    status: 'En activo (espacio progresista plurinacional, integrado en confluencia Frente Amplio 2026)',
+    leader: 'Dirección colegiada / Integrado en Frente Amplio (Ada Colau)',
+    accentColor: '#a21caf',
+    status: 'En activo (concurre al 29N-2026 integrado en la coalición Frente Amplio)',
     summary:
-      'Plataforma progresista plural centrada en la reducción legal de la jornada laboral, el refuerzo de la fiscalidad a las grandes fortunas, la ampliación del parque público de alquiler social y la descarbonización de la economía.',
-    documentTitle: 'Un programa como una casa (Programa Electoral Frente Amplio / Sumar 2026)',
+      'Partido progresista plurinacional cofundador de la coalición Frente Amplio para el 29N-2026. Centra su aportación programática en la reducción inmediata de jornada a 37,5 horas rumbo a las 32 horas, la democracia económica en las empresas, la prestación universal por crianza de 200 €/mes y el parque público de 1,5 millones de viviendas.',
+    documentTitle: 'Un programa como una casa (Programa Electoral Frente Amplio 29N-2026)',
     officialWebsite: 'https://movimientosumar.es',
     programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
     localPdfPath: './pdfs/sumar-frente-amplio-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Confluencia Frente Amplio 2026)'
+    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa compartido de Frente Amplio 2026)'
   },
   {
     id: 'podemos',
     shortName: 'Podemos',
     bloc: 'Izquierda',
     fullName: 'Podemos',
-    ideology: 'Izquierda populista',
+    ideology: 'Izquierda transformadora y republicana',
     foundedYear: 2014,
     foundedLabel: 'desde 2014',
-    leader: 'Ione Belarra / Irene Montero',
+    leader: 'Irene Montero / Ione Belarra',
     accentColor: '#5b247a',
-    status: 'En activo (candidatura propia en Elecciones Generales 2026)',
+    status: 'En activo (candidatura propia en 41 circunscripciones y confluencias territoriales en 29N-2026)',
     summary:
-      'Formación de izquierda transformadora que propone la intervención pública directa en vivienda, energía y banca, el tope legal de los alquileres y márgenes comerciales, la semana de 32 horas y el rechazo al incremento del gasto militar.',
-    documentTitle: 'Programa Electoral Podemos: Intervención pública y transformación social',
+      'Partido de izquierda transformadora que concurre al 29N-2026 con un programa de 442 medidas: rebaja legal del 40% en los alquileres, jornada laboral de 30 horas semanales, SMI de 1.800 euros, banca pública estatal, tercera República y salida de la OTAN.',
+    documentTitle: 'Así de básico: paz, casa y trabajo — Programa Electoral Podemos 29N-2026 (442 medidas)',
     officialWebsite: 'https://podemos.info',
     programUrl: 'https://podemos.info/programa/',
     localPdfPath: null,
-    localPdfMeta: 'PDF 29N-2026 pendiente de publicación en fuente abierta o protegido por el servidor oficial.'
+    localPdfMeta: 'Programa oficial 29N-2026 (141 páginas · 442 medidas) publicado en el portal oficial podemos.info/programa/.'
   },
   {
     id: 'iu',
     shortName: 'IU',
     bloc: 'Izquierda',
-    fullName: 'Izquierda Unida',
-    ideology: 'Izquierda comunista y ecosocialista',
+    fullName: 'Izquierda Unida (integrada en Frente Amplio)',
+    ideology: 'Izquierda comunista, federal y ecosocialista',
     foundedYear: 1986,
     foundedLabel: 'desde 1986',
-    leader: 'Antonio Maíllo',
+    leader: 'Antonio Maíllo (encabeza 29 listas en Frente Amplio 2026)',
     accentColor: '#a61c1c',
-    status: 'En activo (integrada en la confluencia electoral Frente Amplio 2026)',
+    status: 'En activo (integrada en la coalición Frente Amplio 29N-2026)',
     summary:
-      'Movimiento político y social federal, republicano y ecosocialista. Defiende la creación de 1,5 millones de viviendas públicas, reforma fiscal progresiva sobre capital y patrimonios, jornada de 32 horas, blindaje de lo público y salida de la OTAN.',
-    documentTitle: 'Programa Electoral Frente Amplio / Izquierda Unida 2026',
+      'Movimiento político y social federal, republicano y ecosocialista integrado en Frente Amplio para el 29N-2026. Impulsa dentro de la coalición la banca y energía públicas, la reforma fiscal sobre grandes fortunas y herencias, las 32 horas semanales, los 1,5 millones de viviendas públicas y el rechazo al gasto militar de la OTAN.',
+    documentTitle: 'Un programa como una casa (Programa Electoral Frente Amplio / IU 29N-2026)',
     officialWebsite: 'https://izquierdaunida.org',
     programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
     localPdfPath: './pdfs/sumar-frente-amplio-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa compartido de confluencia 2026)'
+    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa compartido de Frente Amplio 2026)'
   },
   {
     id: 'pce',
@@ -78,16 +97,16 @@ export const PARTIES = [
     ideology: 'Comunismo marxista',
     foundedYear: 1921,
     foundedLabel: 'desde 1921',
-    leader: 'Enrique Santiago',
+    leader: 'Enrique Santiago (candidato en Frente Amplio 2026)',
     accentColor: '#8b0000',
-    status: 'En activo (partido orgánico integrado en Izquierda Unida)',
+    status: 'En activo (partido orgánico integrado en IU y en la coalición Frente Amplio 29N-2026)',
     summary:
-      'Formación marxista centrada en la planificación democrática de la economía, la nacionalización de sectores estratégicos, la construcción de una República federal y solidaria, la derogación íntegra de las reformas laborales regresivas y el antiimperialismo.',
-    documentTitle: 'Programa Estratégico del Partido Comunista de España (PCE)',
+      'Partido marxista integrado orgánicamente en Izquierda Unida y concurrente en 2026 dentro de Frente Amplio. Su corpus estratégico propio defiende la planificación democrática de la economía, la nacionalización de sectores estratégicos, la República federal y solidaria y el antiimperialismo.',
+    documentTitle: 'Programa Estratégico del Partido Comunista de España (febrero 2024)',
     officialWebsite: 'https://pce.es',
     programUrl: 'https://pce.es/media/documents/def._PROGRAMA_ESTRATEGICO_PCE.pdf',
     localPdfPath: './pdfs/pce-programa-estrategico.pdf',
-    localPdfMeta: 'PDF oficial local disponible (28 páginas · 0,8 MB · Programa Estratégico PCE)'
+    localPdfMeta: 'PDF local disponible (28 páginas · documento estratégico de febrero 2024; en el 29N-2026 concurre en Frente Amplio)'
   },
   {
     id: 'psoe',
@@ -99,9 +118,9 @@ export const PARTIES = [
     foundedLabel: 'desde 1879',
     leader: 'Pedro Sánchez',
     accentColor: '#c8102e',
-    status: 'En activo (candidatura estatal 2026)',
+    status: 'En activo (candidatura estatal en las 52 circunscripciones y Senado de Progreso, 29N-2026)',
     summary:
-      'Partido socialdemócrata y europeísta que defiende la consolidación del Estado del bienestar mediante fiscalidad progresiva, la vinculación legal del SMI al 60% del salario medio, la regulación de zonas tensionadas en vivienda y la cohesión territorial.',
+      'Partido socialdemócrata y europeísta que defiende el blindaje constitucional de la vivienda, las pensiones y el aborto, la entidad pública CASA 47 (100.000 viviendas), préstamos TUCASA de 50.000 € sin intereses, jornada de 37,5 horas hacia las 35, Plan Sonríe dental y migración ordenada.',
     documentTitle: 'Programa Electoral PSOE 29N-2026: La fuerza de seguir avanzando',
     officialWebsite: 'https://www.psoe.es',
     programUrl: 'https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf',
@@ -113,20 +132,20 @@ export const PARTIES = [
     id: 'cs',
     shortName: 'Cs',
     bloc: 'Centro',
-    fullName: 'Ciudadanos',
+    fullName: 'Ciudadanos (en coalición Democracia para el Siglo 21)',
     ideology: 'Centro liberal',
     foundedYear: 2006,
     foundedLabel: 'desde 2006',
-    leader: 'Carlos Pérez-Nievas',
+    leader: 'Carlos Pérez-Nievas (coalición Democracia para el Siglo 21)',
     accentColor: '#d95f02',
-    status: 'En activo (coalición Democracia para el Siglo 21 en 2026)',
+    status: 'En activo (concurre en coalición Democracia para el Siglo 21 en Madrid y Barcelona, 29N-2026)',
     summary:
-      'Formación liberal y constitucionalista orientada a las reformas institucionales, listas electorales desbloqueadas, despolitización judicial, reducción de trabas administrativas a pymes y exención fiscal en la primera vivienda para jóvenes.',
-    documentTitle: 'La España que merecemos (Programa coalición Democracia para el Siglo 21)',
+      'Partido liberal y constitucionalista que regresa a las generales de 2026 en coalición con Democracia 21 y UCIN bajo el programa común «La España que merecemos»: limpieza clientelar, listas abiertas, CGPJ elegido por jueces, cero impuestos en primera vivienda a menores de 35 años y apoyo a pymes.',
+    documentTitle: 'La España que merecemos (Programa coalición Democracia para el Siglo 21 · 29N)',
     officialWebsite: 'https://www.ciudadanos-cs.org',
     programUrl: 'https://mi.democracia21.es/docs/programa/programa-democracia21.pdf',
     localPdfPath: './pdfs/d21-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa coalición Democracia para el Siglo 21)'
+    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa coalición Democracia para el Siglo 21 · 2026)'
   },
   {
     id: 'upyd',
@@ -145,7 +164,7 @@ export const PARTIES = [
     officialWebsite: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_Progreso_y_Democracia',
     programUrl: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_Progreso_y_Democracia',
     localPdfPath: null,
-    localPdfMeta: 'Formación histórica sin candidatura ni PDF electoral oficial publicado en 2026.'
+    localPdfMeta: 'Partido histórico sin candidatura ni PDF electoral oficial publicado en 2026.'
   },
   {
     id: 'pp',
@@ -157,9 +176,9 @@ export const PARTIES = [
     foundedLabel: 'desde 1976',
     leader: 'Alberto Núñez Feijóo',
     accentColor: '#00569e',
-    status: 'En activo (candidatura estatal 2026)',
+    status: 'En activo (candidatura estatal en las 52 circunscripciones, 29N-2026)',
     summary:
-      'Formación de centro-derecha liberal-conservadora. Propone rebajas fiscales en IRPF, IVA energético y sucesiones, la derogación de la Ley de Vivienda en favor de mayor oferta y desalojo exprés de okupas, prórroga nuclear y refuerzo institucional.',
+      'Partido de centro-derecha liberal-conservador. Su programa 29N-2026 propone deflactar el IRPF, eximir de IRPF el primer año a jóvenes de 18 a 35 años, IVA 0% en alimentos básicos, exención de IVA a autónomos <85.000 €, construir un millón de viviendas, desalojo judicial en 48 horas y prórroga nuclear.',
     documentTitle: 'La Reconstrucción Nacional: Programa Electoral Partido Popular 29N-2026',
     officialWebsite: 'https://www.pp.es',
     programUrl: 'https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL.pdf',
@@ -183,7 +202,7 @@ export const PARTIES = [
     officialWebsite: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_de_Centro_Democr%C3%A1tico_(Espa%C3%B1a)',
     programUrl: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_de_Centro_Democr%C3%A1tico_(Espa%C3%B1a)',
     localPdfPath: null,
-    localPdfMeta: 'Formación histórica disuelta en 1983; sin PDF oficial de elecciones de 2026.'
+    localPdfMeta: 'Partido histórico disuelto en 1983; sin PDF oficial de elecciones de 2026.'
   },
   {
     id: 'vox',
@@ -195,10 +214,10 @@ export const PARTIES = [
     foundedLabel: 'desde 2013',
     leader: 'Santiago Abascal',
     accentColor: '#4a8f17',
-    status: 'En activo (candidatura estatal 2026)',
+    status: 'En activo (candidatura estatal en las 52 circunscripciones, 29N-2026)',
     summary:
-      'Partido nacional-conservador y soberanista que propone la recentralización de competencias autonómicas, deportaciones y cierre estricto de fronteras, rebajas fiscales con tipo dual, derogación del Pacto Verde Europeo y defensa nuclear.',
-    documentTitle: 'Programa Electoral VOX 29N-2026: Es sentido común',
+      'Partido nacional-conservador que concurre al 29N-2026 con 115 medidas en 13 bloques: prioridad nacional, plan de remigración, militarización de fronteras en Ceuta y Melilla, regla de derogar tres normas por cada nueva, IVA 0% en primera vivienda nueva, cuota cero <SMI, prórroga nuclear y fin del Pacto Verde.',
+    documentTitle: 'Programa Electoral VOX 29N-2026: Es sentido común (115 medidas)',
     officialWebsite: 'https://www.voxespana.es',
     programUrl: 'https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf',
     localPdfPath: null,
@@ -215,9 +234,9 @@ export const PARTIES = [
     foundedLabel: 'desde 2024',
     leader: 'Luis Alvise Pérez',
     accentColor: '#4a3525',
-    status: 'En activo (candidatura estatal 2026)',
+    status: 'En activo (candidatura en 46 circunscripciones al Congreso, 29N-2026)',
     summary:
-      'Formación populista articulada en torno a un contrato electoral de 119 medidas: exención de IRPF hasta 35.000 euros, supresión de la cuota de autónomos, macrocárcel de máxima seguridad, expulsión rápida de inmigrantes irregulares y penas imprescriptibles contra la corrupción.',
+      'Partido articulado en torno a un contrato electoral de 119 medidas y bloqueo íntegro de sueldo hasta junio de 2030: exención de IRPF hasta 35.000 euros, reducción de 22 a 10 ministerios, macrocárcel de máxima seguridad, expulsión rápida de inmigrantes irregulares y topes sanitarios de 30/90 días.',
     documentTitle: 'Contrato Electoral SALF 29N-2026 (119 medidas en 10 bloques)',
     officialWebsite: 'https://seacabolafiesta.com',
     programUrl: 'https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf',
@@ -254,9 +273,9 @@ export const PARTIES = [
     foundedLabel: 'desde 1933',
     leader: 'Norberto Pico',
     accentColor: '#7f1d1d',
-    status: 'En activo (partido minoritario extraparlamentario)',
+    status: 'En activo (partido minoritario extraparlamentario en 29N-2026)',
     summary:
-      'Formación nacionalsindicalista heredera de los principios doctrinales de 1934: Estado unitario sin autonomías, representación orgánica sindical frente al sistema de partidos, nacionalización de la banca y crédito, reforma agraria comunal y defensa de la Hispanidad.',
+      'Partido nacionalsindicalista que presenta programa 29N-2026 en 6 bloques: Plan Nacional de Remigración, Estado unitario orgánico sin autonomías ni partitocracia del 78, nacionalización de la banca y crédito público, vuelta a la jubilación a los 65 años, reforma agraria y alianza con Hispanoamérica.',
     documentTitle: 'Programa Electoral FE de las JONS — Elecciones Generales 29N-2026',
     officialWebsite: 'https://falange.es',
     programUrl:
@@ -274,9 +293,9 @@ export const PARTIES = [
     foundedLabel: 'desde 2003',
     leader: 'Javier Luna',
     accentColor: '#15803d',
-    status: 'En activo (candidatura estatal 2026)',
+    status: 'En activo (candidatura en 30 circunscripciones al Congreso, 29N-2026)',
     summary:
-      'Formación animalista, ecologista y de justicia social que exige la abolición de la tauromaquia y la caza, el fin de las macrogranjas, endurecimiento penal del maltrato animal, transición ecológica urgente y ampliación del alquiler social.',
+      'Partido animalista, ecologista y social que concurre al 29N-2026 proponiendo abolir la tauromaquia y la caza, prohibir las macrogranjas, bajar el IVA veterinario al 4%, blindar las pensiones públicas en la Constitución, fomentar la dieta vegetal y ampliar la vivienda social.',
     documentTitle: 'Programa Electoral PACMA Elecciones Generales 29N-2026',
     officialWebsite: 'https://pacma.es',
     programUrl: 'https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf',
@@ -293,14 +312,14 @@ export const PARTIES = [
     foundedLabel: 'desde 2026',
     leader: 'Miriam González Durántez',
     accentColor: '#0f4c81',
-    status: 'En activo (coalición Democracia para el Siglo 21 en Madrid y Barcelona, 2026)',
+    status: 'En activo (coalición Democracia para el Siglo 21 con Cs y UCIN en Madrid y Barcelona, 29N-2026)',
     summary:
-      'Partido liberal y regeneracionista orientado a superar la polarización de bloques mediante auditorías de eficacia del gasto público, mandato blindado para la IGAE, cese automático si no hay presupuestos, despolitización judicial y alivio fiscal a pymes y menores de 35 años.',
-    documentTitle: 'La España que merecemos: Programa Democracia 21 (2026)',
+      'Partido liberal y regeneracionista que encabeza la coalición Democracia para el Siglo 21 en 2026. Propone recortar el 90% de asesores, blindar la IGAE con IA, cesar al Gobierno tras prórrogas presupuestarias, Asamblea Ciudadana por las Pensiones, cero impuestos en vivienda <35 años y 10.000 M€ europeos para vivienda.',
+    documentTitle: 'La España que merecemos: Programa Democracia para el Siglo 21 (29N-2026)',
     officialWebsite: 'https://democracia21.es',
     programUrl: 'https://mi.democracia21.es/docs/programa/programa-democracia21.pdf',
     localPdfPath: './pdfs/d21-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa 2026)'
+    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa 29N-2026)'
   },
   {
     id: 'iustitia',
@@ -312,10 +331,10 @@ export const PARTIES = [
     foundedLabel: 'desde 2023',
     leader: 'Luis María Pardo',
     accentColor: '#1e3a5f',
-    status: 'En activo (candidatura estatal 2026)',
+    status: 'En activo (candidatura 29N-2026)',
     summary:
-      'Movimiento cívico y jurídico nacido de la acusación popular contra la corrupción. Propone blindar constitucionalmente la acción popular, suprimir subvenciones a partidos, eliminar aforamientos, elegir directamente al Presidente y someter tratados internacionales a soberanía nacional.',
-    documentTitle: 'Contrato Electoral Iustitia Europa: Reinicio moral y regeneración institucional',
+      'Movimiento cívico y jurídico constituido como «antipartido». Su Contrato Electoral propone superar el régimen del 78 mediante reforma constitucional, blindar la acción popular (art. 125 CE), suprimir subvenciones a partidos, elegir directamente al Presidente, un tijeretazo al gasto político y soberanía frente a la UE y la Agenda 2030.',
+    documentTitle: 'Contrato Electoral Iustitia Europa: Reinicio moral y reforma constitucional',
     officialWebsite: 'https://iustitiaeuropa.es',
     programUrl:
       'https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf',
@@ -332,10 +351,10 @@ export const PARTIES = [
     foundedLabel: 'desde 2018',
     leader: 'Roberto Vaquero',
     accentColor: '#881313',
-    status: 'En activo (candidatura estatal en las 52 circunscripciones, 2026)',
+    status: 'En activo (candidatura estatal en las 52 circunscripciones, 29N-2026)',
     summary:
-      'Formación obrerista y soberanista que combina intervención económica estatal (reindustrialización, nacionalización energética y defensa laboral) con un Estado republicano unitario, control estricto de fronteras, salida de la UE y la OTAN y rechazo a las leyes identitarias.',
-    documentTitle: 'Programa Político Frente Obrero 2026: Defendamos España',
+      'Partido obrerista y soberanista presente en las 52 circunscripciones. Propone reindustrialización estatal, nacionalización energética y defensa de la nuclear, prioridad de vivienda pública para españoles autóctonos, República unitaria centralizada, control estricto de inmigración y salida inmediata de la UE y la OTAN.',
+    documentTitle: 'Programa Político Frente Obrero 2026: Un programa para recuperar España',
     officialWebsite: 'https://frenteobrero.es',
     programUrl: 'https://frenteobrero.es/documentos/programa-frente-obrero.pdf',
     localPdfPath: './pdfs/frente-obrero-2026.pdf',
