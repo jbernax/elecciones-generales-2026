@@ -124,9 +124,8 @@ export const PARTIES = [
     documentTitle: 'Programa Electoral PSOE 29N-2026: La fuerza de seguir avanzando',
     officialWebsite: 'https://www.psoe.es',
     programUrl: 'https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf',
-    localPdfPath: null,
-    localPdfMeta:
-      'El servidor del PSOE aplica protección automática anti-bot al enlace directo del PDF; puede abrirlo en su navegador mediante el enlace oficial.'
+    localPdfPath: './pdfs/psoe-2026.pdf',
+    localPdfMeta: 'PDF oficial local disponible (114 páginas · 11,4 MB · Programa Electoral 29N-2026)'
   },
   {
     id: 'cs',
@@ -220,9 +219,8 @@ export const PARTIES = [
     documentTitle: 'Programa Electoral VOX 29N-2026: Es sentido común (115 medidas)',
     officialWebsite: 'https://www.voxespana.es',
     programUrl: 'https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf',
-    localPdfPath: null,
-    localPdfMeta:
-      'El servidor de VOX bloquea descargas automatizadas (HTTP 403); puede consultarlo directamente en su navegador mediante el enlace oficial.'
+    localPdfPath: './pdfs/vox-2026.pdf',
+    localPdfMeta: 'PDF oficial local disponible (66 páginas · 13,9 MB · Programa Electoral 29N-2026)'
   },
   {
     id: 'salf',
@@ -240,9 +238,8 @@ export const PARTIES = [
     documentTitle: 'Contrato Electoral SALF 29N-2026 (119 medidas en 10 bloques)',
     officialWebsite: 'https://seacabolafiesta.com',
     programUrl: 'https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf',
-    localPdfPath: null,
-    localPdfMeta:
-      'El servidor de SALF bloquea descargas automatizadas (HTTP 403); puede abrir el contrato electoral directamente mediante el enlace oficial.'
+    localPdfPath: './pdfs/salf-2026.pdf',
+    localPdfMeta: 'PDF oficial local disponible (40 páginas · 18,2 MB · Contrato Electoral 29N-2026)'
   },
   {
     id: 'nn',
