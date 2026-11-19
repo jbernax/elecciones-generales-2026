@@ -448,7 +448,7 @@ export const QUESTIONS = [
           vox: 0.0,
           salf: 0.25,
           nn: 0.25,
-          fe_jons: 0.55,
+          fe_jons: 0.85,
           pacma: 0.8,
           d21: 0.05,
           iustitia: 0.05,
@@ -511,10 +511,10 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-viv-suelo-desalojo',
-        title: 'Derogar topes, construir 1M de pisos, bajar IVA/ITP y desalojo en 24-48 horas',
+        title: 'Derogar topes, construir 1M de pisos, bajar IVA/ITP/IBI y desalojo en 24-48 horas',
         description:
-          'Aumentar oferta liberalizando suelo, reducir al 4% o 0% el IVA en primera vivienda joven y reformar la ley para ejecutar desalojos de okupas en 24-48 horas.',
-        representativeParties: ['pp', 'vox', 'iustitia'],
+          'Aumentar oferta liberalizando suelo, bajar precios (-35% en primera vivienda, IVA 4% o 0% y fin del IBI) y reformar la ley para ejecutar desalojos de okupas en 24-48 horas.',
+        representativeParties: ['pp', 'vox', 'iustitia', 'salf'],
         partyWeights: {
           frente_amplio: 0.0,
           sumar: 0.0,
@@ -527,7 +527,7 @@ export const QUESTIONS = [
           pp: 1.0,
           ucd: 0.4,
           vox: 1.0,
-          salf: 0.85,
+          salf: 0.95,
           nn: 0.4,
           fe_jons: 0.2,
           pacma: 0.05,
@@ -540,8 +540,8 @@ export const QUESTIONS = [
         id: 'opt-viv-veto-extranjeros-desalojo',
         title: 'Prohibir compra a fondos extranjeros, prioridad nacional y mano dura anti-mafias',
         description:
-          'Vetar la compra especulativa de vivienda residencial por fondos extranjeros, priorizar al ciudadano nacional en vivienda social y desalojar ocupaciones en 48 horas.',
-        representativeParties: ['salf', 'fo', 'nn', 'fe_jons'],
+          'Vetar la compra especulativa de vivienda residencial por fondos o compradores extranjeros, priorizar al ciudadano nacional en vivienda social y desalojar ocupaciones en 48 horas.',
+        representativeParties: ['fo', 'nn', 'fe_jons'],
         partyWeights: {
           frente_amplio: 0.15,
           sumar: 0.15,
@@ -554,9 +554,9 @@ export const QUESTIONS = [
           pp: 0.35,
           ucd: 0.1,
           vox: 0.65,
-          salf: 1.0,
+          salf: 0.75,
           nn: 1.0,
-          fe_jons: 0.9,
+          fe_jons: 0.95,
           pacma: 0.1,
           d21: 0.15,
           iustitia: 0.55,
@@ -753,7 +753,7 @@ export const QUESTIONS = [
         id: 'opt-pen-blindaje-ipc-hucha',
         title: 'Blindaje constitucional al IPC y refuerzo de ingresos públicos',
         description:
-          'Blindar por mandato constitucional las pensiones públicas y su revalorización automática con el IPC, nutriendo el Fondo de Reserva.',
+          'Blindar por mandato constitucional las pensiones públicas actuales y su revalorización automática con el IPC, nutriendo el Fondo de Reserva.',
         representativeParties: ['psoe', 'frente_amplio', 'sumar', 'pacma', 'ucd'],
         partyWeights: {
           frente_amplio: 0.95,
@@ -767,7 +767,7 @@ export const QUESTIONS = [
           pp: 0.4,
           ucd: 0.9,
           vox: 0.15,
-          salf: 0.15,
+          salf: 0.75,
           nn: 0.1,
           fe_jons: 0.25,
           pacma: 0.95,
@@ -778,10 +778,10 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-pen-actuarial-ahorro-mixto',
-        title: 'Caja única nacional, Asamblea Ciudadana por las Pensiones y jubilación activa',
+        title: 'Caja única nacional, cuentas mixtas de ahorro o Asamblea Ciudadana por las Pensiones',
         description:
-          'Blindar la caja única sin fragmentación territorial, incentivar la jubilación activa vía IRPF o consensuar sostenibilidad en una Asamblea Ciudadana.',
-        representativeParties: ['pp', 'cs', 'd21', 'upyd'],
+          'Blindar la caja única sin fragmentación territorial, transitar hacia un modelo mixto con cuentas individuales complementarias o consensuar sostenibilidad en una Asamblea Ciudadana.',
+        representativeParties: ['pp', 'cs', 'd21', 'upyd', 'salf', 'iustitia'],
         partyWeights: {
           frente_amplio: 0.05,
           sumar: 0.05,
@@ -794,12 +794,12 @@ export const QUESTIONS = [
           pp: 1.0,
           ucd: 0.7,
           vox: 0.55,
-          salf: 0.55,
+          salf: 0.95,
           nn: 0.1,
           fe_jons: 0.05,
           pacma: 0.15,
           d21: 0.95,
-          iustitia: 0.55,
+          iustitia: 0.85,
           fo: 0.1
         }
       },
@@ -1045,9 +1045,9 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-jud-eleccion-directa-presidente',
-        title: 'Elección directa del Presidente del Gobierno, referéndums vinculantes y CGPJ judicial',
+        title: 'Elección directa del Presidente, distritos uninominales, reforma/fin del TC y CGPJ judicial',
         description:
-          'Separar radicalmente Ejecutivo y Legislativo eligiendo al Presidente en urna directa, CGPJ por jueces y decisiones clave por referéndum vinculante.',
+          'Separar Ejecutivo y Legislativo eligiendo al Presidente en urna directa, implantar distritos uninominales o suprimir/reformar el TC, CGPJ por jueces y referéndums vinculantes.',
         representativeParties: ['iustitia', 'salf'],
         partyWeights: {
           frente_amplio: 0.15,
@@ -1061,7 +1061,7 @@ export const QUESTIONS = [
           pp: 0.35,
           ucd: 0.15,
           vox: 0.6,
-          salf: 0.9,
+          salf: 0.95,
           nn: 0.3,
           fe_jons: 0.2,
           pacma: 0.35,
@@ -1093,7 +1093,7 @@ export const QUESTIONS = [
           fe_jons: 0.2,
           pacma: 1.0,
           d21: 0.65,
-          iustitia: 0.6,
+          iustitia: 0.15,
           fo: 0.7
         }
       },
@@ -1219,9 +1219,9 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-san-centralizada-compras',
-        title: 'Central única de compras, devolución al Estado y topes de 30-90 días',
+        title: 'Central única de compras, devolución al Estado y topes de 30-60 días',
         description:
-          'Recentralizar el Sistema Nacional de Salud suprimiendo 17 consejerías, centralizar compras médicas y fijar plazos máximos de 30 días especialista y 90 cirugía.',
+          'Recentralizar el Sistema Nacional de Salud suprimiendo 17 consejerías, centralizar compras médicas y fijar plazos máximos de 30 días especialista y 60 cirugía.',
         representativeParties: ['vox', 'salf', 'upyd', 'fo', 'fe_jons', 'nn'],
         partyWeights: {
           frente_amplio: 0.15,
@@ -1753,10 +1753,10 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-est-recentralizacion-competencias',
-        title: 'Devolución de Sanidad, Educación y Justicia al Estado central o República unitaria',
+        title: 'Centralización de competencias, regiones simétricas y supresión de Senado y diputaciones',
         description:
-          'Revertir la descentralización recuperando competencias esenciales para garantizar igualdad en las 52 provincias y suprimir entes regionales redundantes.',
-        representativeParties: ['upyd', 'salf', 'fo', 'iustitia'],
+          'Recuperar Sanidad, Educación o emergencias para garantizar igualdad territorial, instaurar CCAA simétricas o eliminar sobrecostes autonómicos, Senado y diputaciones.',
+        representativeParties: ['upyd', 'salf', 'fo', 'iustitia', 'vox'],
         partyWeights: {
           frente_amplio: 0.0,
           sumar: 0.0,
@@ -1768,22 +1768,22 @@ export const QUESTIONS = [
           upyd: 1.0,
           pp: 0.35,
           ucd: 0.1,
-          vox: 0.8,
+          vox: 0.9,
           salf: 0.95,
           nn: 0.65,
           fe_jons: 0.7,
           pacma: 0.15,
           d21: 0.45,
           iustitia: 0.85,
-          fo: 0.95
+          fo: 1.0
         }
       },
       {
         id: 'opt-est-unitario-abolicion-autonomias',
-        title: 'Estado unitario centralizado con abolición total de parlamentos autonómicos',
+        title: 'Estado unitario centralizado con abolición total de autonomías y parlamentos regionales',
         description:
-          'Suprimir las 17 comunidades autónomas y sus parlamentos para instaurar un Estado unitario centralizado e ilegalizar los partidos separatistas.',
-        representativeParties: ['vox', 'fe_jons', 'nn', 'fo'],
+          'Suprimir de raíz las 17 comunidades autónomas y sus parlamentos para instaurar un Estado unitario centralizado e ilegalizar los partidos separatistas.',
+        representativeParties: ['fe_jons', 'nn'],
         partyWeights: {
           frente_amplio: 0.0,
           sumar: 0.0,
@@ -1795,14 +1795,14 @@ export const QUESTIONS = [
           upyd: 0.3,
           pp: 0.15,
           ucd: 0.0,
-          vox: 1.0,
-          salf: 0.7,
+          vox: 0.6,
+          salf: 0.45,
           nn: 1.0,
           fe_jons: 1.0,
           pacma: 0.0,
           d21: 0.1,
           iustitia: 0.55,
-          fo: 0.85
+          fo: 0.5
         }
       }
     ]
@@ -1900,9 +1900,9 @@ export const QUESTIONS = [
       },
       {
         id: 'opt-ene-derogar-agenda2030',
-        title: 'Derogar Agenda 2030 y Pacto Verde, energía nuclear fuerte y aranceles agrarios',
+        title: 'Derogar Agenda 2030 y Pacto Verde, veto a Mercosur y soberanía energética',
         description:
-          'Suprimir normativas climáticas europeas que encarecen el campo y la industria, construir o blindar nucleares e imponer aranceles frente a importaciones agrarias.',
+          'Suprimir normativas climáticas europeas que encarecen el campo y la industria, vetar Mercosur y recortes de la PAC, defender energía barata (nuclear o gas) y aranceles agrarios.',
         representativeParties: ['vox', 'salf', 'fo', 'iustitia', 'nn', 'fe_jons'],
         partyWeights: {
           frente_amplio: 0.0,
@@ -1916,7 +1916,7 @@ export const QUESTIONS = [
           pp: 0.5,
           ucd: 0.1,
           vox: 1.0,
-          salf: 1.0,
+          salf: 0.95,
           nn: 1.0,
           fe_jons: 0.95,
           pacma: 0.0,

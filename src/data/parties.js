@@ -234,7 +234,7 @@ export const PARTIES = [
     accentColor: '#4a3525',
     status: 'En activo (candidatura en 46 circunscripciones al Congreso, 29N-2026)',
     summary:
-      'Partido articulado en torno a un contrato electoral de 119 medidas y bloqueo íntegro de sueldo hasta junio de 2030: exención de IRPF hasta 35.000 euros, reducción de 22 a 10 ministerios, macrocárcel de máxima seguridad, expulsión rápida de inmigrantes irregulares y topes sanitarios de 30/90 días.',
+      'Partido articulado en torno a un contrato electoral de 119 medidas y bloqueo íntegro de sueldo hasta junio de 2030: 0% IRPF hasta 35.000 €, cuota cero total y para siempre a autónomos, rebaja del 35% en primera vivienda y eliminación del IBI, blindaje constitucional de pensiones actuales con el IPC y cuenta individual del 2% (<45 años), supresión del Tribunal Constitucional y del Senado, expulsión de irregulares en 48h y topes sanitarios de 30 días especialista y 60 días cirugía.',
     documentTitle: 'Contrato Electoral SALF 29N-2026 (119 medidas en 10 bloques)',
     officialWebsite: 'https://seacabolafiesta.com',
     programUrl: 'https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf',
@@ -272,7 +272,7 @@ export const PARTIES = [
     accentColor: '#7f1d1d',
     status: 'En activo (partido minoritario extraparlamentario en 29N-2026)',
     summary:
-      'Partido nacionalsindicalista que presenta programa 29N-2026 en 6 bloques: Plan Nacional de Remigración, Estado unitario orgánico sin autonomías ni partitocracia del 78, nacionalización de la banca y crédito público, vuelta a la jubilación a los 65 años, reforma agraria y alianza con Hispanoamérica.',
+      'Partido nacionalsindicalista con programa 29N-2026 en 23 secciones: Instituto Nacional de la Vivienda con tope de alquiler al 25% e hipotecas ICO al 0% condonables por hijo, prohibición del despido improcedente y de las ETT y la jornada partida, Plan Nacional de Remigración en 3 fases, salida de Schengen e impuesto del 50% a remesas, abolición de la Monarquía y las CCAA y salida del euro, la OTAN y la UE.',
     documentTitle: 'Programa Electoral FE de las JONS — Elecciones Generales 29N-2026',
     officialWebsite: 'https://falange.es',
     programUrl:
@@ -330,7 +330,7 @@ export const PARTIES = [
     accentColor: '#1e3a5f',
     status: 'En activo (candidatura 29N-2026)',
     summary:
-      'Movimiento cívico y jurídico constituido como «antipartido». Su Contrato Electoral propone superar el régimen del 78 mediante reforma constitucional, blindar la acción popular (art. 125 CE), suprimir subvenciones a partidos, elegir directamente al Presidente, un tijeretazo al gasto político y soberanía frente a la UE y la Agenda 2030.',
+      'Movimiento cívico y jurídico constituido como «antipartido». Su Contrato Electoral propone sistema electoral mayoritario de distritos uninominales, elección directa del Ejecutivo, límite de 2 mandatos, blindaje de la acción popular (art. 125 CE), máximo de 7 ministerios, cuota cero de autónomos 4 años, referéndum interno en la Guardia Civil sobre su desmilitarización, terapias naturales en el SNS con IVA 0% y referéndums vinculantes sobre la permanencia en la UE y la OTAN.',
     documentTitle: 'Contrato Electoral Iustitia Europa: Reinicio moral y reforma constitucional',
     officialWebsite: 'https://iustitiaeuropa.es',
     programUrl:
@@ -350,7 +350,7 @@ export const PARTIES = [
     accentColor: '#881313',
     status: 'En activo (candidatura estatal en las 52 circunscripciones, 29N-2026)',
     summary:
-      'Partido obrerista y soberanista presente en las 52 circunscripciones. Propone reindustrialización estatal, nacionalización energética y defensa de la nuclear, prioridad de vivienda pública para españoles autóctonos, República unitaria centralizada, control estricto de inmigración y salida inmediata de la UE y la OTAN.',
+      'Partido obrerista y soberanista presente en las 52 circunscripciones. Propone reindustrialización estatal, nacionalización energética y defensa de la nuclear, prioridad de vivienda pública para españoles autóctonos, simetría autonómica e igualdad fiscal con centralización de Sanidad, Educación y Emergencias hacia una República socialista, control estricto de inmigración y salida de la UE y la OTAN.',
     documentTitle: 'Programa Político Frente Obrero 2026: Un programa para recuperar España',
     officialWebsite: 'https://frenteobrero.es',
     programUrl: 'https://frenteobrero.es/documentos/programa-frente-obrero.pdf',

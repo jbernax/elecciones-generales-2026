@@ -6,40 +6,40 @@
 export const PROGRAMS = {
   frente_amplio: {
     economia: {
-      headline: 'Tipo mínimo del 20% en Sociedades, impuesto a ultrarricos y banca pública',
+      headline: 'Tasa Zucman (3% >50 M€), Sociedades al 20%, banca pública y ayuda energética de 1.000 €',
       summary:
-        'Impulsa una reforma fiscal profunda para que el 1% más rico financie el Estado del bienestar, junto a una banca pública estatal, un fondo soberano renovable y condonación condicionada de deuda.',
+        'Implanta la Tasa Zucman del 3% desde 50 M€, eleva al 1% el impuesto a depósitos bancarios y al 15% la Tasa Google, topa herencias en 10 M€, financia ayudas de 1.000 € y crea banca pública.',
       measures: [
-        'Fijar un tipo mínimo real del 20% en el Impuesto sobre Sociedades y crear un impuesto estatal a las grandes herencias (>1 millón €, marginal 34%), limitando las herencias de ultrarricos a 10 millones € por heredero.',
-        'Implantar un IVA progresivo en suministros básicos (agua, gas y luz) desde el 0% para hogares vulnerables hasta el 21% en mayores consumos y acercar la tributación del capital a la del trabajo.',
-        'Crear una banca pública estatal y un fondo soberano renovable junto a políticas de Estado emprendedor e industria verde.',
-        'Condonar deuda autonómica de forma condicionada a prohibir el dumping fiscal (destinando un 20% a parque público de alquiler) y aliviar la deuda municipal reformando la regla de gasto.'
+        'Implantar la Tasa Zucman (3% desde 50 M€), elevar al 1% el impuesto a depósitos bancarios, fijar Sociedades mínimo del 20% y subir la Tasa Google al 15% junto a una «tasa nube» a centros de datos.',
+        'Gravar herencias desde 1 M€ (marginal 34%), topar herencias de ultrarricos en 10 millones € por heredero y crear una ayuda energética directa de 1.000 € durante 2 años a 1,4M hogares.',
+        'Crear una banca pública estatal, un fondo soberano renovable y un Fondo Soberano Europeo de IA financiado con un impuesto del 50% en acciones a grandes empresas de IA (>200 M€).',
+        'Condonar deuda autonómica condicionada a prohibir el dumping fiscal y aliviar la deuda municipal reformando la regla de gasto.'
       ],
-      sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Caps. 3, 6, 11 y 12)'
+      sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Caps. 3, 6, 11, 12 y 17)'
     },
     vivienda: {
-      headline: '1,5 millones de viviendas públicas (1% PIB/año) y tope de alquiler al 25% de la renta',
+      headline: '1,5 millones de viviendas públicas, tope al 25%, expropiación en 3 fases y cuota 0,45%',
       summary:
-        'Sitúa la vivienda como eje central: inversión del 1% del PIB anual para levantar 1,5 millones de viviendas públicas, topes estrictos al alquiler y fin de la especulación.',
+        'Moviliza el 1% del PIB y una cuota empresarial del 0,45% para 1,5 millones de viviendas públicas, topa alquileres al 25%, expropia en 3 fases a grandes tenedores y adscribe SAREB a Casa 47.',
       measures: [
-        'Invertir el 1% del PIB anual para incorporar 1,5 millones de viviendas públicas en 12 años (125.000/año), mayoritariamente en alquiler asequible.',
-        'Topar por ley el precio del alquiler en zonas tensionadas al menor valor entre el 25% de la renta neta media del hogar por sección censal y el índice regulado, con rebaja adicional del 30% en ciudades >200.000 habitantes o masificadas.',
-        'Prohibir la compra especulativa a personas jurídicas y bancos, expropiar progresivamente el stock residencial de grandes tenedores corporativos y erradicar los desahucios sin alternativa.',
-        'Extinguir en un máximo de 3 años las licencias de pisos turísticos en zonas tensionadas, blindar el artículo 47 CE y auditar la SAREB.'
+        'Invertir el 1% del PIB anual y crear una cotización empresarial del 0,45% (>=50 trabajadores) para incorporar 1,5 millones de viviendas públicas en 12 años destinadas a alquiler asequible.',
+        'Topar por ley el alquiler en zonas tensionadas al menor valor entre el 25% de la renta neta media por sección censal y el índice regulado (con rebaja adicional del 30% en ciudades masificadas).',
+        'Aprobar una Ley de Expropiación en 3 fases (>1.000, >700 y >50 viviendas) a propietarios corporativos, prohibir compra especulativa a personas jurídicas, elevar al 50% el recargo IBI a vivienda vacía y adscribir SAREB a Casa 47.',
+        'Extinguir en 3 años licencias turísticas en zonas tensionadas, reservar el 90%-100% de edificabilidad a vivienda habitual y blindar el artículo 47 CE.'
       ],
       sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Cap. 1: Acabar con la especulación)'
     },
     empleo: {
-      headline: 'Jornada de 32 horas (37,5 h inmediatas), SMI al 60% y democracia en la empresa',
+      headline: 'Jornada de 32 horas (37,5 h ya), reparto del 10% del beneficio, tasa del 30% y fondos Meidner',
       summary:
-        'Plantea reducir el tiempo de trabajo sin merma salarial, blindar el poder adquisitivo del SMI e incorporar a las plantillas en los consejos de administración.',
+        'Reduce la jornada hacia 32 horas, exige repartir el 10% de beneficios en empresas >=50 trabajadores, grava al 30% beneficios no compartidos, crea Fondos Meidner y amplía permisos a 20 semanas.',
       measures: [
-        'Implantar de forma inmediata la jornada de 37,5 horas semanales (35 h en el sector público) con senda legal hacia las 32 horas sin bajada salarial.',
-        'Blindar por ley un Salario Mínimo Interprofesional equivalente al 60% del salario medio neto.',
-        'Llevar la democracia a las empresas con participación de las plantillas en los consejos de administración y reparto obligatorio de beneficios.',
-        'Simplificar trámites a pymes y autónomos, garantizar energía a precios justos e impulsar la economía social.'
+        'Implantar de inmediato las 37,5 horas semanales (35 h públicas) con senda legal hacia las 32 horas sin bajada salarial y ampliar permisos de nacimiento a 20 semanas intransferibles.',
+        'Blindar el SMI en el 60% del salario medio neto con revisión salarial obligatoria según inflación/AENC y prohibir su absorción con complementos.',
+        'Implantar reparto obligatorio del 10% de beneficios en empresas >=50 trabajadores (con prioridad sobre el dividendo), gravar al 30% beneficios no compartidos y crear Fondos Meidner de propiedad obrera.',
+        'Simplificar trámites a pymes y autónomos y garantizar derecho preferente de compra cooperativa de la plantilla ante cierres.'
       ],
-      sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Caps. 4.1, 8 y 13)'
+      sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Caps. 2, 4.1, 8 y 13)'
     },
     pensiones: {
       headline: 'Blindaje constitucional al IPC, vuelta a los 65 años y 200 €/mes por hijo',
@@ -126,14 +126,14 @@ export const PROGRAMS = {
       sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Caps. 9, 11, 12 y 18.1)'
     },
     energia_campo: {
-      headline: '3,5% del PIB en transición verde, 3 horas de luz gratis, cierre nuclear y bienestar animal',
+      headline: '3,5% del PIB verde, 3 horas de luz gratis, cancelación H2Med y cierre nuclear',
       summary:
-        'Dedica el 3,5% del PIB anual a descarbonizar la economía con comercializadora eléctrica pública, tres horas diarias de luz gratuita, fin del sistema marginalista y cierre nuclear.',
+        'Crea comercializadora pública con tres horas diarias de luz gratis, redirige los 7.000 M€ del H2Med a redes eléctricas, cierra nucleares (Almaraz 2027-2028) y apoya la agricultura regenerativa.',
       measures: [
-        'Excluir nuclear e hidroeléctrica del sistema marginalista, crear una comercializadora pública con tres horas diarias de luz gratuita y recuperar redes de distribución.',
-        'Cumplir el calendario de cierre nuclear (Almaraz I y II en 2027-2028) con fondos de transición justa, y dedicar el 3,5% del PIB anual a transición ecológica.',
-        'Alcanzar un 25% de superficie agraria y ganadera ecológica en 2030, apoyar la ganadería extensiva y crear un abono único estatal de transporte.',
-        'Reformar la Ley 7/2023 para incluir plenamente a los perros de caza y trabajo, y endurecer el Código Penal contra el maltrato animal.'
+        'Excluir nuclear e hidroeléctrica del sistema marginalista, crear comercializadora pública con tres horas diarias de luz gratuita solar para todos los hogares y recuperar redes de distribución.',
+        'Cumplir el calendario de cierre nuclear (Almaraz I y II en 2027-2028), retirar fondos públicos al H2Med destinando esos 7.000 M€ a redes y dedicar el 3,5% del PIB anual a transición ecológica.',
+        'Alcanzar un 25% de superficie agraria ecológica en 2030, crear un cuerpo civil climático en apoyo a la agricultura regenerativa y un abono único estatal de transporte.',
+        'Reformar la Ley 7/2023 para incluir plenamente a perros de caza y trabajo y endurecer el Código Penal contra el maltrato animal.'
       ],
       sourceRef: 'Programa Electoral Frente Amplio 29N-2026 (Caps. 5 y 7)'
     },
@@ -153,40 +153,40 @@ export const PROGRAMS = {
 
   sumar: {
     economia: {
-      headline: 'Tipo mínimo del 20% en Sociedades, impuesto a ultrarricos y Estado emprendedor',
+      headline: 'Tasa Zucman (3% >50 M€), Sociedades al 20%, depósitos al 1% y banca pública',
       summary:
-        'Como cofundador de Frente Amplio en 2026, prioriza la reforma fiscal sobre grandes corporaciones y fortunas, IVA progresivo en suministros, banca pública y alivio de deuda territorial.',
+        'Como cofundador de Frente Amplio en 2026, implanta la Tasa Zucman del 3%, sube el impuesto a depósitos bancarios al 1%, topa herencias en 10 M€, financia ayudas de 1.000 € y crea banca pública.',
       measures: [
-        'Fijar un tipo mínimo real del 20% en Sociedades, gravar grandes herencias (>1 M€) y topar herencias de ultrarricos a 10 millones € por heredero.',
-        'Implantar IVA progresivo (0%-21%) en suministros básicos y acercar la tributación del capital a las rentas salariales.',
-        'Impulsar una banca pública estatal y un fondo soberano renovable para reindustrialización verde y soberanía tecnológica.',
+        'Implantar la Tasa Zucman del 3% desde 50 M€, fijar tipo mínimo del 20% en Sociedades, elevar al 1% depósitos bancarios y subir al 15% la Tasa Google más «tasa nube» a centros de datos.',
+        'Gravar grandes herencias (>1 M€), topar herencias en 10 millones € por heredero y transferir una ayuda energética de 1.000 € por hogar durante 2 años a 1,4 millones de familias.',
+        'Impulsar una banca pública estatal, un fondo soberano renovable y un Fondo Soberano Europeo de IA (50% en acciones a grandes empresas de IA >200 M€).',
         'Condonar deuda autonómica condicionada a prohibir dumping fiscal a rentas altas y flexibilizar la regla de gasto municipal.'
       ],
-      sourceRef: 'Programa Electoral Frente Amplio / Sumar 29N-2026 (Caps. 3, 6 y 11)'
+      sourceRef: 'Programa Electoral Frente Amplio / Sumar 29N-2026 (Caps. 3, 6, 11 y 17)'
     },
     vivienda: {
-      headline: '1,5 millones de viviendas públicas (1% PIB/año) y tope al 25% de la renta',
+      headline: '1,5 millones de viviendas públicas, tope 25%, expropiación 3 fases y cuota 0,45%',
       summary:
-        'Reemplaza propuestas anteriores por el plan conjunto 2026: parque público de 1,5 millones de viviendas, alquiler limitado al 25% de la renta y fin de pisos turísticos en 3 años.',
+        'Moviliza 1% PIB más cotización empresarial del 0,45% para 1,5M viviendas públicas, topa alquiler al 25%, expropia en 3 fases a grandes tenedores y adscribe SAREB a Casa 47.',
       measures: [
-        'Invertir el 1% del PIB anual para construir y movilizar 1,5 millones de viviendas públicas en 12 años destinadas a alquiler asequible.',
+        'Invertir el 1% del PIB anual y activar una cotización empresarial del 0,45% para levantar y movilizar 1,5 millones de viviendas públicas en 12 años.',
         'Topar los alquileres al 25% de la renta media por hogar en zonas tensionadas (con rebaja del 30% en ciudades >200.000 hab. o masificadas).',
-        'Prohibir la compra especulativa a personas jurídicas, expropiar progresivamente el stock de grandes tenedores y frenar desahucios sin alternativa.',
-        'Extinguir en 3 años las licencias de pisos turísticos en zonas tensionadas y blindar el artículo 47 de la Constitución.'
+        'Expropiar en 3 fases (>1.000, >700 y >50 inmuebles) el stock de tenedores corporativos, prohibir compra especulativa, fijar recargo IBI del 50% a vacías y adscribir SAREB a Casa 47.',
+        'Extinguir en 3 años las licencias turísticas en zonas tensionadas, reservar 90%-100% edificabilidad a residencia habitual y blindar el art. 47 CE.'
       ],
       sourceRef: 'Programa Electoral Frente Amplio / Sumar 29N-2026 (Cap. 1)'
     },
     empleo: {
-      headline: 'Jornada de 37,5 h inmediata rumbo a 32 h, SMI al 60% y democracia empresarial',
+      headline: 'Jornada de 37,5 h rumbo a 32 h, reparto 10% beneficios, tasa 30% y Fondos Meidner',
       summary:
-        'Eje histórico de Movimiento Sumar en Frente Amplio 2026: reducción legal inmediata de la jornada sin recorte salarial, SMI blindado y cogestión en consejos.',
+        'Combina jornada hacia 32h y permisos de 20 semanas con reparto obligatorio del 10% del beneficio empresarial, recargo del 30% a beneficios no compartidos y Fondos Meidner.',
       measures: [
-        'Implantar de inmediato las 37,5 horas semanales en 2026 (35 h en sector público) avanzando por ley hacia las 32 horas sin bajada salarial.',
-        'Blindar por ley un Salario Mínimo Interprofesional equivalente al 60% del salario medio neto.',
-        'Establecer participación de las plantillas en los consejos de administración y reparto obligatorio de beneficios empresariales.',
+        'Implantar de inmediato las 37,5 horas semanales en 2026 (35 h públicas) avanzando hacia las 32 horas sin bajada salarial y ampliar permisos de nacimiento a 20 semanas.',
+        'Blindar por ley el SMI equivalente al 60% del salario medio neto con revisión salarial obligatoria según IPC/AENC.',
+        'Implantar reparto obligatorio del 10% del beneficio en empresas >=50 empleados, gravamen del 30% a beneficios no compartidos y Fondos Meidner bajo control obrero.',
         'Simplificar trabas a autónomos y pymes garantizando energía a precios justos.'
       ],
-      sourceRef: 'Programa Electoral Frente Amplio / Sumar 29N-2026 (Caps. 4.1, 8 y 13)'
+      sourceRef: 'Programa Electoral Frente Amplio / Sumar 29N-2026 (Caps. 2, 4.1, 8 y 13)'
     },
     pensiones: {
       headline: 'Blindaje constitucional al IPC, jubilación a los 65 años y 200 €/mes por crianza',
@@ -447,38 +447,38 @@ export const PROGRAMS = {
 
   iu: {
     economia: {
-      headline: 'Reforma fiscal al 1% más rico, banca pública, IVA progresivo y alivio de deuda',
+      headline: 'Tasa Zucman (3% >50 M€), Sociedades 20%, banca pública y alivio de deuda',
       summary:
-        'Dentro de Frente Amplio 2026, IU impulsa una reforma fiscal profunda sobre grandes fortunas y sociedades, banca pública, control de precios y condonación de deuda territorial.',
+        'Dentro de Frente Amplio 2026, IU impulsa la Tasa Zucman del 3%, depósitos bancarios al 1%, tope sucesorio en 10 M€, ayudas energéticas de 1.000 € y condonación condicionada de deuda.',
       measures: [
-        'Ejecutar una reforma fiscal progresiva con tipo mínimo real del 20% en Sociedades y gravamen a grandes herencias y patrimonios.',
-        'Crear una banca pública estatal, un fondo soberano renovable y empresas públicas en sectores estratégicos.',
-        'Implantar IVA progresivo (0%-21%) en suministros básicos e intervenir márgenes abusivos en bienes esenciales.',
+        'Aplicar la Tasa Zucman (3% desde 50 M€), Sociedades mínimo del 20%, impuesto estatal del 1% a depósitos bancarios y Tasa Google al 15% más «tasa nube».',
+        'Gravar grandes herencias (>1 M€, tope en 10 millones € por heredero) y transferir ayuda energética directa de 1.000 € durante 2 años a 1,4M hogares vulnerables.',
+        'Crear banca pública estatal, fondo soberano renovable y Fondo Soberano Europeo de IA (50% en acciones >200 M€).',
         'Condonar deuda autonómica condicionada a prohibir bajadas fiscales a rentas altas y aliviar la deuda de los ayuntamientos.'
       ],
-      sourceRef: 'Programa Electoral Frente Amplio / Izquierda Unida 29N-2026'
+      sourceRef: 'Programa Electoral Frente Amplio / Izquierda Unida 29N-2026 (Caps. 3, 6, 11 y 17)'
     },
     vivienda: {
-      headline: '1,5 millones de viviendas públicas (1% PIB/año), tope del 25% y expropiación',
+      headline: '1,5M viviendas públicas, cuota 0,45%, tope 25% y expropiación en 3 fases',
       summary:
-        'Reclama en el programa conjunto 2026 la movilización del 1% del PIB anual para 1,5 millones de viviendas públicas y límites obligatorios al alquiler.',
+        'Reclama el 1% del PIB y cuota empresarial del 0,45% para 1,5M viviendas públicas, expropiación en 3 fases a corporaciones y adscripción de SAREB a Casa 47.',
       measures: [
-        'Construir y movilizar 1,5 millones de viviendas públicas en 12 años destinadas a alquiler social permanente.',
-        'Topar los alquileres al 25% de la renta neta del hogar en zonas tensionadas con rebaja adicional en urbes masificadas.',
-        'Expropiar progresivamente el stock residencial de grandes tenedores corporativos y prohibir compra especulativa a personas jurídicas.',
-        'Paralizar todo desahucio sin alternativa habitacional y extinguir pisos turísticos en zonas tensionadas en 3 años.'
+        'Construir y movilizar 1,5 millones de viviendas públicas en 12 años (1% PIB + cuota empresarial del 0,45% desde 50 empleados) destinadas a alquiler social.',
+        'Topar los alquileres al 25% de la renta neta en zonas tensionadas con rebaja del 30% en urbes masificadas.',
+        'Expropiar en 3 fases (>1.000, >700 y >50 pisos) el stock corporativo, vetar compra especulativa, aplicar recargo IBI del 50% y adscribir SAREB a Casa 47.',
+        'Paralizar desahucios sin alternativa y extinguir pisos turísticos en zonas tensionadas en 3 años.'
       ],
       sourceRef: 'Programa Electoral Frente Amplio / Izquierda Unida 29N-2026: Vivienda'
     },
     empleo: {
-      headline: 'Jornada de 32 horas (37,5 h ya), SMI al 60% y democracia en las empresas',
+      headline: 'Jornada de 32 h, reparto 10% beneficios, tasa 30% y Fondos Meidner',
       summary:
-        'Impulsa la reducción inmediata de jornada hacia las 32 horas semanales, la mejora del SMI y la participación obrera en la gestión empresarial.',
+        'Impulsa la jornada hacia 32h, permisos de 20 semanas, reparto del 10% de beneficios en empresas >=50 trabajadores, recargo del 30% a beneficios no compartidos y Fondos Meidner.',
       measures: [
-        'Implantar las 37,5 horas semanales en 2026 (35 h en empleo público) con horizonte legal de 32 horas sin pérdida salarial.',
-        'Blindar el Salario Mínimo Interprofesional equivalente al 60% del salario medio neto.',
-        'Incorporar representación de las plantillas en los consejos de administración y reparto obligatorio de beneficios.',
-        'Reforzar la negociación colectiva, la Inspección de Trabajo y la indemnización disuasoria por despido.'
+        'Implantar las 37,5 horas semanales en 2026 (35 h empleo público) rumbo a 32 horas sin pérdida salarial y ampliar permisos de nacimiento a 20 semanas.',
+        'Blindar el SMI equivalente al 60% del salario medio neto y cláusulas salariales obligatorias en convenios.',
+        'Instaurar reparto obligatorio del 10% de beneficios en empresas >=50 empleados, gravamen del 30% a beneficios no compartidos y Fondos Meidner obreros.',
+        'Reforzar la negociación colectiva, la Inspección de Trabajo y el derecho preferente de compra cooperativa.'
       ],
       sourceRef: 'Programa Electoral Frente Amplio / Izquierda Unida 29N-2026: Trabajo'
     },
@@ -594,188 +594,187 @@ export const PROGRAMS = {
 
   pce: {
     economia: {
-      headline: 'Planificación democrática, nacionalización estratégica y propiedad pública',
+      headline: 'Planificación democrática, nacionalización estratégica, auditoría de deuda y salida del euro',
       summary:
-        'Plantea superar el dominio de los monopolios privados mediante la nacionalización de sectores clave y la planificación económica al servicio del trabajo.',
+        'Su Programa Estratégico (feb. 2024) combina nacionalización de sectores clave, reforma fiscal progresiva y auditoría de deuda hacia la ruptura con las reglas del euro y transición al socialismo.',
       measures: [
-        'Nacionalizar sectores estratégicos: energía, banca, telecomunicaciones y transporte ferroviario y aéreo.',
-        'Implantar una planificación democrática de la economía orientada a la reindustrialización y el empleo estable.',
-        'Establecer una reforma fiscal radical que grave el gran capital, el patrimonio y los beneficios empresariales.',
-        'Controlar por ley los precios de bienes básicos y servicios esenciales frente a la inflación.',
-        'Ejecutar una auditoría integral y suspensión de pagos sobre la deuda considerada ilegítima frente a acreedores financieros y reglas del euro.'
+        'Nacionalizar sectores estratégicos (energía, banca, telecomunicaciones y transporte) bajo planificación democrática y control obrero (Sec. II-III).',
+        'Revertir la precariedad salarial —denunciando que un tercio de asalariados cobra <1.300 € brutos— e impulsar en Frente Amplio 2026 una fiscalidad sobre grandes fortunas y capital.',
+        'Ejecutar una auditoría integral de la deuda pública y romper con las imposiciones de austeridad de los tratados de la UE y el euro (Sec. V, p. 23).',
+        'Combatir la «uberización» y controlar precios básicos mientras se acumulan fuerzas hacia el socialismo (Fase 1-3).'
       ],
-      sourceRef: 'Programa Estratégico del PCE (febrero 2024; concurre en Frente Amplio 2026)'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Secs. I-V, pp. 11-23) y Frente Amplio 29N-2026'
     },
     vivienda: {
-      headline: 'Expropiación de viviendas vacías de fondos y parque público permanente',
+      headline: 'Desmercantilización residencial, tope de alquileres y parque público en Frente Amplio',
       summary:
-        'Concibe la vivienda como un bien social incompatible con la especulación financiera, defendiendo la intervención total del parque ocioso.',
+        'Combate los fondos buitre y la especulación inmobiliaria integrando en su propuesta programática para 2026 las medidas de vivienda pública e intervención de Frente Amplio.',
       measures: [
-        'Expropiar las viviendas vacías acumuladas por la banca rescatada y los fondos buitre.',
-        'Crear un parque público estatal y municipal permanente de alquiler social limitado al 15% del salario.',
-        'Prohibir por ley todo desahucio de primera residencia sin alternativa habitacional digna.',
-        'Regular todos los precios del alquiler y prohibir la conversión de vivienda residencial en alojamiento turístico.'
+        'Desmercantilizar la vivienda prohibiendo la especulación financiera de grandes tenedores y fondos sobre el parque residencial (Sec. II).',
+        'Impulsar en coalición (Frente Amplio 29N-2026) topes de alquiler en zonas tensionadas, prohibición de desahucios sin alternativa y movilización de viviendas vacías hacia un parque público permanente.',
+        'Combatir la turistificación abusiva que expulsa a la clase trabajadora de barrios y municipios.',
+        'Garantizar el derecho constitucional efectivo a la vivienda mediante propiedad pública y alquiler social.'
       ],
-      sourceRef: 'Propuestas de Vivienda del PCE'
+      sourceRef: 'Programa Estratégico del PCE (Sec. II-III) y coalición Frente Amplio 29N-2026'
     },
     empleo: {
-      headline: 'Jornada de 32 horas, pleno empleo garantizado y fin de subcontratas abusivas',
+      headline: 'Reducción de jornada, subida salarial frente a <1.300 € y fin de la uberización',
       summary:
-        'Propone la reducción drástica de la jornada laboral, el trabajo garantizado desde el sector público y la recuperación integral de derechos laborales.',
+        'Sitúa la lucha salarial y sindical en el centro de la Fase 1 de acumulación de fuerzas contra la precariedad, las ETTs y la uberización de la economía.',
       measures: [
-        'Implantar la jornada laboral de 32 horas semanales sin pérdida de poder adquisitivo ni flexibilidad patronal.',
-        'Crear un plan de trabajo garantizado en servicios públicos, industria, cuidados y transición ecológica.',
-        'Derogar todas las reformas laborales regresivas y prohibir las empresas de trabajo temporal y subcontratas abusivas.',
-        'Reforzar la negociación colectiva sectorial y la capacidad sancionadora de la Inspección de Trabajo.'
+        'Impulsar subidas salariales y reducción de jornada sin pérdida salarial (en Frente Amplio 2026) frente a una estructura donde un tercio de asalariados percibe menos de 1.300 € brutos.',
+        'Combatir la «uberización», falsos autónomos, subcontratas abusivas y empresas de trabajo temporal reforzando convenios sectoriales e Inspección de Trabajo.',
+        'Reindustrializar el país mediante planificación pública y empleo estable en industria, cuidados y transición ecosocialista.',
+        'Fortalecer la organización sindical y los derechos de huelga y negociación colectiva en todos los centros de trabajo.'
       ],
-      sourceRef: 'Programa Laboral y Sindical del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Sec. I-III) y Frente Amplio 29N-2026'
     },
     pensiones: {
-      headline: 'Pensiones 100% públicas financiadas por PGE y jubilación a los 60-65 años',
+      headline: 'Blindaje del reparto público solidario, jubilación anticipada y apoyo vía PGE',
       summary:
-        'Reivindica un sistema público de reparto blindado con cargo a los Presupuestos Generales y la rebaja de la edad de jubilación.',
+        'Defiende el sistema público de reparto financiado solidariamente con cargo fiscal al capital, rechazando fondos privados de pensiones y el retraso de la jubilación.',
       measures: [
-        'Financiar las pensiones públicas también vía Presupuestos Generales del Estado mediante fiscalidad al capital.',
-        'Fijar la edad ordinaria de jubilación en los 65 años, con reducción a los 60 años en profesiones penosas o de riesgo.',
-        'Revalorizar todas las pensiones por encima del IPC real y prohibir la privatización mediante fondos de empleo.',
-        'Equiparar la pensión mínima con el salario mínimo garantizado.'
+        'Blindar las pensiones públicas como derecho garantizado mediante reparto solidario y financiación complementaria con cargo a los Presupuestos Generales del Estado.',
+        'Oponerse a la privatización a través de planes privados de empleo y defender la jubilación anticipada en sectores penosos o de riesgo.',
+        'Garantizar la revalorización vinculada al coste real de la vida y reforzar las pensiones mínimas y no contributivas.',
+        'Vincular la sostenibilidad del sistema público a empleo estable, subida salarial e incremento de cotizaciones al capital.'
       ],
-      sourceRef: 'Sistema Público de Pensiones en las Tesis del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024) y Frente Amplio 29N-2026'
     },
     regeneracion_justicia: {
-      headline: 'Proceso constituyente, justicia popular y fin de privilegios institucionales',
+      headline: 'Ruptura Democrática, proceso constituyente y Tercera República',
       summary:
-        'Propugna la apertura de un proceso constituyente republicano que democratice los tribunales, el sistema electoral y las instituciones del Estado.',
+        'Plantea en la Fase 2 del Programa Estratégico abrir un proceso constituyente hacia una Tercera República democrática, feminista, ecológica, plurinacional y antiimperialista.',
       measures: [
-        'Abrir un proceso constituyente democrático que someta a control ciudadano todos los poderes del Estado.',
-        'Reformar el sistema electoral para lograr representación proporcional estricta en todo el país.',
-        'Suprimir aforamientos, leyes mordaza y organismos heredados sin control democrático.',
-        'Garantizar la transparencia absoluta del patrimonio de cargos públicos y financiación de partidos.'
+        'Abrir un proceso constituyente y de Ruptura Democrática frente al régimen del 78 para instaurar la Tercera República.',
+        'Democratizar el poder judicial, suprimir aforamientos y derogar leyes represivas de la protesta laboral y social.',
+        'Reformar el sistema electoral hacia una proporcionalidad estricta que elimine sesgos bipartidistas.',
+        'Combatir la corrupción estructural atacando la connivencia entre poderes económicos oligopólicos y aparato institucional.'
       ],
-      sourceRef: 'Documentos Políticos del PCE sobre Democracia y Estado'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Fase 2: Ruptura Democrática)'
     },
     sanidad: {
-      headline: 'Sistema Nacional de Salud único, 100% público y de gestión directa',
+      headline: 'Sistema Nacional de Salud 100% público, desprivatización y farmacéutica pública',
       summary:
-        'Exige la desprivatización completa de hospitales, centros y servicios auxiliares, además de la nacionalización de la industria farmacéutica.',
+        'Sitúa la defensa de la sanidad pública universal contra las privatizaciones en el núcleo de la acumulación de fuerzas, reclamando reversión de conciertos y farmacéutica estatal.',
       measures: [
-        'Nacionalizar los hospitales privados concertados y prohibir todo lucro empresarial en la salud.',
-        'Crear una industria farmacéutica estatal que produzca medicamentos y vacunas sin patentes especulativas.',
-        'Integrar toda la atención sociosanitaria, dental, psicológica y geriátrica en la red pública.',
-        'Incrementar las plantillas fijas y eliminar la temporalidad en el Sistema Nacional de Salud.'
+        'Revertir privatizaciones, conciertos y externalizaciones hospitalarias devolviendo toda la red a gestión pública directa (Sec. II-III).',
+        'Crear una industria farmacéutica estatal que produzca medicamentos estratégicos sin lucro especulativo.',
+        'Integrar plenamente salud mental, atención bucodental, fisioterapia y cuidados sociosanitarios en el SNS.',
+        'Estabilizar plantillas y reforzar la Atención Primaria con financiación suficiente.'
       ],
-      sourceRef: 'Sanidad Pública en las Tesis del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Servicios Públicos) y Frente Amplio 29N-2026'
     },
     educacion: {
-      headline: 'Escuela pública única y laica, supresión de conciertos y acceso universal',
+      headline: 'Red educativa 100% pública y laica contra privatizaciones y desigualdad de clase',
       summary:
-        'Defiende la integración progresiva de la enseñanza concertada en la red pública única, gratuita y laica.',
+        'Defiende una enseñanza pública, gratuita y laica de 0 años a la universidad que elimine progresivamente los conciertos privados y garantice igualdad de oportunidades.',
       measures: [
-        'Eliminar los conciertos educativos e integrar los centros privados sostenidos con fondos públicos en la red pública.',
-        'Garantizar gratuidad total desde el ciclo de 0 a 3 años hasta el doctorado universitario.',
-        'Suprimir la enseñanza confesional religiosa de todos los centros escolares.',
-        'Garantizar becas salario para que ningún estudiante abandone los estudios por motivos económicos.'
+        'Frenar las privatizaciones educativas eliminando progresivamente los conciertos para volcar el presupuesto en la red pública única.',
+        'Garantizar la laicidad escolar excluyendo la enseñanza confesional religiosa de la escuela pública.',
+        'Asegurar la gratuidad real desde 0-3 años hasta los estudios universitarios con sistema público de becas.',
+        'Integrar valores feministas, democráticos y ecosocialistas en un currículo científico y crítico.'
       ],
-      sourceRef: 'Educación Pública y Laica del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024) y Frente Amplio 29N-2026'
     },
     inmigracion: {
-      headline: 'Solidaridad internacionalista de clase, papeles para todos y fin de CIEs',
+      headline: 'Solidaridad de clase internacionalista, regularización y cierre de los CIEs',
       summary:
-        'Rechaza la criminalización de la población migrante, defendiendo derechos laborales plenos como garantía frente a la explotación patronal.',
+        'Enfoca la migración desde la solidaridad obrera internacionalista: exige derogar la Ley de Extranjería, regularizar derechos y combatir la explotación patronal.',
       measures: [
-        'Derogar la Ley de Extranjería y conceder residencia y permisos de trabajo plenos a todas las personas migrantes.',
-        'Cerrar todos los Centros de Internamiento de Extranjeros y poner fin a las políticas de frontera de la UE.',
-        'Perseguir penalmente a las empresas que exploten mano de obra sin papeles para rebajar salarios.',
-        'Garantizar la igualdad de derechos políticos, sindicales y sociales de toda la clase trabajadora residente.'
+        'Derogar la Ley de Extranjería y cerrar los Centros de Internamiento de Extranjeros (CIEs), garantizando derechos laborales y ciudadanos plenos.',
+        'Poner fin a las políticas fronterizas represivas de la Unión Europea y abrir vías legales y seguras.',
+        'Perseguir penalmente a las empresas que utilizan la irregularidad administrativa para sobreexplotar a trabajadores migrantes y devaluar salarios.',
+        'Asegurar igualdad sindical, política y de acceso a servicios públicos a toda la población residente.'
       ],
-      sourceRef: 'Programa del PCE sobre Migración y Clase Trabajadora'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Derechos y Clase Trabajadora)'
     },
     seguridad: {
-      headline: 'Derogación de leyes represivas y desmilitarización del orden público',
+      headline: 'Derogación de leyes represivas, libertades democráticas y enfoque de derechos',
       summary:
-        'Exige eliminar normas que limitan la acción sindical y social, desmilitarizar cuerpos policiales y perseguir delitos económicos y fascismo.',
+        'Exige derogar normas que criminalizan el derecho de huelga y la protesta social, desmilitarizar el orden público y perseguir delitos económicos y de odio.',
       measures: [
-        'Derogar íntegramente la Ley de Seguridad Ciudadana y eliminar la criminalización del derecho de huelga y piquetes.',
-        'Suprimir el carácter militar de la Guardia Civil avanzando hacia cuerpos policiales civiles unificados.',
-        'Perseguir de oficio el fraude fiscal, los delitos contra los derechos de los trabajadores y los delitos de odio.',
-        'Orientar el sistema penitenciario a la reeducación y reinserción social eliminando la prisión permanente revisable.'
+        'Derogar íntegramente la Ley de Seguridad Ciudadana y eliminar obstáculos penales al ejercicio de la huelga y piquetes.',
+        'Suprimir el carácter militar de la Guardia Civil avanzando hacia un modelo policial estrictamente civil y democrático.',
+        'Perseguir de oficio el fraude fiscal, los delitos laborales patronales y los delitos de odio y racismo.',
+        'Orientar el sistema penitenciario hacia la reinserción derogando la prisión permanente revisable.'
       ],
-      sourceRef: 'Derechos Democráticos y Seguridad — PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Libertades Democráticas)'
     },
     modelo_estado: {
-      headline: 'República Federal, Plurinacional y Solidaria con derecho de autodeterminación',
+      headline: 'Tercera República Federal, Plurinacional y Solidaria en proceso constituyente',
       summary:
-        'Defiende la superación de la Monarquía y la construcción de una República federal basada en la libre adhesión de los pueblos.',
+        'Propone superar la Monarquía mediante una República federal, feminista, ecológica, plurinacional y antiimperialista basada en la libre adhesión de los pueblos.',
       measures: [
-        'Proclamar una República Federal y Solidaria mediante referéndum constituyente.',
-        'Reconocer el derecho de autodeterminación de las naciones del Estado en el marco de una unión federal libre.',
-        'Garantizar la igualdad fiscal y redistributiva entre todos los territorios del Estado.',
-        'Abolir privilegios dinásticos y democratizar la Jefatura del Estado.'
+        'Instaurar una Tercera República de modelo federal, plurinacional, solidaria, feminista y ecológica mediante proceso constituyente (Fase 2).',
+        'Reconocer el carácter plurinacional y el derecho de libre autodeterminación en el seno de una República federal.',
+        'Garantizar la igualdad solidaria de derechos y recursos entre todos los territorios frente al dumping fiscal.',
+        'Abolir la Monarquía y democratizar íntegramente la Jefatura del Estado.'
       ],
-      sourceRef: 'Tesis sobre el Modelo de Estado del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Secs. I-V: República Federal)'
     },
     energia_campo: {
-      headline: 'Nacionalización energética, reforma agraria y transición ecológica pública',
+      headline: 'Transición ecosocialista pública contra oligopolios energéticos y especulación rural',
       summary:
-        'Propone una transición ecológica dirigida por el Estado que evite la quiebra del campo familiar y la pobreza energética.',
+        'Propone arrebatar el control energético a los oligopolios mediante empresa pública, transición ecosocialista planificada y defensa del campesinado frente a distribuidoras.',
       measures: [
-        'Nacionalizar las grandes compañías eléctricas e hidroeléctricas creando una red energética estatal.',
-        'Impulsar una reforma agraria social que proteja a pequeños agricultores frente a grandes cadenas distribuidoras.',
-        'Sustituir la energía nuclear y los combustibles fósiles por renovables planificadas sin expolio rural.',
-        'Garantizar suministro básico de luz, agua y gas como derecho humano inalienable.'
+        'Nacionalizar las grandes compañías eléctricas e hidroeléctricas creando una empresa pública energética bajo control social.',
+        'Ejecutar una transición ecosocialista planificada que combata la pobreza energética y el oligopolio eléctrico (Sec. III).',
+        'Defender al pequeño agricultor y al medio rural frente a macroproyectos extractivos y grandes cadenas de distribución.',
+        'Impulsar movilidad ferroviaria pública y sustitución ordenada de combustibles fósiles y energía nuclear.'
       ],
-      sourceRef: 'Plan Ecosocialista del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Sec. III: Transición Ecosocialista)'
     },
     exterior_ue: {
-      headline: 'Ruptura con la OTAN, desmantelamiento de bases y soberanía frente al euro',
+      headline: 'Movimiento por la Paz, salida de la OTAN y ruptura con la UE neoliberal',
       summary:
-        'Defiende una política exterior antiimperialista, salida inmediata de la OTAN y superación de los tratados neoliberales de la UE.',
+        'Reivindica «del No a la UE al Sí a otra Europa» (p. 23): rompe con tratados neoliberales y el euro, exige salir de la OTAN e impulsa un Movimiento por la Paz antiimperialista.',
       measures: [
-        'Salida unilateral de España de la OTAN y cierre inmediato de las bases militares estadounidenses.',
-        'Rechazar los tratados europeos que imponen austeridad, privatizaciones y rearme militar.',
-        'Construir una política exterior no alineada basada en el derecho internacional y el desarme nuclear.',
-        'Establecer relaciones comerciales soberanas y justas con América Latina, el Magreb y el Sur Global.'
+        'Romper con la Unión Europea neoliberal y el euro para construir una integración europea horizontal, cooperativa y solidaria («del No a la UE al Sí a otra Europa», p. 23).',
+        'Impulsar un Movimiento por la Paz antiimperialista con salida de España de la OTAN y cierre de bases militares estadounidenses.',
+        'Oponerse a la escalada belicista, al rearme europeo y al sometimiento diplomático a bloques militares.',
+        'Practicar la solidaridad internacionalista con el pueblo saharaui, Palestina y relaciones soberanas con el Sur Global.'
       ],
-      sourceRef: 'Política Internacional Antiimperialista del PCE'
+      sourceRef: 'Programa Estratégico del PCE (feb. 2024, Sec. V, pp. 22-23)'
     }
   },
 
   psoe: {
     economia: {
-      headline: 'Fiscalidad a grandes tecnológicas y fortunas, consolidación y reglas europeas',
+      headline: 'Progresividad del capital (hasta 35%), Tasa Tobin 0,4%, crédito fiscal por hijo y deuda',
       summary:
-        'Su programa 29N-2026 («La fuerza de seguir avanzando») refuerza la tributación sobre grandes patrimonios, tecnológicas y empresas con brechas salariales altas manteniendo la senda fiscal europea.',
+        'Su programa 29N-2026 («La fuerza de seguir avanzando») refuerza la tributación de capital (>300.000 € al 35%), duplica la Tasa Tobin al 0,4%, reembolsa deducciones por hijo a 2M de hogares y asume deuda autonómica.',
       measures: [
-        'Introducir figuras impositivas específicas sobre grandes patrimonios, grandes tecnológicas y empresas cotizadas con mayores brechas salariales.',
-        'Consolidar gravámenes permanentes a banca y grandes fortunas y el mínimo del 15% en Sociedades para multinacionales.',
-        'Impulsar la digitalización productiva, apoyo a pymes y regulación ética de la inteligencia artificial frente a monopolios digitales.',
-        'Mantener la senda gradual de reducción del déficit bajo el 3% y de la deuda pública conforme a las reglas fiscales europeas.'
+        'Elevar la progresividad de las rentas del capital más altas hasta el 35% (>300.000 €), duplicar la Tasa Tobin del 0,2% al 0,4% y gravar grandes patrimonios y tecnológicas (c. 130, 135, 457).',
+        'Convertir el mínimo exento por descendiente en el IRPF en un crédito fiscal reembolsable para 2 millones de hogares y exonerar al SMI (c. 134).',
+        'Asumir parcialmente 83.000 M€ de deuda autonómica y consolidar el mínimo global del 15% en Sociedades junto al Régimen 20 empresarial (c. 5, 231).',
+        'Mantener la reducción gradual del déficit bajo el 3% y de la deuda pública conforme a las reglas fiscales europeas.'
       ],
-      sourceRef: 'Programa Electoral PSOE 29N-2026: La fuerza de seguir avanzando'
+      sourceRef: 'Programa Electoral PSOE 29N-2026: La fuerza de seguir avanzando (c. 5, 130-135, 231, 457)'
     },
     vivienda: {
-      headline: 'Derecho constitucional, CASA 47 (100.000 viviendas), TUCASA (50.000 €) y 1% del PIB',
+      headline: 'Derecho constitucional, CASA 47, TUCASA (50.000 €), 1% PIB e impuesto a fondos buitre',
       summary:
-        'Eleva la vivienda a derecho constitucional exigible, moviliza el 1% del PIB anual, consolida la entidad CASA 47 y crea préstamos TUCASA sin intereses de hasta 50.000 €.',
+        'Reforma la Constitución para hacer exigible la vivienda, moviliza el 1% del PIB anual y 25.000 M€ ICO, consolida CASA 47, crea préstamos TUCASA y grava solares ociosos y fondos buitre.',
       measures: [
-        'Reformar la Constitución para reconocer la vivienda digna como derecho fundamental exigible.',
-        'Movilizar anualmente el 1% del PIB en vivienda y destinar el 1% de cada licitación de obra pública estatal a vivienda protegida.',
-        'Consolidar la Entidad Estatal de Vivienda (CASA 47) con 100.000 viviendas de protección permanente y presión fiscal contra viviendas vacías de grandes tenedores.',
-        'Desplegar el programa TUCASA con préstamos públicos sin intereses de hasta 50.000 € para jóvenes en la entrada de su primera vivienda.'
+        'Reformar la Constitución para hacer de la vivienda un derecho exigible y destinar el 1% del PIB anual más el 1% de obra pública estatal (c. 37-41).',
+        'Consolidar CASA 47 para que la vivienda pública sea al menos el 25% de la nueva construcción, gravar solares ociosos y congelar temporalmente rentas abusivas (c. 41, 53, 62).',
+        'Desplegar TUCASA (10.000 M€ en préstamos de hasta 50.000 € sin intereses), más de 25.000 M€ vía ICO y 4.700 M€ del Plan Social del Clima (c. 55-56, 67).',
+        'Aprobar un impuesto progresivo contra la especulación de fondos buitre y grandes propietarios y permitir tasa municipal a pisos turísticos (c. 70, 73).'
       ],
-      sourceRef: 'Programa Electoral PSOE 29N-2026: Bloque de Vivienda'
+      sourceRef: 'Programa Electoral PSOE 29N-2026: Bloque de Vivienda (c. 37-73)'
     },
     empleo: {
-      headline: 'Jornada legal de 37,5 horas (senda 35 h), SMI al 60% y apoyo a pymes',
+      headline: 'Jornada legal de 37,5 h (senda 35 h), SMI >60% blindado y límite a parcialidad',
       summary:
-        'Se compromete a completar por ley la jornada máxima de 37,5 horas semanales, incentivar en convenios el avance hacia 35 horas y proteger el poder adquisitivo del SMI.',
+        'Completa la jornada legal de 37,5 horas incentivando avanzar a 35 horas, blinda por ley el SMI por encima del 60% del salario medio y frena la parcialidad involuntaria.',
       measures: [
-        'Completar por ley la reducción de la jornada ordinaria máxima a 37,5 horas semanales sin pérdida salarial.',
-        'Incentivar en la negociación colectiva el avance progresivo hacia las 35 horas semanales con adaptación para pymes.',
-        'Seguir elevando el Salario Mínimo Interprofesional en consonancia con el coste de la vida (60% del salario medio).',
-        'Consolidar la estabilidad contractual, los permisos de conciliación (19 semanas) y la digitalización de autónomos y pymes.'
+        'Completar por ley la reducción de jornada ordinaria a 37,5 horas semanales e incentivar en negociación colectiva el avance hacia las 35 horas (c. 108).',
+        'Blindar por ley el SMI por encima del 60% del salario medio según precios y productividad (c. 87).',
+        'Reformar el contrato a tiempo parcial: si supera el 80% de la jornada ordinaria pasará a considerarse contrato a jornada completa (c. 123).',
+        'Actualizar el Estatuto del Trabajo Autónomo en conciliación, cese de actividad y prevención de riesgos laborales.'
       ],
-      sourceRef: 'Programa Electoral PSOE 29N-2026: Empleo y Conciliación'
+      sourceRef: 'Programa Electoral PSOE 29N-2026: Empleo y Conciliación (c. 87, 108, 123)'
     },
     pensiones: {
       headline: 'Blindaje constitucional al IPC y sostenibilidad mediante Fondo de Reserva',
@@ -790,16 +789,16 @@ export const PROGRAMS = {
       sourceRef: 'Programa Electoral PSOE 29N-2026: Pensiones'
     },
     regeneracion_justicia: {
-      headline: 'Renovación sin bloqueos del CGPJ, digitalización judicial y transparencia',
+      headline: 'Aborto en art. 43 CE, voto a los 16, escaño ciudadano y fin de aforamientos',
       summary:
-        'Propone reformar plazos de renovación de órganos constitucionales, agilizar los juzgados digitalmente y ampliar derechos civiles como el blindaje constitucional del aborto.',
+        'Blinda el aborto (art. 43 CE), matrimonio igualitario y eutanasia en la Constitución, rebaja el voto a 16 años, crea un escaño ciudadano, suprime aforamientos comunes y agiliza la justicia.',
       measures: [
-        'Reformar los mecanismos legales para evitar bloqueos en la renovación del Consejo General del Poder Judicial.',
-        'Blindar el derecho al aborto en la Constitución y aprobar una ley específica contra la violencia vicaria.',
-        'Digitalizar los juzgados y ampliar tribunales de instancia para reducir la congestión procesal.',
-        'Reforzar la transparencia en publicidad institucional, contratos públicos y prevención de conflictos de interés.'
+        'Reformar el art. 43 de la Constitución para blindar el aborto y proteger constitucionalmente matrimonio igualitario y eutanasia (c. 327, 368).',
+        'Rebajar la edad de voto a los 16 años, crear un escaño ciudadano sin voto en Congreso y Senado e incorporar la unión de amistad al Código Civil (c. 370-372).',
+        'Suprimir los aforamientos por delitos ajenos al ejercicio del cargo y evitar bloqueos en la renovación del CGPJ (c. 373).',
+        'Digitalizar juzgados, ampliar tribunales de instancia y aprobar una ley específica contra la violencia vicaria.'
       ],
-      sourceRef: 'Programa Electoral PSOE 29N-2026: Instituciones y Derechos'
+      sourceRef: 'Programa Electoral PSOE 29N-2026: Instituciones y Derechos (c. 327, 368-373)'
     },
     sanidad: {
       headline: 'Plan Sonríe dental, salud mental (<30 días) y blindaje de gestión directa',
@@ -850,28 +849,28 @@ export const PROGRAMS = {
       sourceRef: 'Programa Electoral PSOE 29N-2026: Seguridad Ciudadana'
     },
     modelo_estado: {
-      headline: 'Estado autonómico cooperativo frente a recentralización o fragmentación',
+      headline: 'Estado autonómico cooperativo, +21.000 M€ financiación, quita de 83.000 M€ y Senado',
       summary:
-        'Defiende el Estado de las Autonomías frente a propuestas centralizadoras o independentistas, reforzando la cogobernanza y un nuevo sistema de financiación.',
+        'Defiende el Estado de las Autonomías con 21.000 millones adicionales, asunción parcial de 83.000 M€ de deuda autonómica y reforma del Senado en Cámara territorial.',
       measures: [
-        'Rechazar tanto la recentralización autonómica como los referéndums unilaterales de independencia.',
-        'Aprobar un nuevo sistema de financiación autonómica que garantice suficiencia en servicios básicos y lealtad institucional.',
-        'Institucionalizar la Conferencia de Presidentes y la cooperación multilateral entre administraciones.',
-        'Proteger y fomentar el uso práctico de las lenguas cooficiales en las instituciones del Estado.'
+        'Aprobar un nuevo sistema de financiación autonómica que aporte 21.000 millones de euros adicionales para blindar sanidad, educación y servicios sociales (c. 229).',
+        'Avanzar en la asunción parcial por el Estado de 83.000 millones de euros de deuda autonómica liberando recursos regionales (c. 231).',
+        'Reformar el Senado como auténtica Cámara de representación territorial e institucionalizar la Conferencia de Presidentes y cooficialidad lingüística (c. 382-385).',
+        'Rechazar tanto la recentralización autonómica como los referéndums unilaterales de independencia.'
       ],
-      sourceRef: 'Programa Electoral PSOE 29N-2026: Modelo Territorial'
+      sourceRef: 'Programa Electoral PSOE 29N-2026: Modelo Territorial (c. 229-231, 382-387)'
     },
     energia_campo: {
-      headline: 'Transición verde justa, renovables y salida nuclear con control técnico',
+      headline: 'Cierre nuclear hasta 2035, 81% renovables en 2030 y mínimo vital de agua',
       summary:
-        'Mantiene el calendario de transición ecológica hacia energías renovables e hidrógeno verde, compatibilizado con informes de seguridad del CSN sobre extensiones transitorias.',
+        'Mantiene el calendario de cierre de las centrales nucleares hasta 2035 con transición justa, eleva las renovables al 81% en 2030 y blinda un mínimo vital de agua en la Constitución.',
       measures: [
-        'Mantener el calendario pactado de salida nuclear compaginado con autorizaciones técnicas condicionadas por el Consejo de Seguridad Nuclear.',
-        'Alcanzar más del 80% de generación eléctrica renovable en 2030 e impulsar el almacenamiento y el hidrógeno verde.',
-        'Invertir en modernización de regadíos sostenibles, digitalización rural y seguros agrarios frente a sequías.',
-        'Defender una transición ecológica justa que proteja el empleo industrial y la competitividad del sector primario.'
+        'Mantener el calendario de cierre de las centrales nucleares hasta 2035 acompañado de proyectos de transición justa en las comarcas afectadas (c. 240).',
+        'Alcanzar el 81% de generación eléctrica renovable en 2030 priorizando Zonas de Aceleración Renovable compatibles con la actividad agroganadera (c. 234).',
+        'Garantizar un mínimo vital de agua potable blindado en la Constitución y actualizar la Estrategia Nacional de Resiliencia Hídrica (c. 261-262).',
+        'Aprobar una Ley de Agricultura Familiar y Profesional y reforzar la financiación de una Política Pesquera Común justa (c. 268, 273).'
       ],
-      sourceRef: 'Programa Electoral PSOE 29N-2026: Transición Ecológica y Campo'
+      sourceRef: 'Programa Electoral PSOE 29N-2026: Transición Ecológica, Agua y Campo (c. 234-273)'
     },
     exterior_ue: {
       headline: 'Europeísmo integrador, compromisos con la OTAN y multilateralismo',
@@ -889,37 +888,37 @@ export const PROGRAMS = {
 
   cs: {
     economia: {
-      headline: 'Auditorías de eficacia, «Test PYME», alivio fiscal y control de deuda',
+      headline: 'Auditorías de eficacia, Sociedades al 5% en reinversión pyme, I+D al 3% y control de deuda',
       summary:
-        'En coalición electoral 2026 con Democracia 21 y UCIN («La España que merecemos»), prioriza auditar el gasto público, desburocratizar pymes e incentivar subidas salariales.',
+        'En coalición electoral 2026 con Democracia 21 y UCIN («La España que merecemos»), prioriza auditar el gasto público, rebajar Sociedades al 5% por reinversión pyme y elevar la I+D al 3% del PIB.',
       measures: [
         'Someter todo programa de gasto público a auditorías independientes de impacto y evaluar las grandes obras a través de la AIReF.',
-        'Implantar un «Test PYME» preceptivo en toda nueva norma y reducir cargas regulatorias para evitar la asfixia burocrática.',
-        'Crear una deducción en Sociedades para empresas que suban salarios por encima del IPC (reforzada en jóvenes) y reformar la Segunda Oportunidad.',
-        'Rebajar el IRPF de forma sostenible y contener la deuda pública eliminando duplicidades y gasto clientelar.'
+        'Implantar un «Test PYME» preceptivo en toda nueva norma, fijar Sociedades al 5% para beneficios reinvertidos en pymes y deducir subidas salariales sobre el IPC.',
+        'Alcanzar una inversión total en I+D del 2% del PIB en 2027 y del 3% en 2030 y reformar la Ley de Segunda Oportunidad.',
+        'Contener el déficit y la deuda pública eliminando duplicidades y gasto clientelar.'
       ],
       sourceRef: 'La España que merecemos (Programa coalición Democracia para el Siglo 21 · 2026)'
     },
     vivienda: {
-      headline: 'Cero impuestos a menores de 35 años, recargo a no residentes y 10.000 M€ UE',
+      headline: 'Pacto de Reconciliación del Alquiler, 0 impuestos <35 años e IVA 4% / ITP 2%',
       summary:
-        'Suprime impuestos de compra de primera vivienda a menores de 35 años (hasta 400.000 €), reorienta 10.000 millones europeos y persigue el alquiler fraudulento.',
+        'Combina el Pacto de Reconciliación del Alquiler con escudo estatal antiimpagos, cero impuestos a menores de 35 años, rebaja general a ITP 2% / AJD 0% / IVA 4% y 10.000 M€ europeos.',
       measures: [
-        'Eliminar impuestos estatales en la compra de vivienda habitual a menores de 35 años y reducirlos para todos (hasta 400.000 €).',
-        'Reorientar 10.000 millones de euros de fondos europeos hacia un fondo soberano de vivienda asequible y rehabilitación.',
-        'Aplicar un recargo autonómico de hasta el 25% a la compra de vivienda no habitual por no residentes y bonificar el IRPF a caseros en alquiler estable.',
+        'Aplicar un Pacto de Reconciliación del Alquiler (SERPAVI) con limitación temporal de rentas acompañada de escudo estatal frente a impagos e inquiokupación.',
+        'Suprimir IVA, ITP y AJD a menores de 35 años (hasta 400.000 €), rebajar para todos el ITP al 2%, AJD al 0% e IVA al 4% en vivienda habitual y obra nueva asequible.',
+        'Reorientar 10.000 millones de euros de fondos europeos hacia un Fondo Soberano de Vivienda y aplicar un recargo de hasta el 25% a no residentes.',
         'Tipificar como estafa la inquiocupación premeditada y cruzar digitalmente alquileres de temporada con el padrón.'
       ],
       sourceRef: 'La España que merecemos: Bloque de Vivienda (Coalición D21/Cs 2026)'
     },
     empleo: {
-      headline: 'Productividad con IA, alivio burocrático a autónomos y marco pyme proporcional',
+      headline: 'IVA franquiciado <85.000 €, plus salarial al 5%, SMI 2/3 y 200h menos de burocracia',
       summary:
-        'Plantea elevar los salarios vía productividad y deducciones fiscales, proteger a los autónomos de cargas administrativas y habilitar transición de 2 años a micropymes.',
+        'Exime de IVA a autónomos <85.000 €, bonifica pluses salariales de hasta 5.000 € al 5%, marca senda del SMI a 2/3 del salario mediano y recorta burocracia.',
       measures: [
-        'Desplegar un Plan Estatal de Integración de la IA y apoyar a pymes para elevar su tamaño y productividad salarial.',
-        'Reducir más de 200 horas anuales de burocracia a autónomos mediante la «Autopista Digital Española» y pago proporcional a lo ganado.',
-        'Habilitar periodos transitorios de adaptación de 2 años en nuevas obligaciones laborales para micropymes y vetar contratos públicos con sueldos precarios.',
+        'Implantar el IVA franquiciado europeo para autónomos y microactividades que facturen menos de 85.000 € anuales y ahorrar >200 horas de trámites con la «Autopista Digital».',
+        'Bonificar con un tipo único del 5% en IRPF pluses salariales de hasta 5.000 €/año y establecer una senda plurianual para que el SMI alcance 2/3 del salario mediano.',
+        'Desplegar un Plan Estatal de IA para elevar la productividad, habilitar transición de 2 años a micropymes y vetar contratos públicos precarios.',
         'Facilitar el relevo generacional de negocios rentables próximos a la jubilación del titular.'
       ],
       sourceRef: 'La España que merecemos: Productividad, PYMES y Autónomos (2026)'
@@ -949,52 +948,52 @@ export const PROGRAMS = {
       sourceRef: 'La España que merecemos: España Limpia (Coalición D21/Cs 2026)'
     },
     sanidad: {
-      headline: 'Reducción de listas de espera, retención de talento y salud digital única',
+      headline: 'Guardias máximas de 12 horas, Grupo A1 en Enfermería y salud digital única',
       summary:
-        'Ataja récords de listas de espera reforzando plantillas sanitarias, despolitizando gerencias por mérito y digitalizando la historia clínica.',
+        'Limita las guardias médicas a un máximo de 12 horas, reconoce el Grupo A1 a Enfermería, traslada la veterinaria a Sanidad con medicamentos al 4% y ataja las listas de espera.',
       measures: [
-        'Frenar la fuga de profesionales sanitarios mejorando retribuciones y condiciones laborales en Atención Primaria y hospitales.',
-        'Evaluar resultados clínicos y listas de espera de cada hospital con transparencia y gerencias elegidas por concurso de mérito.',
-        'Implantar la historia clínica y tarjeta sanitaria plenamente interoperables en todo el territorio.',
+        'Limitar las guardias médicas a un máximo de 12 horas y mejorar retribuciones para frenar la fuga de profesionales en Primaria y hospitales.',
+        'Reconocer la categoría profesional del Grupo A1 y especialidades para Enfermería y trasladar la veterinaria clínica a Sanidad (One Health, con IVA al 4% en fármacos veterinarios).',
+        'Evaluar con transparencia resultados clínicos y listas de espera eligiendo gerencias por mérito y unificar la historia clínica interoperable.',
         'Centralizar compras tecnológicas y farmacéuticas aprovechando economías de escala.'
       ],
       sourceRef: 'La España que merecemos: Sanidad Pública (Coalición D21/Cs 2026)'
     },
     educacion: {
-      headline: 'Tecnología en el currículo, índice socioeducativo y cierre de brechas entre CCAA',
+      headline: 'Objetivo PISA Top 10 europeo, tecnología curricular y cierre de brechas entre CCAA',
       summary:
-        'Propone incorporar competencias tecnológicas reales más allá de pantallas, medir resultados nacionales por comunidades y reforzar las que queden rezagadas.',
+        'Lanza un Plan Estatal Educativo (modelo Estonia) para entrar en el Top 10 europeo de PISA en 8 años, prioriza materias instrumentales y crea un índice socioeducativo.',
       measures: [
+        'Ejecutar el Plan Estatal «Objetivo PISA: España al Top 10 Europeo» en 8 años ampliando horas instrumentales con metodologías avaladas por ciencia cognitiva.',
         'Incorporar la tecnología como pilar curricular real y eliminar barracones climatizando todos los centros.',
         'Crear un Sistema Nacional de Medición Educativa e Índice Socioeducativo con refuerzo estatal automático a CCAA rezagadas.',
-        'Garantizar bilingüismo real, dominio del inglés y derecho al estudio en castellano junto a lenguas cooficiales.',
-        'Reforzar la Formación Profesional tecnológica y becas basadas en renta y esfuerzo.'
+        'Garantizar el dominio del inglés y estudio en castellano junto a lenguas cooficiales, FP tecnológica y becas de renta y esfuerzo.'
       ],
       sourceRef: 'La España que merecemos: La educación en el centro (Coalición D21/Cs 2026)'
     },
     inmigracion: {
-      headline: '«Política Migratoria con Cabeza»: vías legales, homologación ágil y orden',
+      headline: '«Política Migratoria con Cabeza»: visado tipo Chancenkarte y homologación ágil',
       summary:
-        'Reconoce la aportación económica y demográfica de la inmigración ordenada mientras exige reglas claras, homologación digital y control de la irregularidad.',
+        'Crea un visado de búsqueda de empleo de 6 meses (prorrogable a 9) por puntos inspirado en la Chancenkarte alemana, agiliza homologaciones y ordena las fronteras.',
       measures: [
-        'Reconocer la aportación productiva de la migración legal y agilizar visados laborales en sectores con déficit y atracción de talento.',
-        'Agilizar digitalmente la homologación transparente de títulos universitarios y profesionales extranjeros.',
-        'Garantizar el cumplimiento estricto de la ley frente a entradas irregulares en coordinación con Frontex y la UE.',
+        'Crear un visado de búsqueda de empleo de 6 meses (prorrogable a 9) inspirado en la Chancenkarte alemana: por puntos, cupo según vacantes y resolución online en 2 meses.',
+        'Agilizar digitalmente la homologación transparente de títulos universitarios y profesionales extranjeros e impulsar programas de formación en origen.',
+        'Garantizar el cumplimiento estricto de la ley frente a entradas irregulares y retorno efectivo en coordinación con Frontex y la UE.',
         'Vincular la residencia estable a integración cívica, lingüística y laboral.'
       ],
       sourceRef: 'La España que merecemos: Política Migratoria con Cabeza (2026)'
     },
     seguridad: {
-      headline: 'Mando Único Civil de Ciberseguridad (ANCI), respaldo policial y agilidad penal',
+      headline: 'Agencia de Ciberseguridad (ANCI), fin del cese militar a los 45 y respaldo policial',
       summary:
-        'Crea la Agencia Nacional de Ciberseguridad Independiente (ANCI) separando la ciberseguridad civil del CNI y refuerza medios policiales y judiciales.',
+        'Crea la ANCI separando ciberseguridad civil del CNI, elimina la salida forzosa de soldados a los 45 años con FP homologada y agiliza juicios contra la multirreincidencia.',
       measures: [
         'Crear la Agencia Nacional de Ciberseguridad Independiente (ANCI) unificando INCIBE, CCN y CNPIC y segregando la ciberseguridad civil del CNI.',
-        'Dotar de ciberasesores y protección gratuita ante ciberataques a micropymes y autónomos.',
-        'Respaldar salarial y materialmente a Policía Nacional y Guardia Civil y agilizar juicios contra multirreincidencia.',
-        'Perseguir penalmente la inquiocupación y proteger la seguridad en barrios y entornos digitales.'
+        'Aprobar una Ley de la Carrera Militar que elimine la salida forzosa a los 45 años ofreciendo estabilidad hasta la reserva y homologación de FP militar.',
+        'Respaldar salarial y materialmente a Policía Nacional y Guardia Civil, ofrecer ciberprotección gratuita a micropymes y agilizar juicios por multirreincidencia.',
+        'Perseguir penalmente la inquiocupación premeditada.'
       ],
-      sourceRef: 'La España que merecemos: Ciberseguridad y Seguridad (2026)'
+      sourceRef: 'La España que merecemos: Ciberseguridad, Defensa y Seguridad (2026)'
     },
     modelo_estado: {
       headline: 'Estado autonómico eficiente, servicios compartidos en diputaciones y unidad de mercado',
@@ -1196,16 +1195,16 @@ export const PROGRAMS = {
       sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Caps. 1.1, 4.2 y 4.4)'
     },
     vivienda: {
-      headline: 'Un millón de viviendas, derogación de zonas tensionadas, IVA 4% joven y desalojo en 48h',
+      headline: 'Un millón de viviendas, Hucha Hogar Joven, IVA 4% y desalojo en 48h',
       summary:
-        'Suprime las zonas tensionadas y topes de alquiler, moviliza suelo público y privado para un millón de viviendas, rebaja al 4% el IVA joven y ordena desalojos judiciales en 48 horas.',
+        'Deroga zonas tensionadas, impulsa un millón de viviendas, crea la Hucha Hogar Joven y el incentivo «Tres Años+», rebaja el IVA joven al 4% y desaloja en 48 horas.',
       measures: [
-        'Impulsar un millón de viviendas adicionales con una nueva Ley del Suelo, silencio positivo en licencias a tres meses, vivienda industrializada y rehabilitación (IVA 4%).',
-        'Derogar las zonas tensionadas y el índice de control de precios de la Ley de Vivienda e introducir deducción en el IRPF para inquilinos con contratos estables.',
-        'Reducir del 10% al 4% el IVA de primera vivienda para menores de 40 años (fraccionable), rebajar el ITP usado y ofrecer aval público para la entrada.',
-        'Aprobar una ley para el desalojo por orden judicial en 48 horas desde el primer día y facultar a las comunidades de propietarios frente a la ocupación (medida 157).'
+        'Impulsar un millón de viviendas adicionales con nueva Ley del Suelo, silencio positivo en licencias y rehabilitación con IVA superreducido al 4% (m. 144-149).',
+        'Derogar las zonas tensionadas y el índice de alquiler, implantar el incentivo fiscal «Tres Años+» para renovaciones estables y deducción de alquiler en IRPF (m. 145, 156).',
+        'Crear la «Hucha Hogar Joven» (hasta 2.000 €/año con 20% deducción y tope 40.000 € exento) y bajar al 4% el IVA de primera vivienda para menores de 40 años (m. 154-155).',
+        'Aprobar desalojos judiciales de okupas en 48 horas desde el primer día y facultar a las comunidades de propietarios frente a la ocupación (m. 157).'
       ],
-      sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Cap. 4.1: Vivienda)'
+      sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Cap. 4.1: m. 144-157)'
     },
     empleo: {
       headline: 'Autónomos sin IVA hasta 85.000 €, cuota cero y cheque de formación en IA',
@@ -1256,16 +1255,16 @@ export const PROGRAMS = {
       sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Caps. 3.1 y 4.8)'
     },
     educacion: {
-      headline: 'Sustituir la LOMLOE, refuerzo en lectura/cálculo y blindar conciertos y educación especial',
+      headline: 'Sustituir la LOMLOE, PAU común nacional, 0-3 gratuita 50/50 y blindar conciertos',
       summary:
-        'Acuerda sustituir la LOMLOE para mejorar resultados PISA, exigir nota mínima en Magisterio, defender al docente y garantizar conciertos de al menos seis años.',
+        'Sustituye la LOMLOE, implanta una PAU común en toda España, financia al 50% con CCAA la etapa 0-3 gratuita, garantiza conciertos de 6 años y blinda educación especial.',
       measures: [
-        'Sustituir la LOMLOE mediante un nuevo marco educativo con refuerzo específico en lectura y cálculo dentro del horario escolar.',
-        'Prestigiar la carrera docente exigiendo nota mínima en Magisterio, defensa jurídica de oficio al profesor agredido y menor burocracia.',
-        'Garantizar conciertos educativos de al menos seis años con módulos de coste real donde exista demanda familiar y mantener centros de educación especial.',
-        'Ampliar la Formación Profesional en ciclos de alta empleabilidad y fomentar coordinación común en la PAU.'
+        'Sustituir la LOMLOE con refuerzo en lectura y cálculo e implantar una Prueba de Acceso a la Universidad (PAU) común en toda España.',
+        'Universalizar la educación infantil gratuita de 0 a 3 años cofinanciada al 50% por Estado y CCAA, pública o concertada (m. 163).',
+        'Prestigiar al docente con nota mínima en Magisterio, defensa jurídica de oficio al profesor agredido y prohibición de redes sociales a menores de 14 años (m. 168).',
+        'Garantizar conciertos educativos de al menos seis años donde exista demanda familiar y mantener centros de educación especial.'
       ],
-      sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Cap. 4.7: Educación)'
+      sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Caps. 3.1 y 4.7)'
     },
     inmigracion: {
       headline: 'Autoridad Migratoria Única, visados por puntos, cupos y nueva Ley de Nacionalidad',
@@ -1479,295 +1478,295 @@ export const PROGRAMS = {
 
   vox: {
     economia: {
-      headline: 'Rebaja masiva de IRPF, IVA e Impuesto de Sociedades y regla de derogar 3 normas',
+      headline: 'Rebaja de IRPF, IVA y Sociedades, fin de cita previa y derogar 3 normas por cada nueva',
       summary:
-        'Su programa 29N-2026 («Es sentido común», 115 medidas) combina rebajas de IRPF con deducciones por hijos, IVA reducido, menos Sociedades y recorte del gasto político.',
+        'Su programa 29N-2026 («Es sentido común», 115 medidas) baja IRPF por hijos, IVA y Sociedades, alivia a Baleares y Canarias, reduce deuda pública y audita todo gasto superfluo.',
       measures: [
-        'Rebajar masivamente el IRPF con tipos reducidos según el número de hijos, el Impuesto de Sociedades y el IVA en productos esenciales y electricidad.',
-        'Aplicar la regla de derogar tres leyes innecesarias o restrictivas por cada nueva ley aprobada.',
-        'Suprimir el Impuesto de Patrimonio, Sucesiones y Donaciones y eliminar subvenciones a partidos, sindicatos, patronales y ONG.',
-        'Reducir la deuda pública y el déficit ejecutando recortes drásticos en estructuras autonómicas duplicadas y gasto político.'
+        'Rebajar el IRPF con tipos reducidos según el número de hijos, el IVA general y reducido y el Impuesto de Sociedades, junto a fiscalidad mínima contra la despoblación (m. 2-3, 6).',
+        'Aprobar un alivio fiscal específico para Baleares y Canarias mediante rebaja del IGIC y supresión del AIEM (m. 4).',
+        'Aplicar la regla de derogar tres normas por cada nueva ley aprobada, suprimir la cita previa obligatoria e implantar la Ley de Unidad de Mercado (m. 39-40, 42).',
+        'Reducir la deuda pública realizando una auditoría integral de gasto político superfluo y suprimiendo subvenciones a partidos, sindicatos, patronales y ONG (m. 2, 43).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Es sentido común (115 medidas)'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Es sentido común (m. 2-6, 39-43)'
     },
     vivienda: {
-      headline: 'IVA 0% en primera vivienda nueva, bonificación ITP 100% y desalojo <24 horas',
+      headline: 'IVA 0% en primera vivienda nueva, ITP bonificado al 100% y desalojo <24 horas',
       summary:
-        'Aplica IVA del 0% y bonificación del 100% del ITP en primera vivienda habitual para familias españolas, deroga la Ley de Vivienda y acelera desalojos en menos de 24 horas.',
+        'Aplica IVA 0% y bonificación del 100% del ITP en primera vivienda habitual, grava compras no comunitarias y fondos, veta el alquiler a irregulares y desaloja en <24h.',
       measures: [
-        'Aplicar IVA al 0% en la compra de primera vivienda habitual de nueva construcción y bonificación del 100% del ITP en segunda mano para familias españolas.',
-        'Derogar la Ley de Vivienda suprimiendo topes al alquiler y liberalizar suelo urbanizable no protegido.',
-        'Ejecutar desalojos exprés de viviendas ocupadas en menos de 24 horas y tipificar la «inquiocupación» como delito de estafa.',
-        'Establecer prioridad nacional para españoles en acceso a vivienda protegida y ayudas habitacionales.'
+        'Aplicar IVA del 0% en primera vivienda nueva habitual, bonificación del 100% del ITP en segunda mano y recuperación de la deducción por inversión en vivienda habitual (m. 34).',
+        'Derogar la Ley de Vivienda suprimiendo topes al alquiler, ampliar la vivienda pública, regular VUT ilegales y agravar la fiscalidad a compradores no comunitarios y fondos especulativos (m. 29-30, 35).',
+        'Ejecutar desalojos exprés en menos de 24 horas y tipificar la «inquiocupación» como delito de estafa (m. 31).',
+        'Implantar prioridad nacional en vivienda protegida y ayudas y prohibir el alquiler de viviendas a inmigrantes en situación ilegal (m. 27, 32).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Bloque de Vivienda'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Bloque de Vivienda (m. 26-35)'
     },
     empleo: {
       headline: 'Cuota cero a autónomos <SMI, escala progresiva desde 50 € y prioridad nacional',
       summary:
-        'Fija cuota cero para autónomos por debajo del SMI y cuota progresiva desde 50 € por encima, suprime rigideces laborales y prioriza al trabajador nacional.',
+        'Fija cuota cero para autónomos por debajo del SMI y cuota progresiva desde 50 € por encima, reduce cotizaciones y establece prioridad nacional.',
       measures: [
-        'Implantar cuota cero para autónomos cuyos ingresos no alcancen el SMI y una cuota progresiva desde los 50 euros para quienes lo superen.',
-        'Suprimir trabas y rigideces de la legislación laboral vigente y reducir cotizaciones sociales empresariales.',
-        'Establecer prioridad nacional en el acceso a ayudas sociales, prestaciones y programas de empleo.',
-        'Eliminar subvenciones públicas a sindicatos y patronales.'
+        'Implantar cuota cero para autónomos con ingresos por debajo del SMI y cuota progresiva desde 50 euros para quienes lo superen (m. 3).',
+        'Reducir las cotizaciones sociales y cargas burocráticas que lastran la contratación en pymes y autónomos.',
+        'Establecer prioridad nacional en el acceso al empleo, programas de formación y al Ingreso Mínimo Vital (m. 22).',
+        'Eliminar toda subvención pública a sindicatos mayoritarios y patronales (m. 43).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Empleo y Autónomos'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Empleo, Autónomos y Protección Social'
     },
     pensiones: {
-      headline: 'Garantía de pensiones con recorte autonómico y apoyo a la natalidad',
+      headline: 'Sostenibilidad del sistema, cotización estatal por cuidado de hijos y dependencia',
       summary:
-        'Sostiene las pensiones públicas eliminando duplicidades autonómicas y ministeriales e impulsando la natalidad familiar como base demográfica.',
+        'Garantiza el poder adquisitivo de las pensiones con recorte del gasto político superfluo y financia con cargo al Estado las cotizaciones de padres dedicados al cuidado de hijos.',
       measures: [
-        'Garantizar el poder adquisitivo de las pensiones recortando el gasto político autonómico, ministerios y entes duplicados.',
-        'Fomentar la natalidad y protección familiar española como base demográfica del sistema de reparto.',
-        'Aliviar la carga del IRPF a pensiones de jubilación y viudedad más bajas.',
-        'Promover el ahorro previsional complementario sin penalizaciones fiscales.'
+        'Garantizar la sostenibilidad y el poder adquisitivo de las pensiones públicas eliminando el despilfarro político y duplicidades administrativas (m. 7, 43).',
+        'Financiar con cargo al Estado las cotizaciones a la Seguridad Social de los españoles dedicados al cuidado de sus hijos para evitar penalizaciones en la jubilación (m. 94).',
+        'Impulsar un Plan Nacional de Natalidad con ayudas progresivas desde el primer hijo y gratuidad real de 0 a 3 años (m. 94).',
+        'Reforzar el presupuesto de dependencia y eliminar trabas burocráticas para mayores y personas con discapacidad (m. 95-96).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Pensiones y Familia'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Pensiones, Familia y Dependencia (m. 7, 94-96)'
     },
     regeneracion_justicia: {
-      headline: 'CGPJ independiente, prisión permanente ampliada y rebaja de edad penal',
+      headline: '12 vocales del CGPJ por jueces, sedición, malversación e ilegalización separatista',
       summary:
-        'Modifica la elección del CGPJ, amplía la prisión permanente revisable, rebaja la edad penal, deroga leyes ideológicas y promueve la ilegalización del separatismo.',
+        'Devuelve a los jueces la elección de 12 vocales del CGPJ, recupera el delito de sedición, prohíbe indultos políticos, rebaja la edad penal e ilegaliza al separatismo.',
       measures: [
-        'Modificar el sistema de elección del Consejo General del Poder Judicial para garantizar su independencia.',
-        'Rebajar la edad de responsabilidad penal y ampliar los supuestos de prisión permanente revisable.',
-        'Derogar la LOMLOE, leyes de género y Ley de Memoria Democrática y suprimir aforamientos.',
-        'Promover la ilegalización de partidos y organizaciones que atenten contra la unidad constitucional de España.'
+        'Reformar la LOPJ para que los 12 vocales judiciales del CGPJ sean elegidos directamente por los jueces y proteger la primacía del Supremo frente al TC (m. 100-101).',
+        'Recuperar el delito de sedición, agravar la malversación y prohibir los indultos en delitos de corrupción o contra la integridad territorial (m. 103).',
+        'Rebajar la edad penal eliminando la inimputabilidad del menor en delitos violentos graves y ampliar la prisión permanente revisable (m. 80-81).',
+        'Derogar leyes ideológicas como la de Memoria Democrática e ilegalizar partidos que atenten contra la unidad constitucional de España (m. 46-47, 103).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Justicia y Desregulación'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Justicia y Regeneración (m. 46-47, 80-81, 100-103)'
     },
     sanidad: {
-      headline: 'Tarjeta sanitaria única nacional y prioridad nacional en prestaciones',
+      headline: 'Tarjeta sanitaria única nacional, retorno de sanitarios y sin requisito lingüístico',
       summary:
-        'Crea una tarjeta sanitaria única para toda España, centraliza compras y devuelve la gestión sanitaria al Estado frente a las 17 administraciones.',
+        'Implanta la tarjeta sanitaria única con historia clínica compartida sin barreras lingüísticas, refuerza plantillas y excluye atención gratuita no urgente a irregulares.',
       measures: [
-        'Implantar una tarjeta sanitaria única válida en todo el territorio nacional y recentralizar el sistema sanitario.',
-        'Centralizar las compras de medicamentos y equipamiento tecnológico para eliminar sobrecostes autonómicos.',
-        'Establecer prioridad nacional y excluir atención no urgente gratuita a inmigrantes en situación irregular.',
-        'Colaborar con la sanidad privada para reducir listas de espera.'
+        'Implantar una tarjeta sanitaria única nacional con historia clínica compartida eliminando el requisito de lengua regional en oposiciones sanitarias (m. 60).',
+        'Reforzar las plantillas con contratos estables y poner en marcha un plan de retorno de médicos y sanitarios emigrados (m. 61).',
+        'Excluir de la sanidad gratuita no urgente a inmigrantes en situación irregular salvo casos de urgencia grave (m. 20).',
+        'Ampliar conciertos y recursos asistenciales para reducir listas de espera.'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Sanidad Única Nacional'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Sanidad (m. 20, 60-65)'
     },
     educacion: {
-      headline: 'Currículo común, EvAU única, prohibición de móviles y libre elección de centro',
+      headline: 'Currículo común, reválidas y EVAU única, sin móviles y topes culturales en aula',
       summary:
-        'Deroga la LOMLOE para instaurar una EvAU única y currículo nacional común, refuerza autoridad docente, prohíbe móviles en aulas y defiende libre elección.',
+        'Deroga la LOMLOE para instaurar reválidas, EVAU única y enseñanza en español, garantiza libre elección de centro, prohíbe móviles y fija cupos de nivelación lingüística.',
       measures: [
-        'Derogar la LOMLOE e implantar un currículo común nacional y una EvAU única en toda España.',
-        'Garantizar la libre elección de centro (cheque escolar) y la enseñanza en castellano en todo el territorio.',
-        'Reforzar la autoridad del profesorado y prohibir el uso de teléfonos móviles en las aulas.',
-        'Implantar autorización parental expresa ante contenidos morales o afectivo-sexuales.'
+        'Derogar la LOMLOE e implantar currículo común nacional, reválidas, EVAU única y enseñanza garantizada en español en toda España (m. 66, 69).',
+        'Garantizar el derecho de las familias a elegir libremente centro educativo en todos los niveles sin barreras económicas (m. 67).',
+        'Prohibir los teléfonos móviles en clase, reforzar la autoridad del profesorado e implantar un plan contra el acoso escolar (m. 69).',
+        'Fijar un cupo máximo por aula de alumnos de otras culturas o dominio insuficiente del español con aulas de nivelación, y suprimir menús halal, burka y el programa de lengua marroquí (m. 70-74).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Educación'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Educación e Identidad (m. 66-74)'
     },
     inmigracion: {
-      headline: 'Plan de remigración, fin del arraigo, veto a regularizaciones y fin a ayudas ONG',
+      headline: 'Remigración, fin del arraigo, gravamen a remesas y devolución de MENAS',
       summary:
-        'Prohíbe regularizaciones masivas, anula la vía del arraigo, ejecuta repatriaciones de irregulares y delincuentes y suprime subvenciones a ONG.',
+        'Ejecuta un plan de remigración y devolución de menores con sus familias, anula el arraigo, grava las remesas al extranjero y reserva el IMV a españoles.',
       measures: [
-        'Prohibir por completo las regularizaciones masivas y anular la vía del arraigo para quienes entren ilegalmente.',
-        'Ejecutar un plan de remigración para inmigrantes irregulares, condenados por delitos graves o reiterados y dependientes de subsidios.',
-        'Suprimir toda subvención pública a ONG que colaboren con redes migratorias o fomenten el efecto llamada.',
-        'Implantar la prioridad nacional en ayudas sociales, guarderías, vivienda protegida y servicios públicos.'
+        'Prohibir regularizaciones masivas, anular la vía del arraigo y ejecutar la remigración de irregulares, delincuentes y dependientes crónicos de subsidios (m. 9-16).',
+        'Devolver a los menores extranjeros no acompañados (MENAS) con sus familias y países de origen y prohibir el burka y niqab en espacios públicos (m. 19, 71).',
+        'Gravar las remesas enviadas al extranjero y suspender toda ayuda o cooperación con países que rechacen repatriaciones (m. 17, 21).',
+        'Reservar el Ingreso Mínimo Vital a españoles y suprimir subvenciones a ONG de acogida irregular (m. 22, 43).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Inmigración y Remigración'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Inmigración y Remigración (m. 9-22, 71)'
     },
     seguridad: {
-      headline: 'Militarización de Ceuta y Melilla, equiparación policial y profesión de riesgo',
+      headline: 'Militarización de Ceuta y Melilla, OCON-Sur, mandos profesionales y profesión de riesgo',
       summary:
-        'Militariza las fronteras de Ceuta y Melilla frente a entradas masivas y reconoce a policías, guardias civiles, militares y prisiones como profesión de riesgo.',
+        'Militariza las fronteras de Ceuta y Melilla, restablece el OCON-Sur, exige mandos policiales profesionales y reconoce como profesión de riesgo a FCSE, prisiones y FFAA.',
       measures: [
-        'Militarizar las fronteras y desplegar a las Fuerzas Armadas para proteger Ceuta y Melilla con expulsión inmediata ante entradas masivas.',
-        'Reconocer a policías nacionales, guardias civiles, militares y funcionarios de prisiones como profesión de riesgo con equiparación salarial.',
-        'Endurecer el Código Penal rebajando la edad penal y ampliando la prisión permanente revisable.',
-        'Suprimir policías autonómicas integrando sus efectivos en las FCSE.'
+        'Militarizar las fronteras y desplegar permanentemente a las Fuerzas Armadas en Ceuta y Melilla con expulsión inmediata ante asaltos masivos (m. 1, 88).',
+        'Reconocer como profesión de riesgo y equiparar salarialmente a Policía Nacional, Guardia Civil, funcionarios de prisiones y militares (m. 84-85, 89).',
+        'Designar directores generales de Policía Nacional y Guardia Civil entre profesionales de carrera y restablecer de inmediato el OCON-Sur contra el narcotráfico (m. 82, 86).',
+        'Endurecer el Código Penal rebajando la edad penal en delitos violentos graves y ampliando la prisión permanente revisable (m. 80-81).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Ceuta, Melilla y Seguridad'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Seguridad y Defensa (m. 1, 80-91)'
     },
     modelo_estado: {
-      headline: 'Estado unitario sin autonomías ni privilegios fiscales territoriales',
+      headline: 'Igualdad nacional de servicios, Ley de Unidad de Mercado y fin del despilfarro',
       summary:
-        'Propone transformar el Estado autonómico en un Estado unitario centralizado recuperando Sanidad, Educación, Justicia y Seguridad.',
+        'Exige igualdad de Educación, Sanidad, Seguridad y Justicia en toda España, impone la Ley de Unidad de Mercado, ilegaliza al separatismo y protege la Corona y símbolos.',
       measures: [
-        'Sustituir los 17 parlamentos y gobiernos autonómicos por un Estado unitario con un único Gobierno y Parlamento.',
-        'Recuperar de inmediato las competencias de Educación, Sanidad, Justicia e Interior para el Estado.',
-        'Suprimir las policías autonómicas duplicadas integrando sus efectivos en Policía Nacional y Guardia Civil.',
-        'Garantizar la unidad de mercado suprimiendo trabas normativas regionales.'
+        'Garantizar la misma calidad e igualdad en Educación, Sanidad, Seguridad y Justicia en toda España, implantando tarjeta sanitaria única y currículo nacional común (m. 25, 60, 66).',
+        'Aprobar una Ley de Unidad de Mercado para que una licencia autonómica valga automáticamente en todo el territorio nacional (m. 42).',
+        'Auditar las administraciones para recortar todo gasto político autonómico superfluo y organismos duplicados (m. 43).',
+        'Ilegalizar los partidos que atenten contra la unidad territorial y agravar las penas por ultrajes a la Bandera, Escudo, Himno y Corona (m. 103-105).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Unidad Nacional'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Unidad Nacional e Instituciones (m. 25, 42-43, 103-105)'
     },
     energia_campo: {
-      headline: 'Revertir Pacto Verde y Agenda 2030, prórroga nuclear y apoyo al campo',
+      headline: 'Plan Nuclear Nacional, Plan Nacional del Agua y veto al Pacto Verde y Mercosur',
       summary:
-        'Revierte el Pacto Verde europeo y la Agenda 2030, deroga el calendario de cierre nuclear, baja impuestos de la luz y defiende la rentabilidad agraria.',
+        'Suspende el Pacto Verde, Agenda 2030 y las ZBE, recupera el plan nuclear nacional, impulsa la interconexión de cuencas y rechaza el acuerdo UE-Mercosur.',
       measures: [
-        'Revertir el Pacto Verde Europeo, la Agenda 2030 y las normas ambientales y burocráticas de la PAC que lastran al campo.',
-        'Derogar el calendario de cierre nuclear para recuperar soberanía energética y abaratar la factura de la luz.',
-        'Aprobar un Plan Hidrológico Nacional con trasvases entre cuencas excedentarias y deficitarias.',
-        'Exigir cláusulas espejo y aranceles estrictos frente a importaciones agrarias extracomunitarias.'
+        'Suspender el Pacto Verde Europeo, la Agenda 2030 y las Zonas de Bajas Emisiones, reduciendo el coste eléctrico para industria y hogares (m. 8, 44).',
+        'Recuperar el Plan Nuclear Nacional frenando el calendario de cierre y recuperar la soberanía energética (m. 8).',
+        'Aprobar un Plan Nacional del Agua con interconexión de cuencas para abastecer al campo y territorios deficitarios (m. 115).',
+        'Rechazar explícitamente el acuerdo UE-Mercosur, exigir cláusulas espejo y preferencia comunitaria y frenar plantas fotovoltaicas descontroladas en suelo agrícola (m. 48, 51, 54).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Energía, Industria y Campo'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Energía, Campo y Agua (m. 8, 44, 48-54, 115)'
     },
     exterior_ue: {
-      headline: 'Europa de naciones soberanas, defensa de Ceuta/Melilla y vínculo Iberosfera',
+      headline: 'Soberanía nacional ante Bruselas, sanciones por Ceuta y recuperación de Gibraltar',
       summary:
-        'Defiende la primacía de la Constitución española sobre directivas europeas, la cobertura aliada de Ceuta y Melilla y la alianza con la Iberosfera.',
+        'Defiende la primacía nacional frente a imposiciones de Bruselas y Mercosur, exige firmeza y sanciones ante Marruecos, condiciona ayudas al retorno y reclama Gibraltar.',
       measures: [
-        'Reformar los tratados europeos para crear una Europa de naciones soberanas sin primacía burocrática de Bruselas.',
-        'Exigir cobertura expresa de la OTAN sobre Ceuta y Melilla y firmeza frente a presiones de Marruecos.',
-        'Consolidar una alianza diplomática, cultural y comercial estratégica con las naciones de la Iberosfera.',
-        'Oponerse a cesiones de soberanía fiscal, migratoria o agraria ante organismos supranacionales.'
+        'Enfrentar económica, política y jurídicamente las imposiciones de Bruselas, el Pacto Verde y el acuerdo UE-Mercosur priorizando el interés nacional (m. 48, 92).',
+        'Imponer sanciones a Marruecos, militarizar la frontera de Ceuta y Melilla y exigir responsabilidades penales ante cualquier cesión fronteriza (m. 1, 88).',
+        'Reclamar la recuperación de la soberanía española sobre Gibraltar y el control de sus aguas frente a narcotráfico y contrabando (m. 93).',
+        'Cortar toda ayuda y cooperación exterior con países que no colaboren en la repatriación de inmigrantes en situación ilegal (m. 17).'
       ],
-      sourceRef: 'Programa Electoral VOX 29N-2026: Soberanía y Política Exterior'
+      sourceRef: 'Programa Electoral VOX 29N-2026: Soberanía Exterior y Fronteras (m. 1, 17, 48, 92-93)'
     }
   },
 
   salf: {
     economia: {
-      headline: '0% IRPF hasta 35.000 €, Sociedades al 20% (15% reinversión) y de 22 a 10 ministerios',
+      headline: '0% IRPF hasta 35.000 €, 5.000 € por hijo, déficit cero en 2030 y de 22 a 10 ministerios',
       summary:
-        'Su Contrato Electoral 29N (119 medidas) exime de IRPF hasta 35.000 €, recorta el Gobierno de 22 a 10 ministerios y de 3 a 1 vicepresidencias y suprime subvenciones políticas.',
+        'Exime de IRPF hasta 35.000 € con deducción de 5.000 € por hijo, fija un techo constitucional de deuda y déficit cero en 2030 y recorta ministerios y gasto político.',
       measures: [
-        'Fijar un tipo del 0% de IRPF para rentas de hasta 35.000 euros anuales, con deducciones por hijo a cargo, y suprimir Patrimonio y Sucesiones.',
-        'Rebajar el Impuesto de Sociedades del 25% al 20% (y al 15% si se reinvierten beneficios) y reducir el gasto estatal pasando de 22 a 10 ministerios.',
-        'Recortar entre un 60% y 70% asesores y altos cargos y suprimir subvenciones a partidos, sindicatos, patronales y publicidad institucional.',
-        'Contener la deuda pública y el gasto financiero eliminando duplicidades autonómicas y ministeriales en lugar de subir impuestos.'
+        'Fijar 0% de IRPF hasta 35.000 euros anuales (más 5.000 € por hijo para cada progenitor y deflactación obligatoria al IPC) y suprimir Patrimonio, Sucesiones y Donaciones.',
+        'Bajar Sociedades al 20% (15% por reinversión y 10% a startups), fijar IVA del 4% en luz y agua, blindar el pago en efectivo y exigir 3/5 del Congreso para subir impuestos.',
+        'Implantar un techo constitucional de deuda y gasto público hacia el déficit cero en 2030 (-6.800 M€/año en deuda) junto a la Ley de Devolución del Rescate Bancario (70.000 M€ en 15 años).',
+        'Reducir el Gobierno de 22 a 10 ministerios (3 a 1 vicepresidencias), recortar un 60%-70% asesores y eliminar subvenciones a partidos, sindicatos y patronales.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026 (119 medidas en 10 bloques)'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque III (Fiscalidad y Gasto Público, pp. 12-16)'
     },
     vivienda: {
-      headline: 'Rechazo a topes de alquiler, cero impuestos primera vivienda y desalojo exprés',
+      headline: 'Rebaja legal del 35% en primera vivienda, cero IBI y desalojo en 48 horas',
       summary:
-        'Se opone frontalmente a la intervención de precios del alquiler, elimina impuestos en primera vivienda y endurece las penas contra la ocupación ilegal.',
+        'Abarata un 35% la primera vivienda suprimiendo IBI, ITP, AJD e IVA (devuelto en IRPF), grava al 25% a SOCIMIs de más de 100 pisos y desaloja okupas en 48 horas.',
       measures: [
-        'Rechazar los topes legales de alquiler y eliminar impuestos ligados a la compra de primera vivienda (ITP, AJD e IVA reducido).',
-        'Endurecer drásticamente las penas contra la ocupación ilegal ejecutando desalojos inmediatos sin dilación.',
-        'Prohibir la compra masiva especulativa por grandes fondos extranjeros y liberalizar suelo urbano.',
-        'Facilitar líneas de crédito hipotecario garantizadas para jóvenes y familias.'
+        'Aprobar una rebaja legal del 35% en la primera vivienda eliminando ITP y AJD, devolviendo íntegro el IVA del 4% en IRPF y cediendo suelo estatal y Sareb gratis para 100.000 viviendas.',
+        'Eliminar por completo el IBI (-13.400 M€/año), rechazar topes de alquiler y elevar al 25% el Impuesto de Sociedades a las SOCIMIs con más de 100 viviendas.',
+        'Ejecutar desalojos exprés de okupas en 48 horas y de inquiokupas en 30 días, con seguro público de impago de 12 meses.',
+        'Crear un aval público del 20% para menores de 40 años y licencias en 15 días para vivienda industrializada.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Vivienda'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque I (Vivienda, pp. 5-7)'
     },
     empleo: {
-      headline: 'Supresión de cuota de autónomos, contrato único y menor cuña fiscal',
+      headline: 'Cuota cero permanente de autónomos, contrato único con mochila y cuña al 29%',
       summary:
-        'Elimina la cuota fija mensual de autónomos vinculándola al beneficio real, implanta contrato único con mochila austriaca y baja cotizaciones.',
+        'Suprime de forma permanente la cuota fija de autónomos, baja la cuña fiscal del 41,4% al 29%, crea un contrato único con mochila del 1,53% e introduce IVA de caja.',
       measures: [
-        'Suprimir la cuota fija de autónomos sustituyéndola por tributación vinculada exclusivamente al beneficio neto real.',
-        'Implantar un contrato único con mochila austriaca para facilitar la movilidad laboral.',
-        'Reducir la cuña fiscal y cotizaciones sobre el trabajo para elevar el salario neto.',
-        'Suprimir toda subvención pública a sindicatos mayoritarios y patronales.'
+        'Instaurar la cuota cero total y para siempre para autónomos (12.000 M€/año), junto al IVA de caja y licencia de apertura automática en 24 horas.',
+        'Reducir la cuña fiscal del 41,4% al 29% (+80 €/mes netos en el SMI) e implantar un contrato único (12 a 33 días) con mochila austriaca del 1,53%.',
+        'Sufragar las bajas médicas desde la Seguridad Social desde el día 1 (revisión INSS en 72h), aplicar la regla de 1 norma que entra por 2 que salen y suprimir subvenciones a sindicatos y patronales.',
+        'Computar a los 640.900 fijos discontinuos inactivos como parados reales e implantar oposiciones a ciegas.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Empleo y Autónomos'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloques III.4 y VIII (pp. 12, 30-32)'
     },
     pensiones: {
-      headline: 'Auditoría de la Seguridad Social y fin de pensiones vitalicias políticas',
+      headline: 'Blindaje constitucional al IPC y sistema mixto con cuenta del 2% para menores de 45',
       summary:
-        'Sostiene las pensiones públicas eliminando el gasto político improductivo, realizando auditoría independiente y fomentando la natalidad nacional.',
+        'Blinda en la Constitución el IPC de las pensiones actuales, envía el «sobre naranja» anual e introduce para menores de 45 años una cuenta individual heredable del 2%.',
       measures: [
-        'Garantizar las pensiones públicas eliminando gasto político improductivo y suprimiendo pensiones vitalicias de cargos públicos.',
-        'Fomentar la natalidad y empleo formal para equilibrar la base de cotizantes.',
-        'Realizar una auditoría independiente integral de las cuentas de la Seguridad Social.',
-        'Permitir compatibilizar voluntariamente la pensión de jubilación con el trabajo autónomo o profesional.'
+        'Blindar constitucionalmente la revalorización según el IPC de las pensiones actuales e implantar el envío anual del «sobre naranja» informativo.',
+        'Crear para menores de 45 años un sistema mixto con cuenta individual obligatoria y heredable del 2% (comisión máxima del 0,3%) sumada a la mochila austriaca del 1,53%.',
+        'Fijar pensión mínima de 1.000 euros en 14 pagas con 35 años cotizados y permitir jubilación activa al 100% y jubilación libre con 40 años cotizados.',
+        'Suprimir el complemento parlamentario de 7 años y proteger un Fondo de Reserva soberano de 15.267 M€ fuera del control gubernamental.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Pensiones'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque V (Pensiones, pp. 20-21)'
     },
     regeneracion_justicia: {
-      headline: 'Bloqueo de sueldo hasta 2030, corrupción imprescriptible y macrocárcel',
+      headline: 'Bloqueo de sueldo hasta 2030, fin del TC y 17.621 aforamientos y macrocárcel',
       summary:
-        'Deposita el 100% del sueldo público de Alvise Pérez en el Banco de España hasta junio de 2030 sujeto al cumplimiento del contrato electoral y crea juzgados anticorrupción.',
+        'Deposita el 100% del sueldo público en el Banco de España hasta 2030, suprime el Tribunal Constitucional y 17.621 aforamientos y declara imprescriptible la corrupción.',
       measures: [
-        'Bloquear el 100% del sueldo público en el Banco de España hasta junio de 2030: si no se cumplen las 119 medidas, el dinero revierte al Estado.',
-        'Declarar imprescriptibles los delitos de corrupción política, obligar a devolver el triple de lo sustraído y premiar al denunciante con el 15%.',
-        'Construir una macrocárcel de máxima seguridad (3.000 M€) sin tercer grado ni permisos para corruptos que no devuelvan lo robado y criminales graves.',
-        'Recortar de 22 a 10 ministerios, de 3 a 1 vicepresidencias y un 60%-70% los asesores.'
+        'Bloquear el 100% del sueldo público en el Banco de España hasta junio de 2030 sujeto al cumplimiento íntegro de las 119 medidas electorales.',
+        'Declarar imprescriptible la corrupción con triple devolución, premio del 15% al denunciante y macrocárcel sin tercer grado, además de prohibir constitucionalmente las amnistías.',
+        'Suprimir el Tribunal Constitucional (pasando sus funciones a una sala del Supremo elegida por jueces), despolitizar el CGPJ, elegir Fiscal General por 3/5 (6 años) y sumar 100 fiscales Anticorrupción.',
+        'Eliminar los 17.621 aforamientos, limitar cargos públicos a 15 años, blindar la Acción Popular (Art. 125 CE) e implantar juicios rápidos en 72h (+2.000 jueces y +1.500 fiscales).'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Cláusula de Responsabilidad y Justicia'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque VII (Justicia y Corrupción, pp. 25-29)'
     },
     sanidad: {
-      headline: 'Topes de 30 días especialista y 90 días cirugía y central única de compras',
+      headline: 'Topes de 48h médico, 30 días especialista y 60 cirugía con central única',
       summary:
-        'Fija un límite máximo de 30 días para especialistas y 90 días para cirugías apoyándose en conciertos privados sin coste y crea una central única de compras.',
+        'Fija plazos máximos legales de 48 horas en Primaria, 30 días en especialista, 60 en cirugía y 15 en salud mental, con central única de compras.',
       measures: [
-        'Garantizar por ley un máximo de 30 días para consultas de especialista y 90 días para cirugías, apoyándose en conciertos privados sin coste para el paciente.',
-        'Crear una central única nacional de compras sanitarias evitando duplicidades de 17 sistemas autonómicos.',
-        'Equiparar salarios de médicos y enfermeros con la media de Europa occidental.',
-        'Digitalizar plenamente la historia clínica única e impedir el turismo sanitario fraudulento.'
+        'Garantizar por ley plazos máximos de 48 horas en médico de cabecera, 7 días en pruebas prioritarias, 30 días en especialista y 60 días en cirugías (con conciertos gratuitos si se superan).',
+        'Fijar un tope de 15 días en salud mental (1 psicólogo por 10.000 habitantes), sumar 10.000 camas y 1.500 UCI e implantar la central única de compras e historia clínica nacional.',
+        'Subir el sueldo un 20% a médicos y un 10% al resto de sanitarios (con 30.000 euros por plaza rural) y eliminar el copago farmacéutico a menores de 3 años, pensiones mínimas y crónicos.',
+        'Incluir test de paternidad gratuitos al nacer e impedir el turismo sanitario fraudulento.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Sanidad'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque VI (Sanidad, pp. 22-24)'
     },
     educacion: {
-      headline: 'Ley educativa a 20 años, cheque escolar y castellano garantizado en España',
+      headline: 'Ley educativa de 20 años por 2/3, cheque escolar de 8.293 € y MIR docente',
       summary:
-        'Propone sacar la educación del vaivén partidista mediante un marco estable de 20 años, cheque escolar y defensa del castellano.',
+        'Propone una ley estable de 20 años por mayoría de 2/3, cheque escolar de 8.293 euros, MIR docente de 2 años y materias obligatorias de Economía y Constitución.',
       measures: [
-        'Aprobar una ley educativa estable con vigencia mínima de 20 años centrada en mérito y conocimiento.',
-        'Implantar un cheque escolar («el dinero sigue al alumno») para que las familias elijan centro libremente.',
-        'Garantizar la escolarización en castellano en todo el territorio nacional sin exclusiones lingüísticas.',
-        'Reforzar las carreras técnicas, matemáticas y formación profesional práctica.'
+        'Pactar por mayoría de 2/3 una ley educativa con vigencia de 20 años garantizando la escolarización en castellano en toda España.',
+        'Implantar un cheque escolar de 8.293 euros válido en centros públicos, concertados y privados.',
+        'Crear un MIR docente de 2 años y elevar un 10% el sueldo del profesorado.',
+        'Impartir Economía y Constitución de forma obligatoria, otorgar beca-salario de 2.000 € en FP e inglés B2 gratuito en Bachillerato.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Educación'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque IX (Educación, pp. 33-34)'
     },
     inmigracion: {
-      headline: 'Expulsión rápida de irregulares, Armada en el Estrecho y bloqueo a terceros países',
+      headline: 'Expulsión en 48 horas, derogación regularización 2026 y 5 años para ayudas',
       summary:
-        'Despliega a la Armada y Ejército del Aire en el Estrecho contra entradas clandestinas, expulsa irregulares y condiciona visados a repatriaciones.',
+        'Impone expulsiones en 48h, deroga la regularización de 2026, bloquea en 72h a países que no repatríen y exige 5 años de cotización para ayudas y 10 para nacionalidad.',
       measures: [
-        'Ejecutar expulsiones rápidas de inmigrantes en situación irregular o condenados por delito.',
-        'Desplegar permanentemente a la Armada y Ejército del Aire en el Estrecho contra entradas clandestinas y mafias.',
-        'Suspender visados, ayudas y acuerdos con países que rechacen repatriar a sus nacionales en situación ilegal.',
-        'Retirar subvenciones públicas a organizaciones dedicadas a la acogida irregular.'
+        'Ejecutar expulsiones en 48 horas (100% en 90 días) de irregulares o delincuentes, derogar la regularización de 2026 y exigir 10 años para nacionalidad (con cupos hispanoamericanos).',
+        'Aplicar moratoria y bloqueo de visados y comercio en 72 horas a países no colaboradores, además de una tasa del 2% a remesas hacia dichos estados.',
+        'Realizar pruebas radiológicas y dentales para verificar la edad de menores y exigir 5 años de residencia y cotización para ayudas públicas o vivienda social.',
+        'Prohibir el burka y niqab en espacios públicos, ilegalizar los Hermanos Musulmanes y cortar la financiación extranjera a mezquitas y ONG de acogida irregular.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Inmigración y Fronteras'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque IV (Inmigración y Fronteras, pp. 17-19)'
     },
     seguridad: {
-      headline: 'Macrocárcel tipo Bukele, registro de agresores sexuales y legítima defensa',
+      headline: 'Macrocárcel de 3.000 M€, equiparación policial (+7.500 €) y legítima defensa',
       summary:
-        'Presupuesta una macrocárcel de 3.000 M€ sin tercer grado, amplía la legítima defensa armada en domicilios y crea registro público de delincuentes sexuales.',
+        'Construye una macrocárcel de 3.000 M€ sin tercer grado, equipara salarios policiales con los Mossos, triplica unidades especiales y blinda la legítima defensa.',
       measures: [
-        'Construir una macrocárcel de máxima seguridad (3.000 M€) sin tercer grado ni permisos para asesinos, violadores, terroristas, narcotraficantes y corruptos.',
-        'Crear un registro público de delincuentes sexuales reincidentes, seguimiento telemático vitalicio y castración química voluntaria.',
-        'Ampliar la presunción legal de legítima defensa armada en domicilios y negocios frente a asaltos violentos o nocturnos.',
-        'Desplegar Armada y Ejército del Aire en el Estrecho contra narcotráfico y mafias.'
+        'Construir una macrocárcel de máxima seguridad (3.000 M€) sin tercer grado ni permisos; extranjeros condenados cumplen en su país con veto vitalicio de regreso.',
+        'Equiparar Policía Nacional y Guardia Civil con los Mossos (+7.500 € y jubilación a los 60 años), triplicar UCO/UDEF/UDYCO (+3.000) y desplegar Armada y Ejército del Aire en el Estrecho.',
+        'Crear un registro público y castración química voluntaria para agresores sexuales, e impulsar mili voluntaria (1.600 €/mes netos y 50.000 € exentos de IRPF 10 años).',
+        'Ampliar la legítima defensa armada, proteger penalmente a vigilantes de seguridad (jubilación a los 60) e implantar juicios rápidos en 72h.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Seguridad y Prisiones'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque II (Seguridad y Justicia Penal, pp. 8-11)'
     },
     modelo_estado: {
-      headline: 'Centralización frente al «estado de las taifas» y recorte administrativo',
+      headline: 'Recorte de 57.000 millones en sobrecoste autonómico y supresión de Senado y diputaciones',
       summary:
-        'Aboga por recentralizar Sanidad, Educación y compras públicas, cerrar o reformar órganos institucionales y recortar ministerios y entes regionales.',
+        'Suprime Senado, Consejo de Estado, CES y diputaciones, recorta de 22 a 10 ministerios sin abolir formalmente las autonomías y blinda Ceuta, Melilla y Canarias.',
       measures: [
-        'Recentralizar competencias clave de Sanidad, Educación, Justicia y Compras Públicas frente a los 17 sistemas autonómicos.',
-        'Reducir de 22 a 10 ministerios, de 3 a 1 vicepresidencias y recortar asesores, diputaciones y entes duplicados.',
-        'Suprimir la financiación pública a partidos y reducir el número de parlamentarios.',
-        'Garantizar la igualdad fiscal y jurídica en todo el territorio nacional.'
+        'Ahorrar 57.000 millones de euros anuales en sobrecoste y duplicidades autonómicas, reduciendo el Gobierno de 22 a 10 ministerios y de 3 a 1 vicepresidencias.',
+        'Suprimir el Senado, el Consejo de Estado, el Consejo Económico y Social (CES), las diputaciones provinciales y toda financiación pública a partidos.',
+        'Convertir Ceuta y Melilla en zona franca (0% IRPF, Sociedades 10 años y cotizaciones) y aplicar -1.000 euros en IRPF y ZEC al 0% en Canarias.',
+        'Centralizar compras públicas e historia clínica sanitaria garantizando la igualdad fiscal y jurídica territorial.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Estructura del Estado'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloques III y X (Estructura del Estado, pp. 13-16 y 35-38)'
     },
     energia_campo: {
-      headline: 'Revisión del Pacto Verde, energía nuclear y reciprocidad arancelaria agraria',
+      headline: 'Veto al Pacto Verde y Mercosur, IVA al 4% eléctrico y recuperación del gas argelino',
       summary:
-        'Suspende trabas de la Agenda 2030 sobre el sector primario, defiende la energía nuclear para abaratar electricidad y exige reciprocidad arancelaria.',
+        'Fija un IVA del 4% en luz y agua, veta el acuerdo UE-Mercosur, el recorte de la PAC y el Pacto Verde, y repara la relación energética con Argelia.',
       measures: [
-        'Suspender restricciones de la Agenda 2030 que penalicen a agricultores, ganaderos y transportistas españoles.',
-        'Mantener y potenciar la energía nuclear para garantizar electricidad barata y estable a la industria.',
-        'Imponer controles estrictos y reciprocidad arancelaria frente a importaciones agrarias extracomunitarias.',
-        'Ejecutar infraestructuras hidráulicas nacionales contra la sequía.'
+        'Rebajar al 4% el IVA de la electricidad y el agua y suprimir el impuesto a la producción eléctrica para abaratar el coste energético.',
+        'Ejercer el veto en la UE frente al acuerdo UE-Mercosur, el recorte del 20% de la PAC (-877 millones), el Pacto Verde Europeo y la Ley de Restauración de la Naturaleza.',
+        'Exigir cláusulas espejo y controles estrictos frente a importaciones agrarias extracomunitarias y derogar trabas de la Agenda 2030 sobre el campo.',
+        'Retirar la carta sobre el Sáhara para recuperar la alianza comercial y el suministro de gas de Argelia (38,5%).'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Energía y Campo'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloques III.6 y X (pp. 13, 35-39)'
     },
     exterior_ue: {
-      headline: 'Referéndum de renegociación con la UE y firmeza comercial frente a Marruecos',
+      headline: 'Referéndum de renegociación UE, escudo de Ceuta y Melilla y gas argelino',
       summary:
-        'Propone someter a referéndum los términos de pertenencia a la Unión Europea y aplicar reciprocidad dura y bloqueos ante presiones fronterizas.',
+        'Convoca referéndum vinculante de renegociación europea (y salida si se rechaza), veta Mercosur y la ayuda exterior sin retorno, protege Ceuta y Melilla y repara la relación con Argelia.',
       measures: [
-        'Convocar un referéndum vinculante para renegociar las condiciones de pertenencia de España a la Unión Europea.',
-        'Aplicar bloqueos comerciales inmediatos a Marruecos ante presiones migratorias o bloqueos aduaneros en Ceuta y Melilla.',
-        'Impulsar una ley antiterrorista de máximos contra redes extremistas violentas.',
-        'Defender la primacía jurídica nacional frente a imposiciones burocráticas supranacionales.'
+        'Convocar un referéndum vinculante para renegociar los tratados con la UE (y someter la salida si se deniega), vetando Mercosur, el Pacto Verde y el recorte de la PAC.',
+        'Aplicar bloqueo comercial total a Marruecos ante presiones fronterizas o aduaneras, desplegar +5.000 militares en Ceuta y Melilla y reclamar cosoberanía en Gibraltar.',
+        'Retirar la carta sobre el Sáhara Occidental para recuperar la alianza comercial y contratos de gas a largo plazo con Argelia (38,5%).',
+        'Suprimir los 4.550 millones de ayuda exterior sin acuerdos de repatriación y fijar cupos preferentes con Hispanoamérica.'
       ],
-      sourceRef: 'Contrato Electoral SALF 29N-2026: Geopolítica y UE'
+      sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque X (Geopolítica y Soberanía, pp. 35-39)'
     }
   },
 
@@ -1921,177 +1920,175 @@ export const PROGRAMS = {
 
   fe_jons: {
     economia: {
-      headline: 'Nacionalsindicalismo: nacionalización de banca, crédito público y tercera vía',
+      headline: 'Nacionalización bancaria e INI, Sociedades de Retorno, deflactación y auditoría de deuda',
       summary:
-        'Rechaza tanto el capitalismo financiero como el marxismo, proponiendo la nacionalización del crédito, sindicatos productivos y propiedad con función social.',
+        'Nacionaliza banca bajo modelo de cajas, crea un Instituto de Crédito público y el INI, baja el IRPF con deflactación y ejecuta una auditoría de cuentas y deuda pública.',
       measures: [
-        'Nacionalizar la banca privada y las grandes empresas de energía, agua y comunicaciones.',
-        'Superar el capitalismo especulativo mediante crédito público a interés mínimo para trabajadores y pymes.',
-        'Organizar la economía en torno al trabajo como valor supremo, eliminando la usura y especulación bursátil.',
-        'Reconocer la propiedad privada familiar y cooperativa ligada a su función productiva social.',
-        'Ejecutar una auditoría integral de cuentas y deuda pública frente al endeudamiento externo y la usura financiera.'
+        'Nacionalizar la banca como cajas de ahorro, crear un Instituto de Crédito público e impulsar la reindustrialización mediante el INI (2% PIB en I+D y centros de datos autosuficientes) (Secs. 9-10).',
+        'Aplicar un Impuesto de Sociedades de Retorno vinculado a inversión y empleo local, deflactar el IRPF bajando tipos a trabajadores e introducir tramos progresivos (Sec. 9).',
+        'Revisar progresivamente Sucesiones y Donaciones y regular precios e impuestos de bienes esenciales (Sec. 9.4, 9.8).',
+        'Auditar cuentas y deuda pública y suprimir subvenciones partidistas y a organizaciones sectarias (Sec. 18.6-18.7).'
       ],
-      sourceRef: 'Programa Nacionalsindicalista (27 Puntos y Programa Actual de FE de las JONS)'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 9, 10 y 18'
     },
     vivienda: {
-      headline: 'Vivienda familiar en propiedad sin especulación y abolición de hipotecas abusivas',
+      headline: 'INV, tope de alquiler al 25% SMI, veto a fondos y créditos ICO condonados al 4º hijo',
       summary:
-        'Defiende la erradicación de los fondos especulativos, la construcción estatal masiva para familias y el crédito social sin usura bancaria.',
+        'Crea el Instituto Nacional de Vivienda, topa alquileres al 25% del SMI, prohíbe compras a fondos y extranjeros, y concede créditos ICO ~0% condonados por natalidad.',
       measures: [
-        'Prohibir la especulación inmobiliaria y confiscar viviendas acaparadas con fines especulativos por fondos buitre.',
-        'Crear un plan estatal de acceso a vivienda familiar en propiedad mediante crédito público sin interés usurero.',
-        'Garantizar que ninguna familia trabajadora pierda su hogar habitual por desahucio financiero.',
-        'Fomentar cooperativas municipales de construcción residencial.'
+        'Crear el Instituto Nacional de Vivienda (INV) y sacar al mercado pisos vacíos bancarios para vivienda familiar en propiedad (Sec. 2).',
+        'Fijar un tope legal de alquiler al 25% del SMI y definir gran tenedor desde 5 viviendas (Sec. 2).',
+        'Prohibir la adquisición especulativa de vivienda a fondos buitre, SOCIMIs y compradores extranjeros (Sec. 2).',
+        'Conceder préstamos ICO públicos a interés próximo al 0% para primera vivienda, condonando capital por cada hijo hasta quedar saldada la deuda al cuarto hijo (Sec. 2).'
       ],
-      sourceRef: 'Propuestas Sociales de FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Sección 2 (Vivienda)'
     },
     empleo: {
-      headline: 'Sindicatos productivos, salario familiar y participación obrera en beneficios',
+      headline: 'Giro industrial (47%), fin de ETTs, despido improcedente, jornada partida y cuota 0',
       summary:
-        'Propone sustituir los sindicatos subvencionados por representación productiva directa, salario familiar suficiente y estabilidad laboral.',
+        'Transforma el modelo productivo hacia el 47% industrial y 8% primario, ilegaliza ETTs, prohíbe despido improcedente, suprime jornada partida y da cuota cero <SMI sectorial.',
       measures: [
-        'Garantizar un salario familiar suficiente que permita vivir dignamente con un solo sueldo si se desea.',
-        'Participación de los trabajadores en la gestión y beneficios de las empresas productivas.',
-        'Sustituir los sindicatos subvencionados por sindicatos libres de rama de producción.',
-        'Combatir la precariedad, subcontratas abusivas y destrucción de empleo industrial nacional.'
+        'Reequilibrar la economía en 10-15 años hacia un 8% de sector primario, 47% industria y 53% servicios de alto valor (Sec. 6.1.1).',
+        'Derogar las reformas laborales, ilegalizar las ETTs y prohibir el despido improcedente dejando solo despido objetivo (20-33 días) o disciplinario (Sec. 6.4-6.6).',
+        'Suprimir la jornada partida y el comercio los sábados desde las 14:00, y estudiar la reducción semanal de jornada por sectores (Sec. 6).',
+        'Garantizar cuota cero a autónomos por debajo del SMI de su sector, IVA de caja automático y bonificación del 50% por relevo generacional familiar (Sec. 9.6).'
       ],
-      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Trabajo'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 6 y 9.6 (Trabajo y Autónomos)'
     },
     pensiones: {
-      headline: 'Vuelta a la jubilación a los 65 años, retiro anticipado penoso y natalidad',
+      headline: 'Jubilación a los 65 años, traslado del MEI a pensiones altas y retiro anticipado',
       summary:
-        'Exige revertir el retraso de la edad de jubilación, reconocer profesiones penosas y sostener las pensiones mediante natalidad y Estado social.',
+        'Devuelve la jubilación a los 65 años, retira el MEI de las nóminas trasladándolo a pensiones por encima del salario mediano y retira pensiones no contributivas a extranjeros.',
       measures: [
-        'Recuperar los 65 años como edad ordinaria de jubilación frente a las prórrogas actuales.',
-        'Establecer jubilación anticipada obligatoria y sin merma en sectores físicos o penosos.',
-        'Sostener el sistema público de reparto fomentando la natalidad española en lugar de inmigración de reemplazo.',
-        'Garantizar pensiones dignas indexadas al coste real de la vida financiadas solidariamente por el Estado.'
+        'Recuperar los 65 años como edad ordinaria de jubilación con jubilación anticipada obligatoria según penosidad sectorial (Sec. 6).',
+        'Eliminar el MEI de las nóminas de trabajadores aplicándolo a las pensiones por encima del salario mediano para financiar ayudas juveniles y familiares (Sec. 9.10).',
+        'Blindar el sistema público de reparto rechazando toda privatización y estudiando fondos soberanos de respaldo si fuera necesario (Sec. 9.11).',
+        'Retirar pensiones no contributivas a extranjeros y sostener el sistema mediante natalidad española y reindustrialización (Anexo I y Sec. 9).'
       ],
-      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Pensiones'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 6, 9.10-11 y Anexo I'
     },
     regeneracion_justicia: {
-      headline: 'Superación del sistema de partidos y representación orgánica (familia, municipio, sindicato)',
+      headline: 'Abolición de la Monarquía borbónica, fin del TC, CGPJ judicial y Lesa Patria',
       summary:
-        'Cuestiona la partitocracia liberal desde su doctrina fundacional, propugnando representación directa por cuerpos naturales y justicia implacable.',
+        'Propone abolir la Monarquía y el Tribunal Constitucional, elegir el CGPJ entre jueces, cadena perpetua para delitos de Lesa Patria y suprimir subvenciones partidistas.',
       measures: [
-        'Sustituir la representación de partidos políticos por representación orgánica de familia, municipio y sindicato.',
-        'Eliminar toda financiación pública a partidos políticos y recortar cargos políticos parasitarios.',
-        'Endurecer severamente las penas contra la corrupción política con confiscación total de bienes ilícitos.',
-        'Garantizar una justicia independiente gratuita y ágil para todos los españoles.'
+        'Abolir la Monarquía borbónica, superar el régimen partitocrático y sustituir subvenciones a partidos y organismos sectarios por acceso meritocrático (Secs. 13, 18).',
+        'Abolir el Tribunal Constitucional y garantizar la elección directa del CGPJ por los propios jueces (Sec. 17).',
+        'Instaurar la cadena perpetua no revisable para delitos de Lesa Patria (corrupción grave, latrocinio y separatismo) con redención penal laboral 2:1 (Sec. 17).',
+        'Ejecutar una auditoría integral de cuentas y deuda pública y descentralizar administrativamente el traslado de ministerios (Sec. 13, 18.7).'
       ],
-      sourceRef: 'Reforma del Estado — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 13, 17 y 18'
     },
     sanidad: {
-      headline: 'Sanidad nacional 100% pública, única y gratuita bajo gestión directa estatal',
+      headline: 'Servicio Nacional de Salud único, cobertura dental y oftalmológica y salida de la OMS',
       summary:
-        'Defiende un sistema sanitario único centralizado de propiedad pública sin intermediación privada ni diferencias territoriales.',
+        'Centraliza la sanidad pública sin gestión privada ni lucro farmacéutico, incorpora tratamientos bucodentales y oftalmológicos en el SNS y abandona la OMS.',
       measures: [
-        'Nacionalizar y unificar los 17 sistemas sanitarios en un solo Servicio Nacional de Salud gratuito.',
-        'Eliminar concesiones privadas sanitarias y crear industria farmacéutica nacional pública.',
-        'Reforzar la protección médica a la maternidad, la infancia y los trabajadores en activo.',
-        'Garantizar atención médica completa en todo el medio rural español.'
+        'Centralizar los 17 servicios regionales en un único Servicio Nacional de Salud 100% público sin concesiones privadas (Sec. 20).',
+        'Incluir de forma universal los tratamientos bucodentales y oftalmológicos dentro de la cartera pública del SNS (Sec. 20.8).',
+        'Garantizar el acceso sanitario en el medio rural y combatir el oligopolio farmacéutico privado.',
+        'Retirar a España de la Organización Mundial de la Salud (OMS) defendiendo la soberanía sanitaria (Sec. 20).'
       ],
-      sourceRef: 'Sanidad y Justicia Social — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Sección 20 (Sanidad)'
     },
     educacion: {
-      headline: 'Educación pública universal gratuita hasta la universidad con formación patriótica',
+      headline: 'Fin de Bolonia y máster docente, Universidades Laborales y policía en colegios',
       summary:
-        'Propugna la igualdad absoluta de acceso a todos los niveles educativos por mérito, con sentido católico tradicional y unidad idiomática.',
+        'Deroga el Plan Bolonia y el máster habilitante del profesorado, recupera Universidades Laborales, introduce policía en escuelas y excluye contenidos LGTBI/feministas.',
       measures: [
-        'Garantizar acceso gratuito a todos los niveles de enseñanza y universidad en función del mérito y capacidad.',
-        'Recuperar la competencia estatal exclusiva de Educación con currículo común e idioma español en todo el país.',
-        'Integrar la tradición histórica y espiritual española respetando la separación funcional Iglesia-Estado.',
-        'Promover escuelas técnicas y formación profesional vinculadas a la industria nacional.'
+        'Derogar el Plan Bolonia reformulando la universidad e implantar acceso gratuito por mérito hasta estudios superiores (Sec. 19).',
+        'Suprimir el máster habilitante obligatorio para docentes y recuperar la red de Universidades Laborales vinculadas a la industria (Sec. 19).',
+        'Establecer presencia policial en centros escolares, suprimir contenidos ideológicos LGTBI y feministas y garantizar enseñanza en español (Sec. 19).',
+        'Recuperar la competencia estatal exclusiva educativa con currículo único nacional.'
       ],
-      sourceRef: 'Educación y Cultura Nacional — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Sección 19 (Educación)'
     },
     inmigracion: {
-      headline: 'Plan Nacional de Remigración, control fronterizo y prioridad laboral nacional',
+      headline: 'Remigración en 3 fases, revisión 35-50 años de nacionalidades y tasa del 50% a remesas',
       summary:
-        'Su programa 29N-2026 incluye un Plan Nacional de Remigración (Anexo I) frente a la inmigración masiva y reserva empleo y vivienda pública a los españoles.',
+        'Ejecuta una remigración en 3 fases hacia el criterio de ius sanguinis, revisa nacionalidades de los últimos 35-50 años e impone tasa del 50% y tope del 1,5% a remesas.',
       measures: [
-        'Ejecutar un Plan Nacional de Remigración (Anexo I) para revertir flujos irregulares y no integrados.',
-        'Establecer el cierre estricto frente a la inmigración irregular y priorizar al trabajador español en empleo y vivienda.',
-        'Rechazar acuerdos internacionales que impongan cuotas obligatorias de reparto de inmigrantes.',
-        'Priorizar la relación cultural e histórica ordenada con naciones hermanas de Hispanoamérica.'
+        'Ejecutar un Plan Nacional de Remigración en 3 fases expulsando a irregulares y extranjeros condenados o inactivos (Anexo I).',
+        'Revisar las concesiones de nacionalidad de los últimos 35-50 años implantando el criterio único jurídico del ius sanguinis (Anexo I).',
+        'Aplicar una tasa del 50% y tope del 1,5% del PIB/flujos a remesas exteriores y retirar toda pensión o ayuda no contributiva a extranjeros (Anexo I).',
+        'Militarizar las fronteras nacionales y rechazar repartos de migrantes impuestos desde Bruselas.'
       ],
-      sourceRef: 'Programa Electoral FE de las JONS 29N-2026 (Bloque I y Anexo I)'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Anexo I (Remigración y Extranjería)'
     },
     seguridad: {
-      headline: 'Fortalecimiento militar y policial, orden público y lucha contra mafias',
+      headline: 'Servicio militar obligatorio de 18 meses, Ley de Fugas, Nube Soberana y cadena perpetua',
       summary:
-        'Reclama dotar de máxima dignidad y medios a Fuerzas Armadas y cuerpos policiales, con firmeza penal frente a violencia y narcotráfico.',
+        'Reintroduce la mili obligatoria de 18 meses, aplica Ley de Fugas a narcolanchas que no se detengan, crea una Nube Soberana y fija cadena perpetua con trabajo 2:1.',
       measures: [
-        'Reforzar a las Fuerzas Armadas y cuerpos de seguridad para proteger la integridad física y territorial.',
-        'Combatir con máxima firmeza penal las mafias, el narcotráfico y la delincuencia violenta.',
-        'Garantizar el control fronterizo permanente en Ceuta, Melilla, Canarias y costas peninsulares.',
-        'Proteger la seguridad en barrios obreros y medio rural aumentando dotaciones de Guardia Civil.'
+        'Reintroducir el Servicio Militar obligatorio de 18 meses entre los 18 y 22 años y militarizar las fronteras nacionales (Sec. 16.6-7).',
+        'Aplicar la Ley de Fugas a embarcaciones que huyan en persecución contra narcotráfico y contrabando y proteger Ceuta, Melilla y Canarias (Sec. 14).',
+        'Construir una Nube Soberana estatal para blindar datos de ciudadanos, empresas e infraestructuras críticas (Sec. 15).',
+        'Implantar cadena perpetua no revisable para delitos gravísimos y redención de condena por trabajo penal en proporción 2:1 (Sec. 17).'
       ],
-      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Seguridad y Defensa'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 14-17 (Defensa, Seguridad y Datos)'
     },
     modelo_estado: {
-      headline: 'Unidad nacional intangible, abolición de autonomías y estado sindical unitario',
+      headline: 'Abolición de la Monarquía y de las 17 autonomías hacia Estado nacional unitario',
       summary:
-        'Principio doctrinal innegociable: oposición absoluta al Estado autonómico y al separatismo, defendiendo España como unidad indivisible.',
+        'Suprime la Monarquía borbónica y las 17 comunidades autónomas por un Estado nacional unitario descentralizado administrativamente, sin potestad legislativa regional.',
       measures: [
-        'Abolir las comunidades autónomas devolviendo la unidad legislativa y política al Estado nacional.',
-        'Ilegalizar de forma inmediata todo partido, entidad o movimiento separatista.',
-        'Respetar las variedades culturales y folclóricas regionales dentro de la unidad política nacional indivisible.',
-        'Fortalecer el papel del municipio y la provincia como entidades administrativas cercanas.'
+        'Abolir las 17 comunidades autónomas y sus parlamentos sustituyéndolas por administración descentralizada sin potestad legislativa política (Sec. 13).',
+        'Abolir la Monarquía borbónica e ilegalizar de inmediato partidos y organizaciones separatistas (Sec. 13, 17).',
+        'Descentralizar la sede de ministerios por provincias para vertebrar el territorio dentro de la unidad política nacional (Sec. 13).',
+        'Fortalecer el municipio y la provincia suprimiendo duplicidades autonómicas.'
       ],
-      sourceRef: 'Unidad de España en el Programa de FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Sección 13 (Modelo Territorial e Institucional)'
     },
     energia_campo: {
-      headline: 'Reforma agraria comunal, soberanía energética y rechazo a imposiciones externas',
+      headline: 'Nuclear con reactores SMR, autoconsumo 1:1, tasa 25% macrorenovables y Banco de Semillas',
       summary:
-        'Recoge la defensa histórica del campo mediante recuperación de patrimonios comunales, precios justos agrarios y nacionalización energética.',
+        'Combina energía nuclear y minirreactores SMR con autoconsumo 1:1 (<15 kW), grava con el 25% macroinstalaciones en suelo rural y crea un Banco Nacional de Semillas.',
       measures: [
-        'Impulsar una reforma agraria y ganadera con recuperación de tierras comunales y precios justos frente a distribuidoras.',
-        'Nacionalizar el sector eléctrico y mantener la energía nuclear junto a planes hidráulicos nacionales.',
-        'Ejecutar una repoblación forestal masiva y proteger el medio rural de la despoblación.',
-        'Rechazar imposiciones de Bruselas y tratados que arruinen al agricultor y ganadero español.'
+        'Apostar por la energía nuclear, incluyendo minirreactores SMR, bajo control nacional para abaratar la electricidad industrial (Sec. 11).',
+        'Implantar balance neto 1:1 automático en autoconsumo (<15 kW) con mero certificado técnico y gravar al 25% las macroplantas en suelo rural (Sec. 11).',
+        'Crear un Banco Nacional de Semillas autóctonas obligatorio y recuperar tierras comunales con precios agrarios justos (Sec. 12).',
+        'Rechazar restricciones climáticas de Bruselas que destruyen el sector primario.'
       ],
-      sourceRef: 'Reforma Agraria y Energía — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 11 y 12 (Energía y Sector Primario)'
     },
     exterior_ue: {
-      headline: 'Comunidad Hispánica (Hispanidad), salida de la OTAN y rechazo a la UE tecnocrática',
+      headline: 'Salida del Euro, OTAN, FMI, ONU y UE, Schengen y repatriación del oro',
       summary:
-        'Plantea abandonar la OTAN y la subordinación a la UE actual, apostando por la hermandad política y económica con Hispanoamérica.',
+        'Exige abandonar el Euro, OTAN, FMI, ONU y OMS, salir de forma progresiva de la UE y Schengen, repatriar reservas de oro y construir la comunidad de la Hispanidad.',
       measures: [
-        'Promover la salida inmediata de España de la OTAN y desmantelar bases militares extranjeras.',
-        'Recuperar la soberanía monetaria y económica frente a las directivas de la Unión Europea.',
-        'Construir una alianza política, económica y cultural preferente con los países de Hispanoamérica (Hispanidad).',
-        'Reivindicar la soberanía sobre Gibraltar y reforzar la defensa de Ceuta, Melilla y Canarias.'
+        'Promover la salida inmediata del Euro, OTAN, FMI, ONU y OMS, junto a la salida progresiva de la Unión Europea y del espacio Schengen (Secs. 3-5, 16, 20).',
+        'Repatriar y blindar en territorio nacional todas las reservas de oro y metales preciosos y desmantelar bases militares extranjeras (Secs. 4-5, 16).',
+        'Forjar una alianza soberana política, económica y cultural preferente con las naciones de Hispanoamérica.',
+        'Reivindicar la soberanía sobre Gibraltar y reforzar el despliegue militar en Ceuta, Melilla y Canarias (Sec. 14).'
       ],
-      sourceRef: 'Política Exterior e Hispanidad — FE de las JONS'
+      sourceRef: 'Programa Electoral FE de las JONS 29N-2026: Secciones 3-5, 14 y 16 (Soberanía Exterior)'
     }
   },
 
   pacma: {
     economia: {
-      headline: 'Economía verde sostenible, fiscalidad justa e incentivos a la transición ecológica',
+      headline: 'Casilla 0,7% IRPF para protección animal, IVA veterinario al 4% y gasto sostenible',
       summary:
-        'Defiende reorientar subvenciones desde industrias contaminantes y taurinas hacia sectores sostenibles, investigación sin experimentación animal y bienestar social.',
+        'Incorpora la protección animal y los santuarios a la casilla del 0,7% del IRPF, baja al 4% el IVA veterinario, suprime ayudas taurinas y orienta el gasto público a sostenibilidad.',
       measures: [
         'Suprimir el 100% de las subvenciones públicas a la tauromaquia, caza y ganadería intensiva industrial.',
-        'Reducir el IVA de los servicios veterinarios del 21% al tipo superreducido del 4%.',
-        'Establecer fiscalidad progresiva y tasas ambientales sobre industrias altamente contaminantes.',
-        'Redirigir ayudas públicas hacia la economía circular, energías limpias y alimentación vegetal.',
-        'Medir la eficiencia y eficacia del gasto público evitando recortes en servicios sociales mientras se elimina el gasto insostenible.'
+        'Incorporar la defensa animal y santuarios de animales legalmente reconocidos dentro de la casilla del 0,7% del IRPF (Sec. 1.1.12-13).',
+        'Reducir el IVA de los servicios veterinarios del 21% al tipo superreducido del 4% y fijar tasas ambientales sobre industrias contaminantes.',
+        'Evaluar la eficiencia del gasto público reorientando ayudas hacia economía circular y proteínas vegetales sin recortar servicios sociales.'
       ],
-      sourceRef: 'Programa Político PACMA 2026: Economía Sostenible'
+      sourceRef: 'Programa Electoral PACMA 29N-2026 (Caps. 1.1 y 3.4: Economía y Casilla 0,7%)'
     },
     vivienda: {
-      headline: 'Vivienda asequible, parque público amplio y protección a familias con animales',
+      headline: 'Vivienda asequible, admisión en casas de acogida y no discriminación con animales',
       summary:
-        'Defiende topar precios abusivos, frenar la turistificación masiva y prohibir cláusulas que discriminen a inquilinos que conviven con animales.',
+        'Defiende topar alquileres y frenar la turistificación, prohíbe cláusulas discriminatorias hacia familias con animales y garantiza admisión de animales en casas de acogida.',
       measures: [
-        'Ampliar el parque público de vivienda en alquiler social y regular los precios frente a la especulación.',
-        'Limitar la masificación turística residencial para garantizar el derecho a la vivienda de los vecinos.',
+        'Ampliar el parque público de vivienda en alquiler social y regular precios frente a la especulación y masificación turística.',
         'Prohibir por ley la discriminación en contratos de alquiler hacia familias que convivan con animales de compañía.',
-        'Garantizar alternativas habitacionales que incluyan refugios pet-friendly en casos de emergencia o desahucio.'
+        'Garantizar la admisión de animales de compañía en casas de acogida y pisos tutelados de víctimas de violencia machista y desahucios (Sec. 3.10.1).',
+        'Asegurar alternativas habitacionales dignas y refugios adecuados para familias vulnerables.'
       ],
-      sourceRef: 'Programa Político PACMA 2026: Vivienda Digna'
+      sourceRef: 'Programa Electoral PACMA 29N-2026 (Vivienda y Cap. 3.10.1)'
     },
     empleo: {
       headline: 'Igualdad salarial, jornada flexible para conciliación y transición a empleos verdes',
@@ -2118,28 +2115,28 @@ export const PROGRAMS = {
       sourceRef: 'Programa Electoral PACMA 29N-2026: Pensiones y Mayores'
     },
     regeneracion_justicia: {
-      headline: 'Juzgados especializados en maltrato animal, ley electoral justa y transparencia',
+      headline: 'Violencia vicaria animal, juzgados ecológicos, reforma electoral y Ley de Paridad',
       summary:
-        'Reclama una reforma electoral que elimine la discriminación al voto minoritario y la creación de fiscalías dotadas contra delitos ambientales y de maltrato.',
+        'Reconoce legalmente la violencia vicaria sobre animales, crea fiscalías ecológicas, reforma una ley electoral desigual y cuestiona el tope del 50% femenino de listas cremallera.',
       measures: [
-        'Reformar la Ley Electoral eliminando barreras que infrarrepresentan a partidos estatales sin concentración provincial.',
-        'Crear juzgados y fiscalías especializados con medios reales contra el maltrato animal y el delito ecológico.',
-        'Endurecer el Código Penal con penas efectivas de prisión para maltratadores de animales (#MaltratadoresALaCárcel).',
+        'Reconocer legalmente la violencia vicaria ejercida sobre los animales y dotar de recursos a equipos especializados en violencia de género (Sec. 3.10.1).',
+        'Crear juzgados y fiscalías especializados con medios reales contra el maltrato animal y el delito ecológico (#MaltratadoresALaCárcel).',
+        'Reformar la LOREG eliminando barreras que discriminan candidaturas estatales sin concentración provincial y cuestionar que las listas cremallera reduzcan al 50% candidaturas mayoritariamente femeninas (p. 64).',
         'Suprimir privilegios institucionales y asegurar transparencia total de subvenciones públicas.'
       ],
-      sourceRef: 'Programa Político PACMA 2026: Justicia y Reforma Electoral'
+      sourceRef: 'Programa Electoral PACMA 29N-2026 (Caps. 1, 3.10 y p. 64: Justicia y LOREG)'
     },
     sanidad: {
-      headline: 'Enfoque One Health, sanidad 100% pública, salud mental y nutrición preventiva',
+      headline: 'One Health, exclusión de mascotas en RD 666/2023 (PRESVET) y salud mental',
       summary:
-        'Promueve el enfoque de Salud Única (humana, animal y ambiental), el blindaje de la sanidad pública y la prevención basada en nutrición saludable.',
+        'Aplica el enfoque One Health, modifica el RD 666/2023 excluyendo a animales de compañía de notificaciones PRESVET, blinda el SNS y refuerza psicología clínica.',
       measures: [
+        'Modificar el Real Decreto 666/2023 para excluir a los animales de compañía de la obligación de notificación en el sistema PRESVET, coherente con la normativa europea (Cap. 1.8).',
         'Blindar la sanidad 100% pública sin externalizaciones privadas y reducir listas de espera.',
         'Adoptar el enfoque One Health integrando salud humana, sanidad animal y prevención ambiental.',
-        'Ampliar plantillas de psicología clínica y salud mental gratuita en centros de salud e institutos.',
-        'Fomentar alternativas científicas libres de experimentación animal en investigación biomédica.'
+        'Ampliar plantillas de psicología clínica y salud mental gratuita y fomentar investigación sin experimentación animal.'
       ],
-      sourceRef: 'Programa Político PACMA 2026: Sanidad Pública y One Health'
+      sourceRef: 'Programa Electoral PACMA 29N-2026 (Cap. 1.8 RD 666/2023 y One Health)'
     },
     educacion: {
       headline: 'Educación pública laica, educación en empatía y menús vegetales escolares',
@@ -2217,37 +2214,37 @@ export const PROGRAMS = {
 
   d21: {
     economia: {
-      headline: '«Test PYME», auditoría del gasto, deducción salarial en Sociedades y control AIReF',
+      headline: '«Test PYME», Sociedades al 5% en reinversión, I+D al 3% y control AIReF',
       summary:
-        'Propone evaluar cada programa público por eficacia y coste, implantar un Test PYME contra cargas burocráticas, incentivar subidas salariales y contener la deuda pública.',
+        'Propone evaluar cada programa público por eficacia y coste, rebajar Sociedades al 5% por reinversión pyme, alcanzar el 3% del PIB en I+D y contener la deuda pública.',
       measures: [
         'Someter todo programa de gasto público a auditorías de impacto y encargar a la AIReF la evaluación ex post de grandes obras.',
-        'Implantar un «Test PYME» preceptivo en toda nueva norma y reducir cargas regulatorias mediante transición en rampa y reforma de Segunda Oportunidad.',
-        'Crear una deducción en Sociedades para empresas que eleven salarios por encima del IPC (reforzada para trabajadores jóvenes).',
+        'Implantar un «Test PYME» preceptivo en toda nueva norma, fijar Sociedades al 5% en beneficios reinvertidos en pymes y deducir subidas salariales por encima del IPC.',
+        'Alcanzar una inversión en I+D del 2% del PIB en 2027 y del 3% en 2030 y reformar la Ley de Segunda Oportunidad.',
         'Contener el déficit y la deuda pública combinando control digital del gasto y simplificación fiscal sostenible.'
       ],
       sourceRef: 'La España que merecemos — Democracia 21 (29N-2026)'
     },
     vivienda: {
-      headline: 'Cero impuestos en vivienda a menores de 35 años, recargo a no residentes y 10.000 M€ UE',
+      headline: 'Pacto de Reconciliación del Alquiler, 0 impuestos <35 años e IVA 4% / ITP 2%',
       summary:
-        'Suprime impuestos en compra habitual para menores de 35 años (hasta 400.000 €), reorienta 10.000 millones europeos y aplica recargos a compra especulativa de no residentes.',
+        'Combina el Pacto de Reconciliación del Alquiler (SERPAVI) con escudo estatal antiimpagos, 0 impuestos <35 años, rebaja general a ITP 2% / AJD 0% / IVA 4% y 10.000 M€ UE.',
       measures: [
-        'Suprimir los impuestos en compra de vivienda habitual para menores de 35 años y reducirlos para todos hasta un máximo de 400.000 €.',
-        'Reorientar 10.000 millones de euros en fondos europeos no ejecutados hacia un fondo soberano de vivienda asequible y rehabilitación.',
-        'Aplicar un recargo autonómico de hasta el 25% a vivienda no habitual adquirida por no residentes y bonificar el IRPF por alquiler estable.',
+        'Aplicar el Pacto de Reconciliación del Alquiler (SERPAVI) con limitación temporal y excepcional de rentas acompañada de escudo estatal frente a impagos e inquiokupación.',
+        'Suprimir IVA, ITP y AJD a menores de 35 años (hasta 400.000 €) y rebajar para todos el ITP al 2%, AJD al 0% y el IVA al 4% en vivienda habitual y obra nueva asequible.',
+        'Reorientar 10.000 millones de euros de fondos europeos hacia un Fondo Soberano de Vivienda y aplicar un recargo autonómico de hasta el 25% a no residentes.',
         'Tipificar como estafa la inquiocupación premeditada y cruzar digitalmente pisos de temporada con el padrón municipal.'
       ],
       sourceRef: 'La España que merecemos: Vivienda y Emancipación — D21 (2026)'
     },
     empleo: {
-      headline: 'Productividad con IA, alivio de 200h a autónomos y transición de 2 años en micropymes',
+      headline: 'IVA franquiciado <85.000 €, plus salarial al 5%, SMI 2/3 y 200h menos de burocracia',
       summary:
-        'Despliega un Plan Estatal de IA para elevar salarios con productividad, reduce >200 horas de burocracia a autónomos y protege a micropymes con transiciones de 2 años.',
+        'Exime de IVA a autónomos <85.000 €, bonifica pluses salariales al 5%, fija senda del SMI a 2/3 del salario mediano, recorta >200 horas de trámites y protege a micropymes.',
       measures: [
-        'Desplegar un Plan Estatal de Dinamización e Integración de la IA para elevar la productividad salarial y prohibir contratos públicos con sueldos precarios.',
-        'Reducir más de 200 horas anuales de trámites a autónomos con la «Autopista Digital Española» y cotización ajustada a ingresos reales.',
-        'Establecer un periodo transitorio de adaptación de 2 años para micropymes ante nuevos permisos o cargas laborales.',
+        'Implantar el IVA franquiciado europeo para autónomos que facturen menos de 85.000 € al año y ahorrar >200 horas anuales con la «Autopista Digital Española».',
+        'Aplicar un tipo único del 5% en IRPF a pluses salariales de hasta 5.000 €/año y fijar una senda plurianual para que el SMI alcance 2/3 del salario mediano.',
+        'Desplegar un Plan Estatal de Dinamización de la IA para elevar salarios, prohibir contratos públicos precarios y dar transición de 2 años a micropymes.',
         'Facilitar el relevo generacional de negocios rentables próximos a la jubilación del titular.'
       ],
       sourceRef: 'La España que merecemos: Revolución Pyme y Empleo — D21 (2026)'
@@ -2277,52 +2274,52 @@ export const PROGRAMS = {
       sourceRef: 'Documento España Limpia — Democracia 21 (29N-2026)'
     },
     sanidad: {
-      headline: 'Choque contra listas de espera, retención de profesionales y salud digital única',
+      headline: 'Guardias máximas de 12 horas, Grupo A1 en Enfermería y salud digital única',
       summary:
-        'Combate récords de espera quirúrgica reteniendo talento sanitario, despolitizando gerencias hospitalarias por mérito e implantando historia clínica interoperable.',
+        'Limita las guardias médicas a 12 horas, reconoce el Grupo A1 a Enfermería, integra la clínica veterinaria en Sanidad (IVA fármacos 4%), despolitiza gerencias y reduce esperas.',
       measures: [
-        'Mejorar condiciones y retribuciones para frenar la fuga de médicos y enfermeros en Atención Primaria y hospitales.',
-        'Evaluar con indicadores públicos las listas de espera y resultados clínicos de cada hospital.',
-        'Despolitizar cargos directivos sanitarios mediante concurso de méritos e implantar historia clínica interoperable en toda España.',
+        'Limitar las guardias médicas a 12 horas y mejorar retribuciones y condiciones para frenar la fuga de profesionales en Primaria y hospitales.',
+        'Reconocer la categoría del Grupo A1 y especialidades para Enfermería e integrar la veterinaria en Sanidad (One Health, con IVA al 4% en medicamentos veterinarios).',
+        'Evaluar con indicadores públicos las listas de espera, despolitizar gerencias por concurso de méritos e implantar historia clínica interoperable.',
         'Centralizar compras sanitarias aprovechando economías de escala.'
       ],
       sourceRef: 'La España que merecemos: Sanidad Pública — D21 (2026)'
     },
     educacion: {
-      headline: 'Tecnología en el currículo, índice socioeducativo y cierre de brechas autonómicas',
+      headline: 'Objetivo PISA Top 10 europeo, tecnología curricular e índice socioeducativo',
       summary:
-        'Sitúa la tecnología como pilar educativo más allá de pantallas, mide competencias en toda España e interviene en autonomías con peores resultados.',
+        'Lanza el Plan Estatal «Objetivo PISA: España al Top 10 Europeo» en 8 años (modelo Estonia), prioriza materias instrumentales y refuerza autonomías rezagadas.',
       measures: [
+        'Implantar el Plan Estatal «Objetivo PISA: España al Top 10 Europeo» en 8 años ampliando horas instrumentales con ciencia cognitiva.',
         'Incorporar la tecnología como pilar curricular fundamental, climatizar centros y suprimir barracones.',
-        'Evaluar periódicamente resultados educativos creando un Índice Socioeducativo con refuerzo estatal para autonomías rezagadas.',
-        'Impulsar la Formación Profesional tecnológica con empresas innovadoras y asegurar dominio del inglés y lenguas propias.',
-        'Ampliar becas basadas en renta y esfuerzo académico.'
+        'Evaluar resultados educativos creando un Índice Socioeducativo con refuerzo estatal para autonomías rezagadas.',
+        'Impulsar la FP tecnológica, dominio del inglés y lenguas propias y becas de renta y esfuerzo.'
       ],
       sourceRef: 'La España que merecemos: La educación en el centro — D21 (2026)'
     },
     inmigracion: {
-      headline: '«Política Migratoria con Cabeza»: vías legales, homologación digital y control',
+      headline: '«Política Migratoria con Cabeza»: visado tipo Chancenkarte y homologación ágil',
       summary:
-        'Reconoce la contribución de la inmigración al crecimiento y demografía española mientras agiliza homologación de títulos y exige legalidad en frontera.',
+        'Crea un visado de búsqueda de empleo de 6 meses (prorrogable a 9) inspirado en la Chancenkarte alemana, agiliza homologación digital de títulos y exige legalidad.',
       measures: [
-        'Agilizar visados legales de talento internacional y mano de obra necesaria en sectores con déficit.',
-        'Agilizar digitalmente la homologación transparente de títulos universitarios y profesionales extranjeros.',
-        'Garantizar el cumplimiento estricto de la ley frente a entradas irregulares en coordinación con Frontex y la UE.',
+        'Crear un visado de búsqueda de empleo de 6 meses (prorrogable a 9) inspirado en la Chancenkarte alemana: baremo por puntos, cupo según vacantes y resolución online en 2 meses.',
+        'Agilizar digitalmente la homologación transparente de títulos extranjeros e impulsar programas de formación en origen.',
+        'Garantizar el cumplimiento estricto de la ley frente a entradas irregulares y retornos verificados en coordinación con Frontex y la UE.',
         'Vincular la residencia estable a formación laboral e integración cívica constitucional.'
       ],
       sourceRef: 'La España que merecemos: Política Migratoria con Cabeza — D21 (2026)'
     },
     seguridad: {
-      headline: 'Mando Único Civil de Ciberseguridad (ANCI), respaldo policial y agilidad penal',
+      headline: 'Agencia de Ciberseguridad (ANCI), fin del cese militar a los 45 y respaldo policial',
       summary:
-        'Crea la Agencia Nacional de Ciberseguridad Independiente (ANCI) segregando la ciberseguridad civil del CNI y apoya gratuita a pymes junto al respaldo policial.',
+        'Crea la ANCI segregando la ciberseguridad civil del CNI, elimina la salida forzosa de tropa a los 45 años con FP homologada y respalda a las fuerzas policiales.',
       measures: [
         'Crear la Agencia Nacional de Ciberseguridad Independiente (ANCI) unificando INCIBE, CCN y CNPIC y separando ciberseguridad civil del CNI.',
-        'Proveer ciberasesores cercanos y protección gratuita frente a ciberataques para micropymes y autónomos.',
-        'Dotar de medios modernos y respaldo institucional a Policía Nacional y Guardia Civil frente a crimen organizado y multirreincidencia.',
+        'Eliminar de forma progresiva la salida forzosa de tropa y marinería a los 45 años con carrera estable hasta la reserva y homologación de FP militar.',
+        'Proveer ciberasesores gratuitos a micropymes y dotar de medios a Policía Nacional y Guardia Civil frente a crimen organizado y multirreincidencia.',
         'Agilizar la respuesta judicial ante inquiocupación y fraudes.'
       ],
-      sourceRef: 'La España que merecemos: Ciberseguridad y Seguridad — D21 (2026)'
+      sourceRef: 'La España que merecemos: Ciberseguridad, Defensa y Seguridad — D21 (2026)'
     },
     modelo_estado: {
       headline: 'Autonomías eficientes, servicios compartidos vía diputaciones y unidad de mercado',
@@ -2364,297 +2361,295 @@ export const PROGRAMS = {
 
   iustitia: {
     economia: {
-      headline: 'Tijeretazo al gasto político superfluo y alivio burocrático a ciudadanos y pymes',
+      headline: 'Máximo 7 ministerios, -75% asesores, fin de 2.000 chiringuitos y freno a la deuda',
       summary:
-        'Propone recortar drásticamente el gasto público partidista, auditar subvenciones y reducir cargas burocráticas y fiscales sobre familias y empresas.',
+        'Limita el Gobierno a 7 ministerios, recorta un 75% asesores y un 20% sueldos políticos, suprime más de 2.000 chiringuitos y recorta un 80% en subvenciones para frenar la deuda pública.',
       measures: [
-        'Aplicar un recorte profundo del gasto político, ministerios, asesores y subvenciones sin interés general.',
-        'Suprimir impuestos confiscatorios y simplificar obligaciones fiscales para autónomos y pymes.',
-        'Auditar el uso de fondos públicos y recuperar patrimonios desviados mediante corrupción.',
-        'Fomentar la libertad económica liberando al ciudadano del intervencionismo regulatorio excesivo.',
-        'Crear una Auditoría Independiente del Gasto Público para frenar la deuda pública insostenible y el pago de intereses.'
+        'Reducir el Consejo de Ministros a un máximo de 7 ministerios, recortar un 75% los asesores y bajar un 20% los salarios políticos.',
+        'Suprimir más de 2.000 chiringuitos (>6.000 M€), eliminar un 40% de los más de 600 entes públicos y suprimir las diputaciones provinciales.',
+        'Recortar un 80% las subvenciones públicas (eliminando el 100% a partidos, sindicatos, patronales y ONG) y frenar la deuda pública y el déficit.',
+        'Rebajar impuestos confiscatorios, auditar el gasto público y rechazar el euro digital.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Economía y Tijeretazo al Gasto'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 6 (Economía y Gasto Público, pp. 15-18)'
     },
     vivienda: {
-      headline: 'Protección estricta de la propiedad privada, desalojo rápido y rebaja fiscal',
+      headline: 'Supresión de IVA en primera vivienda, fin de topes de alquiler y desalojo <24h',
       summary:
-        'Defiende garantizar la seguridad jurídica de los propietarios frente a ocupaciones ilegales y reducir la carga tributaria sobre la vivienda.',
+        'Suprime el IVA en primera vivienda habitual, elimina controles de precios en el alquiler y ejecuta desalojos exprés de okupas en menos de 24 horas.',
       measures: [
-        'Garantizar el desalojo rápido de viviendas ocupadas ilegalmente con tutela judicial inmediata.',
-        'Reducir impuestos estatales y autonómicos que encarecen la compra y alquiler de la vivienda.',
-        'Rechazar controles coercitivos de precios que reducen la oferta y fomentar suelo disponible.',
-        'Asegurar transparencia en la adjudicación de cualquier promoción de vivienda pública.'
+        'Suprimir el IVA en la adquisición de la primera vivienda habitual y reducir cargas fiscales inmobiliarias.',
+        'Eliminar los topes y controles coercitivos al alquiler para ampliar la oferta residencial.',
+        'Garantizar el desalojo rápido de viviendas ocupadas ilegalmente en menos de 24 horas.',
+        'Blindar la seguridad jurídica de la propiedad privada frente a la ocupación.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Vivienda y Propiedad'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 6.8 (Vivienda, p. 18)'
     },
     empleo: {
-      headline: 'Reducción de cargas a autónomos y empresas y fin de subvenciones sindicales',
+      headline: 'Cuota 0 a autónomos 4 años, exención sin ingresos reales y fin del sistema de módulos',
       summary:
-        'Propone reducir las cuotas y cotizaciones que asfixian al empleo y al trabajador autónomo, aumentando el salario neto y suprimiendo subvenciones.',
+        'Fija 4 años de cuota cero a autónomos, exime del pago en meses sin ingresos reales, suprime los módulos y acaba con subvenciones a sindicatos y patronales.',
       measures: [
-        'Rebajar las cuotas y trabas administrativas a trabajadores autónomos y pequeñas empresas.',
-        'Reducir las cotizaciones sociales para aumentar el salario neto disponible de los trabajadores.',
-        'Eliminar subvenciones públicas obligatorias a sindicatos y patronales financiados con impuestos.',
-        'Fomentar la libertad contractual y el emprendimiento eliminando burocracia estatal.'
+        'Establecer cuota cero para trabajadores autónomos durante los primeros 4 años y suprimir la cuota en los meses sin ingresos reales.',
+        'Eliminar el sistema de tributación por módulos y reducir trabas administrativas a pymes y autónomos.',
+        'Rebajar las cotizaciones sociales sobre el trabajo para mejorar el salario neto disponible.',
+        'Suprimir el 100% de las subvenciones públicas a sindicatos, patronales y organizaciones políticas.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Trabajo y Autónomos'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 6.6 (Trabajo y Autónomos, p. 17)'
     },
     pensiones: {
-      headline: 'Reforma realista de pensiones, auditoría y fin de pensiones vitalicias políticas',
+      headline: 'Derogación del factor de sostenibilidad, modelo mixto y fin de pensiones vitalicias',
       summary:
-        'Denuncia la insostenibilidad del sistema actual por parches políticos, propone auditoría transparente y suprime pensiones especiales de cargos.',
+        'Suprime el factor de sostenibilidad, inicia una transición hacia un modelo mixto de capitalización individual y elimina pensiones vitalicias de cargos públicos.',
       measures: [
-        'Realizar una auditoría transparente e independiente del sistema de pensiones frente a usos impropios de fondos.',
-        'Implantar un sistema de contribución realista y transparente que garantice pensiones dignas a quienes han cotizado.',
-        'Suprimir por completo las pensiones vitalicias e indemnizaciones especiales de exministros, diputados y cargos públicos.',
-        'Proteger el poder adquisitivo de los mayores reduciendo la carga fiscal sobre suministros e IVA básico.'
+        'Derogar el factor de sostenibilidad y reformas penalizadoras que recortan las pensiones futuras.',
+        'Transitar de forma ordenada hacia un sistema mixto que combine reparto público con cuentas de capitalización individual.',
+        'Suprimir por completo las pensiones vitalicias e indemnizaciones especiales de exministros y cargos públicos.',
+        'Auditar las cuentas de la Seguridad Social y proteger el poder adquisitivo de los mayores.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Reforma de Pensiones y Privilegios'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 6.5 (Pensiones, p. 17)'
     },
     regeneracion_justicia: {
-      headline: 'Blindaje de la Acción Popular (Art. 125 CE), fin de subvenciones a partidos y elección directa',
+      headline: 'Blindaje de la Acción Popular (Art. 125 CE), distritos uninominales y elección directa',
       summary:
-        'Núcleo fundacional de Iustitia Europa: empoderar a la sociedad civil en los tribunales contra la corrupción, abolir privilegios políticos y despolitizar la justicia.',
+        'Implanta distritos uninominales mayoritarios y elección directa del Presidente, blinda la Acción Popular, introduce Tribunales de Instancia y sortea Juntas Electorales.',
       measures: [
-        'Reformar el artículo 125 de la Constitución para blindar la Acción Popular ciudadana frente a cualquier limitación legal.',
-        'Suprimir al 100% las subvenciones públicas a partidos políticos para acabar con la partidocracia estatal.',
-        'Instaurar la elección directa del Presidente del Gobierno, referéndums vinculantes y límites estrictos de mandato.',
-        'Eliminar los aforamientos políticos y hacer que los jueces elijan directamente a los miembros del CGPJ.'
+        'Sustituir el sistema proporcional por distritos uninominales mayoritarios en listas abiertas (art. 68 CE), elección directa del Presidente del Gobierno, límite de 2 mandatos y referéndums vinculantes.',
+        'Reformar el art. 125 CE para blindar la Acción Popular ciudadana, crear Juntas Electorales por sorteo ciudadano (nuevo art. 81 bis CE) y suprimir el 100% de subvenciones a partidos.',
+        'Elegir los 10 miembros del CGPJ directamente entre jueces (quien nombra al Fiscal General por 9 años) y someter a referéndum un TC de juristas con >25 años de ejercicio y sin militancia en 30 años.',
+        'Sustituir los más de 3.600 juzgados por Tribunales de Instancia bajo un Ministerio del Sistema Jurídico y eliminar aforamientos.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Reinicio Moral y Reforma Constitucional'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Puntos 2-4 y 11 (Regeneración y Justicia, pp. 6-12 y 23)'
     },
     sanidad: {
-      headline: 'Despolitización sanitaria, libertad terapéutica y refuerzo de derechos del paciente',
+      headline: 'Integración de terapias naturales en el SNS, IVA 0% y fin del monopolio farmacéutico',
       summary:
-        'Combina la defensa de una sanidad pública libre de corrupción contractual con la transparencia clínica y la integración de terapias naturales.',
+        'Incorpora legalmente las terapias naturales en el SNS con IVA del 0% a terapeutas, acaba con el monopolio farmacéutico y garantiza consentimiento informado y libertad terapéutica.',
       measures: [
-        'Auditar todos los contratos de compras y concesiones sanitarias persiguiendo el lucro ilícito.',
-        'Garantizar la libertad terapéutica, el consentimiento informado estricto y la integración de terapias naturales.',
-        'Despolitizar la gestión hospitalaria dando voz a médicos y colegios profesionales independientes.',
-        'Asegurar cobertura sanitaria nacional ágil reduciendo el gasto burocrático directivo.'
+        'Incorporar legalmente las terapias naturales y medicinas complementarias en la cartera del Sistema Nacional de Salud.',
+        'Aplicar un IVA del 0% a los terapeutas naturales y romper el monopolio corporativo farmacéutico.',
+        'Garantizar la libertad terapéutica, el consentimiento informado estricto y los derechos clínicos del paciente.',
+        'Rechazar la cesión de soberanía sanitaria nacional a tratados de la OMS sin refrendo ciudadano.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Sanidad'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 10 (Sanidad y Libertad Terapéutica, p. 22)'
     },
     educacion: {
-      headline: 'Desideologización de las aulas, libertad parental y excelencia educativa',
+      headline: 'Aulas libres de Agenda 2030 e ideología, autoridad docente y castellano garantizado',
       summary:
-        'Reclama retirar contenidos ideológicos del currículo escolar, garantizar la autoridad docente y defender la libertad de elección de las familias.',
+        'Retira la Agenda 2030 y contenidos ideológicos del currículo, refuerza la autoridad del profesorado y garantiza la elección parental y el castellano.',
       measures: [
-        'Suprimir contenidos políticos o ideológicos de las aulas centrándose en conocimiento científico y humanístico.',
-        'Reconocer el derecho preferente de los padres a elegir la formación moral y escolar de sus hijos.',
-        'Garantizar la igualdad de nivel educativo y estudio en castellano en todo el territorio nacional.',
-        'Reforzar la protección jurídica y autoridad del profesorado.'
+        'Eliminar los contenidos de la Agenda 2030 y adoctrinamiento político o ideológico de las aulas.',
+        'Garantizar el derecho preferente de las familias a elegir la educación moral y escolar de sus hijos.',
+        'Asegurar la enseñanza en castellano y la igualdad de exigencia académica en todo el territorio.',
+        'Reforzar la autoridad y protección jurídica del profesorado.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Educación'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 9 (Educación, p. 21)'
     },
     inmigracion: {
-      headline: 'Cierre total de la frontera sur, Armada en Canarias y deportaciones de ilegales',
+      headline: 'Cierre de fronteras con FFAA, Armada en Canarias y deportaciones masivas',
       summary:
-        'Su Contrato Electoral exige tolerancia cero con la inmigración irregular: refuerzo militar en Ceuta y Melilla, flota de la Armada en Canarias y deportaciones inmediatas.',
+        'Despliega a las Fuerzas Armadas en Ceuta y Melilla y la Armada en Canarias, ejecuta deportaciones masivas de irregulares y rechaza repartos europeos obligatorios.',
       measures: [
-        'Reforzar las vallas de Ceuta y Melilla habilitando a las Fuerzas Armadas y destinar la flota de la Armada en Ferrol a patrullar aguas de Canarias.',
+        'Reforzar las vallas de Ceuta y Melilla con las Fuerzas Armadas y destinar la flota de la Armada en Ferrol a patrullar Canarias.',
         'Ejecutar deportaciones masivas de inmigrantes irregulares («fin de los papeles para todos») y expulsar de inmediato a extranjeros delincuentes.',
         'Rechazar repartos obligatorios de inmigrantes impuestos por la Unión Europea sin consentimiento nacional.',
-        'Reformar integralmente la Ley de Extranjería para vincular la residencia al cumplimiento estricto de la legalidad.'
+        'Reformar la Ley de Extranjería vinculando residencia y acceso a prestaciones al cumplimiento estricto de la ley.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa (Punto 7: Inmigración)'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Punto 7 (Inmigración y Fronteras, p. 19)'
     },
     seguridad: {
-      headline: 'Nuevo modelo policial despolitizado y defensa de libertades civiles',
+      headline: 'Desmilitarización de la Guardia Civil en referéndum, equiparación policial y libertades',
       summary:
-        'Plantea despolitizar las cúpulas policiales sujetándolas únicamente a la ley y los jueces, mientras deroga normas restrictivas de libertades.',
+        'Saca a la Guardia Civil del Código Penal Militar con referéndum interno sobre su carácter civil, reorganiza Policía y GC, equipara sueldos y veta la vigilancia biométrica.',
       measures: [
-        'Despolitizar las cúpulas de Policía Nacional y Guardia Civil asegurando su sujeción exclusiva a la ley y los jueces.',
-        'Dotar de medios jurídicos y materiales suficientes a los agentes para combatir delincuencia y corrupción.',
-        'Derogar leyes que restrinjan libertades civiles fundamentales de manifestación, expresión e información.',
-        'Agilizar los juzgados de instrucción para acabar con la impunidad en delitos reiterados.'
+        'Despenalizar a la Guardia Civil sacándola del Código Penal Militar y convocar un referéndum interno sobre su desmilitarización en policía civil.',
+        'Reorganizar territorialmente a Policía Nacional y Guardia Civil y garantizar por ley una equiparación salarial nunca inferior a policías autonómicas o locales.',
+        'Prohibir el euro digital, el reconocimiento facial, la identificación biométrica obligatoria y las Zonas de Bajas Emisiones.',
+        'Dotar de medios y tutela judicial efectiva a los cuerpos policiales garantizando los derechos civiles.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Nuevo Modelo Policial y Seguridad'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Puntos 8 y 15 (Seguridad y Libertades Civiles, pp. 20 y 26)'
     },
     modelo_estado: {
-      headline: 'Reforma profunda del régimen institucional de 1978 hacia democracia directa y unidad',
+      headline: 'Democracia directa, distritos uninominales, fin de diputaciones y -40% entes',
       summary:
-        'Plantea superar la partitocracia del régimen del 78 mediante división real de poderes, referéndums vinculantes y eliminación de duplicidades autonómicas.',
+        'Supera la partitocracia del 78 mediante distritos uninominales, elección directa del Presidente, límite de 2 mandatos, referéndums vinculantes y eliminación de diputaciones.',
       measures: [
-        'Someter las grandes reformas territoriales e institucionales a referéndum ciudadano vinculante.',
-        'Suprimir duplicidades administrativas autonómicas que multiplican el gasto político y las redes clientelares.',
-        'Asegurar la igualdad ante la ley de todos los españoles sin privilegios territoriales ni impunidad.',
-        'Reforzar la separación efectiva entre poder ejecutivo, legislativo y judicial.'
+        'Instaurar distritos uninominales mayoritarios, elección directa del Presidente del Gobierno y límite estricto de 2 mandatos.',
+        'Someter las reformas constitucionales e institucionales clave a referéndum ciudadano vinculante.',
+        'Suprimir las diputaciones provinciales, reducir en un 40% los entes públicos y cerrar más de 2.000 chiringuitos.',
+        'Garantizar la igualdad legal de todos los españoles frente a privilegios territoriales y aforamientos.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Reforma del Estado'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Puntos 2-6 (Reforma del Estado, pp. 6-18)'
     },
     energia_campo: {
-      headline: 'Energía nuclear y gas, salida del Pacto Verde y fin de subvenciones renovables',
+      headline: 'Nuclear y tierras raras, salida del Pacto Verde y derogación de PAC y Bienestar Animal',
       summary:
-        'Apuesta por energía nuclear, gas, nacionalización de tierras raras y derogación inmediata del Pacto Verde Europeo, la PAC y las leyes de Bienestar Animal y Restauración.',
+        'Apuesta por nuclear, gas y nacionalización de tierras raras, sale del Pacto Verde y deroga PAC, Restauración de la Naturaleza, Bienestar Animal y cuaderno digital.',
       measures: [
-        'Apostar por la energía nuclear, el gas y los recursos propios, nacionalizar tierras raras y suprimir subvenciones a macroinstalaciones renovables.',
-        'Salir del Pacto Verde Europeo y derogar de inmediato la Política Agraria Común (PAC) y la Ley de Restauración de la Naturaleza.',
-        'Derogar las leyes de Bienestar Animal, Cadena Alimentaria, Quemas y el cuaderno digital obligatorio para proteger al sector primario.',
-        'Rechazar las imposiciones de la Agenda 2030 y las organizaciones supranacionales no electas.'
+        'Apostar por la energía nuclear, el gas y nacionalizar tierras raras suprimiendo subvenciones a macroinstalaciones renovables.',
+        'Salir del Pacto Verde Europeo y derogar de inmediato la PAC y la Ley de Restauración de la Naturaleza.',
+        'Derogar la Ley de Bienestar Animal, Cadena Alimentaria, Quemas y el cuaderno digital obligatorio.',
+        'Frenar prohibiciones de movilidad urbana (ZBE) y defender la soberanía alimentaria y energética nacional.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa (Puntos 12, 13 y 14)'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Puntos 12-15 (Energía, Campo y Movilidad, pp. 24-26)'
     },
     exterior_ue: {
-      headline: 'Soberanía constitucional frente a tratados supranacionales y organismos globales',
+      headline: 'Dos referéndums vinculantes sobre permanencia o salida de la UE y de la OTAN',
       summary:
-        'Cuestiona la cesión creciente de soberanía a la Unión Europea, la OMS y organismos no electos, exigiendo supremacía nacional y democracia.',
+        'Somete a sendos referéndums vinculantes la permanencia o salida de España de la Unión Europea y de la OTAN, y rechaza la cesión de soberanía ante Bruselas y la OMS.',
       measures: [
-        'Blindar la primacía de la Constitución española y el derecho nacional frente a imposiciones de tratados supranacionales.',
-        'Rechazar tratados globales sanitarios o climáticos que limiten derechos fundamentales sin refrendo ciudadano.',
-        'Exigir transparencia absoluta en los contratos y compromisos internacionales suscritos por el Gobierno.',
-        'Defender una cooperación europea basada en naciones soberanas y libertades individuales.'
+        'Convocar dos referéndums ciudadanos vinculantes sobre la permanencia o salida de España de la Unión Europea y de la OTAN.',
+        'Blindar la primacía de la Constitución española sobre directivas y imposiciones burocráticas de Bruselas.',
+        'Rechazar tratados globales sanitarios (OMS), climáticos y el euro digital que recorten derechos sin refrendo nacional.',
+        'Defender la soberanía comercial, monetaria, fronteriza y energética frente a organismos supranacionales no electos.'
       ],
-      sourceRef: 'Contrato Electoral Iustitia Europa: Soberanía e Internacional'
+      sourceRef: 'Contrato Electoral Iustitia Europa: Puntos 5 y 15 (Soberanía, UE y OTAN, pp. 13-14 y 26)'
     }
   },
 
   fo: {
     economia: {
-      headline: 'Reindustrialización nacional, nacionalización estratégica y proteccionismo obrero',
+      headline: 'Reindustrialización estatal, fiscalidad de clase, proteccionismo y fin de la usura',
       summary:
-        'Propone recuperar sectores estratégicos privatizados, proteger la industria y agricultura españolas mediante aranceles y suprimir subvenciones a ONG y sindicatos.',
+        'Nacionaliza sectores estratégicos, centraliza Patrimonio y Sucesiones para grandes fortunas, suprime gasto público improductivo y alivia la deuda de familias insolventes.',
       measures: [
-        'Ejecutar un Plan Estatal de Reindustrialización para recuperar siderurgia, manufactura y bienes de equipo.',
-        'Nacionalizar sectores estratégicos como energía, banca, telecomunicaciones y transporte clave.',
-        'Aplicar aranceles y proteccionismo comercial frente a importaciones desleales y deslocalizaciones empresariales.',
-        'Suprimir subvenciones a ONG, patronales y sindicatos institucionalizados destinando el presupuesto a industria.',
-        'Auditar la deuda pública frente a los mercados financieros y el BCE, reorientando el ahorro nacional hacia inversión productiva.'
+        'Ejecutar un Plan de Reindustrialización y nacionalizar sectores estratégicos como energía, banca y transporte junto a aranceles frente a deslocalizaciones (Cap. 4).',
+        'Bajar el IRPF a rentas bajas ampliando tramos altos, fijar IVA superreducido en bienes básicos y elevar Sociedades a grandes empresas (Cap. 6).',
+        'Centralizar Patrimonio y Sucesiones eliminando bonificaciones a ricos mientras se suprime Sucesiones a rentas bajas, y expropiar o multar empresas por fraude fiscal (Cap. 6).',
+        'Combatir la usura facilitando el pago de deuda a insolventes y suprimir subvenciones y gasto público improductivo en ONG, patronales y sindicatos del régimen (Cap. 6.7).'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Defendamos España'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulos 4 y 6 (Economía y Fiscalidad, pp. 12-19)'
     },
     vivienda: {
-      headline: 'Parque público obrero, control de precios e intervención contra mafias y fondos',
+      headline: 'Parques públicos juveniles, topes al alquiler, dación en pago y desalojo de mafias',
       summary:
-        'Combina la intervención del mercado frente a fondos especulativos con medidas firmes de desalojo frente a mafias de ocupación que degradan barrios obreros.',
+        'Construye parques públicos juveniles y limita alquileres, garantiza dación en pago a vulnerables y ejecuta desalojo rápido de pisos particulares, inquiokupas y narcopisos.',
       measures: [
-        'Construir vivienda pública obrera y limitar los precios del alquiler frente a fondos buitre y grandes tenedores.',
-        'Prohibir la especulación inmobiliaria extranjera sobre vivienda urbana residencial.',
-        'Desalojar rápidamente usurpaciones vinculadas a mafias que generan inseguridad en barrios trabajadores.',
-        'Conceder créditos públicos hipotecarios sin usura a familias trabajadoras para primera vivienda.'
+        'Crear parques públicos de vivienda para jóvenes, limitar los precios del alquiler frente a fondos buitre y priorizar a los autóctonos en vivienda pública (Cap. 15).',
+        'Paralizar desahucios de familias vulnerables garantizando la dación en pago y la ley de segunda oportunidad (Cap. 15).',
+        'Ejecutar el desalojo rápido de ocupaciones en viviendas particulares, inquiokupas y narcopisos que degradan barrios obreros (Cap. 15).',
+        'Conceder crédito público hipotecario sin usura para primera vivienda de familias trabajadoras.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Vivienda'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 15 (Vivienda)'
     },
     empleo: {
-      headline: 'Endurecimiento del despido, defensa salarial y alivio de cuotas a autónomos',
+      headline: 'Prohibición de ETTs, derogación RD 17/1977 de huelga, cuota cero <SMI y salarios',
       summary:
-        'Defiende reforzar los derechos del trabajador frente a la patronal, reducir la jornada y cuotas de autónomos y perseguir la contratación irregular.',
+        'Liga salarios al coste real de la vida, prohíbe las ETTs, exige representación desde 10 trabajadores, deroga el decreto de huelga de 1977 y fija cuota cero <SMI a autónomos.',
       measures: [
-        'Incrementar las indemnizaciones por despido improcedente y combatir la precariedad y horas extras impagadas.',
-        'Reducir la jornada laboral sin pérdida salarial y garantizar salarios ligados al coste real de la vida.',
-        'Perseguir penalmente a empresas que contraten mano de obra irregular para devaluar salarios de los trabajadores.',
-        'Reducir las cuotas de trabajadores autónomos y garantizarles cobertura real por baja médica.'
+        'Prohibir las ETTs, restringir temporales y fijos discontinuos, aumentar indemnizaciones por despido improcedente e indexar salarios al coste de la vida (Cap. 2).',
+        'Implantar representación obligatoria desde 10 trabajadores, asegurar la primacía del convenio sectorial y derogar el RD 17/1977 para la huelga en sectores estratégicos (Cap. 2).',
+        'Fijar cuota cero a autónomos por debajo del SMI con bonificación del 100% en bajas médicas (Cap. 2).',
+        'Perseguir penalmente a empresas que contraten mano de obra irregular para devaluar salarios nacionales (Cap. 2).'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Derechos Laborales'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 2 (Derechos Laborales, pp. 7-9)'
     },
     pensiones: {
-      headline: 'Rechazo al retraso de jubilación, garantía para autónomos y natalidad nacional',
+      headline: 'Retorno a los 65 años, cálculo por mejores años cotizados y subida de mínimas',
       summary:
-        'Se opone al aumento de la edad de jubilación, exige pensiones dignas para obreros y autónomos y vincula su sostenibilidad a natalidad e industria.',
+        'Revierte el retraso de la edad de jubilación, calcula la pensión sobre la media de los mejores años cotizados y eleva pensiones mínimas y no contributivas.',
       measures: [
-        'Rechazar el retraso progresivo de la edad de jubilación recuperando los 65 años y jubilación anticipada por penosidad.',
-        'Garantizar pensiones públicas dignas también para los trabajadores autónomos y sectores físicos.',
-        'Sostener el sistema público mediante reindustrialización, empleo estable y fomento de la natalidad nacional.',
-        'Blindar las pensiones frente a la inflación y al encarecimiento abusivo de vivienda y energía.'
+        'Revertir el retraso de la edad de jubilación recuperando los 65 años y jubilación anticipada en trabajos penosos (Cap. 16).',
+        'Calcular la cuantía de la pensión con la media de los mejores años cotizados y elevar las pensiones mínimas y no contributivas (Cap. 16).',
+        'Garantizar pensiones públicas dignas también a trabajadores autónomos y sectores físicos.',
+        'Sostener la Seguridad Social mediante reindustrialización, empleo formal estable y natalidad.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Pensiones'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 16 (Pensiones)'
     },
     regeneracion_justicia: {
-      headline: 'República popular unitaria, fin de puertas giratorias y control ciudadano',
+      headline: 'Fin de subvenciones partidistas, fuera Igualdad y Trans, anti-censura y control judicial',
       summary:
-        'Critica la corrupción del sistema político actual y plantea eliminar privilegios partidistas, puertas giratorias y subvenciones a castas burocráticas.',
+        'Suprime el Ministerio de Igualdad, deroga la Ley Trans y cupos, combate la censura de plataformas, prohíbe indultos por corrupción y despolitiza el poder judicial.',
       measures: [
-        'Prohibir de forma absoluta las puertas giratorias de exministros y cargos hacia grandes empresas estratégicas.',
-        'Suprimir subvenciones públicas a partidos políticos, fundaciones y sindicatos del régimen.',
-        'Endurecer las penas por corrupción política con incautación de patrimonio y responsabilidad penal efectiva.',
-        'Establecer mecanismos de revocación de cargos públicos que incumplan su programa.'
+        'Suprimir el Ministerio de Igualdad, derogar la Ley Trans y las cuotas y prohibir prostitución y vientres de alquiler (Cap. 10).',
+        'Extender las penas por corrupción a partidos políticos, prohibir indultos en delitos de corrupción y eliminar puertas giratorias y subvenciones a partidos (Cap. 13, 19).',
+        'Asegurar la independencia judicial sin elección gubernamental e instaurar control estatal frente a la censura arbitraria en plataformas digitales (Cap. 13, 19).',
+        'Implantar mecanismos de revocación para cargos públicos que incumplan su mandato.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Instituciones'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulos 10, 13 y 19'
     },
     sanidad: {
-      headline: 'Sanidad 100% pública, nacionalización farmacéutica y expulsión de fondos buitre',
+      headline: 'SNS centralizado, dental/fisio/óptica gratis, desintoxicación y farmacéutica estatal',
       summary:
-        'Exige una sanidad estatal pública, gratuita y centralizada, expulsando por completo la gestión privada y creando una farmacéutica nacional.',
+        'Centraliza la sanidad sin concesiones privadas, integra gratis odontología, fisioterapia, oftalmología y centros de desintoxicación e impulsa una farmacéutica estatal.',
       measures: [
-        'Expulsar a fondos privados de los hospitales públicos y revertir todas las concesiones y conciertos.',
-        'Centralizar la sanidad en un único sistema público nacional eliminando desigualdades entre regiones.',
-        'Crear una industria farmacéutica pública nacional para producir medicamentos estratégicos.',
-        'Ampliar plantillas fijas y dotar de medios a la atención primaria en barrios obreros y zonas rurales.'
+        'Centralizar el SNS eliminando desigualdades autonómicas y expulsar la gestión privada de los hospitales públicos (Cap. 14).',
+        'Incluir de forma gratuita atención bucodental, fisioterapia y oftalmología en la sanidad pública e integrar centros de desintoxicación en el SNS (Cap. 9, 14).',
+        'Crear una industria farmacéutica pública nacional para producir medicamentos estratégicos (Cap. 14).',
+        'Reforzar plantillas fijas de Atención Primaria en barrios obreros y medio rural.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Sanidad Pública'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulos 9 y 14 (Sanidad Pública)'
     },
     educacion: {
-      headline: 'Escuela pública estatal única, exigencia académica e igualdad territorial',
+      headline: 'Comedor gratis, freno digital (<16), expulsión de privadas de FP y fin del islam',
       summary:
-        'Defiende la educación pública laica y gratuita unificada en toda España, con alta exigencia técnica y acceso universal por capacidad.',
+        'Implanta comedor escolar gratuito, frena la digitalización (<16 años), expulsa empresas de FP y universidad, garantiza castellano o cooficiales y saca islam y teoría queer del aula.',
       measures: [
-        'Recuperar las competencias educativas para el Estado estableciendo un currículo común exigente e idioma común.',
-        'Suprimir conciertos privados para destinar todo el presupuesto a una red pública gratuita hasta la universidad.',
-        'Impulsar la formación profesional industrial y científica vinculada a la reindustrialización del país.',
-        'Garantizar becas completas a hijos de familias trabajadoras para estudios superiores.'
+        'Garantizar comedor escolar gratuito, frenar la digitalización escolar en menores de 16 años y suprimir toda subvención a la enseñanza privada (Cap. 7).',
+        'Expulsar empresas privadas de la universidad y la FP y hacer obligatoriamente remuneradas todas las prácticas formativas (Cap. 7).',
+        'Garantizar el derecho a estudiar en castellano o en lenguas cooficiales en todo el sistema público (Cap. 7).',
+        'Sacar la enseñanza islámica y la teoría queer de las aulas reforzando la exigencia científica y técnica (Cap. 7).'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Educación'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 7 (Educación)'
     },
     inmigracion: {
-      headline: 'Rechazo a la inmigración masiva, fin de regularizaciones y expulsión de irregulares',
+      headline: 'Revisión de 20 años de nacionalidades, fuera hijab público y centros en terceros países',
       summary:
-        'Sostiene que la inmigración descontrolada sirve a la patronal para abaratar salarios y degrada barrios obreros, exigiendo fin de regularizaciones.',
+        'Frena regularizaciones, revisa 20 años de nacionalizaciones hacia ius sanguinis, retira nacionalidad por delitos graves, veta el hijab público y crea centros en terceros países.',
       measures: [
-        'Rechazar regularizaciones extraordinarias masivas y restringir estrictamente la entrada de mano de obra extranjera.',
-        'Expulsar de forma inmediata a inmigrantes en situación irregular y a extranjeros que cometan delitos.',
-        'Retirar subvenciones a ONG que gestionen flujos migratorios irregulares o fomenten el efecto llamada.',
-        'Exigir asimilación cultural y lingüística real para quienes residan legalmente en España.'
+        'Cesar regularizaciones, expulsar a irregulares y reincidentes y habilitar centros de clasificación y deportación en terceros países (Cap. 17).',
+        'Revisar las concesiones de nacionalidad de los últimos 20 años recuperando el criterio de ius sanguinis y retirar la nacionalidad por delitos graves (Cap. 17).',
+        'Prohibir el uso del hijab en espacios y empleos públicos y exigir asimilación cultural y lingüística (Cap. 17).',
+        'Retirar toda subvención a ONG que fomenten flujos migratorios irregulares.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Inmigración'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 17 (Inmigración)'
     },
     seguridad: {
-      headline: 'Seguridad en barrios obreros, fronteras firmes y lucha contra mafias e islamismo',
+      headline: 'Sindicación en Guardia Civil y Ejército, fin del cese militar a los 45 y Policía única',
       summary:
-        'Exige proteger barrios trabajadores frente a delincuencia, narcopisos e islamismo radical dotando de plena autoridad y medios a la policía.',
+        'Reconoce sindicación en Guardia Civil y Ejército, suprime el despido militar a los 45 años, integra policías autonómicas en la PN y combate narcopisos e islamismo.',
       measures: [
-        'Implantar control estricto de fronteras nacionales desplegando los medios necesarios del Estado.',
-        'Combatir frontalmente el islamismo político radical y las mafias criminales y narcopisos en barrios obreros.',
-        'Dotar de autoridad jurídica, equipamiento y refuerzo de plantillas a las fuerzas y cuerpos de seguridad.',
-        'Endurecer el Código Penal frente a delincuencia violenta, multirreincidencia y agresiones a agentes.'
+        'Reconocer el derecho a sindicación en la Guardia Civil y de reunión, sindicación y afiliación en las Fuerzas Armadas, y eliminar el cese militar obligatorio a los 45 años (Cap. 20-21).',
+        'Suprimir las policías autonómicas integrando sus efectivos en la Policía Nacional y depurar mandos políticos (Cap. 20-21).',
+        'Implantar control estricto de fronteras nacionales desplegando los medios operativos necesarios del Estado.',
+        'Combatir frontalmente mafias criminales, narcopisos e islamismo político radical en barrios trabajadores.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Seguridad y Fronteras'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulos 20 y 21 (Seguridad y Defensa)'
     },
     modelo_estado: {
-      headline: 'República unitaria y centralizada frente al separatismo y las 17 taifas',
+      headline: 'Regiones simétricas con igualdad fiscal y centralización hacia República socialista',
       summary:
-        'Rechaza frontalmente el Estado de las Autonomías y el independentismo por fragmentar a la clase trabajadora, proponiendo una República unitaria.',
+        'Exige autonomías simétricas con idénticas competencias e idéntico régimen fiscal, centraliza Sanidad, Educación y Emergencias y fusiona ayuntamientos hacia una República socialista.',
       measures: [
-        'Superar la Monarquía y el modelo de 17 autonomías instaurando una República unitaria y centralizada.',
-        'Combatir políticamente a los nacionalismos periféricos por dividir a los trabajadores en beneficio de oligarquías regionales.',
-        'Unificar los códigos legales, fiscales, sanitarios y educativos en todo el territorio nacional.',
-        'Suprimir parlamentos y estructuras burocráticas autonómicas duplicadas.'
+        'Implantar comunidades autónomas simétricas con las mismas competencias y el mismo régimen fiscal en toda España, eliminando privilegios forales o territoriales (Cap. 18).',
+        'Centralizar en el Estado las competencias de Sanidad, Educación y Emergencias y promover la fusión de ayuntamientos pequeños (Cap. 18).',
+        'Combatir políticamente los nacionalismos periféricos por dividir a la clase trabajadora.',
+        'Avanzar hacia una República socialista unitaria que supere la Monarquía (Cap. 18).'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Modelo de Estado'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 18 (Modelo Territorial, pp. 55-56)'
     },
     energia_campo: {
-      headline: 'Energía nuclear estatal, rechazo al fanatismo verde de Bruselas y defensa agraria',
+      headline: 'Nuclear y uranio nacional, expropiación de latifundios baldíos y fuera solares agrícolas',
       summary:
-        'Defiende la energía nuclear pública como base industrial barata, rechaza la Agenda 2030 por deslocalizar fábricas y apoya al campo español.',
+        'Rompe la PAC, regula luz y carburantes, apuesta por nuclear y uranio propios, expropia tierras sin usar, prohíbe placas solares en tierra fértil y frena el derribo de presas.',
       measures: [
-        'Apostar por la energía nuclear bajo titularidad pública para garantizar electricidad barata a la industria y hogares.',
-        'Rechazar normativas climáticas de la UE que cierran fábricas españolas y arruinan a agricultores y ganaderos.',
-        'Proteger la producción agraria nacional frente a importaciones del norte de África o terceros países.',
-        'Garantizar un plan hídrico nacional público que abastezca al mundo rural.'
+        'Romper la PAC y rechazar la transición ecológica de la UE, regulando precios de electricidad y carburantes (Cap. 5, 12).',
+        'Apostar por la energía nuclear estatal y la extracción de uranio nacional para garantizar energía barata e industrial (Cap. 5).',
+        'Expropiar tierras sin cultivar en manos de grandes terratenientes y prohibir instalar parques solares en suelo cultivable (Cap. 12).',
+        'Frenar el derribo de presas, asumir la caza como competencia estatal y proteger la producción agraria nacional (Cap. 12).'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Energía y Campo'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulos 5 y 12 (Energía y Campo)'
     },
     exterior_ue: {
-      headline: 'Salida de la Unión Europea y de la OTAN por soberanía nacional y obrera',
+      headline: 'Salida de UE y OTAN, expulsión de bases, Gibraltar, Sáhara y aguas archipelágicas',
       summary:
-        'Mantiene un euroescepticismo y anti-OTAN frontal, exigiendo recuperar la moneda, las fronteras, la política exterior y cerrar bases extranjeras.',
+        'Exige salir de la UE y OTAN y desmantelar bases extranjeras, reclama Gibraltar, apoya la autodeterminación del pueblo saharaui y delimita las aguas archipelágicas.',
       measures: [
-        'Promover la salida de España de la Unión Europea para recuperar la soberanía económica, monetaria e industrial.',
-        'Abandonar de forma inmediata la OTAN y desmantelar las bases militares estadounidenses en territorio nacional.',
-        'Practicar una política exterior soberana y firme frente a Marruecos en defensa de Ceuta, Melilla y Canarias.',
-        'Rechazar la subordinación geopolítica de España a intereses imperialistas anglosajones o de Bruselas.'
+        'Promover la salida de España de la Unión Europea y de la OTAN y expulsar las bases militares estadounidenses (Cap. 3).',
+        'Reclamar la devolución de Gibraltar y mantener firmeza soberana frente a Marruecos en Ceuta, Melilla y Canarias (Cap. 3).',
+        'Defender el derecho a la autodeterminación del pueblo saharaui y delimitar las aguas archipelágicas españolas (Cap. 3).',
+        'Rechazar cualquier subordinación diplomática, comercial o militar a bloques imperialistas.'
       ],
-      sourceRef: 'Programa Político Frente Obrero 2026: Soberanía, UE y OTAN'
+      sourceRef: 'Programa Político Frente Obrero 2026: Capítulo 3 (Política Exterior y Soberanía)'
     }
   }
 };
