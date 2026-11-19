@@ -17,7 +17,10 @@ import {
   PRIORITY_WEIGHTS,
   calculateCitizenAffinity,
   filterParties,
-  buildTopicComparison
+  buildTopicComparison,
+  getQuestionStepStates,
+  getNextQuestionStep,
+  getPrevQuestionStep
 } from '../src/engine/affinityEngine.js';
 
 const EXPECTED_ORDER = [
@@ -358,4 +361,114 @@ test('Frente Amplio and 2026 program dataset accurately reflect verified 29N-202
   const faRank = faSummary.rankedParties.find((r) => r.partyId === 'frente_amplio');
   assert.equal(faRank.scorePercentage, 100);
   assert.equal(faRank.exactMatchesCount, 9);
+});
+
+test('PDF audit regressions are fixed across programs and questionnaire weights', () => {
+  // 1. SALF: 60 días cirugía (not 90), IBI & 35% without foreign-fund ban, 2% <45 account & sobre naranja
+  const salfSanidad = getProposal('salf', 'sanidad');
+  const salfSanidadText = `${salfSanidad.headline} ${salfSanidad.summary} ${salfSanidad.measures.join(' ')}`;
+  assert.ok(salfSanidadText.includes('60 días'));
+  assert.ok(!salfSanidadText.includes('90 días'));
+
+  const salfVivienda = getProposal('salf', 'vivienda');
+  const salfViviendaText = `${salfVivienda.headline} ${salfVivienda.summary} ${salfVivienda.measures.join(' ')}`;
+  assert.ok(salfViviendaText.includes('IBI'));
+  assert.ok(salfViviendaText.includes('35%'));
+  assert.ok(!/prohib.*fondos extranjeros/i.test(salfViviendaText));
+
+  const salfPensiones = getProposal('salf', 'pensiones');
+  const salfPensionesText = `${salfPensiones.summary} ${salfPensiones.measures.join(' ')}`;
+  assert.ok(salfPensionesText.includes('2%'));
+  assert.ok(salfPensionesText.toLowerCase().includes('sobre naranja'));
+
+  // 2. Iustitia Europa: terapias naturales + 0%, Guardia Civil desmilitarización, distritos uninominales, UE & OTAN referendums
+  const iustSanidad = getProposal('iustitia', 'sanidad');
+  const iustSanidadText = `${iustSanidad.summary} ${iustSanidad.measures.join(' ')}`.toLowerCase();
+  assert.ok(iustSanidadText.includes('terapias naturales'));
+  assert.ok(iustSanidadText.includes('0%'));
+
+  const iustSeg = getProposal('iustitia', 'seguridad');
+  const iustSegText = `${iustSeg.summary} ${iustSeg.measures.join(' ')}`;
+  assert.ok(iustSegText.includes('Guardia Civil'));
+  assert.ok(iustSegText.toLowerCase().includes('desmilitarización'));
+
+  const iustReg = getProposal('iustitia', 'regeneracion_justicia');
+  assert.ok(`${iustReg.summary} ${iustReg.measures.join(' ')}`.toLowerCase().includes('distritos uninominales'));
+
+  const iustExt = getProposal('iustitia', 'exterior_ue');
+  const iustExtText = `${iustExt.headline} ${iustExt.summary} ${iustExt.measures.join(' ')}`;
+  assert.ok(/UE|Unión Europea/.test(iustExtText));
+  assert.ok(iustExtText.includes('OTAN'));
+
+  const q8 = QUESTIONS.find((q) => q.id === 'q-regeneracion-justicia-voto');
+  const propOpt = q8.options.find((o) => o.id === 'opt-jud-proporcionalidad-pura');
+  assert.ok(propOpt.partyWeights.iustitia <= 0.2);
+
+  // 3. Frente Obrero & PSOE: simétricas (not abolishing 17 parliaments), ETTs & RD 17/1977 (no working-hours cut), PSOE 2035 nuclear closure
+  const foEstado = getProposal('fo', 'modelo_estado');
+  const foEstadoText = `${foEstado.summary} ${foEstado.measures.join(' ')}`.toLowerCase();
+  assert.ok(foEstadoText.includes('simétricas'));
+  assert.ok(!foEstadoText.includes('abolición total de parlamentos'));
+
+  const foEmpleo = getProposal('fo', 'empleo');
+  const foEmpleoText = `${foEmpleo.summary} ${foEmpleo.measures.join(' ')}`;
+  assert.ok(foEmpleoText.includes('ETTs'));
+  assert.ok(foEmpleoText.includes('17/1977'));
+  assert.ok(!/reduc.*jornada/i.test(foEmpleoText));
+
+  const psoeEnergia = getProposal('psoe', 'energia_campo');
+  const psoeEnergiaText = `${psoeEnergia.summary} ${psoeEnergia.measures.join(' ')}`;
+  assert.ok(psoeEnergiaText.includes('2035'));
+  assert.ok(!/Consejo de Seguridad Nuclear|\bCSN\b/i.test(psoeEnergiaText));
+
+  // 4. VOX: no unsubstantiated Patrimonio/Sucesiones, cheque escolar, autorización parental, OTAN or Iberosfera
+  const voxEcon = getProposal('vox', 'economia');
+  const voxEconText = `${voxEcon.summary} ${voxEcon.measures.join(' ')}`;
+  assert.ok(!/Patrimonio|Sucesiones/i.test(voxEconText));
+
+  const voxEdu = getProposal('vox', 'educacion');
+  const voxEduText = `${voxEdu.summary} ${voxEdu.measures.join(' ')}`.toLowerCase();
+  assert.ok(!voxEduText.includes('cheque escolar'));
+  assert.ok(!voxEduText.includes('autorización parental'));
+
+  const voxExt = getProposal('vox', 'exterior_ue');
+  const voxExtText = `${voxExt.summary} ${voxExt.measures.join(' ')}`;
+  assert.ok(!/\bOTAN\b|Iberosfera/i.test(voxExtText));
+});
+
+test('single-screen stepper helpers track answered, skipped, and boundary transitions cleanly', () => {
+  const answers = {
+    [QUESTIONS[0].id]: QUESTIONS[0].options[0].id,
+    [QUESTIONS[2].id]: QUESTIONS[2].options[0].id
+  };
+  const priorities = {
+    [QUESTIONS[1].id]: 'skip',
+    [QUESTIONS[2].id]: 'skip'
+  };
+
+  const steps = getQuestionStepStates(QUESTIONS, answers, priorities, 1);
+  assert.equal(steps.length, QUESTIONS.length);
+  assert.equal(steps[0].status, 'answered');
+  assert.equal(steps[0].isCurrent, false);
+  assert.equal(steps[1].status, 'skipped');
+  assert.equal(steps[1].isCurrent, true);
+  assert.equal(steps[2].status, 'skipped');
+  assert.equal(steps[3].status, 'pending');
+
+  assert.deepEqual(getNextQuestionStep(0, QUESTIONS.length), {
+    quizCurrentIndex: 1,
+    quizViewMode: 'question'
+  });
+  assert.deepEqual(getNextQuestionStep(QUESTIONS.length - 1, QUESTIONS.length), {
+    quizCurrentIndex: QUESTIONS.length - 1,
+    quizViewMode: 'results'
+  });
+  assert.deepEqual(getPrevQuestionStep(0), {
+    quizCurrentIndex: 0,
+    quizViewMode: 'question'
+  });
+  assert.deepEqual(getPrevQuestionStep(5), {
+    quizCurrentIndex: 4,
+    quizViewMode: 'question'
+  });
 });

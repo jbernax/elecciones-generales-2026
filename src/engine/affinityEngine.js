@@ -246,3 +246,75 @@ export function calculateCitizenAffinity(
     questionBreakdown
   };
 }
+
+/**
+ * Compute per-question completion status for the stepper navigation bar.
+ *
+ * @param {Array<object>} questions
+ * @param {Record<string, string>} answers
+ * @param {Record<string, string>} priorities
+ * @param {number} currentIndex
+ * @returns {Array<{ index: number, questionId: string, topicId: string, status: 'answered'|'skipped'|'pending', isCurrent: boolean }>}
+ */
+export function getQuestionStepStates(
+  questions = [],
+  answers = {},
+  priorities = {},
+  currentIndex = 0
+) {
+  const safeIndex = questions.length > 0
+    ? Math.max(0, Math.min(currentIndex, questions.length - 1))
+    : 0;
+
+  return questions.map((question, index) => {
+    const priority = priorities[question.id] || 'normal';
+    const hasAnswer = Boolean(answers[question.id]);
+
+    let status = 'pending';
+    if (priority === 'skip') {
+      status = 'skipped';
+    } else if (hasAnswer) {
+      status = 'answered';
+    }
+
+    return {
+      index,
+      questionId: question.id,
+      topicId: question.topicId,
+      status,
+      isCurrent: index === safeIndex
+    };
+  });
+}
+
+/**
+ * Resolve the next stepper state after answering or advancing from `currentIndex`.
+ * Moves to the next question or transitions to `'results'` after the final question.
+ *
+ * @param {number} currentIndex
+ * @param {number} totalQuestions
+ * @returns {{ quizCurrentIndex: number, quizViewMode: 'question'|'results' }}
+ */
+export function getNextQuestionStep(currentIndex, totalQuestions) {
+  if (totalQuestions <= 0) {
+    return { quizCurrentIndex: 0, quizViewMode: 'results' };
+  }
+  const clamped = Math.max(0, Math.min(currentIndex, totalQuestions - 1));
+  if (clamped >= totalQuestions - 1) {
+    return { quizCurrentIndex: clamped, quizViewMode: 'results' };
+  }
+  return { quizCurrentIndex: clamped + 1, quizViewMode: 'question' };
+}
+
+/**
+ * Resolve the previous stepper state from `currentIndex`.
+ *
+ * @param {number} currentIndex
+ * @returns {{ quizCurrentIndex: number, quizViewMode: 'question' }}
+ */
+export function getPrevQuestionStep(currentIndex) {
+  return {
+    quizCurrentIndex: Math.max(0, currentIndex - 1),
+    quizViewMode: 'question'
+  };
+}

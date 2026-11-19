@@ -10,7 +10,10 @@ import { getTopicOfficialContext } from './data/macroContext.js';
 import {
   filterParties,
   buildTopicComparison,
-  calculateCitizenAffinity
+  calculateCitizenAffinity,
+  getQuestionStepStates,
+  getNextQuestionStep,
+  getPrevQuestionStep
 } from './engine/affinityEngine.js';
 
 const PRESET_PARTIES = {
@@ -37,6 +40,8 @@ const state = {
   comparatorMode: 'cards',
   answers: {},
   priorities: {},
+  quizCurrentIndex: 0,
+  quizViewMode: 'question',
   resultsBlocFilter: 'all',
   selectedResultPartyId: null,
   drawerPartyId: null,
@@ -566,77 +571,226 @@ function initComparatorControls() {
 }
 
 /* =========================================================================
- * STAGE 4: SCROLLYTELLING LIVE QUESTIONNAIRE (#cuestionario)
+ * STAGE 4: SINGLE-SCREEN STEPPER QUESTIONNAIRE & RESULTS (#cuestionario)
  * ========================================================================= */
-function renderQuestionnaireQuestions() {
-  const listEl = document.getElementById('scrolly-questions-list');
-  if (!listEl) return;
+let autoAdvanceTimer = null;
 
-  listEl.innerHTML = QUESTIONS.map((question, index) => {
-    const topic = getTopicById(question.topicId);
-    const activePriority = state.priorities[question.id] || 'normal';
-    const selectedOptionId = state.answers[question.id] || null;
-    const isAnswered = Boolean(selectedOptionId) && activePriority !== 'skip';
+function clearAutoAdvanceTimer() {
+  if (autoAdvanceTimer !== null) {
+    window.clearTimeout(autoAdvanceTimer);
+    autoAdvanceTimer = null;
+  }
+}
 
-    const priorityHtml = PRIORITY_OPTIONS.map(({ key, label }) => {
-      const active = activePriority === key;
+function advanceQuizStep() {
+  clearAutoAdvanceTimer();
+  const next = getNextQuestionStep(state.quizCurrentIndex, QUESTIONS.length);
+  state.quizCurrentIndex = next.quizCurrentIndex;
+  state.quizViewMode = next.quizViewMode;
+  renderQuestionnaireQuestions();
+  renderLiveScoreboard();
+}
+
+function goToPrevQuizStep() {
+  clearAutoAdvanceTimer();
+  const prev = getPrevQuestionStep(state.quizCurrentIndex);
+  state.quizCurrentIndex = prev.quizCurrentIndex;
+  state.quizViewMode = prev.quizViewMode;
+  renderQuestionnaireQuestions();
+  renderLiveScoreboard();
+}
+
+function renderQuizStepperNav(answeredCount) {
+  const stepperEl = document.getElementById('quiz-stepper-nav');
+  if (!stepperEl) return;
+
+  const steps = getQuestionStepStates(
+    QUESTIONS,
+    state.answers,
+    state.priorities,
+    state.quizCurrentIndex
+  );
+
+  const stepButtonsHtml = steps
+    .map((step, idx) => {
+      const question = QUESTIONS[idx];
+      const topic = getTopicById(question.topicId);
+      const isCurrent = state.quizViewMode === 'question' && step.isCurrent;
+      const statusClass =
+        step.status === 'answered'
+          ? 'is-answered'
+          : step.status === 'skipped'
+            ? 'is-skipped'
+            : '';
+
       return `
         <button
           type="button"
-          class="priority-btn ${active ? 'is-active' : ''}"
-          data-question-id="${escapeHtml(question.id)}"
-          data-priority="${escapeHtml(key)}"
-          aria-pressed="${active ? 'true' : 'false'}"
+          class="step-pill-btn ${statusClass} ${isCurrent ? 'is-current' : ''}"
+          data-step-index="${idx}"
+          aria-current="${isCurrent ? 'step' : 'false'}"
+          aria-label="Pregunta ${idx + 1}: ${escapeHtml(topic?.shortLabel || topic?.title || question.title)}"
+          title="${escapeHtml(topic?.shortLabel || topic?.title || question.title)}"
         >
-          ${escapeHtml(label)}
+          ${String(idx + 1).padStart(2, '0')}
         </button>
       `;
-    }).join('');
+    })
+    .join('');
 
-    const optionsHtml = question.options
-      .map((option) => {
-        const checked = selectedOptionId === option.id;
-        return `
-          <label class="quiz-option-label ${checked ? 'is-selected' : ''}">
-            <input
-              type="radio"
-              name="quiz-${escapeHtml(question.id)}"
-              value="${escapeHtml(option.id)}"
-              data-question-id="${escapeHtml(question.id)}"
-              ${checked ? 'checked' : ''}
-            />
-            <span class="quiz-option-title">${escapeHtml(option.title)}</span>
-            <span class="quiz-option-desc">${escapeHtml(option.description)}</span>
-          </label>
-        `;
-      })
-      .join('');
+  const isResults = state.quizViewMode === 'results';
+  stepperEl.innerHTML = `
+    ${stepButtonsHtml}
+    <button
+      type="button"
+      class="step-pill-btn step-pill-results ${isResults ? 'is-current' : ''}"
+      data-step-results="true"
+      aria-current="${isResults ? 'step' : 'false'}"
+      ${answeredCount === 0 ? 'disabled' : ''}
+    >
+      Resultados
+    </button>
+  `;
 
+  stepperEl.querySelectorAll('[data-step-index]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.dataset.stepIndex);
+      if (!Number.isInteger(idx)) return;
+      clearAutoAdvanceTimer();
+      state.quizCurrentIndex = Math.max(0, Math.min(idx, QUESTIONS.length - 1));
+      state.quizViewMode = 'question';
+      renderQuestionnaireQuestions();
+      renderLiveScoreboard();
+    });
+  });
+
+  stepperEl.querySelector('[data-step-results]')?.addEventListener('click', () => {
+    clearAutoAdvanceTimer();
+    state.quizViewMode = 'results';
+    renderQuestionnaireQuestions();
+    renderLiveScoreboard();
+  });
+}
+
+function renderQuestionnaireQuestions() {
+  const workbenchEl = document.getElementById('quiz-workbench');
+  const questionStageEl = document.getElementById('quiz-question-stage');
+  const resultsStageEl = document.getElementById('quiz-results-stage');
+  const slotEl = document.getElementById('quiz-active-card-slot');
+
+  if (!workbenchEl || !questionStageEl || !resultsStageEl || !slotEl) return;
+
+  const isResultsMode = state.quizViewMode === 'results';
+  workbenchEl.dataset.view = state.quizViewMode;
+  questionStageEl.hidden = isResultsMode;
+  resultsStageEl.hidden = !isResultsMode;
+
+  const activeAnswered = QUESTIONS.filter(
+    (q) => state.answers[q.id] && (state.priorities[q.id] || 'normal') !== 'skip'
+  ).length;
+  renderQuizStepperNav(activeAnswered);
+
+  if (isResultsMode || QUESTIONS.length === 0) {
+    return;
+  }
+
+  const index = Math.max(0, Math.min(state.quizCurrentIndex, QUESTIONS.length - 1));
+  state.quizCurrentIndex = index;
+  const question = QUESTIONS[index];
+  const topic = getTopicById(question.topicId);
+  const activePriority = state.priorities[question.id] || 'normal';
+  const selectedOptionId = state.answers[question.id] || null;
+  const isAnswered = Boolean(selectedOptionId) && activePriority !== 'skip';
+  const isLast = index === QUESTIONS.length - 1;
+
+  const priorityHtml = PRIORITY_OPTIONS.map(({ key, label }) => {
+    const active = activePriority === key;
     return `
-      <li>
-        <article class="quiz-question-card ${isAnswered ? 'is-answered' : ''}" data-q-card="${escapeHtml(question.id)}">
-          <header class="quiz-q-head">
-            <span class="quiz-q-num">
-              ${String(index + 1).padStart(2, '0')} / ${QUESTIONS.length} · ${escapeHtml(topic?.shortLabel || topic?.title || '')}
-            </span>
-            <section class="priority-selector" aria-label="Importancia de la cuestión ${index + 1}">
-              ${priorityHtml}
-            </section>
-          </header>
-
-          <h3 class="quiz-q-title">${escapeHtml(question.questionText)}</h3>
-          <p class="quiz-q-context">${escapeHtml(question.contextNote)}</p>
-
-          <fieldset class="quiz-options-fieldset">
-            <legend class="sr-only">${escapeHtml(question.title)}</legend>
-            ${optionsHtml}
-          </fieldset>
-        </article>
-      </li>
+      <button
+        type="button"
+        class="priority-btn ${active ? 'is-active' : ''}"
+        data-question-id="${escapeHtml(question.id)}"
+        data-priority="${escapeHtml(key)}"
+        aria-pressed="${active ? 'true' : 'false'}"
+      >
+        ${escapeHtml(label)}
+      </button>
     `;
   }).join('');
 
-  listEl.querySelectorAll('input[type="radio"]').forEach((input) => {
+  const optionsHtml = question.options
+    .map((option) => {
+      const checked = selectedOptionId === option.id;
+      return `
+        <label class="quiz-option-label ${checked ? 'is-selected' : ''}">
+          <input
+            type="radio"
+            name="quiz-${escapeHtml(question.id)}"
+            value="${escapeHtml(option.id)}"
+            data-question-id="${escapeHtml(question.id)}"
+            ${checked ? 'checked' : ''}
+          />
+          <span class="quiz-option-title">${escapeHtml(option.title)}</span>
+          <span class="quiz-option-desc">${escapeHtml(option.description)}</span>
+        </label>
+      `;
+    })
+    .join('');
+
+  const hasOddOptions = question.options.length % 2 === 1;
+
+  slotEl.innerHTML = `
+    <article class="quiz-question-card ${isAnswered ? 'is-answered' : ''}" data-q-card="${escapeHtml(question.id)}">
+      <header class="quiz-q-head">
+        <span class="quiz-q-num">
+          ${String(index + 1).padStart(2, '0')} / ${QUESTIONS.length} · ${escapeHtml(topic?.shortLabel || topic?.title || '')}
+        </span>
+        <section class="priority-selector" aria-label="Importancia de la cuestión ${index + 1}">
+          ${priorityHtml}
+        </section>
+      </header>
+
+      <h3 class="quiz-q-title">${escapeHtml(question.questionText)}</h3>
+      <p class="quiz-q-context">${escapeHtml(question.contextNote)}</p>
+
+      <fieldset class="quiz-options-fieldset ${hasOddOptions ? 'has-odd-count' : ''}">
+        <legend class="sr-only">${escapeHtml(question.title)}</legend>
+        ${optionsHtml}
+      </fieldset>
+
+      <footer class="quiz-nav-dock">
+        <div class="quiz-nav-group">
+          <button
+            id="btn-quiz-prev"
+            type="button"
+            class="btn-secondary btn-compact"
+            ${index === 0 ? 'disabled' : ''}
+          >
+            Anterior
+          </button>
+          <button
+            id="btn-quiz-skip"
+            type="button"
+            class="btn-ghost btn-compact"
+          >
+            Omitir tema
+          </button>
+        </div>
+
+        <span class="quiz-auto-hint">Al elegir una medida avanza automáticamente</span>
+
+        <button
+          id="btn-quiz-next"
+          type="button"
+          class="btn-primary btn-compact"
+        >
+          ${isLast ? 'Ver resultado final' : 'Siguiente'}
+        </button>
+      </footer>
+    </article>
+  `;
+
+  slotEl.querySelectorAll('input[type="radio"]').forEach((input) => {
     input.addEventListener('change', () => {
       const qId = input.dataset.questionId;
       if (!qId) return;
@@ -646,19 +800,34 @@ function renderQuestionnaireQuestions() {
       }
       renderQuestionnaireQuestions();
       renderLiveScoreboard();
+
+      clearAutoAdvanceTimer();
+      autoAdvanceTimer = window.setTimeout(() => {
+        advanceQuizStep();
+      }, 280);
     });
   });
 
-  listEl.querySelectorAll('.priority-btn').forEach((btn) => {
+  slotEl.querySelectorAll('.priority-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const qId = btn.dataset.questionId;
       const priority = btn.dataset.priority || 'normal';
       if (!qId) return;
+      clearAutoAdvanceTimer();
       state.priorities[qId] = priority;
       renderQuestionnaireQuestions();
       renderLiveScoreboard();
     });
   });
+
+  slotEl.querySelector('#btn-quiz-prev')?.addEventListener('click', goToPrevQuizStep);
+
+  slotEl.querySelector('#btn-quiz-skip')?.addEventListener('click', () => {
+    state.priorities[question.id] = 'skip';
+    advanceQuizStep();
+  });
+
+  slotEl.querySelector('#btn-quiz-next')?.addEventListener('click', advanceQuizStep);
 }
 
 function getAlignmentLabel(weight) {
@@ -668,24 +837,100 @@ function getAlignmentLabel(weight) {
   return 'Discrepancia';
 }
 
+function buildRankingRowsHtml(entries, { hasAnswers, selectedPartyId, actionAttr }) {
+  return entries
+    .map((entry, idx) => {
+      const party = getPartyById(entry.partyId);
+      if (!party) return '';
+      const isSelected = hasAnswers && actionAttr === 'data-inspect-party' && entry.partyId === selectedPartyId;
+      const pctLabel = hasAnswers ? `${entry.scorePercentage}%` : '--%';
+      const barWidth = hasAnswers ? entry.scorePercentage : 0;
+
+      return `
+        <li>
+          <button
+            type="button"
+            class="ranking-row-btn ${isSelected ? 'is-selected' : ''}"
+            ${actionAttr}="${escapeHtml(party.id)}"
+            aria-pressed="${isSelected ? 'true' : 'false'}"
+            style="--party-accent: ${escapeHtml(party.accentColor)};"
+          >
+            <span class="rank-pos">${String(idx + 1).padStart(2, '0')}</span>
+            <span class="rank-party-label">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
+            <span class="rank-score-num">${pctLabel}</span>
+            <span class="rank-bar-track">
+              <span class="rank-bar-fill" style="width: ${barWidth}%;"></span>
+            </span>
+          </button>
+        </li>
+      `;
+    })
+    .join('');
+}
+
 function renderLiveScoreboard() {
   const answeredCountEl = document.getElementById('quiz-answered-count');
   const headlineEl = document.getElementById('scoreboard-headline');
+  const liveTopListEl = document.getElementById('affinity-live-top-list');
+  const showResultsBtn = document.getElementById('btn-show-results');
+
+  const resultsHeadlineEl = document.getElementById('results-headline');
+  const resultsProgressEl = document.getElementById('results-progress-caption');
   const filtersEl = document.getElementById('scoreboard-bloc-filters');
   const rankingEl = document.getElementById('affinity-ranking-list');
   const traceHeadingEl = document.getElementById('trace-party-heading');
   const traceTbodyEl = document.getElementById('affinity-trace-tbody');
   const openTraceBtn = document.getElementById('btn-open-trace-party');
 
-  if (!rankingEl || !traceTbodyEl) return;
-
-  const activeAnswered = QUESTIONS.filter(
-    (q) => state.answers[q.id] && (state.priorities[q.id] || 'normal') !== 'skip'
-  ).length;
+  const affinitySummary = calculateCitizenAffinity(
+    state.answers,
+    state.priorities,
+    QUESTIONS,
+    PARTIES
+  );
+  const hasAnswers = affinitySummary.answeredCount > 0;
+  const activeAnswered = affinitySummary.answeredCount;
 
   if (answeredCountEl) {
     answeredCountEl.textContent = `${activeAnswered} / ${QUESTIONS.length}`;
   }
+  if (showResultsBtn) {
+    showResultsBtn.disabled = !hasAnswers;
+  }
+
+  const overallTop = affinitySummary.rankedParties[0];
+  const overallTopParty = overallTop ? getPartyById(overallTop.partyId) : null;
+
+  if (headlineEl) {
+    headlineEl.textContent =
+      hasAnswers && overallTopParty
+        ? `Mayor afinidad: ${overallTopParty.shortName} (${overallTop.scorePercentage}%)`
+        : 'Responde para ver tu afinidad';
+  }
+
+  if (liveTopListEl) {
+    liveTopListEl.innerHTML = buildRankingRowsHtml(affinitySummary.rankedParties.slice(0, 5), {
+      hasAnswers,
+      selectedPartyId: null,
+      actionAttr: hasAnswers ? 'data-jump-result-party' : 'data-open-party'
+    });
+
+    liveTopListEl.querySelectorAll('[data-open-party]').forEach((btn) => {
+      btn.addEventListener('click', () => openPartyDrawer(btn.dataset.openParty, btn));
+    });
+
+    liveTopListEl.querySelectorAll('[data-jump-result-party]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        clearAutoAdvanceTimer();
+        state.selectedResultPartyId = btn.dataset.jumpResultParty || null;
+        state.quizViewMode = 'results';
+        renderQuestionnaireQuestions();
+        renderLiveScoreboard();
+      });
+    });
+  }
+
+  if (!rankingEl || !traceTbodyEl) return;
 
   if (filtersEl) {
     const chips = [
@@ -717,45 +962,28 @@ function renderLiveScoreboard() {
     });
   }
 
-  const affinitySummary = calculateCitizenAffinity(
-    state.answers,
-    state.priorities,
-    QUESTIONS,
-    PARTIES
-  );
-
   const visibleRanking = affinitySummary.rankedParties.filter((entry) => {
     if (state.resultsBlocFilter === 'all') return true;
     const party = getPartyById(entry.partyId);
     return party?.bloc === state.resultsBlocFilter;
   });
 
-  if (affinitySummary.answeredCount === 0) {
-    if (headlineEl) {
-      headlineEl.textContent = 'Responde para ver tu afinidad';
-    }
-    rankingEl.innerHTML = visibleRanking
-      .slice(0, 8)
-      .map((entry, idx) => {
-        const party = getPartyById(entry.partyId);
-        if (!party) return '';
-        return `
-          <li>
-            <button
-              type="button"
-              class="ranking-row-btn"
-              data-open-party="${escapeHtml(party.id)}"
-            >
-              <span class="rank-pos">${String(idx + 1).padStart(2, '0')}</span>
-              <span class="rank-party-label">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
-              <span class="rank-score-num">--%</span>
-              <span class="rank-bar-track"><span class="rank-bar-fill" style="width: 0%;"></span></span>
-            </button>
-          </li>
-        `;
-      })
-      .join('');
+  if (resultsProgressEl) {
+    resultsProgressEl.innerHTML = `
+      <strong class="tabular">${activeAnswered} / ${QUESTIONS.length}</strong>
+      <span>preguntas valoradas</span>
+    `;
+  }
 
+  if (!hasAnswers) {
+    if (resultsHeadlineEl) {
+      resultsHeadlineEl.textContent = 'Responde al menos una pregunta para calcular tu afinidad';
+    }
+    rankingEl.innerHTML = buildRankingRowsHtml(visibleRanking.slice(0, 8), {
+      hasAnswers: false,
+      selectedPartyId: null,
+      actionAttr: 'data-open-party'
+    });
     rankingEl.querySelectorAll('[data-open-party]').forEach((btn) => {
       btn.addEventListener('click', () => openPartyDrawer(btn.dataset.openParty, btn));
     });
@@ -781,37 +1009,17 @@ function renderLiveScoreboard() {
 
   const topEntry = visibleRanking[0];
   const topParty = topEntry ? getPartyById(topEntry.partyId) : null;
-  if (headlineEl) {
-    headlineEl.textContent = topParty
+  if (resultsHeadlineEl) {
+    resultsHeadlineEl.textContent = topParty
       ? `Mayor afinidad: ${topParty.shortName} (${topEntry.scorePercentage}%)`
       : 'Ranking de coincidencia';
   }
 
-  rankingEl.innerHTML = visibleRanking
-    .map((entry, index) => {
-      const party = getPartyById(entry.partyId);
-      if (!party) return '';
-      const isSelected = entry.partyId === state.selectedResultPartyId;
-      return `
-        <li>
-          <button
-            type="button"
-            class="ranking-row-btn ${isSelected ? 'is-selected' : ''}"
-            data-inspect-party="${escapeHtml(party.id)}"
-            aria-pressed="${isSelected ? 'true' : 'false'}"
-            style="--party-accent: ${escapeHtml(party.accentColor)};"
-          >
-            <span class="rank-pos">${String(index + 1).padStart(2, '0')}</span>
-            <span class="rank-party-label">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
-            <span class="rank-score-num">${entry.scorePercentage}%</span>
-            <span class="rank-bar-track">
-              <span class="rank-bar-fill" style="width: ${entry.scorePercentage}%;"></span>
-            </span>
-          </button>
-        </li>
-      `;
-    })
-    .join('');
+  rankingEl.innerHTML = buildRankingRowsHtml(visibleRanking, {
+    hasAnswers: true,
+    selectedPartyId: state.selectedResultPartyId,
+    actionAttr: 'data-inspect-party'
+  });
 
   rankingEl.querySelectorAll('[data-inspect-party]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -851,14 +1059,48 @@ function renderLiveScoreboard() {
     .join('');
 }
 
+function resetQuizState() {
+  clearAutoAdvanceTimer();
+  state.answers = {};
+  state.priorities = {};
+  state.quizCurrentIndex = 0;
+  state.quizViewMode = 'question';
+  state.selectedResultPartyId = null;
+  state.resultsBlocFilter = 'all';
+  renderQuestionnaireQuestions();
+  renderLiveScoreboard();
+}
+
 function initQuestionnaireControls() {
-  document.getElementById('btn-reset-quiz')?.addEventListener('click', () => {
-    state.answers = {};
-    state.priorities = {};
-    state.selectedResultPartyId = null;
-    state.resultsBlocFilter = 'all';
+  document.getElementById('btn-reset-quiz')?.addEventListener('click', resetQuizState);
+  document.getElementById('btn-reset-quiz-results')?.addEventListener('click', resetQuizState);
+
+  document.getElementById('btn-show-results')?.addEventListener('click', () => {
+    clearAutoAdvanceTimer();
+    state.quizViewMode = 'results';
     renderQuestionnaireQuestions();
     renderLiveScoreboard();
+  });
+
+  document.getElementById('btn-back-to-questions')?.addEventListener('click', () => {
+    clearAutoAdvanceTimer();
+    state.quizViewMode = 'question';
+    renderQuestionnaireQuestions();
+    renderLiveScoreboard();
+  });
+
+  document.getElementById('quiz-workbench')?.addEventListener('keydown', (event) => {
+    if (state.quizViewMode !== 'question') return;
+    if (event.target instanceof HTMLElement && event.target.tagName === 'INPUT') {
+      return;
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      advanceQuizStep();
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      goToPrevQuizStep();
+    }
   });
 }
 

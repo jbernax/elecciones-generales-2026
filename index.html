@@ -162,64 +162,98 @@
       </section>
     </section>
 
-    <section id="cuestionario" class="stage-section">
+    <section id="cuestionario" class="stage-section quiz-section">
       <section class="stage-container">
-        <header class="stage-header">
+        <header class="stage-header quiz-stage-header">
           <hgroup>
             <span class="kicker">Con peso por prioridad · Medidas concretas</span>
             <h2>Test de afinidad electoral</h2>
           </hgroup>
           <p>
-            Marca las medidas que mejor encajan contigo y decide cuánto pesa cada tema (Omitir, Baja, Normal o Alta). El ranking y el desglose punto por punto se actualizan al instante.
+            Responde una cuestión cada vez: al elegir una medida avanza automáticamente a la siguiente, o ajusta primero la prioridad del tema. El ranking Top 5 se actualiza al instante y al finalizar verás el desglose completo.
           </p>
         </header>
 
-        <section class="scrolly-stage">
-          <ol id="scrolly-questions-list" class="scrolly-steps-col"></ol>
+        <section id="quiz-workbench" class="quiz-workbench" data-view="question">
+          <nav id="quiz-stepper-nav" class="quiz-stepper-nav" aria-label="Progreso del test (15 preguntas)"></nav>
 
-          <aside id="scrolly-scoreboard" class="scrolly-sticky-visual" aria-live="polite">
-            <header class="scoreboard-header">
-              <span class="kicker">Afinidad en tiempo real</span>
-              <h3 id="scoreboard-headline">Ranking de coincidencia</h3>
-              <p class="scoreboard-progress-row">
-                <strong id="quiz-answered-count" class="tabular">0 / 15</strong>
-                <span>preguntas valoradas</span>
-              </p>
-            </header>
+          <section id="quiz-question-stage" class="quiz-question-stage">
+            <section id="quiz-active-card-slot" class="quiz-active-card-slot" aria-live="polite"></section>
 
-            <menu class="scoreboard-actions">
-              <li>
+            <aside id="quiz-live-aside" class="quiz-live-aside" aria-live="polite">
+              <header class="scoreboard-header">
+                <span class="kicker">Afinidad en tiempo real</span>
+                <h3 id="scoreboard-headline">Responde para ver tu afinidad</h3>
+                <p class="scoreboard-progress-row">
+                  <strong id="quiz-answered-count" class="tabular">0 / 15</strong>
+                  <span>preguntas valoradas</span>
+                </p>
+              </header>
+
+              <ol id="affinity-live-top-list" class="affinity-ranking-list"></ol>
+
+              <footer class="quiz-aside-actions">
+                <button id="btn-show-results" type="button" class="btn-primary btn-compact" disabled>
+                  Ver resultados completos
+                </button>
                 <button id="btn-reset-quiz" type="button" class="btn-secondary btn-compact">
                   Reiniciar respuestas
                 </button>
-              </li>
-              <li>
-                <ul id="scoreboard-bloc-filters" class="mini-bloc-filters" role="list"></ul>
-              </li>
-            </menu>
+              </footer>
+            </aside>
+          </section>
 
-            <ol id="affinity-ranking-list" class="affinity-ranking-list"></ol>
+          <section id="quiz-results-stage" class="quiz-results-stage" hidden aria-live="polite">
+            <header class="quiz-results-topbar">
+              <div class="quiz-results-summary">
+                <span class="kicker">Resultado del test de afinidad</span>
+                <h3 id="results-headline">Ranking de coincidencia</h3>
+                <p id="results-progress-caption" class="scoreboard-progress-row"></p>
+              </div>
+              <menu class="quiz-results-controls">
+                <li>
+                  <button id="btn-back-to-questions" type="button" class="btn-secondary btn-compact">
+                    Editar respuestas
+                  </button>
+                </li>
+                <li>
+                  <button id="btn-reset-quiz-results" type="button" class="btn-secondary btn-compact">
+                    Reiniciar respuestas
+                  </button>
+                </li>
+              </menu>
+            </header>
 
-            <section id="affinity-trace-section" class="affinity-trace-section">
-              <header class="trace-header">
-                <h4 id="trace-party-heading">Desglose pregunta a pregunta</h4>
-                <button id="btn-open-trace-party" type="button" class="inline-action-btn" hidden>
-                  Abrir programa completo &rarr;
-                </button>
-              </header>
-              <table class="spec-table trace-spec-table">
-                <thead>
-                  <tr>
-                    <th>Tema</th>
-                    <th>Tu elección</th>
-                    <th>Qué propone</th>
-                    <th class="num">Afinidad</th>
-                  </tr>
-                </thead>
-                <tbody id="affinity-trace-tbody"></tbody>
-              </table>
+            <section class="quiz-results-toolbar" aria-label="Filtrar resultados por bloque ideológico">
+              <ul id="scoreboard-bloc-filters" class="mini-bloc-filters" role="list"></ul>
             </section>
-          </aside>
+
+            <section class="quiz-results-grid">
+              <section class="quiz-results-ranking-col" aria-label="Ranking completo de partidos">
+                <ol id="affinity-ranking-list" class="affinity-ranking-list"></ol>
+              </section>
+
+              <section id="affinity-trace-section" class="affinity-trace-section">
+                <header class="trace-header">
+                  <h4 id="trace-party-heading">Desglose pregunta a pregunta</h4>
+                  <button id="btn-open-trace-party" type="button" class="inline-action-btn" hidden>
+                    Abrir programa completo &rarr;
+                  </button>
+                </header>
+                <table class="spec-table trace-spec-table">
+                  <thead>
+                    <tr>
+                      <th>Tema</th>
+                      <th>Tu elección</th>
+                      <th>Qué propone</th>
+                      <th class="num">Afinidad</th>
+                    </tr>
+                  </thead>
+                  <tbody id="affinity-trace-tbody"></tbody>
+                </table>
+              </section>
+            </section>
+          </section>
         </section>
       </section>
     </section>
@@ -245,7 +279,14 @@
 
   <footer class="stage-container site-colophon">
     <span>Guía Electoral España 2026 · 18 partidos y coaliciones · 12 temas · Sin rastreadores</span>
-    <span>Datos oficiales de referencia por tema (2025-2026) · PDFs en /pdfs</span>
+    <span>
+      Datos oficiales de referencia por tema (2025-2026) · PDFs en /pdfs ·
+      <a
+        href="https://jbernax.github.io/democracia-colaborativa/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Democracia Colaborativa</a>
+    </span>
   </footer>
 
   <script type="module" src="./src/app.js"></script>
