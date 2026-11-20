@@ -148,8 +148,10 @@ function applyPalette(paletteName) {
   }
 
   if (toggleBtn) {
-    toggleBtn.textContent = isDaylight ? 'Modo oscuro' : 'Modo claro';
+    const label = isDaylight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro';
     toggleBtn.setAttribute('aria-pressed', isDaylight ? 'true' : 'false');
+    toggleBtn.setAttribute('aria-label', label);
+    toggleBtn.setAttribute('title', label);
   }
 
   try {

@@ -130,22 +130,40 @@ ol.affinity-ranking-list {
 
 .palette-toggle-btn {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  flex-shrink: 0;
   background: var(--surface-2);
   color: var(--ink-primary);
   border: 1px solid var(--specular-border-strong);
   border-radius: 6px;
-  padding: 0.45rem 0.9rem;
-  font-family: var(--font-label);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
   cursor: pointer;
-  white-space: nowrap;
   transition: border-color 0.18s var(--ease-out-expo), background-color 0.18s var(--ease-out-expo);
 }
 
 .palette-toggle-btn:hover {
   border-color: var(--accent-primary);
+}
+
+.palette-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.palette-icon-moon {
+  display: none;
+}
+
+html[data-palette="daylight-editorial"] .palette-icon-sun {
+  display: none;
+}
+
+html[data-palette="daylight-editorial"] .palette-icon-moon {
+  display: block;
 }
 
 /* Section Rhythm & Anchor Spacing */
