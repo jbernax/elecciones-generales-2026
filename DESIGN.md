@@ -26,7 +26,7 @@ Do not use `JetBrains Mono` or coding monospace fonts for UI controls, kickers, 
 1. **Rhythmic Section Alternation**: Consecutive sections must never repeat identical uniform column grids. Alternate across:
    - Full-bleed interactive hero stage
    - Asymmetric 12-column Bento matrix (`span-7` + `span-5`, `span-4` + `span-8`)
-   - Single-screen stepper questionnaire (`1` active question + compact live Top-5 meter) transitioning to a dedicated results stage
+   - Single-screen randomized blind stepper questionnaire (`1` active question + neutral progress panel, no live affinity) transitioning to a dedicated results stage with a per-policy similarity report
    - Precision comparison table or split-stage workbench
 2. **Information Restraint & Spaciousness**:
    - Limit cards (`.bento-cell` / `.bento-card`) to at most `3` concise elements (Title, 1–2 line summary, single action or metric) with `>= 1.5rem` internal padding.

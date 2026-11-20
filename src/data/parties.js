@@ -1,6 +1,6 @@
 /**
- * Ideological blocs and the 18 political formations covered in the
- * Elecciones Generales Espana 2026 (29N) reference dataset.
+ * Ideological blocs and the 14 political candidatures and historical references
+ * covered in the Elecciones Generales Espana 2026 (29N) dataset.
  */
 
 export const BLOCS = [
@@ -17,39 +17,32 @@ export const PARTIES = [
     id: 'frente_amplio',
     shortName: 'Frente Amplio',
     bloc: 'Izquierda',
-    fullName: 'Frente Amplio (Sumar · IU · Más Madrid · Comuns)',
+    fullName: 'Frente Amplio',
     ideology: 'Izquierda progresista, ecosocialista y federal',
     foundedYear: 2026,
     foundedLabel: 'coalición 2026',
-    leader: 'Ada Colau',
+    leader: 'Ada Colau (con Antonio Maíllo y Enrique Santiago en listas)',
     accentColor: '#b91c4c',
     status: 'En activo (coalición estatal 29N-2026 en 46 circunscripciones + alianzas territoriales)',
+    coalition: {
+      label: 'Candidatura conjunta 29N',
+      shortTag: 'Sumar · IU · PCE · Más Madrid · Comuns',
+      compactLabel: 'Sumar · IU · PCE +2',
+      members: [
+        { shortName: 'Sumar', fullName: 'Movimiento Sumar', officialWebsite: 'https://movimientosumar.es' },
+        { shortName: 'IU', fullName: 'Izquierda Unida', officialWebsite: 'https://izquierdaunida.org' },
+        { shortName: 'PCE', fullName: 'Partido Comunista de España', officialWebsite: 'https://pce.es' },
+        { shortName: 'Más Madrid', fullName: 'Más Madrid', officialWebsite: null },
+        { shortName: 'Comuns', fullName: 'Comuns', officialWebsite: null }
+      ]
+    },
     summary:
-      'Coalición electoral de 2026 que agrupa a Movimiento Sumar, Izquierda Unida, Más Madrid, Comuns y fuerzas aliadas. Propone 1,5 millones de viviendas públicas con el 1% del PIB anual, tope del alquiler al 25% de la renta, jornada de 32 horas, prestación universal de 200 €/mes por menor, tipo mínimo del 20% en Sociedades y una República Federal y Plurinacional.',
+      'Coalición electoral de 2026 que reúne en candidatura conjunta a Movimiento Sumar, Izquierda Unida, PCE, Más Madrid, Comuns y fuerzas aliadas. Propone 1,5 millones de viviendas públicas con el 1% del PIB anual, tope del alquiler al 25% de la renta, jornada de 32 horas, prestación universal de 200 €/mes por menor, tipo mínimo del 20% en Sociedades y una República Federal y Plurinacional.',
     documentTitle: 'Un programa como una casa — Programa Electoral Frente Amplio 29N-2026',
     officialWebsite: 'https://frenteamplio.info',
     programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
     localPdfPath: './pdfs/sumar-frente-amplio-2026.pdf',
     localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa Electoral Frente Amplio 29N-2026)'
-  },
-  {
-    id: 'sumar',
-    shortName: 'Sumar',
-    bloc: 'Izquierda',
-    fullName: 'Movimiento Sumar (integrado en Frente Amplio)',
-    ideology: 'Izquierda progresista plural',
-    foundedYear: 2022,
-    foundedLabel: 'desde 2022',
-    leader: 'Dirección colegiada / Integrado en Frente Amplio (Ada Colau)',
-    accentColor: '#a21caf',
-    status: 'En activo (concurre al 29N-2026 integrado en la coalición Frente Amplio)',
-    summary:
-      'Partido progresista plurinacional cofundador de la coalición Frente Amplio para el 29N-2026. Centra su aportación programática en la reducción inmediata de jornada a 37,5 horas rumbo a las 32 horas, la democracia económica en las empresas, la prestación universal por crianza de 200 €/mes y el parque público de 1,5 millones de viviendas.',
-    documentTitle: 'Un programa como una casa (Programa Electoral Frente Amplio 29N-2026)',
-    officialWebsite: 'https://movimientosumar.es',
-    programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
-    localPdfPath: './pdfs/sumar-frente-amplio-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa compartido de Frente Amplio 2026)'
   },
   {
     id: 'podemos',
@@ -71,44 +64,6 @@ export const PARTIES = [
     localPdfMeta: 'Programa oficial 29N-2026 (141 páginas · 442 medidas) publicado en el portal oficial podemos.info/programa/.'
   },
   {
-    id: 'iu',
-    shortName: 'IU',
-    bloc: 'Izquierda',
-    fullName: 'Izquierda Unida (integrada en Frente Amplio)',
-    ideology: 'Izquierda comunista, federal y ecosocialista',
-    foundedYear: 1986,
-    foundedLabel: 'desde 1986',
-    leader: 'Antonio Maíllo (encabeza 29 listas en Frente Amplio 2026)',
-    accentColor: '#a61c1c',
-    status: 'En activo (integrada en la coalición Frente Amplio 29N-2026)',
-    summary:
-      'Movimiento político y social federal, republicano y ecosocialista integrado en Frente Amplio para el 29N-2026. Impulsa dentro de la coalición la banca y energía públicas, la reforma fiscal sobre grandes fortunas y herencias, las 32 horas semanales, los 1,5 millones de viviendas públicas y el rechazo al gasto militar de la OTAN.',
-    documentTitle: 'Un programa como una casa (Programa Electoral Frente Amplio / IU 29N-2026)',
-    officialWebsite: 'https://izquierdaunida.org',
-    programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
-    localPdfPath: './pdfs/sumar-frente-amplio-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (151 páginas · 1,1 MB · Programa compartido de Frente Amplio 2026)'
-  },
-  {
-    id: 'pce',
-    shortName: 'PCE',
-    bloc: 'Izquierda',
-    fullName: 'Partido Comunista de España',
-    ideology: 'Comunismo marxista',
-    foundedYear: 1921,
-    foundedLabel: 'desde 1921',
-    leader: 'Enrique Santiago (candidato en Frente Amplio 2026)',
-    accentColor: '#8b0000',
-    status: 'En activo (partido orgánico integrado en IU y en la coalición Frente Amplio 29N-2026)',
-    summary:
-      'Partido marxista integrado orgánicamente en Izquierda Unida y concurrente en 2026 dentro de Frente Amplio. Su corpus estratégico propio defiende la planificación democrática de la economía, la nacionalización de sectores estratégicos, la República federal y solidaria y el antiimperialismo.',
-    documentTitle: 'Programa Estratégico del Partido Comunista de España (febrero 2024)',
-    officialWebsite: 'https://pce.es',
-    programUrl: 'https://pce.es/media/documents/def._PROGRAMA_ESTRATEGICO_PCE.pdf',
-    localPdfPath: './pdfs/pce-programa-estrategico.pdf',
-    localPdfMeta: 'PDF local disponible (28 páginas · documento estratégico de febrero 2024; en el 29N-2026 concurre en Frente Amplio)'
-  },
-  {
     id: 'psoe',
     shortName: 'PSOE',
     bloc: 'Centro-izquierda',
@@ -128,20 +83,30 @@ export const PARTIES = [
     localPdfMeta: 'PDF oficial local disponible (114 páginas · 11,4 MB · Programa Electoral 29N-2026)'
   },
   {
-    id: 'cs',
-    shortName: 'Cs',
+    id: 'd21',
+    shortName: 'D21 · Cs',
     bloc: 'Centro',
-    fullName: 'Ciudadanos (en coalición Democracia para el Siglo 21)',
-    ideology: 'Centro liberal',
-    foundedYear: 2006,
-    foundedLabel: 'desde 2006',
-    leader: 'Carlos Pérez-Nievas (coalición Democracia para el Siglo 21)',
-    accentColor: '#d95f02',
-    status: 'En activo (concurre en coalición Democracia para el Siglo 21 en Madrid y Barcelona, 29N-2026)',
+    fullName: 'Democracia para el Siglo 21',
+    ideology: 'Centro liberal y regeneracionista',
+    foundedYear: 2026,
+    foundedLabel: 'coalición 2026',
+    leader: 'Miriam González Durántez (D21) · Carlos Pérez-Nievas (Cs)',
+    accentColor: '#0f4c81',
+    status: 'En activo (coalición Democracia para el Siglo 21 con D21, Cs y UCIN en Madrid y Barcelona, 29N-2026)',
+    coalition: {
+      label: 'Candidatura conjunta 29N',
+      shortTag: 'Democracia 21 (D21) · Ciudadanos (Cs) · UCIN',
+      compactLabel: 'D21 · Cs · UCIN',
+      members: [
+        { shortName: 'D21', fullName: 'Democracia 21', officialWebsite: 'https://democracia21.es' },
+        { shortName: 'Cs', fullName: 'Ciudadanos', officialWebsite: 'https://www.ciudadanos-cs.org' },
+        { shortName: 'UCIN', fullName: 'Unión de Ciudadanos Independientes', officialWebsite: null }
+      ]
+    },
     summary:
-      'Partido liberal y constitucionalista que regresa a las generales de 2026 en coalición con Democracia 21 y UCIN bajo el programa común «La España que merecemos»: limpieza clientelar, listas abiertas, CGPJ elegido por jueces, cero impuestos en primera vivienda a menores de 35 años y apoyo a pymes.',
-    documentTitle: 'La España que merecemos (Programa coalición Democracia para el Siglo 21 · 29N)',
-    officialWebsite: 'https://www.ciudadanos-cs.org',
+      'Coalición liberal y regeneracionista que une a Democracia 21, Ciudadanos y UCIN en el 29N-2026 bajo el programa «La España que merecemos»: recortar el 90% de asesores, blindar la IGAE con IA, cesar al Gobierno tras prórrogas presupuestarias, CGPJ elegido por jueces, listas abiertas, Asamblea Ciudadana por las Pensiones, cero impuestos en vivienda <35 años y 10.000 M€ europeos para vivienda.',
+    documentTitle: 'La España que merecemos: Programa Democracia para el Siglo 21 (29N-2026)',
+    officialWebsite: 'https://democracia21.es',
     programUrl: 'https://mi.democracia21.es/docs/programa/programa-democracia21.pdf',
     localPdfPath: './pdfs/d21-2026.pdf',
     localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa coalición Democracia para el Siglo 21 · 2026)'
@@ -300,25 +265,6 @@ export const PARTIES = [
     localPdfMeta: 'PDF oficial local disponible (82 páginas · 1,1 MB · Programa Electoral 29N-2026)'
   },
   {
-    id: 'd21',
-    shortName: 'D21',
-    bloc: 'Otros',
-    fullName: 'Democracia 21',
-    ideology: 'Liberal y regeneracionista',
-    foundedYear: 2026,
-    foundedLabel: 'desde 2026',
-    leader: 'Miriam González Durántez',
-    accentColor: '#0f4c81',
-    status: 'En activo (coalición Democracia para el Siglo 21 con Cs y UCIN en Madrid y Barcelona, 29N-2026)',
-    summary:
-      'Partido liberal y regeneracionista que encabeza la coalición Democracia para el Siglo 21 en 2026. Propone recortar el 90% de asesores, blindar la IGAE con IA, cesar al Gobierno tras prórrogas presupuestarias, Asamblea Ciudadana por las Pensiones, cero impuestos en vivienda <35 años y 10.000 M€ europeos para vivienda.',
-    documentTitle: 'La España que merecemos: Programa Democracia para el Siglo 21 (29N-2026)',
-    officialWebsite: 'https://democracia21.es',
-    programUrl: 'https://mi.democracia21.es/docs/programa/programa-democracia21.pdf',
-    localPdfPath: './pdfs/d21-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa 29N-2026)'
-  },
-  {
     id: 'iustitia',
     shortName: 'Iustitia Europa',
     bloc: 'Otros',
@@ -360,7 +306,27 @@ export const PARTIES = [
 ];
 
 /**
- * Look up a party record by its identifier.
+ * Canonical alias map from absorbed coalition partner IDs (legacy deep links)
+ * to their unified 29N-2026 candidature ID.
+ */
+export const LEGACY_PARTY_ALIASES = Object.freeze({
+  sumar: 'frente_amplio',
+  iu: 'frente_amplio',
+  pce: 'frente_amplio',
+  cs: 'd21'
+});
+
+/**
+ * Resolve a legacy or absorbed party ID to its canonical candidature ID.
+ * @param {string} id
+ * @returns {string}
+ */
+export function resolvePartyId(id) {
+  return LEGACY_PARTY_ALIASES[id] || id;
+}
+
+/**
+ * Look up a party record by its canonical identifier.
  * @param {string} id
  * @returns {object|undefined}
  */

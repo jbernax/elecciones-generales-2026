@@ -41,6 +41,18 @@ export function filterParties(parties, programs, { bloc = 'all', query = '' } = 
       return true;
     }
 
+    const coalitionFields = party.coalition
+      ? [
+          party.coalition.label,
+          party.coalition.shortTag,
+          party.coalition.compactLabel,
+          ...(party.coalition.members || []).flatMap((member) => [
+            member.shortName,
+            member.fullName
+          ])
+        ]
+      : [];
+
     const metadataFields = [
       party.shortName,
       party.fullName,
@@ -48,7 +60,8 @@ export function filterParties(parties, programs, { bloc = 'all', query = '' } = 
       party.ideology,
       party.leader,
       party.summary,
-      party.foundedLabel
+      party.foundedLabel,
+      ...coalitionFields
     ];
 
     if (metadataFields.some((field) => normalizeText(field).includes(normalizedQuery))) {
@@ -316,5 +329,375 @@ export function getPrevQuestionStep(currentIndex) {
   return {
     quizCurrentIndex: Math.max(0, currentIndex - 1),
     quizViewMode: 'question'
+  };
+}
+
+function shuffleArray(items = [], rng = Math.random) {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(rng() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+/**
+ * Create a randomized session copy of the questionnaire without mutating
+ * the canonical `QUESTIONS` dataset or its nested `options` arrays.
+ *
+ * @param {Array<object>} questions
+ * @param {{ shuffleOptions?: boolean, rng?: () => number }} [options]
+ * @returns {Array<object>}
+ */
+export function createRandomizedQuiz(
+  questions = [],
+  { shuffleOptions = true, rng = Math.random } = {}
+) {
+  if (!Array.isArray(questions) || questions.length === 0) {
+    return [];
+  }
+
+  return shuffleArray(questions, rng).map((question) => ({
+    ...question,
+    options: shuffleOptions
+      ? shuffleArray(question.options || [], rng)
+      : [...(question.options || [])]
+  }));
+}
+
+/**
+ * Summarize blind-evaluation progress counts consistently with the stepper and
+ * scoring engine (`answered`, `skipped`, `pending`, `resolved`, `completionPercent`).
+ *
+ * @param {Array<object>} questions
+ * @param {Record<string, string>} answers
+ * @param {Record<string, string>} priorities
+ * @returns {{
+ *   total: number,
+ *   answered: number,
+ *   skipped: number,
+ *   pending: number,
+ *   resolved: number,
+ *   completionPercent: number
+ * }}
+ */
+export function getQuizProgressStats(questions = [], answers = {}, priorities = {}) {
+  const total = Array.isArray(questions) ? questions.length : 0;
+  if (total === 0) {
+    return {
+      total: 0,
+      answered: 0,
+      skipped: 0,
+      pending: 0,
+      resolved: 0,
+      completionPercent: 0
+    };
+  }
+
+  const steps = getQuestionStepStates(questions, answers, priorities, 0);
+  let answered = 0;
+  let skipped = 0;
+  let pending = 0;
+
+  for (const step of steps) {
+    if (step.status === 'answered') {
+      answered += 1;
+    } else if (step.status === 'skipped') {
+      skipped += 1;
+    } else {
+      pending += 1;
+    }
+  }
+
+  const resolved = answered + skipped;
+  const completionPercent = Math.round((resolved / total) * 100);
+
+  return {
+    total,
+    answered,
+    skipped,
+    pending,
+    resolved,
+    completionPercent
+  };
+}
+
+const PRIORITY_ORDER = {
+  high: 3,
+  normal: 2,
+  low: 1
+};
+
+function selectTopicSummaryFields(topic) {
+  return {
+    topicId: topic.topicId,
+    topicTitle: topic.topicTitle,
+    topicShortTitle: topic.topicShortTitle,
+    score: topic.score,
+    highestPriority: topic.highestPriority
+  };
+}
+
+/**
+ * Build an end-of-test policy similarity report mapping answered policy areas
+ * to their closest matching parties and summarizing strongest/weakest areas for
+ * top overall aligned parties.
+ *
+ * @param {object} affinitySummary - Output of `calculateCitizenAffinity`
+ * @param {Array<object>} topics
+ * @param {Array<object>} parties
+ * @param {{ blocFilter?: string, maxPartiesPerTopic?: number, topPartiesLimit?: number }} [options]
+ * @returns {{
+ *   byTopic: Array<object>,
+ *   byParty: Array<object>,
+ *   summaryMetrics: {
+ *     answeredTopicsCount: number,
+ *     distinctLeadingPartiesCount: number,
+ *     highPriorityTopics: Array<object>
+ *   }
+ * }}
+ */
+export function buildPolicySimilarityReport(
+  affinitySummary,
+  topics = [],
+  parties = [],
+  { blocFilter = 'all', maxPartiesPerTopic = 4, topPartiesLimit = 3 } = {}
+) {
+  if (
+    !affinitySummary ||
+    affinitySummary.answeredCount <= 0 ||
+    !Array.isArray(affinitySummary.questionBreakdown) ||
+    affinitySummary.questionBreakdown.length === 0
+  ) {
+    return {
+      byTopic: [],
+      byParty: [],
+      summaryMetrics: {
+        answeredTopicsCount: 0,
+        distinctLeadingPartiesCount: 0,
+        highPriorityTopics: []
+      }
+    };
+  }
+
+  const partyById = new Map();
+  const partyOrderIndex = new Map();
+  parties.forEach((party, idx) => {
+    partyById.set(party.id, party);
+    partyOrderIndex.set(party.id, idx);
+  });
+
+  const visibleRankedParties = (affinitySummary.rankedParties || []).filter((entry) => {
+    const party = partyById.get(entry.partyId);
+    if (!party) return false;
+    return !blocFilter || blocFilter === 'all' || party.bloc === blocFilter;
+  });
+
+  const breakdownByTopic = new Map();
+  for (const row of affinitySummary.questionBreakdown) {
+    if (!breakdownByTopic.has(row.topicId)) {
+      breakdownByTopic.set(row.topicId, []);
+    }
+    breakdownByTopic.get(row.topicId).push(row);
+  }
+
+  const leadingPartyIds = new Set();
+  const rawTopics = [];
+
+  topics.forEach((topic, canonicalIndex) => {
+    const rows = breakdownByTopic.get(topic.id);
+    if (!rows || rows.length === 0) return;
+
+    let totalTopicWeight = 0;
+    let highestPriority = 'low';
+    let highestRank = 0;
+
+    const chosenOptions = rows.map((row) => {
+      totalTopicWeight += Number(row.multiplier) || 0;
+      const rank = PRIORITY_ORDER[row.priorityKey] ?? PRIORITY_ORDER.normal;
+      if (rank > highestRank) {
+        highestRank = rank;
+        highestPriority = row.priorityKey || 'normal';
+      }
+      return {
+        questionId: row.questionId,
+        title: row.title,
+        selectedOptionTitle: row.selectedOptionTitle,
+        priorityKey: row.priorityKey
+      };
+    });
+
+    const scored = [];
+    for (const entry of visibleRankedParties) {
+      const topicScore = entry.topicScores?.[topic.id];
+      if (topicScore === undefined) continue;
+      const party = partyById.get(entry.partyId);
+      if (!party) continue;
+
+      scored.push({
+        partyId: party.id,
+        shortName: party.shortName,
+        bloc: party.bloc,
+        accentColor: party.accentColor,
+        coalitionShortTag: party.coalition?.shortTag || null,
+        coalitionCompactLabel: party.coalition?.compactLabel || null,
+        topicScore,
+        overallScore: entry.scorePercentage,
+        exactMatchesCount: entry.exactMatchesCount,
+        canonicalIndex: partyOrderIndex.get(party.id) ?? Number.MAX_SAFE_INTEGER
+      });
+    }
+
+    scored.sort((a, b) => {
+      if (b.topicScore !== a.topicScore) {
+        return b.topicScore - a.topicScore;
+      }
+      if (b.overallScore !== a.overallScore) {
+        return b.overallScore - a.overallScore;
+      }
+      if (b.exactMatchesCount !== a.exactMatchesCount) {
+        return b.exactMatchesCount - a.exactMatchesCount;
+      }
+      return a.canonicalIndex - b.canonicalIndex;
+    });
+
+    const topScore = scored[0]?.topicScore ?? 0;
+    const threshold =
+      topScore >= 50 ? Math.max(50, topScore - 10) : Math.max(1, topScore - 10);
+
+    const qualifying =
+      topScore > 0 ? scored.filter((item) => item.topicScore >= threshold) : [];
+
+    if (topScore > 0) {
+      for (const item of scored) {
+        if (item.topicScore === topScore) {
+          leadingPartyIds.add(item.partyId);
+        } else {
+          break;
+        }
+      }
+    }
+
+    const topMatches = qualifying.slice(0, maxPartiesPerTopic).map((item) => ({
+      partyId: item.partyId,
+      shortName: item.shortName,
+      bloc: item.bloc,
+      accentColor: item.accentColor,
+      coalitionShortTag: item.coalitionShortTag,
+      coalitionCompactLabel: item.coalitionCompactLabel,
+      topicScore: item.topicScore,
+      overallScore: item.overallScore
+    }));
+
+    const additionalTiedCount = Math.max(0, qualifying.length - topMatches.length);
+
+    rawTopics.push({
+      topicId: topic.id,
+      topicTitle: topic.title,
+      topicShortTitle: topic.shortTitle || topic.title,
+      questionCount: rows.length,
+      totalTopicWeight,
+      highestPriority,
+      chosenOptions,
+      topScore,
+      topMatches,
+      additionalTiedCount,
+      canonicalIndex
+    });
+  });
+
+  rawTopics.sort((a, b) => {
+    const aHigh = a.highestPriority === 'high' ? 1 : 0;
+    const bHigh = b.highestPriority === 'high' ? 1 : 0;
+    if (bHigh !== aHigh) {
+      return bHigh - aHigh;
+    }
+    return a.canonicalIndex - b.canonicalIndex;
+  });
+
+  const byTopic = rawTopics.map(({ canonicalIndex, ...rest }) => rest);
+
+  const byParty = [];
+  for (const entry of visibleRankedParties) {
+    if (byParty.length >= topPartiesLimit) break;
+    if (entry.scorePercentage <= 0) continue;
+
+    const party = partyById.get(entry.partyId);
+    if (!party) continue;
+
+    const evaluatedTopics = byTopic.map((topicItem, orderIdx) => ({
+      topicId: topicItem.topicId,
+      topicTitle: topicItem.topicTitle,
+      topicShortTitle: topicItem.topicShortTitle,
+      score: entry.topicScores?.[topicItem.topicId] ?? 0,
+      totalTopicWeight: topicItem.totalTopicWeight,
+      highestPriority: topicItem.highestPriority,
+      orderIdx
+    }));
+
+    let strongTopics = evaluatedTopics
+      .filter((t) => t.score >= 75)
+      .sort(
+        (a, b) =>
+          b.score - a.score ||
+          b.totalTopicWeight - a.totalTopicWeight ||
+          a.orderIdx - b.orderIdx
+      );
+
+    if (strongTopics.length === 0) {
+      strongTopics = evaluatedTopics
+        .filter((t) => t.score >= 50)
+        .sort(
+          (a, b) =>
+            b.score - a.score ||
+            b.totalTopicWeight - a.totalTopicWeight ||
+            a.orderIdx - b.orderIdx
+        )
+        .slice(0, 2);
+    }
+
+    const weakTopics = evaluatedTopics
+      .filter((t) => t.score < 50)
+      .sort(
+        (a, b) =>
+          a.score - b.score ||
+          b.totalTopicWeight - a.totalTopicWeight ||
+          a.orderIdx - b.orderIdx
+      )
+      .slice(0, 3);
+
+    byParty.push({
+      partyId: party.id,
+      shortName: party.shortName,
+      fullName: party.fullName,
+      bloc: party.bloc,
+      accentColor: party.accentColor,
+      coalitionShortTag: party.coalition?.shortTag || null,
+      coalitionCompactLabel: party.coalition?.compactLabel || null,
+      scorePercentage: entry.scorePercentage,
+      exactMatchesCount: entry.exactMatchesCount,
+      answeredCount: affinitySummary.answeredCount,
+      strongTopics: strongTopics.map(selectTopicSummaryFields),
+      weakTopics: weakTopics.map(selectTopicSummaryFields)
+    });
+  }
+
+  const highPriorityTopics = byTopic
+    .filter((topicItem) => topicItem.highestPriority === 'high')
+    .map((topicItem) => ({
+      topicId: topicItem.topicId,
+      topicShortTitle: topicItem.topicShortTitle,
+      topScore: topicItem.topScore,
+      topPartyShortNames: topicItem.topMatches.slice(0, 3).map((m) => m.shortName)
+    }));
+
+  return {
+    byTopic,
+    byParty,
+    summaryMetrics: {
+      answeredTopicsCount: byTopic.length,
+      distinctLeadingPartiesCount: leadingPartyIds.size,
+      highPriorityTopics
+    }
   };
 }

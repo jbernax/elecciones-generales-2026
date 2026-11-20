@@ -6,7 +6,7 @@
   <title>Elecciones Generales España 2026 | Comparador de Programas 29N</title>
   <meta
     name="description"
-    content="Guía electoral interactiva para las Elecciones Generales de España 2026: los 18 partidos y coaliciones, 12 áreas clave, datos oficiales por tema, programas en PDF y test de afinidad."
+    content="Guía electoral interactiva para las Elecciones Generales de España 2026: las 14 candidaturas y coaliciones, 12 áreas clave, datos oficiales por tema, programas en PDF y test de afinidad."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,15 +49,15 @@
     <section id="panorama" class="hero-stage">
       <section class="stage-container hero-grid">
         <header class="hero-copy">
-          <span class="kicker">España · Elecciones Generales 29N · 18 Partidos y Coaliciones · 12 Temas</span>
+          <span class="kicker">España · Elecciones Generales 29N · 14 Candidaturas y Coaliciones · 12 Temas</span>
           <h1 class="hero-display">Las propuestas del 29N, frente a los datos oficiales.</h1>
           <p class="hero-lead">
-            Consulta todos los partidos y coaliciones que concurren a las urnas —y las principales referencias históricas—,
+            Consulta todas las candidaturas y coaliciones que concurren a las urnas —y las principales referencias históricas—,
             compara sus propuestas cara a cara en 12 áreas temáticas con datos oficiales de referencia,
             abre los programas completos en PDF y calcula tu afinidad real según lo que más te importa.
           </p>
           <menu class="hero-cta-row">
-            <li><a href="#partidos" class="btn-primary">Ver los 18 partidos</a></li>
+            <li><a href="#partidos" class="btn-primary">Ver las 14 candidaturas</a></li>
             <li><a href="#comparador" class="btn-secondary">Comparar cara a cara</a></li>
             <li><a href="#cuestionario" class="btn-ghost">Hacer el test de 15 preguntas</a></li>
           </menu>
@@ -70,10 +70,10 @@
         <header class="stage-header">
           <hgroup>
             <span class="kicker">Mapa político · 6 bloques ideológicos</span>
-            <h2>Los 18 partidos, coaliciones y sus programas para el 29N</h2>
+            <h2>Las 14 candidaturas, coaliciones y sus programas para el 29N</h2>
           </hgroup>
           <p>
-            Filtra por bloque ideológico o busca cualquier partido, siglas o medida clave.
+            Filtra por bloque ideológico o busca cualquier candidatura, partido integrado, siglas o medida clave.
             Cada ficha abre su programa completo en 12 temas y da acceso al PDF oficial cuando está disponible.
           </p>
         </header>
@@ -85,12 +85,12 @@
             <input
               id="party-search-input"
               type="search"
-              placeholder="Ej. Frente Amplio, vivienda, deuda, PSOE, PP, PACMA, IRPF..."
+              placeholder="Ej. Frente Amplio, IU, PCE, Sumar, Cs, D21, vivienda, IRPF..."
               autocomplete="off"
             />
           </label>
           <output id="parties-counter" class="results-counter tabular" for="party-search-input">
-            18 de 18 partidos
+            14 de 14 candidaturas
           </output>
         </section>
 
@@ -119,14 +119,14 @@
 
             <section class="rail-group" aria-label="Selección de partidos">
               <header class="rail-subhead">
-                <span class="rail-heading">Partidos a comparar</span>
-                <span id="workbench-parties-count" class="tabular rail-counter">5 / 18</span>
+                <span class="rail-heading">Candidaturas a comparar</span>
+                <span id="workbench-parties-count" class="tabular rail-counter">5 / 14</span>
               </header>
               <menu class="rail-presets">
                 <li><button type="button" class="preset-btn" data-preset="principales">Principales (5)</button></li>
                 <li><button type="button" class="preset-btn" data-preset="izquierda-centro">Izq. y Centro</button></li>
                 <li><button type="button" class="preset-btn" data-preset="derecha-otros">Dcha. y Otros</button></li>
-                <li><button type="button" class="preset-btn" data-preset="todas">Todas (18)</button></li>
+                <li><button type="button" class="preset-btn" data-preset="todas">Todas (14)</button></li>
               </menu>
               <ul id="workbench-parties-toggle-list" class="party-toggle-grid" role="list"></ul>
             </section>
@@ -166,11 +166,11 @@
       <section class="stage-container">
         <header class="stage-header quiz-stage-header">
           <hgroup>
-            <span class="kicker">Con peso por prioridad · Medidas concretas</span>
+            <span class="kicker">Evaluación a ciegas · Orden aleatorio · Peso por prioridad</span>
             <h2>Test de afinidad electoral</h2>
           </hgroup>
           <p>
-            Responde una cuestión cada vez: al elegir una medida avanza automáticamente a la siguiente, o ajusta primero la prioridad del tema. El ranking Top 5 se actualiza al instante y al finalizar verás el desglose completo.
+            Las 15 cuestiones y sus medidas se muestran en orden aleatorio y la afinidad permanece oculta durante el test para evitar respuestas sesgadas. Al elegir una medida avanza automáticamente; al terminar verás el ranking completo y un informe de qué políticas coinciden más con cada partido.
           </p>
         </header>
 
@@ -180,24 +180,52 @@
           <section id="quiz-question-stage" class="quiz-question-stage">
             <section id="quiz-active-card-slot" class="quiz-active-card-slot" aria-live="polite"></section>
 
-            <aside id="quiz-live-aside" class="quiz-live-aside" aria-live="polite">
+            <aside id="quiz-progress-aside" class="quiz-progress-aside" aria-live="polite">
               <header class="scoreboard-header">
-                <span class="kicker">Afinidad en tiempo real</span>
-                <h3 id="scoreboard-headline">Responde para ver tu afinidad</h3>
+                <span class="kicker">Evaluación a ciegas</span>
+                <h3 id="quiz-progress-headline">Progreso del cuestionario</h3>
                 <p class="scoreboard-progress-row">
                   <strong id="quiz-answered-count" class="tabular">0 / 15</strong>
-                  <span>preguntas valoradas</span>
+                  <span>preguntas respondidas</span>
                 </p>
+                <div
+                  id="quiz-progress-bar"
+                  class="quiz-progress-track"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="15"
+                  aria-valuenow="0"
+                  aria-label="Progreso del test de afinidad"
+                >
+                  <span id="quiz-progress-bar-fill" class="quiz-progress-fill" style="width: 0%;"></span>
+                </div>
               </header>
 
-              <ol id="affinity-live-top-list" class="affinity-ranking-list"></ol>
+              <dl id="quiz-progress-stats" class="quiz-progress-stats">
+                <section>
+                  <dt>Respondidas</dt>
+                  <dd id="quiz-stat-answered" class="tabular">0</dd>
+                </section>
+                <section>
+                  <dt>Omitidas</dt>
+                  <dd id="quiz-stat-skipped" class="tabular">0</dd>
+                </section>
+                <section>
+                  <dt>Pendientes</dt>
+                  <dd id="quiz-stat-pending" class="tabular">15</dd>
+                </section>
+              </dl>
+
+              <p class="quiz-blind-note">
+                Tanto el orden de las preguntas como el de sus opciones se aleatoriza en cada intento. Los resultados se calculan y muestran únicamente al finalizar.
+              </p>
 
               <footer class="quiz-aside-actions">
                 <button id="btn-show-results" type="button" class="btn-primary btn-compact" disabled>
-                  Ver resultados completos
+                  Finalizar y ver informe
                 </button>
                 <button id="btn-reset-quiz" type="button" class="btn-secondary btn-compact">
-                  Reiniciar respuestas
+                  Reiniciar y mezclar
                 </button>
               </footer>
             </aside>
@@ -218,7 +246,7 @@
                 </li>
                 <li>
                   <button id="btn-reset-quiz-results" type="button" class="btn-secondary btn-compact">
-                    Reiniciar respuestas
+                    Reiniciar y mezclar
                   </button>
                 </li>
               </menu>
@@ -226,6 +254,35 @@
 
             <section class="quiz-results-toolbar" aria-label="Filtrar resultados por bloque ideológico">
               <ul id="scoreboard-bloc-filters" class="mini-bloc-filters" role="list"></ul>
+            </section>
+
+            <section id="quiz-policy-report" class="quiz-policy-report" aria-label="Informe de coincidencia por políticas">
+              <header class="policy-report-header">
+                <hgroup>
+                  <span class="kicker">Informe de coincidencia por políticas</span>
+                  <h4>Qué políticas son más similares en cada partido</h4>
+                </hgroup>
+                <dl id="policy-report-metrics" class="policy-report-metrics"></dl>
+              </header>
+
+              <section class="policy-report-block" aria-label="Principales partidos afines por política">
+                <h5 class="report-subhead">Principales partidos afines: dónde coincidís y dónde divergís</h5>
+                <section id="policy-report-party-grid" class="policy-report-party-grid"></section>
+              </section>
+
+              <section class="policy-report-block" aria-label="Partidos más similares por área política">
+                <h5 class="report-subhead">Políticas más similares por área temática</h5>
+                <table class="spec-table policy-report-table">
+                  <thead>
+                    <tr>
+                      <th>Área política</th>
+                      <th>Tu elección</th>
+                      <th>Partidos más similares</th>
+                    </tr>
+                  </thead>
+                  <tbody id="policy-report-topics-tbody"></tbody>
+                </table>
+              </section>
             </section>
 
             <section class="quiz-results-grid">
@@ -278,7 +335,7 @@
   </div>
 
   <footer class="stage-container site-colophon">
-    <span>Guía Electoral España 2026 · 18 partidos y coaliciones · 12 temas · Sin rastreadores</span>
+    <span>Guía Electoral España 2026 · 14 candidaturas y coaliciones · 12 temas · Sin rastreadores</span>
     <span>
       Datos oficiales de referencia por tema (2025-2026) · PDFs en /pdfs ·
       <a

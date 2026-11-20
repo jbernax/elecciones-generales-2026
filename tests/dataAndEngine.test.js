@@ -4,7 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { BLOCS, PARTIES, getPartyById } from '../src/data/parties.js';
+import {
+  BLOCS,
+  PARTIES,
+  LEGACY_PARTY_ALIASES,
+  getPartyById,
+  resolvePartyId
+} from '../src/data/parties.js';
 import { TOPICS, getTopicById } from '../src/data/topics.js';
 import { PROGRAMS, getPartyProgram, getProposal } from '../src/data/programs.js';
 import { QUESTIONS } from '../src/data/questionnaire.js';
@@ -16,6 +22,9 @@ import {
 import {
   PRIORITY_WEIGHTS,
   calculateCitizenAffinity,
+  createRandomizedQuiz,
+  getQuizProgressStats,
+  buildPolicySimilarityReport,
   filterParties,
   buildTopicComparison,
   getQuestionStepStates,
@@ -25,12 +34,9 @@ import {
 
 const EXPECTED_ORDER = [
   { id: 'frente_amplio', shortName: 'Frente Amplio', bloc: 'Izquierda', foundedYear: 2026 },
-  { id: 'sumar', shortName: 'Sumar', bloc: 'Izquierda', foundedYear: 2022 },
   { id: 'podemos', shortName: 'Podemos', bloc: 'Izquierda', foundedYear: 2014 },
-  { id: 'iu', shortName: 'IU', bloc: 'Izquierda', foundedYear: 1986 },
-  { id: 'pce', shortName: 'PCE', bloc: 'Izquierda', foundedYear: 1921 },
   { id: 'psoe', shortName: 'PSOE', bloc: 'Centro-izquierda', foundedYear: 1879 },
-  { id: 'cs', shortName: 'Cs', bloc: 'Centro', foundedYear: 2006 },
+  { id: 'd21', shortName: 'D21 · Cs', bloc: 'Centro', foundedYear: 2026 },
   { id: 'upyd', shortName: 'UPyD', bloc: 'Centro', foundedYear: 2007 },
   { id: 'pp', shortName: 'PP', bloc: 'Centro-derecha', foundedYear: 1976 },
   { id: 'ucd', shortName: 'UCD', bloc: 'Centro-derecha', foundedYear: 1977 },
@@ -39,14 +45,13 @@ const EXPECTED_ORDER = [
   { id: 'nn', shortName: 'NN', bloc: 'Derecha', foundedYear: 2024 },
   { id: 'fe_jons', shortName: 'FE de las JONS', bloc: 'Derecha', foundedYear: 1933 },
   { id: 'pacma', shortName: 'PACMA', bloc: 'Otros', foundedYear: 2003 },
-  { id: 'd21', shortName: 'D21', bloc: 'Otros', foundedYear: 2026 },
   { id: 'iustitia', shortName: 'Iustitia Europa', bloc: 'Otros', foundedYear: 2023 },
   { id: 'fo', shortName: 'FO', bloc: 'Otros', foundedYear: 2018 }
 ];
 
-test('parties roster includes all 18 formations in the exact order and 6 blocs', () => {
+test('parties roster includes all 14 candidatures in the exact order and 6 blocs', () => {
   assert.equal(BLOCS.length, 6);
-  assert.equal(PARTIES.length, 18);
+  assert.equal(PARTIES.length, 14);
 
   PARTIES.forEach((party, idx) => {
     const expected = EXPECTED_ORDER[idx];
@@ -60,7 +65,7 @@ test('parties roster includes all 18 formations in the exact order and 6 blocs',
   });
 });
 
-test('programs dataset covers all 18 parties across all 12 separated topics (216 entries)', () => {
+test('programs dataset covers all 14 candidatures across all 12 separated topics (168 entries)', () => {
   assert.equal(TOPICS.length, 12);
   assert.ok(getTopicById('empleo'));
   assert.ok(getTopicById('pensiones'));
@@ -90,11 +95,11 @@ test('programs dataset covers all 18 parties across all 12 separated topics (216
     }
   }
 
-  assert.equal(entryCount, 216);
-  assert.equal(Object.keys(PROGRAMS).length, 18);
+  assert.equal(entryCount, 168);
+  assert.equal(Object.keys(PROGRAMS).length, 14);
 });
 
-test('questionnaire covers all 12 topics with 15 concrete options and full 18-party weight maps', () => {
+test('questionnaire covers all 12 topics with 15 concrete options and full 14-party weight maps', () => {
   assert.equal(QUESTIONS.length, 15);
 
   const coveredTopics = new Set(QUESTIONS.map((q) => q.topicId));
@@ -102,11 +107,24 @@ test('questionnaire covers all 12 topics with 15 concrete options and full 18-pa
     assert.ok(coveredTopics.has(topic.id), `Topic ${topic.id} is not covered in questionnaire`);
   }
 
+  const canonicalIds = new Set(PARTIES.map((p) => p.id));
+
   for (const question of QUESTIONS) {
     assert.ok(question.options.length >= 4 && question.options.length <= 6);
     for (const option of question.options) {
       assert.ok(option.title.trim().length > 5);
       assert.ok(option.description.trim().length > 15);
+      assert.equal(
+        Object.keys(option.partyWeights).length,
+        14,
+        `Expected exact 14-party weight map on ${question.id}/${option.id}`
+      );
+      for (const repId of option.representativeParties || []) {
+        assert.ok(
+          canonicalIds.has(repId),
+          `Unknown representativeParties id '${repId}' on ${question.id}/${option.id}`
+        );
+      }
       for (const party of PARTIES) {
         const w = option.partyWeights[party.id];
         assert.equal(
@@ -124,7 +142,7 @@ test('calculateCitizenAffinity handles empty or skipped responses cleanly', () =
   const emptyResult = calculateCitizenAffinity({}, {}, QUESTIONS, PARTIES);
   assert.equal(emptyResult.answeredCount, 0);
   assert.equal(emptyResult.totalWeight, 0);
-  assert.equal(emptyResult.rankedParties.length, 18);
+  assert.equal(emptyResult.rankedParties.length, 14);
   assert.equal(emptyResult.rankedParties[0].scorePercentage, 0);
 
   const skippedResult = calculateCitizenAffinity(
@@ -138,7 +156,7 @@ test('calculateCitizenAffinity handles empty or skipped responses cleanly', () =
 });
 
 test('calculateCitizenAffinity ranks matching parties highest when choosing their concrete proposals', () => {
-  // Select signature concrete measures of Democracia 21 (D21)
+  // Select signature concrete measures of Coalición Democracia para el Siglo 21 (D21 · Cs)
   const d21Answers = {
     'q-economia-fiscalidad': 'opt-fisc-auditoria-eficiencia',
     'q-economia-modelo': 'opt-mod-libre-mercado-pyme',
@@ -149,10 +167,9 @@ test('calculateCitizenAffinity ranks matching parties highest when choosing thei
   };
   const d21Summary = calculateCitizenAffinity(d21Answers, {}, QUESTIONS, PARTIES);
   assert.equal(d21Summary.answeredCount, 6);
-  assert.ok(['d21', 'cs'].includes(d21Summary.rankedParties[0].partyId));
-  const d21Result = d21Summary.rankedParties.find((r) => r.partyId === 'd21');
-  assert.equal(d21Result.scorePercentage, 100);
-  assert.equal(d21Result.exactMatchesCount, 6);
+  assert.equal(d21Summary.rankedParties[0].partyId, 'd21');
+  assert.equal(d21Summary.rankedParties[0].scorePercentage, 100);
+  assert.equal(d21Summary.rankedParties[0].exactMatchesCount, 6);
 
   // Select signature concrete measures of Frente Obrero (FO)
   const foAnswers = {
@@ -168,8 +185,8 @@ test('calculateCitizenAffinity ranks matching parties highest when choosing thei
   assert.equal(foSummary.rankedParties[0].partyId, 'fo');
   assert.ok(foSummary.rankedParties[0].scorePercentage >= 95);
 
-  // Select signature concrete measures of Izquierda Unida (IU)
-  const iuAnswers = {
+  // Select signature concrete measures of Podemos
+  const podemosAnswers = {
     'q-economia-fiscalidad': 'opt-fisc-gran-reforma',
     'q-economia-modelo': 'opt-mod-nacionalizacion-plan',
     'q-vivienda-acceso': 'opt-viv-intervencion-total',
@@ -180,9 +197,10 @@ test('calculateCitizenAffinity ranks matching parties highest when choosing thei
     'q-modelo-estado': 'opt-est-republica-federal-plurinacional',
     'q-exterior-ue': 'opt-ext-no-otan-pacifista'
   };
-  const iuSummary = calculateCitizenAffinity(iuAnswers, {}, QUESTIONS, PARTIES);
-  assert.ok(['iu', 'pce', 'podemos'].includes(iuSummary.rankedParties[0].partyId));
-  assert.equal(iuSummary.rankedParties.find((r) => r.partyId === 'iu').scorePercentage, 100);
+  const podemosSummary = calculateCitizenAffinity(podemosAnswers, {}, QUESTIONS, PARTIES);
+  assert.equal(podemosSummary.rankedParties[0].partyId, 'podemos');
+  assert.equal(podemosSummary.rankedParties[0].scorePercentage, 100);
+  assert.equal(podemosSummary.rankedParties[0].exactMatchesCount, 9);
 });
 
 test('priority multipliers accurately shift weighted affinity scores', () => {
@@ -220,11 +238,23 @@ test('filterParties and buildTopicComparison filter by bloc and search accents c
     ['vox', 'salf', 'nn', 'fe_jons']
   );
 
-  // Accent-insensitive search across programmatic measures (IGAE shared by Cs & D21 2026 coalition)
+  const centroParties = filterParties(PARTIES, PROGRAMS, { bloc: 'Centro' });
+  assert.deepEqual(
+    centroParties.map((p) => p.id),
+    ['d21', 'upyd']
+  );
+
+  const otrosParties = filterParties(PARTIES, PROGRAMS, { bloc: 'Otros' });
+  assert.deepEqual(
+    otrosParties.map((p) => p.id),
+    ['pacma', 'iustitia', 'fo']
+  );
+
+  // Accent-insensitive search across programmatic measures (IGAE unique to unified D21 · Cs coalition)
   const igaeMatches = filterParties(PARTIES, PROGRAMS, { query: 'IGAE' });
   assert.deepEqual(
     igaeMatches.map((p) => p.id),
-    ['cs', 'd21']
+    ['d21']
   );
 
   const faMatches = filterParties(PARTIES, PROGRAMS, { query: 'tres horas diarias' });
@@ -237,7 +267,7 @@ test('filterParties and buildTopicComparison filter by bloc and search accents c
   assert.equal(comparison.length, 3);
   assert.deepEqual(
     comparison.map((c) => c.party.id),
-    ['salf', 'd21', 'iustitia']
+    ['d21', 'salf', 'iustitia']
   );
   assert.ok(comparison[2].proposal.headline.includes('Acción Popular'));
 });
@@ -248,7 +278,11 @@ test('local PDF assets referenced by parties exist, are valid PDFs, and stay und
   const maxBytes = 50 * 1024 * 1024;
 
   const partiesWithPdf = PARTIES.filter((p) => Boolean(p.localPdfPath));
-  assert.ok(partiesWithPdf.length >= 10);
+  assert.equal(partiesWithPdf.length, 10);
+  assert.ok(
+    partiesWithPdf.every((p) => p.localPdfPath !== './pdfs/pce-programa-estrategico.pdf'),
+    'UI dataset must surface only the shared 29N-2026 Frente Amplio PDF'
+  );
 
   for (const party of partiesWithPdf) {
     assert.match(party.localPdfPath, /^\.\/pdfs\/[a-z0-9._-]+\.pdf$/i);
@@ -331,7 +365,9 @@ test('macroeconomic financial status reference and party debt-management proposa
 test('Frente Amplio and 2026 program dataset accurately reflect verified 29N-2026 proposals', () => {
   const fa = getPartyById('frente_amplio');
   assert.ok(fa);
-  assert.equal(fa.leader, 'Ada Colau');
+  assert.ok(fa.leader.includes('Ada Colau'));
+  assert.ok(fa.leader.includes('Antonio Maíllo'));
+  assert.ok(fa.leader.includes('Enrique Santiago'));
   assert.equal(fa.localPdfPath, './pdfs/sumar-frente-amplio-2026.pdf');
 
   const faHousing = getProposal('frente_amplio', 'vivienda');
@@ -341,9 +377,9 @@ test('Frente Amplio and 2026 program dataset accurately reflect verified 29N-202
   const faPensions = getProposal('frente_amplio', 'pensiones');
   assert.ok(faPensions.measures.join(' ').includes('200 euros'));
 
-  // Ensure stale 2023 Sumar proposal was removed
-  const sumarEcon = getProposal('sumar', 'economia');
-  assert.ok(!sumarEcon.measures.join(' ').includes('herencia universal de 20.000'));
+  // Ensure stale 2023 Sumar proposal was removed from Frente Amplio
+  const faEcon = getProposal('frente_amplio', 'economia');
+  assert.ok(!faEcon.measures.join(' ').includes('herencia universal de 20.000'));
 
   // Choosing Frente Amplio 2026 concrete measures yields 100% affinity
   const faAnswers = {
@@ -471,4 +507,293 @@ test('single-screen stepper helpers track answered, skipped, and boundary transi
     quizCurrentIndex: 4,
     quizViewMode: 'question'
   });
+});
+
+function createSeededRng(seed = 42) {
+  let state = seed >>> 0;
+  return () => {
+    state = (state * 1664525 + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
+test('createRandomizedQuiz shuffles questions and options immutably without altering affinity scoring', () => {
+  const originalQuestionIds = QUESTIONS.map((q) => q.id);
+  const originalOptionIdsByQ = Object.fromEntries(
+    QUESTIONS.map((q) => [q.id, q.options.map((o) => o.id)])
+  );
+
+  const randomized = createRandomizedQuiz(QUESTIONS, { rng: createSeededRng(2026) });
+  assert.equal(randomized.length, QUESTIONS.length);
+
+  // Canonical QUESTIONS and nested options arrays stay untouched
+  assert.deepEqual(
+    QUESTIONS.map((q) => q.id),
+    originalQuestionIds
+  );
+  for (const q of QUESTIONS) {
+    assert.deepEqual(
+      q.options.map((o) => o.id),
+      originalOptionIdsByQ[q.id]
+    );
+  }
+
+  // Same full set of questions and options, reordered deterministically
+  assert.notDeepEqual(
+    randomized.map((q) => q.id),
+    originalQuestionIds
+  );
+  assert.deepEqual(
+    [...randomized.map((q) => q.id)].sort(),
+    [...originalQuestionIds].sort()
+  );
+
+  let anyOptionOrderChanged = false;
+  for (const rq of randomized) {
+    const origOptIds = originalOptionIdsByQ[rq.id];
+    const randOptIds = rq.options.map((o) => o.id);
+    assert.deepEqual([...randOptIds].sort(), [...origOptIds].sort());
+    if (randOptIds.some((id, idx) => id !== origOptIds[idx])) {
+      anyOptionOrderChanged = true;
+    }
+  }
+  assert.ok(anyOptionOrderChanged, 'Expected option orders to be shuffled');
+
+  // shuffleOptions: false preserves each question's option order while shuffling questions
+  const questionsOnlyShuffled = createRandomizedQuiz(QUESTIONS, {
+    shuffleOptions: false,
+    rng: createSeededRng(99)
+  });
+  assert.notDeepEqual(
+    questionsOnlyShuffled.map((q) => q.id),
+    originalQuestionIds
+  );
+  for (const rq of questionsOnlyShuffled) {
+    assert.deepEqual(
+      rq.options.map((o) => o.id),
+      originalOptionIdsByQ[rq.id]
+    );
+  }
+
+  // Scoring invariance: canonical order vs randomized order produce identical party rankings
+  const sampleAnswers = {
+    'q-economia-fiscalidad': 'opt-fisc-auditoria-eficiencia',
+    'q-vivienda-acceso': 'opt-viv-zonas-tensionadas-ico',
+    'q-sanidad-gestion': 'opt-san-100-publica-cartera',
+    'q-seguridad-orden': 'opt-seg-multirreincidencia-equiparacion',
+    'q-exterior-ue': 'opt-ext-europeismo-otan-2pct'
+  };
+  const samplePriorities = {
+    'q-vivienda-acceso': 'high',
+    'q-seguridad-orden': 'low'
+  };
+
+  const canonicalSummary = calculateCitizenAffinity(sampleAnswers, samplePriorities, QUESTIONS, PARTIES);
+  const randomizedSummary = calculateCitizenAffinity(sampleAnswers, samplePriorities, randomized, PARTIES);
+  const pickInvariantScores = (summary) =>
+    summary.rankedParties.map(({ partyId, scorePercentage, exactMatchesCount, topicScores }) => ({
+      partyId,
+      scorePercentage,
+      exactMatchesCount,
+      topicScores
+    }));
+  assert.deepEqual(pickInvariantScores(randomizedSummary), pickInvariantScores(canonicalSummary));
+});
+
+test('getQuizProgressStats accurately tracks answered, skipped, pending, and completion percentage', () => {
+  const emptyStats = getQuizProgressStats(QUESTIONS, {}, {});
+  assert.deepEqual(emptyStats, {
+    total: 15,
+    answered: 0,
+    skipped: 0,
+    pending: 15,
+    resolved: 0,
+    completionPercent: 0
+  });
+
+  const answers = {
+    [QUESTIONS[0].id]: QUESTIONS[0].options[0].id,
+    [QUESTIONS[1].id]: QUESTIONS[1].options[0].id,
+    [QUESTIONS[2].id]: QUESTIONS[2].options[0].id
+  };
+  // Question 2 was answered, then marked 'skip'
+  const priorities = {
+    [QUESTIONS[2].id]: 'skip',
+    [QUESTIONS[3].id]: 'skip'
+  };
+
+  const partialStats = getQuizProgressStats(QUESTIONS, answers, priorities);
+  assert.deepEqual(partialStats, {
+    total: 15,
+    answered: 2,
+    skipped: 2,
+    pending: 11,
+    resolved: 4,
+    completionPercent: 27
+  });
+});
+
+test('buildPolicySimilarityReport handles empty summaries and builds accurate per-topic and per-party insights', () => {
+  const emptySummary = calculateCitizenAffinity({}, {}, QUESTIONS, PARTIES);
+  const emptyReport = buildPolicySimilarityReport(emptySummary, TOPICS, PARTIES);
+  assert.deepEqual(emptyReport, {
+    byTopic: [],
+    byParty: [],
+    summaryMetrics: {
+      answeredTopicsCount: 0,
+      distinctLeadingPartiesCount: 0,
+      highPriorityTopics: []
+    }
+  });
+
+  // Mixed answers: conflicting multi-question 'economia' (<70% max), progressive sanidad/energia,
+  // strict seguridad/vivienda, plus high-priority on sanidad and economia
+  const mixedAnswers = {
+    'q-economia-fiscalidad': 'opt-fisc-gran-reforma', // left-wing
+    'q-economia-modelo': 'opt-mod-libre-mercado-pyme', // liberal/right
+    'q-vivienda-acceso': 'opt-viv-suelo-desalojo', // PP/VOX
+    'q-sanidad-gestion': 'opt-san-100-publica-cartera', // Frente Amplio/Sumar/IU/Podemos/PACMA
+    'q-seguridad-orden': 'opt-seg-macrocarcel-armada-defensa' // VOX/SALF/FE/NN/FO
+  };
+  const mixedPriorities = {
+    'q-sanidad-gestion': 'high'
+  };
+
+  const summary = calculateCitizenAffinity(mixedAnswers, mixedPriorities, QUESTIONS, PARTIES);
+  const report = buildPolicySimilarityReport(summary, TOPICS, PARTIES);
+
+  assert.equal(report.summaryMetrics.answeredTopicsCount, 4);
+  assert.ok(report.summaryMetrics.distinctLeadingPartiesCount >= 2);
+  assert.equal(report.summaryMetrics.highPriorityTopics.length, 1);
+  assert.equal(report.summaryMetrics.highPriorityTopics[0].topicId, 'sanidad');
+
+  // High-priority topic ('sanidad') sorts first ahead of canonical topic order
+  assert.equal(report.byTopic[0].topicId, 'sanidad');
+  assert.equal(report.byTopic[0].highestPriority, 'high');
+  assert.ok(
+    report.byTopic[0].topMatches.some((m) => m.partyId === 'frente_amplio'),
+    'Expected Frente Amplio among top Sanidad matches'
+  );
+
+  // Conflicting multi-question 'economia' topic still reports topMatches despite lower max score
+  const econRow = report.byTopic.find((t) => t.topicId === 'economia');
+  assert.ok(econRow);
+  assert.equal(econRow.questionCount, 2);
+  assert.ok(econRow.topScore < 75, `Expected conflicting economia topScore < 75, got ${econRow.topScore}`);
+  assert.ok(econRow.topMatches.length > 0, 'Expected non-empty topMatches for mixed economia');
+
+  // Vivienda should include PP or VOX; Seguridad should include VOX or SALF
+  const vivRow = report.byTopic.find((t) => t.topicId === 'vivienda');
+  assert.ok(vivRow.topMatches.some((m) => m.partyId === 'pp' || m.partyId === 'vox'));
+  const segRow = report.byTopic.find((t) => t.topicId === 'seguridad');
+  assert.ok(segRow.topMatches.some((m) => m.partyId === 'vox' || m.partyId === 'salf'));
+
+  // additionalTiedCount tracks extra qualifying matches beyond maxPartiesPerTopic
+  const tightCapReport = buildPolicySimilarityReport(summary, TOPICS, PARTIES, {
+    maxPartiesPerTopic: 2
+  });
+  const tightSanidad = tightCapReport.byTopic.find((t) => t.topicId === 'sanidad');
+  assert.equal(tightSanidad.topMatches.length, 2);
+  assert.ok(tightSanidad.additionalTiedCount >= 1);
+
+  // byParty splits strongTopics (>= 75) and weakTopics (< 50)
+  assert.equal(report.byParty.length, 3);
+  for (const partyProfile of report.byParty) {
+    assert.ok(partyProfile.strongTopics.every((t) => t.score >= 50));
+    assert.ok(partyProfile.weakTopics.every((t) => t.score < 50));
+  }
+
+  // blocFilter restricts both byParty and byTopic[].topMatches to that bloc
+  const leftReport = buildPolicySimilarityReport(summary, TOPICS, PARTIES, {
+    blocFilter: 'Izquierda'
+  });
+  assert.ok(leftReport.byParty.every((p) => p.bloc === 'Izquierda'));
+  for (const topicItem of leftReport.byTopic) {
+    assert.ok(topicItem.topMatches.every((m) => m.bloc === 'Izquierda'));
+  }
+});
+
+test('compressed coalitions expose structured coalition metadata, legacy alias resolution, and searchable member names', () => {
+  const fa = getPartyById('frente_amplio');
+  assert.ok(fa?.coalition);
+  assert.equal(fa.coalition.label, 'Candidatura conjunta 29N');
+  assert.ok(fa.coalition.shortTag.includes('Sumar'));
+  assert.ok(fa.coalition.shortTag.includes('IU'));
+  assert.ok(fa.coalition.shortTag.includes('PCE'));
+  assert.equal(fa.coalition.members.length, 5);
+
+  const d21 = getPartyById('d21');
+  assert.ok(d21?.coalition);
+  assert.equal(d21.bloc, 'Centro');
+  assert.equal(d21.shortName, 'D21 · Cs');
+  assert.ok(d21.coalition.shortTag.includes('Ciudadanos (Cs)'));
+  assert.ok(d21.coalition.shortTag.includes('UCIN'));
+  assert.equal(d21.coalition.members.length, 3);
+
+  for (const party of PARTIES) {
+    if (party.id !== 'frente_amplio' && party.id !== 'd21') {
+      assert.equal(party.coalition, undefined);
+    }
+  }
+
+  // Strict lookup returns undefined for absorbed IDs, while resolvePartyId maps legacy hashes
+  assert.equal(getPartyById('sumar'), undefined);
+  assert.equal(getPartyById('iu'), undefined);
+  assert.equal(getPartyById('pce'), undefined);
+  assert.equal(getPartyById('cs'), undefined);
+
+  assert.equal(LEGACY_PARTY_ALIASES.pce, 'frente_amplio');
+  assert.equal(resolvePartyId('sumar'), 'frente_amplio');
+  assert.equal(resolvePartyId('iu'), 'frente_amplio');
+  assert.equal(resolvePartyId('pce'), 'frente_amplio');
+  assert.equal(resolvePartyId('cs'), 'd21');
+  assert.equal(resolvePartyId('psoe'), 'psoe');
+
+  // Search by constituent party names and acronyms returns parent coalitions
+  for (const query of ['PCE', 'IU', 'Izquierda Unida', 'Sumar', 'Más Madrid', 'Comuns']) {
+    const matches = filterParties(PARTIES, PROGRAMS, { query });
+    assert.ok(
+      matches.some((p) => p.id === 'frente_amplio'),
+      `Expected Frente Amplio to match query "${query}"`
+    );
+  }
+
+  for (const query of ['Ciudadanos', 'Cs', 'UCIN', 'Democracia 21']) {
+    const matches = filterParties(PARTIES, PROGRAMS, { query });
+    assert.ok(
+      matches.some((p) => p.id === 'd21'),
+      `Expected D21 · Cs to match query "${query}"`
+    );
+  }
+});
+
+test('buildPolicySimilarityReport propagates coalition tags onto coalition matches and null onto standalone parties', () => {
+  const answers = {
+    'q-sanidad-gestion': 'opt-san-100-publica-cartera',
+    'q-regeneracion-corrupcion': 'opt-reg-auditoria-igae'
+  };
+  const summary = calculateCitizenAffinity(answers, {}, QUESTIONS, PARTIES);
+  const report = buildPolicySimilarityReport(summary, TOPICS, PARTIES);
+
+  const faPartyRow = report.byParty.find((p) => p.partyId === 'frente_amplio');
+  assert.ok(faPartyRow?.coalitionShortTag);
+  assert.equal(faPartyRow.coalitionCompactLabel, 'Sumar · IU · PCE +2');
+
+  const d21PartyRow = report.byParty.find((p) => p.partyId === 'd21');
+  if (d21PartyRow) {
+    assert.ok(d21PartyRow.coalitionShortTag.includes('Ciudadanos (Cs)'));
+    assert.equal(d21PartyRow.coalitionCompactLabel, 'D21 · Cs · UCIN');
+  }
+
+  const sanidadTopic = report.byTopic.find((t) => t.topicId === 'sanidad');
+  const faMatch = sanidadTopic.topMatches.find((m) => m.partyId === 'frente_amplio');
+  const podemosMatch = sanidadTopic.topMatches.find((m) => m.partyId === 'podemos');
+  assert.ok(faMatch?.coalitionShortTag);
+  assert.equal(podemosMatch?.coalitionShortTag, null);
+  assert.equal(podemosMatch?.coalitionCompactLabel, null);
+
+  const regTopic = report.byTopic.find((t) => t.topicId === 'regeneracion_justicia');
+  const d21Match = regTopic.topMatches.find((m) => m.partyId === 'd21');
+  assert.ok(d21Match?.coalitionShortTag);
+  assert.equal(d21Match.coalitionCompactLabel, 'D21 · Cs · UCIN');
 });

@@ -426,6 +426,35 @@ ol.affinity-ranking-list {
   margin-top: 0.55rem;
 }
 
+.coalition-tag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.22rem 0.55rem;
+  margin-top: 0.55rem;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-secondary);
+}
+
+.coalition-tag-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+}
+
+.coalition-tag-members {
+  font-weight: 500;
+  color: var(--ink-secondary);
+}
+
+.comparator-card .coalition-tag {
+  margin-top: -0.35rem;
+}
+
 .party-card-foot {
   display: flex;
   flex-wrap: wrap;
@@ -569,6 +598,41 @@ ol.affinity-ranking-list {
   font-weight: 500;
   cursor: pointer;
   min-width: 0;
+  text-align: left;
+}
+
+.party-pill-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.party-pill-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.party-pill-coalition {
+  font-family: var(--font-label);
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.12rem;
+}
+
+.table-coalition-note {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  line-height: 1.38;
 }
 
 .party-toggle-pill.is-selected {
@@ -1103,16 +1167,66 @@ ol.affinity-ranking-list {
   color: var(--ink-muted);
 }
 
-/* Compact Live Top-5 Affinity Aside */
-.quiz-live-aside {
+/* Neutral Blind-Evaluation Progress Aside */
+.quiz-progress-aside {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: clamp(0.95rem, 1.6vw, 1.25rem);
+  gap: 0.95rem;
+  padding: clamp(1rem, 1.8vw, 1.35rem);
   background-color: var(--surface-1);
   border: 1px solid var(--specular-border);
   border-radius: 16px;
   min-width: 0;
+}
+
+.quiz-progress-track {
+  width: 100%;
+  height: 6px;
+  margin-top: 0.65rem;
+  border-radius: 6px;
+  background-color: var(--surface-0);
+  border: 1px solid var(--specular-border);
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  display: block;
+  height: 100%;
+  background-color: var(--accent-primary);
+  transition: width 0.22s var(--ease-out-expo);
+}
+
+.quiz-progress-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--specular-border);
+  border-bottom: 1px solid var(--specular-border);
+}
+
+.quiz-progress-stats dt {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.quiz-progress-stats dd {
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--ink-primary);
+}
+
+.quiz-blind-note {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-secondary);
 }
 
 .quiz-aside-actions {
@@ -1127,6 +1241,240 @@ ol.affinity-ranking-list {
 .quiz-aside-actions .btn-primary,
 .quiz-aside-actions .btn-secondary {
   width: 100%;
+}
+
+/* End-of-Test Policy Similarity Report */
+.quiz-policy-report {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem 0 1.45rem;
+  border-top: 1px solid var(--specular-border);
+  border-bottom: 1px solid var(--specular-border);
+}
+
+.quiz-policy-report[hidden] {
+  display: none;
+}
+
+.policy-report-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.policy-report-header h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.12rem, 1.55vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 0.25rem;
+  color: var(--ink-primary);
+}
+
+.policy-report-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem 1.25rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--surface-0);
+  border: 1px solid var(--specular-border);
+  border-radius: 14px;
+}
+
+.policy-report-metrics dt {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.policy-report-metrics dd {
+  margin-top: 0.22rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  line-height: 1.35;
+}
+
+.policy-report-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.report-subhead {
+  font-family: var(--font-label);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.policy-report-party-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.report-party-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background-color: var(--surface-0);
+  border: 1px solid var(--specular-border);
+  border-radius: 14px;
+  min-width: 0;
+  transition: border-color 0.18s var(--ease-out-expo), background-color 0.18s var(--ease-out-expo);
+}
+
+.report-party-item.is-selected {
+  border-color: var(--accent-primary);
+  background-color: var(--surface-2);
+}
+
+.report-party-item-head {
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--specular-border);
+}
+
+.report-party-select-btn {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.65rem;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink-primary);
+}
+
+.report-party-id {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.report-party-id strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink-primary);
+}
+
+.report-party-bloc {
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
+
+.report-party-score-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.report-party-score {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.report-party-direct {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
+.report-party-coalition {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-secondary);
+  line-height: 1.4;
+}
+
+.report-party-line {
+  font-size: 0.84rem;
+  line-height: 1.48;
+  color: var(--ink-secondary);
+}
+
+.report-party-line strong {
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+.policy-report-table {
+  font-size: 0.84rem;
+}
+
+.policy-report-table th,
+.policy-report-table td {
+  padding: 0.72rem 0.65rem;
+  vertical-align: top;
+}
+
+.report-topic-meta {
+  display: block;
+  margin-top: 0.18rem;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+}
+
+.report-party-matches {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.report-party-link {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.24rem 0.54rem;
+  background-color: var(--surface-0);
+  border: 1px solid var(--specular-border);
+  border-radius: 6px;
+  font-family: var(--font-label);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease-out-expo), background-color 0.16s var(--ease-out-expo);
+}
+
+.report-party-link:hover,
+.report-party-link.is-selected {
+  border-color: var(--accent-primary);
+  background-color: var(--surface-2);
+}
+
+.report-tied-more,
+.report-no-match,
+.report-empty-note {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
 }
 
 /* Dedicated Full Results Stage */
@@ -1269,9 +1617,26 @@ ol.affinity-ranking-list {
 }
 
 .rank-party-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.rank-party-name {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--ink-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank-coalition-note {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ink-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1450,6 +1815,27 @@ ol.affinity-ranking-list {
   margin-top: 0.25rem;
 }
 
+.drawer-coalition-fact {
+  grid-column: 1 / -1;
+}
+
+.drawer-facts-grid .drawer-coalition-links {
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.drawer-coalition-links a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--specular-border-strong);
+  font-weight: 600;
+}
+
+.drawer-coalition-links a:hover {
+  text-decoration-color: var(--accent-primary);
+}
+
 .drawer-doc-panel {
   padding: 1.25rem 1.4rem;
   background: var(--surface-0);
@@ -1558,7 +1944,8 @@ ol.affinity-ranking-list {
   }
 
   .quiz-question-stage,
-  .quiz-results-grid {
+  .quiz-results-grid,
+  .policy-report-party-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1629,7 +2016,8 @@ ol.affinity-ranking-list {
 
   .breakout-grid,
   .party-toggle-grid,
-  .drawer-facts-grid {
+  .drawer-facts-grid,
+  .policy-report-metrics {
     grid-template-columns: minmax(0, 1fr);
   }
 

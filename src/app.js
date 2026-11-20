@@ -2,7 +2,7 @@
  * Elecciones Generales España 2026 — Unified Flagship & Interactive Workbench Controller
  */
 
-import { BLOCS, PARTIES, getPartyById } from './data/parties.js';
+import { BLOCS, PARTIES, getPartyById, resolvePartyId } from './data/parties.js';
 import { TOPICS, getTopicById } from './data/topics.js';
 import { PROGRAMS, getPartyProgram } from './data/programs.js';
 import { QUESTIONS } from './data/questionnaire.js';
@@ -11,6 +11,9 @@ import {
   filterParties,
   buildTopicComparison,
   calculateCitizenAffinity,
+  createRandomizedQuiz,
+  getQuizProgressStats,
+  buildPolicySimilarityReport,
   getQuestionStepStates,
   getNextQuestionStep,
   getPrevQuestionStep
@@ -18,8 +21,8 @@ import {
 
 const PRESET_PARTIES = {
   principales: ['psoe', 'pp', 'vox', 'frente_amplio', 'podemos'],
-  'izquierda-centro': ['frente_amplio', 'sumar', 'podemos', 'iu', 'pce', 'psoe', 'cs', 'upyd'],
-  'derecha-otros': ['pp', 'ucd', 'vox', 'salf', 'nn', 'fe_jons', 'pacma', 'd21', 'iustitia', 'fo'],
+  'izquierda-centro': ['frente_amplio', 'podemos', 'psoe', 'd21', 'upyd'],
+  'derecha-otros': ['pp', 'ucd', 'vox', 'salf', 'nn', 'fe_jons', 'pacma', 'iustitia', 'fo'],
   todas: PARTIES.map((party) => party.id)
 };
 
@@ -38,6 +41,7 @@ const state = {
   comparatorTopicId: 'economia',
   comparatorPartyIds: [...PRESET_PARTIES.principales],
   comparatorMode: 'cards',
+  quizQuestions: createRandomizedQuiz(QUESTIONS),
   answers: {},
   priorities: {},
   quizCurrentIndex: 0,
@@ -80,6 +84,24 @@ function sanitizeLocalPdfPath(rawPath) {
     return rawPath;
   }
   return null;
+}
+
+function formatPartyCardTitle(party) {
+  if (party.shortName.toLowerCase() === party.fullName.toLowerCase()) {
+    return party.fullName;
+  }
+  return `${party.shortName} — ${party.fullName}`;
+}
+
+function renderCoalitionTagHtml(party, labelOverride = null) {
+  if (!party?.coalition) return '';
+  const label = labelOverride || party.coalition.label;
+  return `
+    <p class="coalition-tag">
+      <span class="coalition-tag-label">${escapeHtml(label)}</span>
+      <span class="coalition-tag-members">${escapeHtml(party.coalition.shortTag)}</span>
+    </p>
+  `;
 }
 
 /**
@@ -256,7 +278,7 @@ function renderPartiesDirectory() {
   });
 
   if (counterEl) {
-    counterEl.textContent = `${filtered.length} de ${PARTIES.length} partidos`;
+    counterEl.textContent = `${filtered.length} de ${PARTIES.length} candidaturas`;
   }
 
   if (filtered.length === 0) {
@@ -288,7 +310,8 @@ function renderPartiesDirectory() {
               <span class="swatch-dot" aria-hidden="true"></span>
               <span>${escapeHtml(party.bloc)} · ${escapeHtml(party.foundedLabel)}</span>
             </p>
-            <h3 class="party-official-name">${escapeHtml(party.shortName)} — ${escapeHtml(party.fullName)}</h3>
+            <h3 class="party-official-name">${escapeHtml(formatPartyCardTitle(party))}</h3>
+            ${renderCoalitionTagHtml(party)}
             <p class="party-summary-copy">${escapeHtml(party.ideology)}. ${escapeHtml(party.summary)}</p>
           </header>
 
@@ -401,6 +424,10 @@ function renderComparatorWorkbench() {
 
   partiesToggleList.innerHTML = PARTIES.map((party) => {
     const isSelected = selectedSet.has(party.id);
+    const pillTitle = party.coalition
+      ? `${party.coalition.label}: ${party.coalition.shortTag}`
+      : party.fullName;
+
     return `
       <li>
         <button
@@ -409,9 +436,13 @@ function renderComparatorWorkbench() {
           style="--party-accent: ${escapeHtml(party.accentColor)};"
           data-toggle-party="${escapeHtml(party.id)}"
           aria-pressed="${isSelected ? 'true' : 'false'}"
+          title="${escapeHtml(pillTitle)}"
         >
           <span class="swatch-dot" aria-hidden="true"></span>
-          <span>${escapeHtml(party.shortName)}</span>
+          <span class="party-pill-text">
+            <span class="party-pill-name">${escapeHtml(party.shortName)}</span>
+            ${party.coalition ? `<span class="party-pill-coalition">${escapeHtml(party.coalition.compactLabel)}</span>` : ''}
+          </span>
         </button>
       </li>
     `;
@@ -435,7 +466,7 @@ function renderComparatorWorkbench() {
 
   const activeTopic = getTopicById(state.comparatorTopicId) || TOPICS[0];
   topicHeader.innerHTML = `
-    <span class="kicker">Tema activo · ${selectedSet.size} partidos comparados</span>
+    <span class="kicker">Tema activo · ${selectedSet.size} candidaturas comparadas</span>
     <h3>${escapeHtml(activeTopic.title)}</h3>
     <p>${escapeHtml(activeTopic.description)}</p>
   `;
@@ -477,7 +508,10 @@ function renderComparatorWorkbench() {
               if (!proposal) return '';
               return `
                 <tr>
-                  <td data-label="Partido"><strong>${escapeHtml(party.shortName)}</strong></td>
+                  <td data-label="Partido">
+                    <strong>${escapeHtml(party.shortName)}</strong>
+                    ${party.coalition ? `<span class="table-coalition-note">${escapeHtml(party.coalition.shortTag)}</span>` : ''}
+                  </td>
                   <td data-label="Bloque">${escapeHtml(party.bloc)}</td>
                   <td data-label="Línea principal">${escapeHtml(proposal.headline)}</td>
                   <td data-label="Medidas clave">${escapeHtml((proposal.measures || []).slice(0, 2).join(' · '))}</td>
@@ -517,6 +551,8 @@ function renderComparatorWorkbench() {
               </span>
               <span class="doc-badge">${escapeHtml(party.bloc)}</span>
             </header>
+
+            ${renderCoalitionTagHtml(party, 'Coalición 29N')}
 
             <h4 class="comparator-card-headline">${escapeHtml(proposal.headline)}</h4>
             <p class="comparator-card-summary">${escapeHtml(proposal.summary)}</p>
@@ -571,7 +607,7 @@ function initComparatorControls() {
 }
 
 /* =========================================================================
- * STAGE 4: SINGLE-SCREEN STEPPER QUESTIONNAIRE & RESULTS (#cuestionario)
+ * STAGE 4: SINGLE-SCREEN BLIND STEPPER QUESTIONNAIRE & POLICY REPORT (#cuestionario)
  * ========================================================================= */
 let autoAdvanceTimer = null;
 
@@ -582,13 +618,20 @@ function clearAutoAdvanceTimer() {
   }
 }
 
+function stripLeadingQuestionNumber(title) {
+  return String(title || '').replace(/^\d+\.\s*/, '').trim();
+}
+
 function advanceQuizStep() {
   clearAutoAdvanceTimer();
-  const next = getNextQuestionStep(state.quizCurrentIndex, QUESTIONS.length);
+  const next = getNextQuestionStep(state.quizCurrentIndex, state.quizQuestions.length);
   state.quizCurrentIndex = next.quizCurrentIndex;
   state.quizViewMode = next.quizViewMode;
   renderQuestionnaireQuestions();
-  renderLiveScoreboard();
+  renderQuizProgressAside();
+  if (state.quizViewMode === 'results') {
+    renderQuizResults();
+  }
 }
 
 function goToPrevQuizStep() {
@@ -596,8 +639,9 @@ function goToPrevQuizStep() {
   const prev = getPrevQuestionStep(state.quizCurrentIndex);
   state.quizCurrentIndex = prev.quizCurrentIndex;
   state.quizViewMode = prev.quizViewMode;
+  clearQuizResultsDom();
   renderQuestionnaireQuestions();
-  renderLiveScoreboard();
+  renderQuizProgressAside();
 }
 
 function renderQuizStepperNav(answeredCount) {
@@ -605,7 +649,7 @@ function renderQuizStepperNav(answeredCount) {
   if (!stepperEl) return;
 
   const steps = getQuestionStepStates(
-    QUESTIONS,
+    state.quizQuestions,
     state.answers,
     state.priorities,
     state.quizCurrentIndex
@@ -613,8 +657,9 @@ function renderQuizStepperNav(answeredCount) {
 
   const stepButtonsHtml = steps
     .map((step, idx) => {
-      const question = QUESTIONS[idx];
+      const question = state.quizQuestions[idx];
       const topic = getTopicById(question.topicId);
+      const topicLabel = topic?.shortTitle || topic?.title || stripLeadingQuestionNumber(question.title);
       const isCurrent = state.quizViewMode === 'question' && step.isCurrent;
       const statusClass =
         step.status === 'answered'
@@ -629,8 +674,8 @@ function renderQuizStepperNav(answeredCount) {
           class="step-pill-btn ${statusClass} ${isCurrent ? 'is-current' : ''}"
           data-step-index="${idx}"
           aria-current="${isCurrent ? 'step' : 'false'}"
-          aria-label="Pregunta ${idx + 1}: ${escapeHtml(topic?.shortLabel || topic?.title || question.title)}"
-          title="${escapeHtml(topic?.shortLabel || topic?.title || question.title)}"
+          aria-label="Pregunta ${idx + 1}: ${escapeHtml(topicLabel)}"
+          title="${escapeHtml(topicLabel)}"
         >
           ${String(idx + 1).padStart(2, '0')}
         </button>
@@ -648,7 +693,7 @@ function renderQuizStepperNav(answeredCount) {
       aria-current="${isResults ? 'step' : 'false'}"
       ${answeredCount === 0 ? 'disabled' : ''}
     >
-      Resultados
+      Informe
     </button>
   `;
 
@@ -657,10 +702,11 @@ function renderQuizStepperNav(answeredCount) {
       const idx = Number(btn.dataset.stepIndex);
       if (!Number.isInteger(idx)) return;
       clearAutoAdvanceTimer();
-      state.quizCurrentIndex = Math.max(0, Math.min(idx, QUESTIONS.length - 1));
+      state.quizCurrentIndex = Math.max(0, Math.min(idx, state.quizQuestions.length - 1));
       state.quizViewMode = 'question';
+      clearQuizResultsDom();
       renderQuestionnaireQuestions();
-      renderLiveScoreboard();
+      renderQuizProgressAside();
     });
   });
 
@@ -668,7 +714,8 @@ function renderQuizStepperNav(answeredCount) {
     clearAutoAdvanceTimer();
     state.quizViewMode = 'results';
     renderQuestionnaireQuestions();
-    renderLiveScoreboard();
+    renderQuizProgressAside();
+    renderQuizResults();
   });
 }
 
@@ -685,23 +732,26 @@ function renderQuestionnaireQuestions() {
   questionStageEl.hidden = isResultsMode;
   resultsStageEl.hidden = !isResultsMode;
 
-  const activeAnswered = QUESTIONS.filter(
-    (q) => state.answers[q.id] && (state.priorities[q.id] || 'normal') !== 'skip'
-  ).length;
-  renderQuizStepperNav(activeAnswered);
+  const progress = getQuizProgressStats(
+    state.quizQuestions,
+    state.answers,
+    state.priorities
+  );
+  renderQuizStepperNav(progress.answered);
 
-  if (isResultsMode || QUESTIONS.length === 0) {
+  if (isResultsMode || state.quizQuestions.length === 0) {
     return;
   }
 
-  const index = Math.max(0, Math.min(state.quizCurrentIndex, QUESTIONS.length - 1));
+  const index = Math.max(0, Math.min(state.quizCurrentIndex, state.quizQuestions.length - 1));
   state.quizCurrentIndex = index;
-  const question = QUESTIONS[index];
+  const question = state.quizQuestions[index];
   const topic = getTopicById(question.topicId);
+  const topicLabel = topic?.shortTitle || topic?.title || '';
   const activePriority = state.priorities[question.id] || 'normal';
   const selectedOptionId = state.answers[question.id] || null;
   const isAnswered = Boolean(selectedOptionId) && activePriority !== 'skip';
-  const isLast = index === QUESTIONS.length - 1;
+  const isLast = index === state.quizQuestions.length - 1;
 
   const priorityHtml = PRIORITY_OPTIONS.map(({ key, label }) => {
     const active = activePriority === key;
@@ -743,7 +793,7 @@ function renderQuestionnaireQuestions() {
     <article class="quiz-question-card ${isAnswered ? 'is-answered' : ''}" data-q-card="${escapeHtml(question.id)}">
       <header class="quiz-q-head">
         <span class="quiz-q-num">
-          ${String(index + 1).padStart(2, '0')} / ${QUESTIONS.length} · ${escapeHtml(topic?.shortLabel || topic?.title || '')}
+          ${String(index + 1).padStart(2, '0')} / ${state.quizQuestions.length} · ${escapeHtml(topicLabel)}
         </span>
         <section class="priority-selector" aria-label="Importancia de la cuestión ${index + 1}">
           ${priorityHtml}
@@ -754,7 +804,7 @@ function renderQuestionnaireQuestions() {
       <p class="quiz-q-context">${escapeHtml(question.contextNote)}</p>
 
       <fieldset class="quiz-options-fieldset ${hasOddOptions ? 'has-odd-count' : ''}">
-        <legend class="sr-only">${escapeHtml(question.title)}</legend>
+        <legend class="sr-only">${escapeHtml(stripLeadingQuestionNumber(question.title))}</legend>
         ${optionsHtml}
       </fieldset>
 
@@ -784,7 +834,7 @@ function renderQuestionnaireQuestions() {
           type="button"
           class="btn-primary btn-compact"
         >
-          ${isLast ? 'Ver resultado final' : 'Siguiente'}
+          ${isLast ? 'Ver informe final' : 'Siguiente'}
         </button>
       </footer>
     </article>
@@ -799,7 +849,7 @@ function renderQuestionnaireQuestions() {
         state.priorities[qId] = 'normal';
       }
       renderQuestionnaireQuestions();
-      renderLiveScoreboard();
+      renderQuizProgressAside();
 
       clearAutoAdvanceTimer();
       autoAdvanceTimer = window.setTimeout(() => {
@@ -816,7 +866,7 @@ function renderQuestionnaireQuestions() {
       clearAutoAdvanceTimer();
       state.priorities[qId] = priority;
       renderQuestionnaireQuestions();
-      renderLiveScoreboard();
+      renderQuizProgressAside();
     });
   });
 
@@ -845,6 +895,9 @@ function buildRankingRowsHtml(entries, { hasAnswers, selectedPartyId, actionAttr
       const isSelected = hasAnswers && actionAttr === 'data-inspect-party' && entry.partyId === selectedPartyId;
       const pctLabel = hasAnswers ? `${entry.scorePercentage}%` : '--%';
       const barWidth = hasAnswers ? entry.scorePercentage : 0;
+      const rowTitle = party.coalition
+        ? `${party.shortName} (${party.coalition.label}: ${party.coalition.shortTag})`
+        : party.fullName;
 
       return `
         <li>
@@ -854,9 +907,13 @@ function buildRankingRowsHtml(entries, { hasAnswers, selectedPartyId, actionAttr
             ${actionAttr}="${escapeHtml(party.id)}"
             aria-pressed="${isSelected ? 'true' : 'false'}"
             style="--party-accent: ${escapeHtml(party.accentColor)};"
+            title="${escapeHtml(rowTitle)}"
           >
             <span class="rank-pos">${String(idx + 1).padStart(2, '0')}</span>
-            <span class="rank-party-label">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
+            <span class="rank-party-label">
+              <span class="rank-party-name">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
+              ${party.coalition ? `<span class="rank-coalition-note">${escapeHtml(party.coalition.compactLabel)}</span>` : ''}
+            </span>
             <span class="rank-score-num">${pctLabel}</span>
             <span class="rank-bar-track">
               <span class="rank-bar-fill" style="width: ${barWidth}%;"></span>
@@ -868,11 +925,270 @@ function buildRankingRowsHtml(entries, { hasAnswers, selectedPartyId, actionAttr
     .join('');
 }
 
-function renderLiveScoreboard() {
+function renderQuizProgressAside() {
   const answeredCountEl = document.getElementById('quiz-answered-count');
-  const headlineEl = document.getElementById('scoreboard-headline');
-  const liveTopListEl = document.getElementById('affinity-live-top-list');
+  const headlineEl = document.getElementById('quiz-progress-headline');
+  const progressBarEl = document.getElementById('quiz-progress-bar');
+  const progressFillEl = document.getElementById('quiz-progress-bar-fill');
+  const statAnsweredEl = document.getElementById('quiz-stat-answered');
+  const statSkippedEl = document.getElementById('quiz-stat-skipped');
+  const statPendingEl = document.getElementById('quiz-stat-pending');
   const showResultsBtn = document.getElementById('btn-show-results');
+
+  const stats = getQuizProgressStats(
+    state.quizQuestions,
+    state.answers,
+    state.priorities
+  );
+
+  if (answeredCountEl) {
+    answeredCountEl.textContent = `${stats.answered} / ${stats.total}`;
+  }
+  if (progressBarEl) {
+    progressBarEl.setAttribute('aria-valuemax', String(stats.total));
+    progressBarEl.setAttribute('aria-valuenow', String(stats.resolved));
+  }
+  if (progressFillEl) {
+    progressFillEl.style.width = `${stats.completionPercent}%`;
+  }
+  if (statAnsweredEl) {
+    statAnsweredEl.textContent = String(stats.answered);
+  }
+  if (statSkippedEl) {
+    statSkippedEl.textContent = String(stats.skipped);
+  }
+  if (statPendingEl) {
+    statPendingEl.textContent = String(stats.pending);
+  }
+
+  if (headlineEl) {
+    if (stats.resolved === stats.total && stats.answered > 0) {
+      headlineEl.textContent = 'Cuestionario completado';
+    } else if (stats.answered > 0) {
+      headlineEl.textContent = 'Respuestas registradas en modo ciego';
+    } else {
+      headlineEl.textContent = 'Progreso del cuestionario';
+    }
+  }
+
+  if (showResultsBtn) {
+    showResultsBtn.disabled = stats.answered === 0;
+    showResultsBtn.textContent =
+      stats.pending > 0 && stats.answered > 0
+        ? `Finalizar ahora (${stats.answered}/${stats.total})`
+        : 'Finalizar y ver informe';
+  }
+}
+
+function clearQuizResultsDom() {
+  const resultsHeadlineEl = document.getElementById('results-headline');
+  const resultsProgressEl = document.getElementById('results-progress-caption');
+  const metricsEl = document.getElementById('policy-report-metrics');
+  const partyGridEl = document.getElementById('policy-report-party-grid');
+  const topicsTbodyEl = document.getElementById('policy-report-topics-tbody');
+  const rankingEl = document.getElementById('affinity-ranking-list');
+  const traceHeadingEl = document.getElementById('trace-party-heading');
+  const traceTbodyEl = document.getElementById('affinity-trace-tbody');
+  const openTraceBtn = document.getElementById('btn-open-trace-party');
+
+  if (resultsHeadlineEl) resultsHeadlineEl.textContent = 'Ranking de coincidencia';
+  if (resultsProgressEl) resultsProgressEl.innerHTML = '';
+  if (metricsEl) metricsEl.innerHTML = '';
+  if (partyGridEl) partyGridEl.innerHTML = '';
+  if (topicsTbodyEl) topicsTbodyEl.innerHTML = '';
+  if (rankingEl) rankingEl.innerHTML = '';
+  if (traceHeadingEl) traceHeadingEl.textContent = 'Desglose pregunta a pregunta';
+  if (traceTbodyEl) traceTbodyEl.innerHTML = '';
+  if (openTraceBtn) openTraceBtn.hidden = true;
+}
+
+function formatTopicMetaLabel(topicRow) {
+  const parts = [];
+  if (topicRow.highestPriority === 'high') {
+    parts.push('Prioridad alta · x2');
+  } else if (topicRow.highestPriority === 'low') {
+    parts.push('Prioridad baja · x0,5');
+  }
+  if (topicRow.questionCount > 1) {
+    parts.push(`${topicRow.questionCount} cuestiones`);
+  }
+  return parts.join(' · ');
+}
+
+function renderPolicySimilarityReport(report, selectedPartyId) {
+  const reportEl = document.getElementById('quiz-policy-report');
+  const metricsEl = document.getElementById('policy-report-metrics');
+  const partyGridEl = document.getElementById('policy-report-party-grid');
+  const topicsTbodyEl = document.getElementById('policy-report-topics-tbody');
+  if (!reportEl || !metricsEl || !partyGridEl || !topicsTbodyEl) return;
+
+  if (!report || report.byTopic.length === 0) {
+    reportEl.hidden = true;
+    metricsEl.innerHTML = '';
+    partyGridEl.innerHTML = '';
+    topicsTbodyEl.innerHTML = '';
+    return;
+  }
+
+  reportEl.hidden = false;
+
+  const highTopicsText =
+    report.summaryMetrics.highPriorityTopics.length > 0
+      ? report.summaryMetrics.highPriorityTopics.map((t) => t.topicShortTitle).join(', ')
+      : 'Ninguno marcado';
+
+  metricsEl.innerHTML = `
+    <section>
+      <dt>Áreas valoradas</dt>
+      <dd class="tabular">${report.summaryMetrics.answeredTopicsCount} / ${TOPICS.length}</dd>
+    </section>
+    <section>
+      <dt>Partidos líderes en algún área</dt>
+      <dd class="tabular">${report.summaryMetrics.distinctLeadingPartiesCount}</dd>
+    </section>
+    <section>
+      <dt>Temas de prioridad alta (x2)</dt>
+      <dd>${escapeHtml(highTopicsText)}</dd>
+    </section>
+  `;
+
+  if (report.byParty.length === 0) {
+    partyGridEl.innerHTML = `
+      <p class="report-empty-note">
+        Ningún partido de este bloque presenta coincidencia positiva con tus elecciones actuales.
+      </p>
+    `;
+  } else {
+    partyGridEl.innerHTML = report.byParty
+      .map((party) => {
+        const isSelected = party.partyId === selectedPartyId;
+        const strongText =
+          party.strongTopics.length > 0
+            ? party.strongTopics
+                .map((t) => `${t.topicShortTitle} (${t.score}%)`)
+                .join(', ')
+            : 'Sin coincidencias destacadas';
+        const weakText =
+          party.weakTopics.length > 0
+            ? party.weakTopics
+                .map((t) => `${t.topicShortTitle} (${t.score}%)`)
+                .join(', ')
+            : 'Sin discrepancias marcadas (<50%)';
+
+        return `
+          <article
+            class="report-party-item ${isSelected ? 'is-selected' : ''}"
+            style="--party-accent: ${escapeHtml(party.accentColor)};"
+          >
+            <header class="report-party-item-head">
+              <button
+                type="button"
+                class="report-party-select-btn"
+                data-report-party="${escapeHtml(party.partyId)}"
+                aria-pressed="${isSelected ? 'true' : 'false'}"
+              >
+                <span class="report-party-id">
+                  <span class="swatch-dot" aria-hidden="true"></span>
+                  <strong>${escapeHtml(party.shortName)}</strong>
+                  <span class="report-party-bloc">${escapeHtml(party.bloc)}</span>
+                </span>
+                <span class="report-party-score-wrap">
+                  <strong class="report-party-score tabular">${party.scorePercentage}%</strong>
+                  <span class="report-party-direct tabular">${party.exactMatchesCount}/${party.answeredCount} directas</span>
+                </span>
+              </button>
+            </header>
+            ${
+              party.coalitionShortTag
+                ? `<p class="report-party-coalition">Coalición 29N · ${escapeHtml(party.coalitionShortTag)}</p>`
+                : ''
+            }
+            <p class="report-party-line">
+              <strong>Mayor coincidencia:</strong> ${escapeHtml(strongText)}
+            </p>
+            <p class="report-party-line">
+              <strong>Menor coincidencia:</strong> ${escapeHtml(weakText)}
+            </p>
+          </article>
+        `;
+      })
+      .join('');
+  }
+
+  topicsTbodyEl.innerHTML = report.byTopic
+    .map((topicRow) => {
+      const metaLabel = formatTopicMetaLabel(topicRow);
+      const chosenText = topicRow.chosenOptions
+        .map((opt) => escapeHtml(opt.selectedOptionTitle))
+        .join(' · ');
+
+      const matchesHtml =
+        topicRow.topMatches.length === 0
+          ? '<span class="report-no-match">Sin coincidencias relevantes en este bloque</span>'
+          : `
+            <ul class="report-party-matches" role="list">
+              ${topicRow.topMatches
+                .map((match) => {
+                  const matchTitle = match.coalitionShortTag
+                    ? `Coalición 29N: ${match.coalitionShortTag}`
+                    : '';
+                  const matchAria = match.coalitionShortTag
+                    ? `${match.shortName} (${match.coalitionShortTag}) · ${match.topicScore}%`
+                    : `${match.shortName} · ${match.topicScore}%`;
+
+                  return `
+                    <li>
+                      <button
+                        type="button"
+                        class="report-party-link ${match.partyId === selectedPartyId ? 'is-selected' : ''}"
+                        data-report-party="${escapeHtml(match.partyId)}"
+                        aria-pressed="${match.partyId === selectedPartyId ? 'true' : 'false'}"
+                        aria-label="${escapeHtml(matchAria)}"
+                        ${matchTitle ? `title="${escapeHtml(matchTitle)}"` : ''}
+                        style="--party-accent: ${escapeHtml(match.accentColor)};"
+                      >
+                        <span class="swatch-dot" aria-hidden="true"></span>
+                        <span>${escapeHtml(match.shortName)}</span>
+                        <span class="tabular">${match.topicScore}%</span>
+                      </button>
+                    </li>
+                  `;
+                })
+                .join('')}
+              ${
+                topicRow.additionalTiedCount > 0
+                  ? `<li class="report-tied-more">+${topicRow.additionalTiedCount} más</li>`
+                  : ''
+              }
+            </ul>
+          `;
+
+      return `
+        <tr>
+          <td data-label="Área política">
+            <strong>${escapeHtml(topicRow.topicShortTitle)}</strong>
+            ${metaLabel ? `<span class="report-topic-meta">${escapeHtml(metaLabel)}</span>` : ''}
+          </td>
+          <td data-label="Tu elección">${chosenText}</td>
+          <td data-label="Partidos más similares">${matchesHtml}</td>
+        </tr>
+      `;
+    })
+    .join('');
+
+  reportEl.querySelectorAll('[data-report-party]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      state.selectedResultPartyId = btn.dataset.reportParty || null;
+      renderQuizResults();
+      document
+        .getElementById('affinity-trace-section')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+}
+
+function renderQuizResults() {
+  if (state.quizViewMode !== 'results') return;
 
   const resultsHeadlineEl = document.getElementById('results-headline');
   const resultsProgressEl = document.getElementById('results-progress-caption');
@@ -882,6 +1198,8 @@ function renderLiveScoreboard() {
   const traceTbodyEl = document.getElementById('affinity-trace-tbody');
   const openTraceBtn = document.getElementById('btn-open-trace-party');
 
+  if (!rankingEl || !traceTbodyEl) return;
+
   const affinitySummary = calculateCitizenAffinity(
     state.answers,
     state.priorities,
@@ -890,47 +1208,6 @@ function renderLiveScoreboard() {
   );
   const hasAnswers = affinitySummary.answeredCount > 0;
   const activeAnswered = affinitySummary.answeredCount;
-
-  if (answeredCountEl) {
-    answeredCountEl.textContent = `${activeAnswered} / ${QUESTIONS.length}`;
-  }
-  if (showResultsBtn) {
-    showResultsBtn.disabled = !hasAnswers;
-  }
-
-  const overallTop = affinitySummary.rankedParties[0];
-  const overallTopParty = overallTop ? getPartyById(overallTop.partyId) : null;
-
-  if (headlineEl) {
-    headlineEl.textContent =
-      hasAnswers && overallTopParty
-        ? `Mayor afinidad: ${overallTopParty.shortName} (${overallTop.scorePercentage}%)`
-        : 'Responde para ver tu afinidad';
-  }
-
-  if (liveTopListEl) {
-    liveTopListEl.innerHTML = buildRankingRowsHtml(affinitySummary.rankedParties.slice(0, 5), {
-      hasAnswers,
-      selectedPartyId: null,
-      actionAttr: hasAnswers ? 'data-jump-result-party' : 'data-open-party'
-    });
-
-    liveTopListEl.querySelectorAll('[data-open-party]').forEach((btn) => {
-      btn.addEventListener('click', () => openPartyDrawer(btn.dataset.openParty, btn));
-    });
-
-    liveTopListEl.querySelectorAll('[data-jump-result-party]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        clearAutoAdvanceTimer();
-        state.selectedResultPartyId = btn.dataset.jumpResultParty || null;
-        state.quizViewMode = 'results';
-        renderQuestionnaireQuestions();
-        renderLiveScoreboard();
-      });
-    });
-  }
-
-  if (!rankingEl || !traceTbodyEl) return;
 
   if (filtersEl) {
     const chips = [
@@ -957,7 +1234,7 @@ function renderLiveScoreboard() {
     filtersEl.querySelectorAll('[data-res-bloc]').forEach((btn) => {
       btn.addEventListener('click', () => {
         state.resultsBlocFilter = btn.dataset.resBloc || 'all';
-        renderLiveScoreboard();
+        renderQuizResults();
       });
     });
   }
@@ -976,6 +1253,7 @@ function renderLiveScoreboard() {
   }
 
   if (!hasAnswers) {
+    renderPolicySimilarityReport(null, null);
     if (resultsHeadlineEl) {
       resultsHeadlineEl.textContent = 'Responde al menos una pregunta para calcular tu afinidad';
     }
@@ -1007,6 +1285,11 @@ function renderLiveScoreboard() {
     state.selectedResultPartyId = visibleRanking[0]?.partyId || null;
   }
 
+  const report = buildPolicySimilarityReport(affinitySummary, TOPICS, PARTIES, {
+    blocFilter: state.resultsBlocFilter
+  });
+  renderPolicySimilarityReport(report, state.selectedResultPartyId);
+
   const topEntry = visibleRanking[0];
   const topParty = topEntry ? getPartyById(topEntry.partyId) : null;
   if (resultsHeadlineEl) {
@@ -1024,7 +1307,7 @@ function renderLiveScoreboard() {
   rankingEl.querySelectorAll('[data-inspect-party]').forEach((btn) => {
     btn.addEventListener('click', () => {
       state.selectedResultPartyId = btn.dataset.inspectParty || null;
-      renderLiveScoreboard();
+      renderQuizResults();
     });
   });
 
@@ -1032,7 +1315,10 @@ function renderLiveScoreboard() {
   const inspectedEntry = visibleRanking.find((e) => e.partyId === state.selectedResultPartyId);
 
   if (traceHeadingEl && inspectedParty && inspectedEntry) {
-    traceHeadingEl.textContent = `Contraste con ${inspectedParty.shortName} (${inspectedEntry.scorePercentage}%)`;
+    const coalitionSuffix = inspectedParty.coalition
+      ? ` · ${inspectedParty.coalition.compactLabel}`
+      : '';
+    traceHeadingEl.textContent = `Contraste con ${inspectedParty.shortName}${coalitionSuffix} (${inspectedEntry.scorePercentage}%)`;
   }
 
   if (openTraceBtn && inspectedParty) {
@@ -1049,7 +1335,7 @@ function renderLiveScoreboard() {
       const alignment = getAlignmentLabel(weight);
       return `
         <tr>
-          <td data-label="Tema"><strong>${escapeHtml(topic?.shortLabel || topic?.title || row.topicId)}</strong></td>
+          <td data-label="Tema"><strong>${escapeHtml(topic?.shortTitle || topic?.title || row.topicId)}</strong></td>
           <td data-label="Tu elección">${escapeHtml(row.selectedOptionTitle)}</td>
           <td data-label="Qué propone">${escapeHtml(partyProposal?.headline || '--')}</td>
           <td data-label="Afinidad" class="num">${escapeHtml(alignment)} (${Math.round(weight * 100)}%)</td>
@@ -1061,14 +1347,16 @@ function renderLiveScoreboard() {
 
 function resetQuizState() {
   clearAutoAdvanceTimer();
+  state.quizQuestions = createRandomizedQuiz(QUESTIONS);
   state.answers = {};
   state.priorities = {};
   state.quizCurrentIndex = 0;
   state.quizViewMode = 'question';
   state.selectedResultPartyId = null;
   state.resultsBlocFilter = 'all';
+  clearQuizResultsDom();
   renderQuestionnaireQuestions();
-  renderLiveScoreboard();
+  renderQuizProgressAside();
 }
 
 function initQuestionnaireControls() {
@@ -1079,14 +1367,16 @@ function initQuestionnaireControls() {
     clearAutoAdvanceTimer();
     state.quizViewMode = 'results';
     renderQuestionnaireQuestions();
-    renderLiveScoreboard();
+    renderQuizProgressAside();
+    renderQuizResults();
   });
 
   document.getElementById('btn-back-to-questions')?.addEventListener('click', () => {
     clearAutoAdvanceTimer();
     state.quizViewMode = 'question';
+    clearQuizResultsDom();
     renderQuestionnaireQuestions();
-    renderLiveScoreboard();
+    renderQuizProgressAside();
   });
 
   document.getElementById('quiz-workbench')?.addEventListener('keydown', (event) => {
@@ -1160,7 +1450,7 @@ function renderPartyDrawer() {
         }
         ${
           safeSiteUrl
-            ? `<a href="${escapeHtml(safeSiteUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">Web del partido</a>`
+            ? `<a href="${escapeHtml(safeSiteUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">${party.coalition ? 'Web de la coalición' : 'Web del partido'}</a>`
             : ''
         }
       </section>
@@ -1210,6 +1500,18 @@ function renderPartyDrawer() {
     `;
   }).join('');
 
+  const coalitionMembersHtml = party.coalition
+    ? party.coalition.members
+        .map((member) => {
+          const safeMemberUrl = sanitizeHttpUrl(member.officialWebsite);
+          if (safeMemberUrl) {
+            return `<a href="${escapeHtml(safeMemberUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(member.fullName)}</a>`;
+          }
+          return `<span>${escapeHtml(member.fullName)}</span>`;
+        })
+        .join(' · ')
+    : '';
+
   content.innerHTML = `
     <article class="drawer-hero-card" style="--party-accent: ${escapeHtml(party.accentColor)};">
       <header class="party-card-top">
@@ -1217,8 +1519,9 @@ function renderPartyDrawer() {
         <span class="party-bloc-label">${escapeHtml(party.bloc)}</span>
       </header>
       <h2 id="drawer-party-title">${escapeHtml(party.fullName)}</h2>
+      ${renderCoalitionTagHtml(party)}
       <p class="party-summary-copy">${escapeHtml(party.summary)}</p>
-      <dl class="drawer-facts-grid">
+      <dl class="drawer-facts-grid ${party.coalition ? 'has-coalition' : ''}">
         <section>
           <dt>Ideología</dt>
           <dd>${escapeHtml(party.ideology)}</dd>
@@ -1231,6 +1534,16 @@ function renderPartyDrawer() {
           <dt>Liderazgo / referencia</dt>
           <dd>${escapeHtml(party.leader)}</dd>
         </section>
+        ${
+          party.coalition
+            ? `
+              <section class="drawer-coalition-fact">
+                <dt>Formaciones integrantes</dt>
+                <dd class="drawer-coalition-links">${coalitionMembersHtml}</dd>
+              </section>
+            `
+            : ''
+        }
       </dl>
     </article>
 
@@ -1330,8 +1643,11 @@ function handleDeepLinkHash() {
   if (!rawHash) return;
 
   const parts = rawHash.split('/').filter(Boolean);
-  if (parts[0] === 'perfil' && parts[1] && getPartyById(parts[1])) {
-    openPartyDrawer(parts[1]);
+  if (parts[0] === 'perfil' && parts[1]) {
+    const resolvedId = resolvePartyId(parts[1]);
+    if (getPartyById(resolvedId)) {
+      openPartyDrawer(resolvedId);
+    }
     return;
   }
 
@@ -1350,7 +1666,7 @@ function initApp() {
   renderComparatorWorkbench();
   initQuestionnaireControls();
   renderQuestionnaireQuestions();
-  renderLiveScoreboard();
+  renderQuizProgressAside();
   initDrawerControls();
   initScrollProgress();
 
