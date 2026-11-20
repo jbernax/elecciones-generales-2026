@@ -41,18 +41,6 @@ export function filterParties(parties, programs, { bloc = 'all', query = '' } = 
       return true;
     }
 
-    const coalitionFields = party.coalition
-      ? [
-          party.coalition.label,
-          party.coalition.shortTag,
-          party.coalition.compactLabel,
-          ...(party.coalition.members || []).flatMap((member) => [
-            member.shortName,
-            member.fullName
-          ])
-        ]
-      : [];
-
     const metadataFields = [
       party.shortName,
       party.fullName,
@@ -61,7 +49,7 @@ export function filterParties(parties, programs, { bloc = 'all', query = '' } = 
       party.leader,
       party.summary,
       party.foundedLabel,
-      ...coalitionFields
+      ...(party.searchAliases || [])
     ];
 
     if (metadataFields.some((field) => normalizeText(field).includes(normalizedQuery))) {
@@ -539,8 +527,6 @@ export function buildPolicySimilarityReport(
         shortName: party.shortName,
         bloc: party.bloc,
         accentColor: party.accentColor,
-        coalitionShortTag: party.coalition?.shortTag || null,
-        coalitionCompactLabel: party.coalition?.compactLabel || null,
         topicScore,
         overallScore: entry.scorePercentage,
         exactMatchesCount: entry.exactMatchesCount,
@@ -583,8 +569,6 @@ export function buildPolicySimilarityReport(
       shortName: item.shortName,
       bloc: item.bloc,
       accentColor: item.accentColor,
-      coalitionShortTag: item.coalitionShortTag,
-      coalitionCompactLabel: item.coalitionCompactLabel,
       topicScore: item.topicScore,
       overallScore: item.overallScore
     }));
@@ -672,8 +656,6 @@ export function buildPolicySimilarityReport(
       fullName: party.fullName,
       bloc: party.bloc,
       accentColor: party.accentColor,
-      coalitionShortTag: party.coalition?.shortTag || null,
-      coalitionCompactLabel: party.coalition?.compactLabel || null,
       scorePercentage: entry.scorePercentage,
       exactMatchesCount: entry.exactMatchesCount,
       answeredCount: affinitySummary.answeredCount,

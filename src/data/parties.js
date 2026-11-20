@@ -1,6 +1,6 @@
 /**
- * Ideological blocs and the 14 political candidatures and historical references
- * covered in the Elecciones Generales Espana 2026 (29N) dataset.
+ * Ideological blocs and the 11 active political candidatures covered in the
+ * Elecciones Generales Espana 2026 (29N) dataset.
  */
 
 export const BLOCS = [
@@ -20,24 +20,22 @@ export const PARTIES = [
     fullName: 'Frente Amplio',
     ideology: 'Izquierda progresista, ecosocialista y federal',
     foundedYear: 2026,
-    foundedLabel: 'coalición 2026',
-    leader: 'Ada Colau (con Antonio Maíllo y Enrique Santiago en listas)',
+    foundedLabel: 'desde 2026',
+    leader: 'Ada Colau',
     accentColor: '#b91c4c',
-    status: 'En activo (coalición estatal 29N-2026 en 46 circunscripciones + alianzas territoriales)',
-    coalition: {
-      label: 'Candidatura conjunta 29N',
-      shortTag: 'Sumar · IU · PCE · Más Madrid · Comuns',
-      compactLabel: 'Sumar · IU · PCE +2',
-      members: [
-        { shortName: 'Sumar', fullName: 'Movimiento Sumar', officialWebsite: 'https://movimientosumar.es' },
-        { shortName: 'IU', fullName: 'Izquierda Unida', officialWebsite: 'https://izquierdaunida.org' },
-        { shortName: 'PCE', fullName: 'Partido Comunista de España', officialWebsite: 'https://pce.es' },
-        { shortName: 'Más Madrid', fullName: 'Más Madrid', officialWebsite: null },
-        { shortName: 'Comuns', fullName: 'Comuns', officialWebsite: null }
-      ]
-    },
+    status: 'En activo (candidatura estatal 29N-2026 en 46 circunscripciones + alianzas territoriales)',
+    searchAliases: [
+      'Sumar',
+      'Movimiento Sumar',
+      'IU',
+      'Izquierda Unida',
+      'PCE',
+      'Partido Comunista de España',
+      'Más Madrid',
+      'Comuns'
+    ],
     summary:
-      'Coalición electoral de 2026 que reúne en candidatura conjunta a Movimiento Sumar, Izquierda Unida, PCE, Más Madrid, Comuns y fuerzas aliadas. Propone 1,5 millones de viviendas públicas con el 1% del PIB anual, tope del alquiler al 25% de la renta, jornada de 32 horas, prestación universal de 200 €/mes por menor, tipo mínimo del 20% en Sociedades y una República Federal y Plurinacional.',
+      'Candidatura progresista, ecosocialista y federal para el 29N-2026. Propone 1,5 millones de viviendas públicas con el 1% del PIB anual, tope del alquiler al 25% de la renta, jornada de 32 horas, prestación universal de 200 €/mes por menor, tipo mínimo del 20% en Sociedades y una República Federal y Plurinacional.',
     documentTitle: 'Un programa como una casa — Programa Electoral Frente Amplio 29N-2026',
     officialWebsite: 'https://frenteamplio.info',
     programUrl: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf',
@@ -84,51 +82,23 @@ export const PARTIES = [
   },
   {
     id: 'd21',
-    shortName: 'D21 · Cs',
+    shortName: 'Democracia para el Siglo 21',
     bloc: 'Centro',
     fullName: 'Democracia para el Siglo 21',
     ideology: 'Centro liberal y regeneracionista',
     foundedYear: 2026,
-    foundedLabel: 'coalición 2026',
-    leader: 'Miriam González Durántez (D21) · Carlos Pérez-Nievas (Cs)',
+    foundedLabel: 'desde 2026',
+    leader: 'Miriam González Durántez',
     accentColor: '#0f4c81',
-    status: 'En activo (coalición Democracia para el Siglo 21 con D21, Cs y UCIN en Madrid y Barcelona, 29N-2026)',
-    coalition: {
-      label: 'Candidatura conjunta 29N',
-      shortTag: 'Democracia 21 (D21) · Ciudadanos (Cs) · UCIN',
-      compactLabel: 'D21 · Cs · UCIN',
-      members: [
-        { shortName: 'D21', fullName: 'Democracia 21', officialWebsite: 'https://democracia21.es' },
-        { shortName: 'Cs', fullName: 'Ciudadanos', officialWebsite: 'https://www.ciudadanos-cs.org' },
-        { shortName: 'UCIN', fullName: 'Unión de Ciudadanos Independientes', officialWebsite: null }
-      ]
-    },
+    status: 'En activo (candidatura en Madrid y Barcelona, 29N-2026)',
+    searchAliases: ['D21', 'Democracia 21', 'Cs', 'Ciudadanos', 'UCIN'],
     summary:
-      'Coalición liberal y regeneracionista que une a Democracia 21, Ciudadanos y UCIN en el 29N-2026 bajo el programa «La España que merecemos»: recortar el 90% de asesores, blindar la IGAE con IA, cesar al Gobierno tras prórrogas presupuestarias, CGPJ elegido por jueces, listas abiertas, Asamblea Ciudadana por las Pensiones, cero impuestos en vivienda <35 años y 10.000 M€ europeos para vivienda.',
+      'Candidatura liberal y regeneracionista para el 29N-2026 bajo el programa «La España que merecemos»: recortar el 90% de asesores, blindar la IGAE con IA, cesar al Gobierno tras prórrogas presupuestarias, CGPJ elegido por jueces, listas abiertas, Asamblea Ciudadana por las Pensiones, cero impuestos en vivienda <35 años y 10.000 M€ europeos para vivienda.',
     documentTitle: 'La España que merecemos: Programa Democracia para el Siglo 21 (29N-2026)',
     officialWebsite: 'https://democracia21.es',
     programUrl: 'https://mi.democracia21.es/docs/programa/programa-democracia21.pdf',
     localPdfPath: './pdfs/d21-2026.pdf',
-    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa coalición Democracia para el Siglo 21 · 2026)'
-  },
-  {
-    id: 'upyd',
-    shortName: 'UPyD',
-    bloc: 'Centro',
-    fullName: 'Unión Progreso y Democracia',
-    ideology: 'Centrismo no nacionalista',
-    foundedYear: 2007,
-    foundedLabel: 'desde 2007',
-    leader: 'Cristiano Brown / Referencia programática histórica',
-    accentColor: '#c2185b',
-    status: 'Referencia programática histórica (actividad institucional extinguida en 2020)',
-    summary:
-      'Partido transversal creado para regenerar la democracia española, reformar la ley electoral hacia la proporcionalidad pura con listas abiertas, devolver al Estado central las competencias de Educación y Sanidad y suprimir duplicidades provinciales.',
-    documentTitle: 'Corpus Programático de Unión Progreso y Democracia (Reforma del Estado y LOREG)',
-    officialWebsite: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_Progreso_y_Democracia',
-    programUrl: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_Progreso_y_Democracia',
-    localPdfPath: null,
-    localPdfMeta: 'Partido histórico sin candidatura ni PDF electoral oficial publicado en 2026.'
+    localPdfMeta: 'PDF oficial local disponible (108 páginas · 3,6 MB · Programa Democracia para el Siglo 21 · 2026)'
   },
   {
     id: 'pp',
@@ -148,25 +118,6 @@ export const PARTIES = [
     programUrl: 'https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL.pdf',
     localPdfPath: './pdfs/pp-2026.pdf',
     localPdfMeta: 'PDF oficial local disponible (82 páginas · 11,7 MB · Programa Electoral 29N-2026)'
-  },
-  {
-    id: 'ucd',
-    shortName: 'UCD',
-    bloc: 'Centro-derecha',
-    fullName: 'Unión de Centro Democrático',
-    ideology: 'Centrismo liberal-democristiano',
-    foundedYear: 1977,
-    foundedLabel: 'desde 1977',
-    leader: 'Adolfo Suárez (Referencia histórica 1977-1983)',
-    accentColor: '#1b6d3e',
-    status: 'Referencia histórica de la Transición (disuelta en 1983)',
-    summary:
-      'Coalición fundacional de la democracia constitucional española que articuló el consenso constitucional de 1978, la economía social de mercado, los Pactos de la Moncloa, la reforma fiscal moderna, el Estado autonómico y la homologación europea.',
-    documentTitle: 'Programa Electoral UCD (1977-1979) y Pactos Constitucionales de la Transición',
-    officialWebsite: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_de_Centro_Democr%C3%A1tico_(Espa%C3%B1a)',
-    programUrl: 'https://es.wikipedia.org/wiki/Uni%C3%B3n_de_Centro_Democr%C3%A1tico_(Espa%C3%B1a)',
-    localPdfPath: null,
-    localPdfMeta: 'Partido histórico disuelto en 1983; sin PDF oficial de elecciones de 2026.'
   },
   {
     id: 'vox',
@@ -205,25 +156,6 @@ export const PARTIES = [
     programUrl: 'https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf',
     localPdfPath: './pdfs/salf-2026.pdf',
     localPdfMeta: 'PDF oficial local disponible (40 páginas · 18,2 MB · Contrato Electoral 29N-2026)'
-  },
-  {
-    id: 'nn',
-    shortName: 'NN',
-    bloc: 'Derecha',
-    fullName: 'Núcleo Nacional',
-    ideology: 'Ultranacionalismo identitario de derecha',
-    foundedYear: 2024,
-    foundedLabel: 'desde 2024',
-    leader: 'Dirección colegiada (Asociación / Noviembre Nacional)',
-    accentColor: '#262626',
-    status: 'Organización extraparlamentaria (bajo medidas judiciales de cese cautelar en noviembre de 2026)',
-    summary:
-      'Movimiento ultranacionalista identitario surgido en 2024 con tesis etnonacionalistas, rechazo frontal a la inmigración, antiliberalismo económico de tercera posición y oposición al marco constitucional y supranacional actual.',
-    documentTitle: 'Manifiesto Ideológico y Puntos Programáticos de Núcleo Nacional',
-    officialWebsite: 'https://es.wikipedia.org/wiki/N%C3%BAcleo_Nacional',
-    programUrl: 'https://es.wikipedia.org/wiki/N%C3%BAcleo_Nacional',
-    localPdfPath: null,
-    localPdfMeta: 'No dispone de programa electoral oficial en PDF publicado para el 29N-2026.'
   },
   {
     id: 'fe_jons',

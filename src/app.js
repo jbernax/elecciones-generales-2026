@@ -2,11 +2,11 @@
  * Elecciones Generales España 2026 — Unified Flagship & Interactive Workbench Controller
  */
 
-import { BLOCS, PARTIES, getPartyById, resolvePartyId } from './data/parties.js';
-import { TOPICS, getTopicById } from './data/topics.js';
-import { PROGRAMS, getPartyProgram } from './data/programs.js';
-import { QUESTIONS } from './data/questionnaire.js';
-import { getTopicOfficialContext } from './data/macroContext.js';
+import { BLOCS, PARTIES, getPartyById, resolvePartyId } from './data/parties.js?v=20261120b';
+import { TOPICS, getTopicById } from './data/topics.js?v=20261120b';
+import { PROGRAMS, getPartyProgram } from './data/programs.js?v=20261120b';
+import { QUESTIONS } from './data/questionnaire.js?v=20261120b';
+import { getTopicOfficialContext } from './data/macroContext.js?v=20261120b';
 import {
   filterParties,
   buildTopicComparison,
@@ -17,12 +17,12 @@ import {
   getQuestionStepStates,
   getNextQuestionStep,
   getPrevQuestionStep
-} from './engine/affinityEngine.js';
+} from './engine/affinityEngine.js?v=20261120b';
 
 const PRESET_PARTIES = {
   principales: ['psoe', 'pp', 'vox', 'frente_amplio', 'podemos'],
-  'izquierda-centro': ['frente_amplio', 'podemos', 'psoe', 'd21', 'upyd'],
-  'derecha-otros': ['pp', 'ucd', 'vox', 'salf', 'nn', 'fe_jons', 'pacma', 'iustitia', 'fo'],
+  'izquierda-centro': ['frente_amplio', 'podemos', 'psoe', 'd21'],
+  'derecha-otros': ['pp', 'vox', 'salf', 'fe_jons', 'pacma', 'iustitia', 'fo'],
   todas: PARTIES.map((party) => party.id)
 };
 
@@ -91,17 +91,6 @@ function formatPartyCardTitle(party) {
     return party.fullName;
   }
   return `${party.shortName} — ${party.fullName}`;
-}
-
-function renderCoalitionTagHtml(party, labelOverride = null) {
-  if (!party?.coalition) return '';
-  const label = labelOverride || party.coalition.label;
-  return `
-    <p class="coalition-tag">
-      <span class="coalition-tag-label">${escapeHtml(label)}</span>
-      <span class="coalition-tag-members">${escapeHtml(party.coalition.shortTag)}</span>
-    </p>
-  `;
 }
 
 /**
@@ -311,7 +300,6 @@ function renderPartiesDirectory() {
               <span>${escapeHtml(party.bloc)} · ${escapeHtml(party.foundedLabel)}</span>
             </p>
             <h3 class="party-official-name">${escapeHtml(formatPartyCardTitle(party))}</h3>
-            ${renderCoalitionTagHtml(party)}
             <p class="party-summary-copy">${escapeHtml(party.ideology)}. ${escapeHtml(party.summary)}</p>
           </header>
 
@@ -424,9 +412,6 @@ function renderComparatorWorkbench() {
 
   partiesToggleList.innerHTML = PARTIES.map((party) => {
     const isSelected = selectedSet.has(party.id);
-    const pillTitle = party.coalition
-      ? `${party.coalition.label}: ${party.coalition.shortTag}`
-      : party.fullName;
 
     return `
       <li>
@@ -436,13 +421,9 @@ function renderComparatorWorkbench() {
           style="--party-accent: ${escapeHtml(party.accentColor)};"
           data-toggle-party="${escapeHtml(party.id)}"
           aria-pressed="${isSelected ? 'true' : 'false'}"
-          title="${escapeHtml(pillTitle)}"
         >
           <span class="swatch-dot" aria-hidden="true"></span>
-          <span class="party-pill-text">
-            <span class="party-pill-name">${escapeHtml(party.shortName)}</span>
-            ${party.coalition ? `<span class="party-pill-coalition">${escapeHtml(party.coalition.compactLabel)}</span>` : ''}
-          </span>
+          <span>${escapeHtml(party.shortName)}</span>
         </button>
       </li>
     `;
@@ -508,10 +489,7 @@ function renderComparatorWorkbench() {
               if (!proposal) return '';
               return `
                 <tr>
-                  <td data-label="Partido">
-                    <strong>${escapeHtml(party.shortName)}</strong>
-                    ${party.coalition ? `<span class="table-coalition-note">${escapeHtml(party.coalition.shortTag)}</span>` : ''}
-                  </td>
+                  <td data-label="Partido"><strong>${escapeHtml(party.shortName)}</strong></td>
                   <td data-label="Bloque">${escapeHtml(party.bloc)}</td>
                   <td data-label="Línea principal">${escapeHtml(proposal.headline)}</td>
                   <td data-label="Medidas clave">${escapeHtml((proposal.measures || []).slice(0, 2).join(' · '))}</td>
@@ -551,8 +529,6 @@ function renderComparatorWorkbench() {
               </span>
               <span class="doc-badge">${escapeHtml(party.bloc)}</span>
             </header>
-
-            ${renderCoalitionTagHtml(party, 'Coalición 29N')}
 
             <h4 class="comparator-card-headline">${escapeHtml(proposal.headline)}</h4>
             <p class="comparator-card-summary">${escapeHtml(proposal.summary)}</p>
@@ -895,9 +871,6 @@ function buildRankingRowsHtml(entries, { hasAnswers, selectedPartyId, actionAttr
       const isSelected = hasAnswers && actionAttr === 'data-inspect-party' && entry.partyId === selectedPartyId;
       const pctLabel = hasAnswers ? `${entry.scorePercentage}%` : '--%';
       const barWidth = hasAnswers ? entry.scorePercentage : 0;
-      const rowTitle = party.coalition
-        ? `${party.shortName} (${party.coalition.label}: ${party.coalition.shortTag})`
-        : party.fullName;
 
       return `
         <li>
@@ -907,13 +880,9 @@ function buildRankingRowsHtml(entries, { hasAnswers, selectedPartyId, actionAttr
             ${actionAttr}="${escapeHtml(party.id)}"
             aria-pressed="${isSelected ? 'true' : 'false'}"
             style="--party-accent: ${escapeHtml(party.accentColor)};"
-            title="${escapeHtml(rowTitle)}"
           >
             <span class="rank-pos">${String(idx + 1).padStart(2, '0')}</span>
-            <span class="rank-party-label">
-              <span class="rank-party-name">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
-              ${party.coalition ? `<span class="rank-coalition-note">${escapeHtml(party.coalition.compactLabel)}</span>` : ''}
-            </span>
+            <span class="rank-party-label">${escapeHtml(party.shortName)} · ${escapeHtml(party.bloc)}</span>
             <span class="rank-score-num">${pctLabel}</span>
             <span class="rank-bar-track">
               <span class="rank-bar-fill" style="width: ${barWidth}%;"></span>
@@ -1098,11 +1067,6 @@ function renderPolicySimilarityReport(report, selectedPartyId) {
                 </span>
               </button>
             </header>
-            ${
-              party.coalitionShortTag
-                ? `<p class="report-party-coalition">Coalición 29N · ${escapeHtml(party.coalitionShortTag)}</p>`
-                : ''
-            }
             <p class="report-party-line">
               <strong>Mayor coincidencia:</strong> ${escapeHtml(strongText)}
             </p>
@@ -1128,23 +1092,14 @@ function renderPolicySimilarityReport(report, selectedPartyId) {
           : `
             <ul class="report-party-matches" role="list">
               ${topicRow.topMatches
-                .map((match) => {
-                  const matchTitle = match.coalitionShortTag
-                    ? `Coalición 29N: ${match.coalitionShortTag}`
-                    : '';
-                  const matchAria = match.coalitionShortTag
-                    ? `${match.shortName} (${match.coalitionShortTag}) · ${match.topicScore}%`
-                    : `${match.shortName} · ${match.topicScore}%`;
-
-                  return `
+                .map(
+                  (match) => `
                     <li>
                       <button
                         type="button"
                         class="report-party-link ${match.partyId === selectedPartyId ? 'is-selected' : ''}"
                         data-report-party="${escapeHtml(match.partyId)}"
                         aria-pressed="${match.partyId === selectedPartyId ? 'true' : 'false'}"
-                        aria-label="${escapeHtml(matchAria)}"
-                        ${matchTitle ? `title="${escapeHtml(matchTitle)}"` : ''}
                         style="--party-accent: ${escapeHtml(match.accentColor)};"
                       >
                         <span class="swatch-dot" aria-hidden="true"></span>
@@ -1152,8 +1107,8 @@ function renderPolicySimilarityReport(report, selectedPartyId) {
                         <span class="tabular">${match.topicScore}%</span>
                       </button>
                     </li>
-                  `;
-                })
+                  `
+                )
                 .join('')}
               ${
                 topicRow.additionalTiedCount > 0
@@ -1315,10 +1270,7 @@ function renderQuizResults() {
   const inspectedEntry = visibleRanking.find((e) => e.partyId === state.selectedResultPartyId);
 
   if (traceHeadingEl && inspectedParty && inspectedEntry) {
-    const coalitionSuffix = inspectedParty.coalition
-      ? ` · ${inspectedParty.coalition.compactLabel}`
-      : '';
-    traceHeadingEl.textContent = `Contraste con ${inspectedParty.shortName}${coalitionSuffix} (${inspectedEntry.scorePercentage}%)`;
+    traceHeadingEl.textContent = `Contraste con ${inspectedParty.shortName} (${inspectedEntry.scorePercentage}%)`;
   }
 
   if (openTraceBtn && inspectedParty) {
@@ -1450,7 +1402,7 @@ function renderPartyDrawer() {
         }
         ${
           safeSiteUrl
-            ? `<a href="${escapeHtml(safeSiteUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">${party.coalition ? 'Web de la coalición' : 'Web del partido'}</a>`
+            ? `<a href="${escapeHtml(safeSiteUrl)}" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-compact">Web oficial</a>`
             : ''
         }
       </section>
@@ -1500,18 +1452,6 @@ function renderPartyDrawer() {
     `;
   }).join('');
 
-  const coalitionMembersHtml = party.coalition
-    ? party.coalition.members
-        .map((member) => {
-          const safeMemberUrl = sanitizeHttpUrl(member.officialWebsite);
-          if (safeMemberUrl) {
-            return `<a href="${escapeHtml(safeMemberUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(member.fullName)}</a>`;
-          }
-          return `<span>${escapeHtml(member.fullName)}</span>`;
-        })
-        .join(' · ')
-    : '';
-
   content.innerHTML = `
     <article class="drawer-hero-card" style="--party-accent: ${escapeHtml(party.accentColor)};">
       <header class="party-card-top">
@@ -1519,9 +1459,8 @@ function renderPartyDrawer() {
         <span class="party-bloc-label">${escapeHtml(party.bloc)}</span>
       </header>
       <h2 id="drawer-party-title">${escapeHtml(party.fullName)}</h2>
-      ${renderCoalitionTagHtml(party)}
       <p class="party-summary-copy">${escapeHtml(party.summary)}</p>
-      <dl class="drawer-facts-grid ${party.coalition ? 'has-coalition' : ''}">
+      <dl class="drawer-facts-grid">
         <section>
           <dt>Ideología</dt>
           <dd>${escapeHtml(party.ideology)}</dd>
@@ -1534,16 +1473,6 @@ function renderPartyDrawer() {
           <dt>Liderazgo / referencia</dt>
           <dd>${escapeHtml(party.leader)}</dd>
         </section>
-        ${
-          party.coalition
-            ? `
-              <section class="drawer-coalition-fact">
-                <dt>Formaciones integrantes</dt>
-                <dd class="drawer-coalition-links">${coalitionMembersHtml}</dd>
-              </section>
-            `
-            : ''
-        }
       </dl>
     </article>
 

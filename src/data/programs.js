@@ -1,7 +1,6 @@
 /**
- * Structured programmatic corpus for all 14 political candidatures and
- * historical references across the 12 core policy areas (168 topic-party entries),
- * grounded in 2026 programs.
+ * Structured programmatic corpus for all 11 active 29N-2026 candidatures
+ * across the 12 core policy areas (132 topic-party entries), grounded in 2026 programs.
  */
 
 export const PROGRAMS = {
@@ -446,154 +445,6 @@ export const PROGRAMS = {
     }
   },
 
-  upyd: {
-    economia: {
-      headline: 'Unidad de mercado nacional, rigor fiscal y reforma del sector público',
-      summary:
-        'Propone suprimir barreras administrativas entre comunidades autónomas, revisar subvenciones opacas y reducir la deuda mediante eficiencia administrativa.',
-      measures: [
-        'Garantizar la plena unidad de mercado suprimiendo normativas autonómicas contradictorias para empresas.',
-        'Eliminar subvenciones directas sin concurrencia a organizaciones patronales, sindicatos y entidades afines.',
-        'Reorientar el gasto administrativo hacia inversión en I+D+i y formación profesional.',
-        'Asegurar transparencia absoluta en todos los contratos y presupuestos públicos.',
-        'Reducir el déficit y la deuda pública eliminando duplicidades autonómicas, diputaciones y entes administrativos redundantes.'
-      ],
-      sourceRef: 'Corpus Programático de Unión Progreso y Democracia (UPyD)'
-    },
-    vivienda: {
-      headline: 'Seguridad jurídica frente a ocupaciones y parque público de alquiler racional',
-      summary:
-        'Defiende reforzar la protección del propietario frente a ocupaciones ilegales mientras se impulsa oferta pública asequible sin topes intervencionistas.',
-      measures: [
-        'Acelerar el desalojo judicial de viviendas ocupadas ilegalmente garantizando la tutela efectiva.',
-        'Fomentar un parque público de vivienda en alquiler de gestión transparente para jóvenes.',
-        'Eliminar trabas urbanísticas locales y desigualdades fiscales autonómicas en la compra de vivienda.',
-        'Vincular las ayudas de vivienda directamente a la renta real del ciudadano.'
-      ],
-      sourceRef: 'Propuestas Sociales y de Vivienda de UPyD'
-    },
-    empleo: {
-      headline: 'Contrato único indefinido e igualdad laboral sin barreras autonómicas',
-      summary:
-        'Propugna combatir la temporalidad con un contrato único, eliminar barreras lingüísticas para trabajar en otras regiones y modernizar convenios.',
-      measures: [
-        'Implantar un contrato único indefinido con indemnización progresiva para terminar con la precariedad dual.',
-        'Garantizar la igualdad de oportunidades laborales en todo el país eliminando requisitos lingüísticos discriminatorios.',
-        'Facilitar la movilidad geográfica de trabajadores eliminando barreras administrativas regionales.',
-        'Suprimir cuotas corporativas obligatorias y subvenciones directas sin concurrencia a sindicatos y patronales.'
-      ],
-      sourceRef: 'Reforma Laboral de UPyD'
-    },
-    pensiones: {
-      headline: 'Cuentas individuales transparentes, Pacto de Toledo y viabilidad actuarial',
-      summary:
-        'Aboga por asegurar la viabilidad financiera a largo plazo de la Seguridad Social mediante cuentas informativas y reforma del gasto público.',
-      measures: [
-        'Asegurar cuentas individuales informativas en la Seguridad Social que reflejen exactamente lo cotizado.',
-        'Separar claramente las fuentes de financiación de prestaciones contributivas y no contributivas.',
-        'Garantizar el poder adquisitivo de las pensiones con reformas estructurales que amplíen la base de cotizantes.',
-        'Eliminar pensiones especiales o privilegios parlamentarios respecto al régimen general.'
-      ],
-      sourceRef: 'Sostenibilidad de Pensiones — UPyD'
-    },
-    regeneracion_justicia: {
-      headline: 'Reforma de la LOREG, proporcionalidad pura, listas abiertas y fin de partidocracia',
-      summary:
-        'La regeneración institucional constituye la razón de ser del programa de UPyD: igualdad de voto, despolitización de la justicia y fin de duplicidades.',
-      measures: [
-        'Reformar la Ley Electoral (LOREG) para aplicar proporcionalidad pura ("un ciudadano, un voto") y listas abiertas.',
-        'Despolitizar por completo el CGPJ, el Tribunal Constitucional y la Fiscalía General del Estado eliminando cuotas de partido.',
-        'Suprimir los aforamientos políticos, tipificar el enriquecimiento ilícito y prohibir indultos por corrupción.',
-        'Abolir las puertas giratorias y regular estrictamente la financiación privada y pública de los partidos.'
-      ],
-      sourceRef: 'Plan de Regeneración Democrática de UPyD'
-    },
-    sanidad: {
-      headline: 'Devolución de la Sanidad al Estado para garantizar igualdad real',
-      summary:
-        'Reclama recuperar la competencia estatal de Sanidad para evitar 17 carteras distintas de servicios y suprimir desigualdades territoriales.',
-      measures: [
-        'Reintegrar las competencias de Sanidad al Estado central garantizando gestión eficiente y cobertura idéntica.',
-        'Implantar una cartera de servicios, calendario vacunal e historial clínico único en todo el país.',
-        'Centralizar compras farmacéuticas y equipamiento tecnológico para ahorrar costes.',
-        'Profesionalizar la dirección de centros sanitarios sin nombramientos políticos.'
-      ],
-      sourceRef: 'Reforma del Estado en Sanidad (UPyD)'
-    },
-    educacion: {
-      headline: 'Competencia educativa estatal, EBAU única y libertad lingüística en castellano',
-      summary:
-        'Plantea devolver Educación al Estado para homogeneizar niveles, asegurar el estudio en castellano en todo el territorio y exigir excelencia.',
-      measures: [
-        'Recuperar las competencias de Educación para el Estado garantizando un currículo común de calidad.',
-        'Establecer una prueba única nacional de acceso a la universidad y oposiciones docentes homogéneas.',
-        'Garantizar la libertad de escolarización en castellano como lengua común y en las cooficiales en su ámbito.',
-        'Sustituir la inmersión lingüística obligatoria por modelos trilingües equilibrados.'
-      ],
-      sourceRef: 'Propuesta Educativa Nacional de UPyD'
-    },
-    inmigracion: {
-      headline: 'Política común europea de asilo, visados legales e integración cívica',
-      summary:
-        'Defiende la gestión europea coordinada de los flujos migratorios junto al cumplimiento estricto de las leyes de extranjería e integración.',
-      measures: [
-        'Transferir y coordinar en la Unión Europea el control efectivo de fronteras y el sistema de asilo común.',
-        'Condicionar la inmigración laboral a contratos legales y capacidad de integración en la sociedad de acogida.',
-        'Garantizar la igualdad de derechos y deberes constitucionales evitando guetos comunitarios.',
-        'Agilizar procedimientos de retorno ante entrada irregular firme respetando derechos humanos.'
-      ],
-      sourceRef: 'Política Migratoria en el Ideario de UPyD'
-    },
-    seguridad: {
-      headline: 'Cuerpos de seguridad bajo mando estatal único y lucha contra multirreincidencia',
-      summary:
-        'Propone unificar criterios policiales bajo competencia del Estado central y reforzar los recursos contra crimen organizado y terrorismo.',
-      measures: [
-        'Unificar criterios de seguridad bajo mando estatal reforzando Policía Nacional y Guardia Civil.',
-        'Aumentar los recursos contra el crimen organizado, narcotráfico y delincuencia multirreincidente.',
-        'Eliminar duplicidades administrativas entre cuerpos policiales mejorando la interoperabilidad de bases de datos.',
-        'Reformar la Ley de Seguridad Ciudadana protegiendo derechos fundamentales junto a la autoridad policial.'
-      ],
-      sourceRef: 'Seguridad Nacional en el Ideario de UPyD'
-    },
-    modelo_estado: {
-      headline: 'Reforma constitucional del Estado autonómico y supresión de diputaciones',
-      summary:
-        'Propone racionalizar el Estado devolviendo competencias esenciales al centro y eliminando administraciones intermedias redundantes.',
-      measures: [
-        'Reformar la Constitución para devolver al Estado las competencias de Sanidad, Educación y Justicia.',
-        'Suprimir las diputaciones provinciales, las comarcas administrativas y fusionar pequeños municipios inviables.',
-        'Eliminar los conciertos y cupos fiscales diferenciados para asegurar igualdad tributaria entre ciudadanos.',
-        'Reformar el Senado y el sistema de partidos para evitar que minorías nacionalistas decidan la gobernabilidad.'
-      ],
-      sourceRef: 'Propuesta de Reforma Constitucional de UPyD'
-    },
-    energia_campo: {
-      headline: 'Mix energético equilibrado con energía nuclear y Plan Hidrológico Nacional',
-      summary:
-        'Defiende decisiones técnicas alejadas del sesgo ideológico en energía nuclear, renovables y trasvases hídricos estatales.',
-      measures: [
-        'Mantener las centrales nucleares seguras como energía de respaldo libre de emisiones.',
-        'Recuperar competencias hídricas nacionales para garantizar un Plan Hidrológico solidario entre cuencas.',
-        'Fomentar energías renovables con criterios de eficiencia económica sin primas especulativas.',
-        'Proteger el sector agrario con mercados europeos abiertos y reciprocidad regulatoria.'
-      ],
-      sourceRef: 'Política Energética e Hídrica de UPyD'
-    },
-    exterior_ue: {
-      headline: 'Federalismo europeo democrático, defensa atlántica y Gibraltar español',
-      summary:
-        'Apuesta por una Unión Europea federalizada, cumplimiento de compromisos con la OTAN y defensa firme de los intereses estratégicos españoles.',
-      measures: [
-        'Impulsar una Europa federal dotada de política exterior, fiscal y de seguridad verdaderamente común.',
-        'Mantener el compromiso firme de España en la OTAN y modernizar las Fuerzas Armadas.',
-        'Defender activamente la soberanía de Ceuta, Melilla y la reivindicación diplomática sobre Gibraltar.',
-        'Promover una diplomacia de defensa de la democracia y derechos humanos sin concesiones.'
-      ],
-      sourceRef: 'Política Exterior y Unión Europea de UPyD'
-    }
-  },
-
   pp: {
     economia: {
       headline: 'Deflactación del IRPF, 0% IRPF primer año a jóvenes, IVA 0% básico y control AIReF',
@@ -738,154 +589,6 @@ export const PROGRAMS = {
         'Impulsar una pausa normativa europea de un año sobre burocracia excesiva y reforzar la competitividad industrial de la UE.'
       ],
       sourceRef: 'La Reconstrucción Nacional: Programa PP 29N-2026 (Caps. 1.1, 1.8 y 4.10)'
-    }
-  },
-
-  ucd: {
-    economia: {
-      headline: 'Economía social de mercado, reforma fiscal moderna y Pactos de la Moncloa',
-      summary:
-        'Referencia histórica de centro reformista: articuló la transición hacia una economía abierta, el IRPF progresivo moderno y el control de la inflación por consenso.',
-      measures: [
-        'Consolidar una economía social de mercado combinando iniciativa privada con cohesión social.',
-        'Mantener un sistema tributario progresivo inspirado en la reforma fiscal de 1977 (IRPF y Patrimonio) con lucha contra el fraude.',
-        'Impulsar acuerdos macroeconómicos de consenso entre Gobierno, sindicatos y patronal para moderar la inflación.',
-        'Modernizar infraestructuras e industria para preparar la adhesión plena al mercado común europeo.',
-        'Controlar el déficit público y el endeudamiento estatal mediante disciplina presupuestaria y equilibrio monetario gradual.'
-      ],
-      sourceRef: 'Programa UCD (1977-1979) y Pactos de la Moncloa (Referencia histórica)'
-    },
-    vivienda: {
-      headline: 'Fomento de vivienda de protección oficial y seguridad jurídica patrimonial',
-      summary:
-        'Combinaba el desarrollo de programas estatales de Vivienda de Protección Oficial (VPO) con la protección de la propiedad privada y el crédito hipotecario.',
-      measures: [
-        'Impulsar planes estatales de Vivienda de Protección Oficial (VPO) en colaboración con entidades de ahorro.',
-        'Garantizar el derecho constitucional a la propiedad privada y la estabilidad contractual del alquiler.',
-        'Facilitar crédito bancario a familias trabajadoras para acceso a primera vivienda en propiedad.',
-        'Coordinar el ordenamiento urbanístico entre ayuntamientos y administraciones autonómicas.'
-      ],
-      sourceRef: 'Política Social y de Vivienda de UCD (Referencia histórica)'
-    },
-    empleo: {
-      headline: 'Estatuto de los Trabajadores, diálogo sindical y defensa del empleo estable',
-      summary:
-        'Sentó las bases del moderno marco laboral democrático mediante el derecho de huelga, la negociación colectiva y el consenso social.',
-      measures: [
-        'Garantizar el diálogo social estable bajo el marco del Estatuto de los Trabajadores y libertad sindical.',
-        'Fomentar el empleo estable mediante reducción de cargas empresariales en momentos de reconversión industrial.',
-        'Proteger las prestaciones por desempleo y la formación profesional para trabajadores afectados.',
-        'Impulsar el empleo juvenil y rural mediante crédito oficial e incentivos a la inversión.'
-      ],
-      sourceRef: 'Marco Laboral de la Transición — UCD (Referencia histórica)'
-    },
-    pensiones: {
-      headline: 'Universalización de la Seguridad Social y revalorización solidaria',
-      summary:
-        'Expandió la cobertura de la Seguridad Social hacia un sistema público universal, contributivo y financieramente equilibrado.',
-      measures: [
-        'Sostener y ampliar la cobertura universal de la Seguridad Social con equilibrio actuarial.',
-        'Actualizar periódicamente las pensiones de jubilación, viudedad e invalidez atendiendo a las más bajas.',
-        'Integrar regímenes especiales agrarios y de trabajadores autónomos en la protección social moderna.',
-        'Modernizar la gestión administrativa del Instituto Nacional de la Seguridad Social.'
-      ],
-      sourceRef: 'Seguridad Social de la Transición — UCD (Referencia histórica)'
-    },
-    regeneracion_justicia: {
-      headline: 'Consenso constitucional, independencia judicial y libertades democráticas',
-      summary:
-        'Su programa fundacional estableció el Estado social y democrático de derecho, la separación de poderes y la amnistía y concordia civil.',
-      measures: [
-        'Preservar el consenso constitucional de 1978 como pacto integrador de toda la sociedad española.',
-        'Garantizar la plena independencia del Poder Judicial y del Tribunal Constitucional.',
-        'Asegurar el pluralismo político, la libertad de expresión y prensa y la alternancia democrática.',
-        'Descentralizar administrativamente con sujeción estricta a la ley y los órganos de control.'
-      ],
-      sourceRef: 'Fundamentos Constitucionales UCD 1977-1979'
-    },
-    sanidad: {
-      headline: 'Creación del INSALUD y ampliación progresiva de la cobertura asistencial',
-      summary:
-        'Impulsó la transición hacia un sistema sanitario integrado y financiado públicamente con convivencia de centros públicos y concertados.',
-      measures: [
-        'Consolidar una red hospitalaria pública amplia coordinada a través del Instituto Nacional de la Salud.',
-        'Mantener conciertos complementarios con entidades asistenciales sin ánimo de lucro.',
-        'Extender progresivamente la cobertura sanitaria a toda la población residente.',
-        'Modernizar la atención primaria rural y comarcal.'
-      ],
-      sourceRef: 'Reforma Sanitaria de la Transición — UCD'
-    },
-    educacion: {
-      headline: 'Libertad de enseñanza, pacto escolar constitucional y expansión de plazas',
-      summary:
-        'Articuló el equilibrio constitucional del artículo 27: gratuidad obligatoria de la educación básica junto a la libertad de creación de centros.',
-      measures: [
-        'Garantizar la enseñanza básica obligatoria y gratuita en toda España construyendo escuelas públicas suficientes.',
-        'Respetar la libertad de elección de centro y el derecho de los padres sobre la formación moral de sus hijos.',
-        'Financiar conciertos escolares con centros privados de función social bajo control público.',
-        'Promover la autonomía universitaria y la ampliación de becas por capacidad y necesidad.'
-      ],
-      sourceRef: 'Pacto Educativo Constitucional (Art. 27) — UCD'
-    },
-    inmigracion: {
-      headline: 'Regulación legal de extranjería compatible con estándares europeos',
-      summary:
-        'Sentó el marco legal inicial de extranjería y asilo democrático en concordancia con la Constitución de 1978 y tratados europeos.',
-      measures: [
-        'Regular los flujos de extranjería con criterios legales compatibles con los estándares europeos.',
-        'Reconocer el derecho constitucional de asilo y refugio conforme a la Convención de Ginebra.',
-        'Establecer convenios bilaterales de cooperación consular y movilidad laboral con Iberoamérica y Europa.',
-        'Garantizar garantías jurídicas administrativas en procedimientos de residencia y permisos de trabajo.'
-      ],
-      sourceRef: 'Política de Extranjería — UCD (Referencia histórica)'
-    },
-    seguridad: {
-      headline: 'Seguridad ciudadana democrática, profesionalización policial y orden constitucional',
-      summary:
-        'Transformó los cuerpos policiales hacia modelos democráticos de servicio público, defendiendo la seguridad bajo garantías procesales.',
-      measures: [
-        'Garantizar la seguridad ciudadana mediante cuerpos policiales sometidos estrictamente a la ley y los jueces.',
-        'Fomentar el consenso político y policial frente al terrorismo y el crimen organizado.',
-        'Modernizar el sistema penitenciario orientándolo a la legalidad constitucional y reinserción.',
-        'Profesionalizar la formación de los cuerpos y fuerzas de seguridad del Estado democrático.'
-      ],
-      sourceRef: 'Política de Interior y Seguridad — UCD'
-    },
-    modelo_estado: {
-      headline: 'Construcción del Estado de las Autonomías dentro de la unidad nacional',
-      summary:
-        'Diseñó la arquitectura territorial de 1978 combinando la indisoluble unidad de la Nación española con el derecho a la autonomía de regiones y nacionalidades.',
-      measures: [
-        'Desarrollar de forma ordenada y pactada el Estado de las Autonomías previsto en el Título VIII de la Constitución.',
-        'Asegurar la solidaridad interterritorial mediante el Fondo de Compensación Interterritorial.',
-        'Reconocer las lenguas y culturas propias de las comunidades en un marco de lealtad institucional.',
-        'Mantener la Monarquía parlamentaria como símbolo de unidad, arbitraje y estabilidad del Estado.'
-      ],
-      sourceRef: 'Pactos Autonómicos y Constitución de 1978 — UCD'
-    },
-    energia_campo: {
-      headline: 'Plan Energético Nacional equilibrado y modernización del mundo rural',
-      summary:
-        'Impulsó la diversificación energética ante la crisis del petróleo, combinando centrales térmicas, nucleares e hidráulicas junto al desarrollo agrario.',
-      measures: [
-        'Planificar el suministro energético nacional combinando energía nuclear, hidroeléctrica y ahorro energético.',
-        'Apoyar la modernización de explotaciones agrarias y ganaderas para su integración competitiva en Europa.',
-        'Proteger los regadíos y obras hidráulicas mediante planificación estatal.',
-        'Iniciar la ordenación de parques nacionales y protección del medio ambiente.'
-      ],
-      sourceRef: 'Plan Energético Nacional y Política Agraria — UCD'
-    },
-    exterior_ue: {
-      headline: 'Integración en la Comunidad Económica Europea y pertenencia a la OTAN',
-      summary:
-        'Abrió la política exterior española a las democracias occidentales, solicitando el ingreso en las Comunidades Europeas y formalizando la entrada en la OTAN.',
-      measures: [
-        'Culminar la integración plena de España en las Comunidades Europeas (CEE) como ancla democrática y económica.',
-        'Integrar a España en la Alianza Atlántica (OTAN) garantizando su defensa colectiva occidental.',
-        'Mantener relaciones diplomáticas de respeto y cooperación preferente con Iberoamérica.',
-        'Normalizar relaciones exteriores con todos los países desde el respeto a la democracia.'
-      ],
-      sourceRef: 'Política Exterior Occidental de UCD (Referencia histórica)'
     }
   },
 
@@ -1180,154 +883,6 @@ export const PROGRAMS = {
         'Suprimir los 4.550 millones de ayuda exterior sin acuerdos de repatriación y fijar cupos preferentes con Hispanoamérica.'
       ],
       sourceRef: 'Contrato Electoral SALF 29N-2026: Bloque X (Geopolítica y Soberanía, pp. 35-39)'
-    }
-  },
-
-  nn: {
-    economia: {
-      headline: 'Antiliberalismo económico, proteccionismo nacional y crítica al capitalismo global',
-      summary:
-        'Rechaza tanto el capitalismo financiero globalizado como el socialismo parlamentario, proponiendo una economía nacional autárquica y social.',
-      measures: [
-        'Subordinar la actividad financiera y bancaria al interés nacional frente a multinacionales y fondos extranjeros.',
-        'Imponer proteccionismo económico estricto para preservar industrias y comercios locales frente a importaciones.',
-        'Combatir la usura bancaria y el endeudamiento nacional con instituciones financieras internacionales.',
-        'Reorientar el presupuesto hacia vivienda, natalidad e industria propia suprimiendo gasto político.',
-        'Rechazar la deuda pública externa y el pago de intereses usurarios vinculados al sistema financiero global.'
-      ],
-      sourceRef: 'Manifiesto Ideológico y Puntos Programáticos de Núcleo Nacional'
-    },
-    vivienda: {
-      headline: 'Prioridad nacional absoluta en vivienda y freno a fondos extranjeros',
-      summary:
-        'Plantea prohibir la adquisición especulativa de inmuebles por capital extranjero y reservar ayudas y vivienda pública exclusivamente a nacionales.',
-      measures: [
-        'Prohibir la compra masiva de vivienda por fondos de inversión extranjeros y capital especulativo.',
-        'Establecer prioridad nacional estricta en el acceso a vivienda social, ayudas al alquiler y avales públicos.',
-        'Construir promociones públicas para familias jóvenes nacionales vinculadas a natalidad.',
-        'Ejecutar desalojos inmediatos contra la usurpación ilegal de viviendas.'
-      ],
-      sourceRef: 'Puntos Sociales de Núcleo Nacional'
-    },
-    empleo: {
-      headline: 'Prioridad laboral nacional y rechazo a la devaluación salarial',
-      summary:
-        'Vincula la protección del salario del trabajador español al cierre frente a mano de obra extranjera barata y al apoyo al comercio local.',
-      measures: [
-        'Imponer prioridad absoluta del trabajador nacional en la contratación pública y privada.',
-        'Combatir la devaluación salarial derivada de la contratación de mano de obra inmigrante.',
-        'Proteger el pequeño comercio y el trabajo autónomo frente a grandes plataformas transnacionales.',
-        'Sancionar la deslocalización de industrias nacionales hacia países con costes laborales ínfimos.'
-      ],
-      sourceRef: 'Doctrina Social de Núcleo Nacional'
-    },
-    pensiones: {
-      headline: 'Sostenimiento generacional de pensiones mediante natalidad e industria nacional',
-      summary:
-        'Rechaza sostener el sistema de pensiones mediante inmigración y propone vincularlo a la natalidad nacional y reindustrialización.',
-      measures: [
-        'Garantizar las pensiones de jubilación exclusivamente a través de empleo industrial nacional y natalidad.',
-        'Rechazar explícitamente las políticas de reemplazo demográfico como solución al envejecimiento.',
-        'Proteger a los pensionistas españoles frente a la inflación en energía, alimentación y vivienda.',
-        'Suprimir cualquier prestación no contributiva o subsidio para población no nacional.'
-      ],
-      sourceRef: 'Doctrina Social de Núcleo Nacional: Natalidad y Mayores'
-    },
-    regeneracion_justicia: {
-      headline: 'Ruptura total con el régimen de partidos de 1978 y endurecimiento penal',
-      summary:
-        'Adopta una postura antisistema que rechaza el modelo parlamentario de partidos actual y reclama orden penal estricto.',
-      measures: [
-        'Superar el sistema parlamentario de partidos vigente al que consideran corrupto e ineficaz.',
-        'Implantar penas de máxima severidad y cumplimiento íntegro para delitos graves, corrupción y traición.',
-        'Suprimir toda subvención estatal a partidos políticos, sindicatos mayoritarios y ONG.',
-        'Establecer mecanismos directos de responsabilidad personal para gobernantes.'
-      ],
-      sourceRef: 'Posicionamiento Institucional de Núcleo Nacional'
-    },
-    sanidad: {
-      headline: 'Sistema sanitario estatal nacionalizado con prioridad exclusiva a ciudadanos',
-      summary:
-        'Defiende la sanidad gestionada centralmente por el Estado pero reservada de forma prioritaria a ciudadanos españoles.',
-      measures: [
-        'Centralizar la sanidad en una única estructura nacional suprimiendo desigualdades autonómicas.',
-        'Excluir de cobertura no urgente a residentes ilegales reservando recursos a contribuyentes nacionales.',
-        'Reforzar la atención a la natalidad, maternidad y salud juvenil frente a adicciones.',
-        'Garantizar soberanía farmacéutica produciendo medicamentos esenciales en España.'
-      ],
-      sourceRef: 'Propuestas Sociales de Núcleo Nacional'
-    },
-    educacion: {
-      headline: 'Educación nacional unitaria, disciplina escolar e identidad histórica',
-      summary:
-        'Propone un sistema educativo único nacional centrado en la identidad española, la disciplina y la eliminación de contenidos progresistas.',
-      measures: [
-        'Implantar un sistema educativo único en todo el Estado con el castellano como única lengua vehicular.',
-        'Suprimir cualquier contenido curricular vinculado a perspectiva de género, multiculturalismo o memoria democrática.',
-        'Reforzar la enseñanza de la historia nacional, cultura clásica, disciplina y educación física.',
-        'Orientar la formación profesional hacia sectores productivos e industriales estratégicos.'
-      ],
-      sourceRef: 'Educación y Cultura en Núcleo Nacional'
-    },
-    inmigracion: {
-      headline: 'Etnonacionalismo, remigración masiva y rechazo frontal a la multiculturalidad',
-      summary:
-        'Núcleo central de su ideario: oposición radical a toda inmigración extracomunitaria, programas de repatriación y cierre total de asilo.',
-      measures: [
-        'Detener por completo toda inmigración extracomunitaria y derogar mecanismos de asilo y nacionalización acelerada.',
-        'Ejecutar programas estatales de repatriación masiva (remigración) de población inmigrante.',
-        'Rechazar el multiculturalismo y defender la identidad étnica, cultural e histórica europea y española.',
-        'Suprimir toda ayuda económica o sanitaria no urgente dirigida a inmigrantes.'
-      ],
-      sourceRef: 'Programa Identitario de Núcleo Nacional'
-    },
-    seguridad: {
-      headline: 'Despliegue policial y militar permanente y endurecimiento penal extremo',
-      summary:
-        'Propone una política de orden autoritario con presencia permanente en fronteras y barrios conflictivos y penas de máxima severidad.',
-      measures: [
-        'Desplegar presencia permanente policial y militar en fronteras y barrios con alta conflictividad.',
-        'Endurecer de forma drástica el Código Penal con cumplimiento íntegro de condenas por delitos violentos.',
-        'Reforzar los cuerpos de seguridad suprimiendo restricciones operativas en actuaciones de orden público.',
-        'Combatir bandas criminales, narcotráfico y usurpación de propiedades con detención preventiva reforzada.'
-      ],
-      sourceRef: 'Orden y Seguridad en Núcleo Nacional'
-    },
-    modelo_estado: {
-      headline: 'Estado nacional unitario, centralizado y opuesto a autonomías y separatismo',
-      summary:
-        'Exige la abolición total del Estado de las Autonomías para instaurar un Estado nacional fuertemente centralizado y unitario.',
-      measures: [
-        'Abolir las 17 comunidades autónomas y sus parlamentos para instaurar un Estado unitario centralizado.',
-        'Prohibir e ilegalizar cualquier partido o movimiento separatista o regionalista.',
-        'Suprimir toda estructura burocrática territorial duplicada.',
-        'Reorganizar la administración territorial en torno a provincias o municipios subordinados al poder central.'
-      ],
-      sourceRef: 'Modelo Nacional Unitario — Núcleo Nacional'
-    },
-    energia_campo: {
-      headline: 'Soberanía energética nacional y oposición radical a la Agenda 2030',
-      summary:
-        'Rechaza las normativas ecológicas supranacionales, defendiendo autosuficiencia energética, energía nuclear y apoyo al campo español.',
-      measures: [
-        'Derogar por completo los compromisos derivados de la Agenda 2030 y el Pacto Verde Europeo.',
-        'Apostar por la energía nuclear y recursos propios para alcanzar plena autosuficiencia energética.',
-        'Proteger la agricultura y ganadería españolas bloqueando importaciones de terceros países.',
-        'Preservar el patrimonio natural nacional sin subordinación a directivas externas.'
-      ],
-      sourceRef: 'Soberanía Material y Campo — Núcleo Nacional'
-    },
-    exterior_ue: {
-      headline: 'Ruptura con la Unión Europea y la OTAN hacia una Europa identitaria',
-      summary:
-        'Rechaza la Unión Europea actual y la alianza militar atlantista de la OTAN, abogando por la soberanía nacional plena y cooperación europea identitaria.',
-      measures: [
-        'Promover la salida de España de la Unión Europea y recuperar la moneda y política comercial propias.',
-        'Abandonar la OTAN y cerrar bases militares extranjeras en territorio español.',
-        'Romper relaciones preferentes y acuerdos económicos con Marruecos ante la presión migratoria.',
-        'Articular alianzas exclusivas entre naciones soberanas de raíz cultural europea.'
-      ],
-      sourceRef: 'Posición Geopolítica de Núcleo Nacional'
     }
   },
 
@@ -1636,7 +1191,7 @@ export const PROGRAMS = {
         'Alcanzar una inversión en I+D del 2% del PIB en 2027 y del 3% en 2030 y reformar la Ley de Segunda Oportunidad.',
         'Contener el déficit y la deuda pública combinando control digital del gasto y simplificación fiscal sostenible.'
       ],
-      sourceRef: 'La España que merecemos — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos — Democracia para el Siglo 21 (29N-2026)'
     },
     vivienda: {
       headline: 'Pacto de Reconciliación del Alquiler, 0 impuestos <35 años e IVA 4% / ITP 2%',
@@ -1648,7 +1203,7 @@ export const PROGRAMS = {
         'Reorientar 10.000 millones de euros de fondos europeos hacia un Fondo Soberano de Vivienda y aplicar un recargo autonómico de hasta el 25% a no residentes.',
         'Tipificar como estafa la inquiocupación premeditada y cruzar digitalmente pisos de temporada con el padrón municipal.'
       ],
-      sourceRef: 'La España que merecemos: Vivienda y Emancipación — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Vivienda y Emancipación — Democracia para el Siglo 21 (29N-2026)'
     },
     empleo: {
       headline: 'IVA franquiciado <85.000 €, plus salarial al 5%, SMI 2/3 y 200h menos de burocracia',
@@ -1660,7 +1215,7 @@ export const PROGRAMS = {
         'Desplegar un Plan Estatal de Dinamización de la IA para elevar salarios, prohibir contratos públicos precarios y dar transición de 2 años a micropymes.',
         'Facilitar el relevo generacional de negocios rentables próximos a la jubilación del titular.'
       ],
-      sourceRef: 'La España que merecemos: Revolución Pyme y Empleo — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Revolución Pyme y Empleo — Democracia para el Siglo 21 (29N-2026)'
     },
     pensiones: {
       headline: 'Asamblea Ciudadana de 150 miembros sorteados y pacto intergeneracional',
@@ -1672,7 +1227,7 @@ export const PROGRAMS = {
         'Elevar la tasa de actividad formal, empleo joven y productividad para sostener el sistema sin fractura generacional.',
         'Desplegar un plan sociosanitario frente a la soledad no deseada de los mayores.'
       ],
-      sourceRef: 'La España que merecemos: Asamblea por las Pensiones — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Asamblea por las Pensiones — Democracia para el Siglo 21 (29N-2026)'
     },
     regeneracion_justicia: {
       headline: 'IGAE con IA blindada 6 años, cese sin presupuestos y recorte del 90% de asesores',
@@ -1684,7 +1239,7 @@ export const PROGRAMS = {
         'Recortar el 90% de asesores a dedo (máximo 4 por ministro), tipificar el enchufismo y hacer responder civilmente a partidos por corrupción.',
         'Elegir vocales judiciales del CGPJ por los jueces (sin asociaciones), terna de 3/5 para Fiscal General, eliminar aforamientos y abrir listas electorales.'
       ],
-      sourceRef: 'La España que merecemos: España Limpia — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: España Limpia — Democracia para el Siglo 21 (29N-2026)'
     },
     sanidad: {
       headline: 'Guardias máximas de 12 horas, Grupo A1 en Enfermería y salud digital única',
@@ -1696,7 +1251,7 @@ export const PROGRAMS = {
         'Evaluar con indicadores públicos las listas de espera, despolitizar gerencias por concurso de méritos e implantar historia clínica interoperable.',
         'Centralizar compras sanitarias aprovechando economías de escala.'
       ],
-      sourceRef: 'La España que merecemos: Sanidad Pública — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Sanidad Pública — Democracia para el Siglo 21 (29N-2026)'
     },
     educacion: {
       headline: 'Objetivo PISA Top 10 europeo, tecnología curricular e índice socioeducativo',
@@ -1708,7 +1263,7 @@ export const PROGRAMS = {
         'Evaluar resultados educativos creando un Índice Socioeducativo con refuerzo estatal para autonomías rezagadas.',
         'Impulsar la FP tecnológica, dominio del inglés y lenguas propias y becas de renta y esfuerzo.'
       ],
-      sourceRef: 'La España que merecemos: La educación en el centro — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: La educación en el centro — Democracia para el Siglo 21 (29N-2026)'
     },
     inmigracion: {
       headline: '«Política Migratoria con Cabeza»: visado tipo Chancenkarte y homologación ágil',
@@ -1720,7 +1275,7 @@ export const PROGRAMS = {
         'Garantizar el cumplimiento estricto de la ley frente a entradas irregulares y retornos verificados en coordinación con Frontex y la UE.',
         'Vincular la residencia estable a formación laboral e integración cívica constitucional.'
       ],
-      sourceRef: 'La España que merecemos: Política Migratoria con Cabeza — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Política Migratoria con Cabeza — Democracia para el Siglo 21 (29N-2026)'
     },
     seguridad: {
       headline: 'Agencia de Ciberseguridad (ANCI), fin del cese militar a los 45 y respaldo policial',
@@ -1732,7 +1287,7 @@ export const PROGRAMS = {
         'Proveer ciberasesores gratuitos a micropymes y dotar de medios a Policía Nacional y Guardia Civil frente a crimen organizado y multirreincidencia.',
         'Agilizar la respuesta judicial ante inquiocupación y fraudes.'
       ],
-      sourceRef: 'La España que merecemos: Ciberseguridad, Defensa y Seguridad — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Ciberseguridad, Defensa y Seguridad — Democracia para el Siglo 21 (29N-2026)'
     },
     modelo_estado: {
       headline: 'Autonomías eficientes, servicios compartidos vía diputaciones y unidad de mercado',
@@ -1744,7 +1299,7 @@ export const PROGRAMS = {
         'Vincular financiación territorial a evaluación objetiva de servicios públicos sin privilegios fiscales.',
         'Impulsar una estrategia europea específica contra la despoblación en la España interior.'
       ],
-      sourceRef: 'La España que merecemos: Estado Inteligente y Territorio — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Estado Inteligente y Territorio — Democracia para el Siglo 21 (29N-2026)'
     },
     energia_campo: {
       headline: 'Desalación con renovables, riego inteligente y «Ciudades Frescas»',
@@ -1756,7 +1311,7 @@ export const PROGRAMS = {
         'Restituir parte del agua ahorrada a ríos y acuíferos presionados e impulsar planes urbanos de «Ciudades Frescas».',
         'Asegurar energía limpia y competitiva que preserve la industria.'
       ],
-      sourceRef: 'La España que merecemos: Agua, Campo y Clima — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Agua, Campo y Clima — Democracia para el Siglo 21 (29N-2026)'
     },
     exterior_ue: {
       headline: 'Refundar la UE, pilar europeo en la OTAN y condicionalidad democrática de fondos',
@@ -1768,7 +1323,7 @@ export const PROGRAMS = {
         'Reorientar fondos europeos Next Generation no ejecutados a vivienda asequible y estrategia contra la despoblación 2028-2034.',
         'Impulsar el mercado único europeo de capitales, tecnología e innovación.'
       ],
-      sourceRef: 'La España que merecemos: Construir la UE del Siglo 21 — Coalición Democracia para el Siglo 21 (D21 · Cs · UCIN, 29N-2026)'
+      sourceRef: 'La España que merecemos: Construir la UE del Siglo 21 — Democracia para el Siglo 21 (29N-2026)'
     }
   },
 

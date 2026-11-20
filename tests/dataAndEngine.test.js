@@ -36,22 +36,19 @@ const EXPECTED_ORDER = [
   { id: 'frente_amplio', shortName: 'Frente Amplio', bloc: 'Izquierda', foundedYear: 2026 },
   { id: 'podemos', shortName: 'Podemos', bloc: 'Izquierda', foundedYear: 2014 },
   { id: 'psoe', shortName: 'PSOE', bloc: 'Centro-izquierda', foundedYear: 1879 },
-  { id: 'd21', shortName: 'D21 · Cs', bloc: 'Centro', foundedYear: 2026 },
-  { id: 'upyd', shortName: 'UPyD', bloc: 'Centro', foundedYear: 2007 },
+  { id: 'd21', shortName: 'Democracia para el Siglo 21', bloc: 'Centro', foundedYear: 2026 },
   { id: 'pp', shortName: 'PP', bloc: 'Centro-derecha', foundedYear: 1976 },
-  { id: 'ucd', shortName: 'UCD', bloc: 'Centro-derecha', foundedYear: 1977 },
   { id: 'vox', shortName: 'VOX', bloc: 'Derecha', foundedYear: 2013 },
   { id: 'salf', shortName: 'SALF', bloc: 'Derecha', foundedYear: 2024 },
-  { id: 'nn', shortName: 'NN', bloc: 'Derecha', foundedYear: 2024 },
   { id: 'fe_jons', shortName: 'FE de las JONS', bloc: 'Derecha', foundedYear: 1933 },
   { id: 'pacma', shortName: 'PACMA', bloc: 'Otros', foundedYear: 2003 },
   { id: 'iustitia', shortName: 'Iustitia Europa', bloc: 'Otros', foundedYear: 2023 },
   { id: 'fo', shortName: 'FO', bloc: 'Otros', foundedYear: 2018 }
 ];
 
-test('parties roster includes all 14 candidatures in the exact order and 6 blocs', () => {
+test('parties roster includes all 11 active candidatures in the exact order and 6 blocs', () => {
   assert.equal(BLOCS.length, 6);
-  assert.equal(PARTIES.length, 14);
+  assert.equal(PARTIES.length, 11);
 
   PARTIES.forEach((party, idx) => {
     const expected = EXPECTED_ORDER[idx];
@@ -65,7 +62,7 @@ test('parties roster includes all 14 candidatures in the exact order and 6 blocs
   });
 });
 
-test('programs dataset covers all 14 candidatures across all 12 separated topics (168 entries)', () => {
+test('programs dataset covers all 11 active candidatures across all 12 separated topics (132 entries)', () => {
   assert.equal(TOPICS.length, 12);
   assert.ok(getTopicById('empleo'));
   assert.ok(getTopicById('pensiones'));
@@ -95,11 +92,11 @@ test('programs dataset covers all 14 candidatures across all 12 separated topics
     }
   }
 
-  assert.equal(entryCount, 168);
-  assert.equal(Object.keys(PROGRAMS).length, 14);
+  assert.equal(entryCount, 132);
+  assert.equal(Object.keys(PROGRAMS).length, 11);
 });
 
-test('questionnaire covers all 12 topics with 15 concrete options and full 14-party weight maps', () => {
+test('questionnaire covers all 12 topics with 15 concrete options and full 11-party weight maps', () => {
   assert.equal(QUESTIONS.length, 15);
 
   const coveredTopics = new Set(QUESTIONS.map((q) => q.topicId));
@@ -116,8 +113,8 @@ test('questionnaire covers all 12 topics with 15 concrete options and full 14-pa
       assert.ok(option.description.trim().length > 15);
       assert.equal(
         Object.keys(option.partyWeights).length,
-        14,
-        `Expected exact 14-party weight map on ${question.id}/${option.id}`
+        11,
+        `Expected exact 11-party weight map on ${question.id}/${option.id}`
       );
       for (const repId of option.representativeParties || []) {
         assert.ok(
@@ -142,7 +139,7 @@ test('calculateCitizenAffinity handles empty or skipped responses cleanly', () =
   const emptyResult = calculateCitizenAffinity({}, {}, QUESTIONS, PARTIES);
   assert.equal(emptyResult.answeredCount, 0);
   assert.equal(emptyResult.totalWeight, 0);
-  assert.equal(emptyResult.rankedParties.length, 14);
+  assert.equal(emptyResult.rankedParties.length, 11);
   assert.equal(emptyResult.rankedParties[0].scorePercentage, 0);
 
   const skippedResult = calculateCitizenAffinity(
@@ -235,13 +232,19 @@ test('filterParties and buildTopicComparison filter by bloc and search accents c
   const derechaParties = filterParties(PARTIES, PROGRAMS, { bloc: 'Derecha' });
   assert.deepEqual(
     derechaParties.map((p) => p.id),
-    ['vox', 'salf', 'nn', 'fe_jons']
+    ['vox', 'salf', 'fe_jons']
   );
 
   const centroParties = filterParties(PARTIES, PROGRAMS, { bloc: 'Centro' });
   assert.deepEqual(
     centroParties.map((p) => p.id),
-    ['d21', 'upyd']
+    ['d21']
+  );
+
+  const centroDerechaParties = filterParties(PARTIES, PROGRAMS, { bloc: 'Centro-derecha' });
+  assert.deepEqual(
+    centroDerechaParties.map((p) => p.id),
+    ['pp']
   );
 
   const otrosParties = filterParties(PARTIES, PROGRAMS, { bloc: 'Otros' });
@@ -250,7 +253,7 @@ test('filterParties and buildTopicComparison filter by bloc and search accents c
     ['pacma', 'iustitia', 'fo']
   );
 
-  // Accent-insensitive search across programmatic measures (IGAE unique to unified D21 · Cs coalition)
+  // Accent-insensitive search across programmatic measures
   const igaeMatches = filterParties(PARTIES, PROGRAMS, { query: 'IGAE' });
   assert.deepEqual(
     igaeMatches.map((p) => p.id),
@@ -365,9 +368,7 @@ test('macroeconomic financial status reference and party debt-management proposa
 test('Frente Amplio and 2026 program dataset accurately reflect verified 29N-2026 proposals', () => {
   const fa = getPartyById('frente_amplio');
   assert.ok(fa);
-  assert.ok(fa.leader.includes('Ada Colau'));
-  assert.ok(fa.leader.includes('Antonio Maíllo'));
-  assert.ok(fa.leader.includes('Enrique Santiago'));
+  assert.equal(fa.leader, 'Ada Colau');
   assert.equal(fa.localPdfPath, './pdfs/sumar-frente-amplio-2026.pdf');
 
   const faHousing = getProposal('frente_amplio', 'vivienda');
@@ -713,34 +714,24 @@ test('buildPolicySimilarityReport handles empty summaries and builds accurate pe
   }
 });
 
-test('compressed coalitions expose structured coalition metadata, legacy alias resolution, and searchable member names', () => {
+test('only the 11 active candidatures remain, visual coalition tags are absent, and search aliases/legacy redirects work', () => {
   const fa = getPartyById('frente_amplio');
-  assert.ok(fa?.coalition);
-  assert.equal(fa.coalition.label, 'Candidatura conjunta 29N');
-  assert.ok(fa.coalition.shortTag.includes('Sumar'));
-  assert.ok(fa.coalition.shortTag.includes('IU'));
-  assert.ok(fa.coalition.shortTag.includes('PCE'));
-  assert.equal(fa.coalition.members.length, 5);
+  assert.equal(fa?.shortName, 'Frente Amplio');
+  assert.equal(fa?.fullName, 'Frente Amplio');
 
   const d21 = getPartyById('d21');
-  assert.ok(d21?.coalition);
-  assert.equal(d21.bloc, 'Centro');
-  assert.equal(d21.shortName, 'D21 · Cs');
-  assert.ok(d21.coalition.shortTag.includes('Ciudadanos (Cs)'));
-  assert.ok(d21.coalition.shortTag.includes('UCIN'));
-  assert.equal(d21.coalition.members.length, 3);
+  assert.equal(d21?.bloc, 'Centro');
+  assert.equal(d21?.shortName, 'Democracia para el Siglo 21');
+  assert.equal(d21?.fullName, 'Democracia para el Siglo 21');
 
   for (const party of PARTIES) {
-    if (party.id !== 'frente_amplio' && party.id !== 'd21') {
-      assert.equal(party.coalition, undefined);
-    }
+    assert.equal(party.coalition, undefined, `Expected no visual coalition tag metadata on ${party.id}`);
   }
 
-  // Strict lookup returns undefined for absorbed IDs, while resolvePartyId maps legacy hashes
-  assert.equal(getPartyById('sumar'), undefined);
-  assert.equal(getPartyById('iu'), undefined);
-  assert.equal(getPartyById('pce'), undefined);
-  assert.equal(getPartyById('cs'), undefined);
+  for (const removedId of ['upyd', 'ucd', 'nn', 'sumar', 'iu', 'pce', 'cs']) {
+    assert.equal(getPartyById(removedId), undefined, `Expected ${removedId} to be absent from PARTIES`);
+    assert.equal(getPartyProgram(removedId), undefined, `Expected ${removedId} to be absent from PROGRAMS`);
+  }
 
   assert.equal(LEGACY_PARTY_ALIASES.pce, 'frente_amplio');
   assert.equal(resolvePartyId('sumar'), 'frente_amplio');
@@ -749,25 +740,24 @@ test('compressed coalitions expose structured coalition metadata, legacy alias r
   assert.equal(resolvePartyId('cs'), 'd21');
   assert.equal(resolvePartyId('psoe'), 'psoe');
 
-  // Search by constituent party names and acronyms returns parent coalitions
   for (const query of ['PCE', 'IU', 'Izquierda Unida', 'Sumar', 'Más Madrid', 'Comuns']) {
     const matches = filterParties(PARTIES, PROGRAMS, { query });
     assert.ok(
       matches.some((p) => p.id === 'frente_amplio'),
-      `Expected Frente Amplio to match query "${query}"`
+      `Expected Frente Amplio to match searchAlias query "${query}"`
     );
   }
 
-  for (const query of ['Ciudadanos', 'Cs', 'UCIN', 'Democracia 21']) {
+  for (const query of ['D21', 'Democracia 21', 'Ciudadanos', 'Cs', 'UCIN']) {
     const matches = filterParties(PARTIES, PROGRAMS, { query });
     assert.ok(
       matches.some((p) => p.id === 'd21'),
-      `Expected D21 · Cs to match query "${query}"`
+      `Expected Democracia para el Siglo 21 to match searchAlias query "${query}"`
     );
   }
 });
 
-test('buildPolicySimilarityReport propagates coalition tags onto coalition matches and null onto standalone parties', () => {
+test('buildPolicySimilarityReport keeps clean candidature names without coalition tag fields', () => {
   const answers = {
     'q-sanidad-gestion': 'opt-san-100-publica-cartera',
     'q-regeneracion-corrupcion': 'opt-reg-auditoria-igae'
@@ -776,24 +766,15 @@ test('buildPolicySimilarityReport propagates coalition tags onto coalition match
   const report = buildPolicySimilarityReport(summary, TOPICS, PARTIES);
 
   const faPartyRow = report.byParty.find((p) => p.partyId === 'frente_amplio');
-  assert.ok(faPartyRow?.coalitionShortTag);
-  assert.equal(faPartyRow.coalitionCompactLabel, 'Sumar · IU · PCE +2');
-
-  const d21PartyRow = report.byParty.find((p) => p.partyId === 'd21');
-  if (d21PartyRow) {
-    assert.ok(d21PartyRow.coalitionShortTag.includes('Ciudadanos (Cs)'));
-    assert.equal(d21PartyRow.coalitionCompactLabel, 'D21 · Cs · UCIN');
-  }
-
-  const sanidadTopic = report.byTopic.find((t) => t.topicId === 'sanidad');
-  const faMatch = sanidadTopic.topMatches.find((m) => m.partyId === 'frente_amplio');
-  const podemosMatch = sanidadTopic.topMatches.find((m) => m.partyId === 'podemos');
-  assert.ok(faMatch?.coalitionShortTag);
-  assert.equal(podemosMatch?.coalitionShortTag, null);
-  assert.equal(podemosMatch?.coalitionCompactLabel, null);
+  assert.ok(faPartyRow);
+  assert.equal(faPartyRow.shortName, 'Frente Amplio');
+  assert.equal('coalitionShortTag' in faPartyRow, false);
+  assert.equal('coalitionCompactLabel' in faPartyRow, false);
 
   const regTopic = report.byTopic.find((t) => t.topicId === 'regeneracion_justicia');
   const d21Match = regTopic.topMatches.find((m) => m.partyId === 'd21');
-  assert.ok(d21Match?.coalitionShortTag);
-  assert.equal(d21Match.coalitionCompactLabel, 'D21 · Cs · UCIN');
+  assert.ok(d21Match);
+  assert.equal(d21Match.shortName, 'Democracia para el Siglo 21');
+  assert.equal('coalitionShortTag' in d21Match, false);
+  assert.equal('coalitionCompactLabel' in d21Match, false);
 });
